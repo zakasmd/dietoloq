@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', justifyContent: 'center' }}>
+          <div className="responsive-grid">
             {serviceKeys.map((key, index) => {
               const Icon = serviceIcons[index];
               const isPopular = index === 0;

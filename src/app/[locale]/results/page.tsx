@@ -66,7 +66,7 @@ export default function ResultsPage() {
       {/* Results grid */}
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', justifyContent: 'center' }}>
+          <div className="responsive-grid">
             {results.map((r, i) => (
               <motion.div
                 key={r.id}
