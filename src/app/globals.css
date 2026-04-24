@@ -96,14 +96,14 @@
 
 .container {
   margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    max-width: 72rem;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-  }
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 90rem;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
 
   .section {
     padding-top: 6rem;
@@ -142,8 +142,7 @@
 
   .blob {
     position: absolute; border-radius: 50%;
-    filter: blur(80px); opacity: 0.5;
-    pointer-events: none; will-change: transform;
+    opacity: 0.5; pointer-events: none; will-change: transform;
   }
 
   .neon-ring {
