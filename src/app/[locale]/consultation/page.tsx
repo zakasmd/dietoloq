@@ -86,19 +86,19 @@ export default function ConsultationPage() {
           >
             <div className={styles.infoCard}>
               <div className={styles.infoIcon}>📋</div>
-              <h3>Necə işləyir?</h3>
+              <h3>{t('howItWorks')}</h3>
               <ol className={styles.steps}>
-                <li>Formu doldurun</li>
-                <li>24 saat ərzində əlaqə saxlayırıq</li>
-                <li>İlk görüş planlanır</li>
-                <li>Fərdi plan hazırlanır</li>
+                <li>{t('step1')}</li>
+                <li>{t('step2')}</li>
+                <li>{t('step3')}</li>
+                <li>{t('step4')}</li>
               </ol>
             </div>
 
             <div className={styles.contactCard}>
-              <Phone size={20} color="#8B5CF6" />
+              <Phone size={20} color="hsl(var(--primary))" />
               <div>
-                <div className={styles.contactLabel}>Birbaşa zəng edin</div>
+                <div className={styles.contactLabel}>{t('callDirectly')}</div>
                 <a href="tel:+994506684823" className={styles.contactPhone}>+994 50 668 48 23</a>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function ConsultationPage() {
               className="btn btn-whatsapp"
               style={{ width: '100%', justifyContent: 'center' }}
             >
-              WhatsApp-da yaz
+              {t('whatsappBtn')}
             </a>
           </motion.div>
 
@@ -123,11 +123,11 @@ export default function ConsultationPage() {
           >
             {success ? (
               <div className={styles.successBox}>
-                <CheckCircle size={48} color="#10B981" />
-                <h3>Müraciətiniz qəbul edildi!</h3>
+                <CheckCircle size={48} color="hsl(var(--primary))" />
+                <h3>{t('successTitle')}</h3>
                 <p>{t('success')}</p>
                 <button className="btn btn-primary" onClick={() => setSuccess(false)}>
-                  Yeni müraciət
+                  {t('newRequest')}
                 </button>
               </div>
             ) : (
@@ -181,7 +181,7 @@ export default function ConsultationPage() {
                 <div className="form-group">
                   <label className="form-label">{t('goal')} *</label>
                   <select {...register('goal')} className="form-input form-select">
-                    <option value="">Seçin...</option>
+                    <option value="">{t('goalPlaceholder')}</option>
                     {goalKeys.map((key) => (
                       <option key={key} value={key}>
                         {t(`goalOptions.${key}`)}
@@ -196,7 +196,7 @@ export default function ConsultationPage() {
                   <textarea
                     {...register('message')}
                     className="form-input form-textarea"
-                    placeholder="Əlavə məlumat..."
+                    placeholder={t('messagePlaceholder')}
                     rows={4}
                   />
                 </div>
@@ -207,7 +207,7 @@ export default function ConsultationPage() {
                   disabled={loading}
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
-                  {loading ? 'Göndərilir...' : t('submit')}
+                  {loading ? t('sending') : t('submit')}
                 </button>
               </form>
             )}

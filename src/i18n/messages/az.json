@@ -172,6 +172,7 @@
     "whatsapp": "WhatsApp-da yaz"
   },
   "footer": {
+    "subTitle": "Peşəkar Dietoloq",
     "description": "Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
     "contact": "Əlaqə",
@@ -198,9 +199,21 @@
       "other": "Digər"
     },
     "message": "Əlavə qeydlər",
+    "messagePlaceholder": "Əlavə məlumat...",
     "submit": "Müraciəti göndər",
+    "sending": "Göndərilir...",
     "success": "Müraciətiniz qəbul edildi! Tezliklə sizinlə əlaqə saxlayacağıq.",
-    "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin."
+    "successTitle": "Müraciətiniz qəbul edildi!",
+    "newRequest": "Yeni müraciət",
+    "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.",
+    "howItWorks": "Necə işləyir?",
+    "step1": "Formu doldurun",
+    "step2": "24 saat ərzində əlaqə saxlayırıq",
+    "step3": "İlk görüş planlanır",
+    "step4": "Fərdi plan hazırlanır",
+    "callDirectly": "Birbaşa zəng edin",
+    "whatsappBtn": "WhatsApp-da yaz",
+    "goalPlaceholder": "Seçin..."
   },
   "book": {
     "title": "Köklüyün Sirri — Arıqlığın Açarı",

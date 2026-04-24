@@ -43,8 +43,8 @@ export default function Footer() {
             <div className={styles.logo}>
               <span className={styles.logoIcon}>🥗</span>
               <div>
-                <div className={styles.logoName}>Leyla Zülfüqarlı</div>
-                <div className={styles.logoSub}>Peşəkar Dietoloq</div>
+                <div className={styles.logoName}>{nav('brandName')}</div>
+                <div className={styles.logoSub}>{t('subTitle')}</div>
               </div>
             </div>
             <p className={styles.description}>{t('description')}</p>

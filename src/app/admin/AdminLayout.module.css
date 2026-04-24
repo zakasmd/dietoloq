@@ -1,10 +1,12 @@
-.layout { display: flex; min-height: 100vh; background: #F8FAFC; }
+.layout { display: flex; min-height: 100vh; background: #0F172A; }
 
 .sidebar {
-  width: 260px; background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+  width: 260px;
+  background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
   display: flex; flex-direction: column; flex-shrink: 0;
   position: fixed; top: 0; left: 0; bottom: 0; z-index: 200;
   transition: transform 0.3s ease;
+  border-right: 1px solid rgba(255,255,255,0.06);
 }
 
 .sidebarHeader {
@@ -14,8 +16,11 @@
 }
 
 .logo { display: flex; align-items: center; gap: 0.625rem; }
-.logoName { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; color: white; }
-.logoSub { font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+.logoName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.95rem; color: white; letter-spacing: -0.01em;
+}
+.logoSub { font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; color: rgba(255,255,255,0.4); }
 
 .closeBtn {
   display: none; background: none; border: none;
@@ -26,44 +31,69 @@
 
 .navItem {
   display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.75rem 1rem; border-radius: var(--radius-lg);
+  padding: 0.75rem 1rem; border-radius: 10px;
   color: rgba(255,255,255,0.55); text-decoration: none;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease;
 }
 .navItem:hover { background: rgba(255,255,255,0.06); color: white; }
-.navActive { background: rgba(99,102,241,0.25); color: white; border: 1px solid rgba(99,102,241,0.3); }
+.navActive {
+  background: linear-gradient(135deg, hsl(150 100% 72% / 0.18), hsl(175 85% 60% / 0.12));
+  color: hsl(150 100% 72%);
+  border: 1px solid hsl(150 100% 72% / 0.3);
+}
 
 .sidebarFooter {
   padding: 1rem 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);
   display: flex; flex-direction: column; gap: 0.5rem;
 }
 
-.dashLink { color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none; padding: 0.5rem 1rem; }
+.dashLink {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none;
+  padding: 0.5rem 1rem;
+}
 .dashLink:hover { color: white; }
 
 .logoutBtn {
   display: flex; align-items: center; gap: 0.5rem; width: 100%;
   padding: 0.625rem 1rem; background: none; border: none;
-  color: rgba(255,255,255,0.4); font-size: 0.8rem; cursor: pointer;
-  border-radius: var(--radius-lg); transition: all 0.2s ease; font-family: var(--font-body);
+  color: rgba(255,255,255,0.4);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem; cursor: pointer;
+  border-radius: 10px; transition: all 0.2s ease;
 }
 .logoutBtn:hover { background: rgba(239,68,68,0.15); color: #FCA5A5; }
 
 .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 150; }
 
-.main { flex: 1; margin-left: 260px; display: flex; flex-direction: column; min-height: 100vh; }
+.main { flex: 1; margin-left: 260px; display: flex; flex-direction: column; min-height: 100vh; background: #F1F5F9; }
 
 .topbar {
-  background: white; border-bottom: 1px solid var(--color-border-light);
+  background: white; border-bottom: 1px solid #E2E8F0;
   padding: 0 1.75rem; height: 64px; display: flex; align-items: center; gap: 1rem;
-  position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
-.menuBtn { display: none; background: none; border: none; color: var(--color-text); cursor: pointer; padding: 0.4rem; border-radius: var(--radius-md); }
-.menuBtn:hover { background: var(--color-bg-secondary); }
+.menuBtn {
+  display: none; background: none; border: none;
+  color: #334155; cursor: pointer; padding: 0.4rem;
+  border-radius: 8px;
+}
+.menuBtn:hover { background: #F1F5F9; }
 
-.topbarTitle { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; }
-.siteLink { margin-left: auto; font-size: 0.825rem; color: var(--color-primary); text-decoration: none; font-weight: 600; font-family: var(--font-heading); }
+.topbarTitle {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700; font-size: 1.05rem; color: #0F172A;
+  letter-spacing: -0.01em;
+}
+.siteLink {
+  margin-left: auto;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.825rem; color: hsl(150 80% 35%); text-decoration: none; font-weight: 600;
+}
+.siteLink:hover { color: hsl(150 80% 25%); }
 
 .content { padding: 2rem 1.75rem; flex: 1; }
 

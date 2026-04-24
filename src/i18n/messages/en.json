@@ -172,6 +172,7 @@
     "whatsapp": "Message on WhatsApp"
   },
   "footer": {
+    "subTitle": "Professional Dietitian",
     "description": "Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
@@ -198,9 +199,21 @@
       "other": "Other"
     },
     "message": "Additional Notes",
+    "messagePlaceholder": "Additional information...",
     "submit": "Submit Request",
+    "sending": "Sending...",
     "success": "Your request has been received! We'll contact you shortly.",
-    "error": "An error occurred. Please try again."
+    "successTitle": "Request received!",
+    "newRequest": "New request",
+    "error": "An error occurred. Please try again.",
+    "howItWorks": "How does it work?",
+    "step1": "Fill out the form",
+    "step2": "We contact you within 24 hours",
+    "step3": "First appointment is scheduled",
+    "step4": "Personalized plan is prepared",
+    "callDirectly": "Call directly",
+    "whatsappBtn": "Message on WhatsApp",
+    "goalPlaceholder": "Select..."
   },
   "book": {
     "title": "The Secret of Weight — The Key to Slimness",
