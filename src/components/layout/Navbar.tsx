@@ -53,7 +53,7 @@ export default function Navbar() {
               </svg>
             </div>
             <div className={styles.logoText}>
-              <span className={styles.logoName}>Leyla Zülfüqarlı</span>
+              <span className={styles.logoName}>{t('brandName')}</span>
               <span className={styles.logoSub}>Dietoloq</span>
             </div>
           </Link>

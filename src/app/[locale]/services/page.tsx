@@ -3,17 +3,10 @@
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { TrendingDown, TrendingUp, Leaf, Droplets, Mic, CheckCircle, FlaskConical } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const serviceKeys = ['weightLoss', 'weightGain', 'antiAging', 'consultation', 'detox', 'media'] as const;
-
-const serviceConfig = [
-  { icon: TrendingDown, color: '#059669', bg: '#ECFDF5', popular: true },
-  { icon: TrendingUp, color: '#0D9488', bg: '#CCFBF1', popular: false },
-  { icon: Leaf, color: '#F59E0B', bg: '#FFF7ED', popular: false },
-  { icon: Droplets, color: '#3B82F6', bg: '#EFF6FF', popular: false },
-  { icon: FlaskConical, color: '#10B981', bg: '#F0FDF4', popular: false },
-  { icon: Mic, color: '#6366F1', bg: '#EEF2FF', popular: false },
-];
+const serviceIcons = [TrendingDown, TrendingUp, Leaf, Droplets, FlaskConical, Mic];
 
 const featureMap: Record<string, string[]> = {
   weightLoss: ['Fərdi kalori hesablaması', 'Həftəlik menyu planı', 'Su qəbulu planı', 'Nəticə izlənməsi'],
@@ -30,96 +23,90 @@ export default function ServicesPage() {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
-      {/* Hero */}
-      <section style={{
-        background: 'linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%)',
-        padding: '5rem 0 4rem',
-        textAlign: 'center',
-        borderBottom: '1px solid var(--color-primary-100)',
-      }}>
+      <section style={{ padding: '5rem 0 4rem', textAlign: 'center' }}>
         <div className="container">
-          <div className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>💼 {t('title')}</div>
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', marginBottom: '1rem' }}>{t('title')}</h1>
-          <div className="divider" />
-          <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', maxWidth: '540px', margin: '0 auto' }}>
-            {t('subtitle')}
-          </p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="eyebrow" style={{ marginBottom: '1rem' }}>💼 {t('title')}</div>
+            <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+              {t('title')}
+            </h1>
+            <p style={{ fontSize: '1.05rem', color: 'hsl(var(--foreground)/0.7)', maxWidth: '540px', margin: '0 auto' }}>{t('subtitle')}</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section" style={{ background: 'var(--color-white)' }}>
+      <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
             {serviceKeys.map((key, index) => {
-              const cfg = serviceConfig[index];
-              const Icon = cfg.icon;
+              const Icon = serviceIcons[index];
+              const isPopular = index === 0;
               return (
-                <div
+                <motion.div
                   key={key}
-                  className="card"
+                  className="glass hover-glow"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
                   style={{
-                    position: 'relative',
-                    border: cfg.popular ? '2px solid var(--color-primary)' : '1px solid var(--color-border-light)',
+                    padding: '2rem', borderRadius: 'var(--radius)', position: 'relative', overflow: 'hidden',
+                    border: isPopular ? '1px solid hsl(var(--primary)/0.4)' : '1px solid hsl(var(--glass-border))',
+                    display: 'flex', flexDirection: 'column',
                   }}
                 >
-                  {cfg.popular && (
+                  {isPopular && (
                     <div style={{
-                      position: 'absolute', top: '-1px', right: '1.5rem',
-                      background: 'var(--gradient-primary)', color: 'white',
-                      padding: '0.3rem 0.85rem', borderRadius: '0 0 12px 12px',
-                      fontSize: '0.72rem', fontWeight: 700, fontFamily: 'var(--font-heading)',
-                    }}>
-                      ⭐ Populyar
-                    </div>
+                      position: 'absolute', top: 0, right: '1.5rem',
+                      background: 'var(--gradient-mint)', color: 'hsl(var(--primary-foreground))',
+                      padding: '0.25rem 0.875rem', borderRadius: '0 0 12px 12px',
+                      fontSize: '0.7rem', fontWeight: 700,
+                    }}>⭐ Populyar</div>
                   )}
-                  <div className="card-body" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', height: '100%' }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                      <div style={{
-                        width: 52, height: 52, borderRadius: 14, flexShrink: 0,
-                        background: cfg.bg, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      }}>
-                        <Icon size={24} color={cfg.color} />
-                      </div>
-                      <div>
-                        <h3 style={{ fontSize: '1.05rem', marginBottom: '0.2rem' }}>{t(`items.${key}.title`)}</h3>
-                        <span style={{ fontSize: '0.775rem', color: cfg.color, fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
-                          {t('learnMore')}
-                        </span>
-                      </div>
-                    </div>
-                    <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: '1.65' }}>
-                      {t(`items.${key}.desc`)}
-                    </p>
-                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                      {featureMap[key].map((f) => (
-                        <li key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.825rem', color: 'var(--color-text-secondary)' }}>
-                          <CheckCircle size={14} color="var(--color-primary)" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <div style={{ marginTop: 'auto' }}>
-                      <Link href={`/${locale}/consultation`} className="btn btn-primary btn-sm" style={{ width: '100%', justifyContent: 'center' }}>
-                        {t('learnMore')}
-                      </Link>
-                    </div>
+                  <div style={{
+                    width: 48, height: 48, borderRadius: 12,
+                    background: 'var(--gradient-mint)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: '1.25rem',
+                  }}>
+                    <Icon size={22} color="hsl(var(--primary-foreground))" />
                   </div>
-                </div>
+                  <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.5rem' }}>
+                    {t(`items.${key}.title`)}
+                  </h3>
+                  <p style={{ fontSize: '0.875rem', color: 'hsl(var(--foreground)/0.7)', lineHeight: '1.65', marginBottom: '1.25rem' }}>
+                    {t(`items.${key}.desc`)}
+                  </p>
+                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem', flex: 1 }}>
+                    {featureMap[key].map((f) => (
+                      <li key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.825rem', color: 'hsl(var(--foreground)/0.75)' }}>
+                        <CheckCircle size={14} color="hsl(var(--primary))" />{f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '0.875rem', padding: '0.625rem 1rem' }}>
+                    {t('learnMore')}
+                  </Link>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: 'var(--gradient-primary)', padding: '4rem 0', textAlign: 'center' }}>
+      <section style={{ padding: '0 0 5rem', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ color: 'white', marginBottom: '1rem' }}>Hansı xidmət sizin üçündür?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>Pulsuz ilk konsultasiyada birgə müzakirə edək</p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href={`/${locale}/consultation`} className="btn btn-white btn-lg">Konsultasiya al</Link>
-            <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">WhatsApp</a>
+          <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)' }}>
+            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+              Hansı xidmət sizin üçündür?
+            </h2>
+            <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>Pulsuz ilk konsultasiyada birgə müzakirə edək</p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg">Konsultasiya al</Link>
+              <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
