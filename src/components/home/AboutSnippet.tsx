@@ -9,6 +9,7 @@ import styles from './AboutSnippet.module.css';
 
 export default function AboutSnippet() {
   const t = useTranslations('about');
+  const nav = useTranslations('nav');
   const locale = useLocale();
 
   const highlights = [
@@ -51,8 +52,8 @@ export default function AboutSnippet() {
             >
               <CheckCircle size={16} color="hsl(var(--primary))" />
               <div>
-                <div className={styles.certTitle}>15+ Sertifikat</div>
-                <div className={styles.certSub}>Klinik Nutrisyon</div>
+                <div className={styles.certTitle}>{t('certsBadgeTitle')}</div>
+                <div className={styles.certSub}>{t('certsBadgeSub')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -66,7 +67,7 @@ export default function AboutSnippet() {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <div className="eyebrow">✦ {t('title')}</div>
-            <h2 className={styles.title}>Leyla Zülfüqarlı</h2>
+            <h2 className={styles.title}>{nav('brandName')}</h2>
             <p className={styles.bio}>{t('shortBio')}</p>
 
             {/* Stats */}

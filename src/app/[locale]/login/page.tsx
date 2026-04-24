@@ -28,12 +28,10 @@ function LoginContent() {
   const loginForm = useForm<LoginForm>();
   const regForm = useForm<RegisterForm>();
 
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) router.push('/dashboard');
-    });
-  }, [router]);
+
+  // NOTE: We intentionally do NOT auto-redirect when session exists.
+  // This prevents the infinite "Yüklənir..." loop when user presses browser back.
+  // Users who are logged in and visit /login will just see the login form.
 
   const handleLogin = async (data: LoginForm) => {
     setLoading(true);

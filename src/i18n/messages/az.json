@@ -60,14 +60,30 @@
         "desc": "Tədbirlər, seminarlar və media çıxışları vasitəsilə qidalanma üzrə ekspert rəyi."
       }
     },
-    "learnMore": "Ətraflı"
+    "learnMore": "Ətraflı",
+    "popular": "Populyar",
+    "ctaTitle": "Hansı xidmət sizin üçündür?",
+    "ctaSubtitle": "Pulsuz ilk konsultasiyada birgə müzakirə edək",
+    "ctaButton": "Konsultasiya al"
   },
   "results": {
     "title": "Real Nəticələr",
     "subtitle": "Müştərilərimizin real transformasiya hekayələri",
+    "eyebrow": "Nəticələr",
     "beforeLabel": "Əvvəl",
     "afterLabel": "Sonra",
-    "viewAll": "Hamısına bax"
+    "viewAll": "Hamısına bax",
+    "statsClients": "Uğurlu müştəri",
+    "statsSatisfy": "Məmnuniyyət dərəcəsi",
+    "statsLoss": "Ortalama çəki itkisi",
+    "statsTime": "İlk nəticə müddəti",
+    "goalLoss": "Arıqlama",
+    "goalGain": "Çəki artırma",
+    "monthLabel": "ay",
+    "weekLabel": "həftə",
+    "ctaTitle": "Siz də nəticə əldə edə bilərsiniz",
+    "ctaSubtitle": "Fərdi qidalanma planınızı hazırlayalım",
+    "ctaButton": "Konsultasiya al"
   },
   "about": {
     "title": "Haqqında",
@@ -102,7 +118,9 @@
       "Uşaq Qidalanması Sertifikatı"
     ],
     "socialTitle": "Sosial media",
-    "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent"
+    "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent",
+    "certsBadgeTitle": "15+ Sertifikat",
+    "certsBadgeSub": "Klinik Nutrisyon"
   },
   "testimonials": {
     "title": "Müştəri rəyləri",
@@ -173,6 +191,7 @@
   },
   "footer": {
     "subTitle": "Peşəkar Dietoloq",
+    "copyrightName": "Leyla Zülfüqarlı",
     "description": "Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
     "contact": "Əlaqə",
@@ -183,6 +202,7 @@
     "email": "E-mail"
   },
   "consultation": {
+    "eyebrow": "Konsultasiya",
     "title": "Konsultasiya üçün qeydiyyat",
     "subtitle": "Aşağıdakı formu doldurun, tezliklə sizinlə əlaqə saxlayacağıq",
     "fullName": "Ad və soyad",
@@ -251,6 +271,23 @@
     "submit": "Qeydiyyat ol",
     "haveAccount": "Hesabınız var?",
     "login": "Daxil ol"
+  },
+  "contact": {
+    "eyebrow": "Əlaqə",
+    "title": "Bizimlə əlaqə saxlayın",
+    "subtitle": "Suallarınızı soruşun, məsləhət alın, konsultasiya planlaşdırın",
+    "directContact": "Birbaşa əlaqə",
+    "phoneLabel": "TELEFON",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ÜNVAN",
+    "addressValue": "Bakı, Azərbaycan",
+    "socialMedia": "Sosial media",
+    "consultTitle": "Konsultasiya almaq istəyirsiniz?",
+    "consultDesc": "Fərdi qidalanma planınız üçün konsultasiya formumuzu doldurun. 24 saat ərzində sizinlə əlaqə saxlayırıq.",
+    "consultBtn": "Konsultasiya üçün qeydiyyat",
+    "quickTitle": "Sürətli əlaqə",
+    "quickDesc": "Sualınız varsa, WhatsApp-da birbaşa yazın. Ən qısa müddətdə cavab alacaqsınız.",
+    "quickBtn": "WhatsApp-da yaz"
   },
   "dashboard": {
     "welcome": "Xoş gəldiniz",

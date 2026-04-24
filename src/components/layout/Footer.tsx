@@ -105,7 +105,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {currentYear} Leyla Zülfüqarlı. {t('rights')}
+            © {currentYear} {t('copyrightName')}. {t('rights')}
           </p>
         </div>
       </div>

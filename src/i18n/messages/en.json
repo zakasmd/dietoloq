@@ -60,14 +60,29 @@
         "desc": "Events, seminars and media appearances — expert opinion on nutrition."
       }
     },
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "ctaTitle": "Which service is right for you?",
+    "ctaSubtitle": "Let's discuss together in a free first consultation",
+    "ctaButton": "Get a Consultation"
   },
   "results": {
     "title": "Real Results",
     "subtitle": "Transformation stories from our clients",
+    "eyebrow": "Results",
     "beforeLabel": "Before",
     "afterLabel": "After",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "statsClients": "Successful clients",
+    "statsSatisfy": "Satisfaction rate",
+    "statsLoss": "Average weight loss",
+    "statsTime": "First results in",
+    "goalLoss": "Weight Loss",
+    "goalGain": "Weight Gain",
+    "monthLabel": "months",
+    "weekLabel": "weeks",
+    "ctaTitle": "You can achieve results too",
+    "ctaSubtitle": "Let's build your personalized nutrition plan",
+    "ctaButton": "Get a Consultation"
   },
   "about": {
     "title": "About",
@@ -102,7 +117,9 @@
       "Pediatric Nutrition Certification"
     ],
     "socialTitle": "Social Media",
-    "socialDesc": "Educational content on nutrition and healthy living on YouTube and social media"
+    "socialDesc": "Educational content on nutrition and healthy living on YouTube and social media",
+    "certsBadgeTitle": "15+ Certifications",
+    "certsBadgeSub": "Clinical Nutrition"
   },
   "testimonials": {
     "title": "Client Reviews",
@@ -173,6 +190,7 @@
   },
   "footer": {
     "subTitle": "Professional Dietitian",
+    "copyrightName": "Leyla Zulfuqarli",
     "description": "Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
@@ -183,6 +201,7 @@
     "email": "Email"
   },
   "consultation": {
+    "eyebrow": "Consultation",
     "title": "Book a Consultation",
     "subtitle": "Fill out the form below and we'll contact you shortly",
     "fullName": "Full Name",
@@ -251,6 +270,23 @@
     "submit": "Create Account",
     "haveAccount": "Already have an account?",
     "login": "Log In"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch with us",
+    "subtitle": "Ask questions, get advice, schedule a consultation",
+    "directContact": "Direct Contact",
+    "phoneLabel": "PHONE",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ADDRESS",
+    "addressValue": "Baku, Azerbaijan",
+    "socialMedia": "Social Media",
+    "consultTitle": "Want a consultation?",
+    "consultDesc": "Fill out the consultation form for a personalized nutrition plan. We'll get in touch within 24 hours.",
+    "consultBtn": "Book a Consultation",
+    "quickTitle": "Quick Contact",
+    "quickDesc": "If you have questions, message us directly on WhatsApp. We'll reply as soon as possible.",
+    "quickBtn": "Message on WhatsApp"
   },
   "dashboard": {
     "welcome": "Welcome",

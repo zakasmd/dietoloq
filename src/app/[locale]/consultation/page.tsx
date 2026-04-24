@@ -68,7 +68,7 @@ export default function ConsultationPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="badge badge-primary">📋 Konsultasiya</span>
+            <span className="badge badge-primary">📋 {t('eyebrow')}</span>
             <h1 className={styles.title}>{t('title')}</h1>
             <p className={styles.subtitle}>{t('subtitle')}</p>
           </motion.div>
