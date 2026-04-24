@@ -164,12 +164,7 @@ function CoursesContent() {
       )}
 
       {/* Main layout: video player + lesson list */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 340px',
-        gap: '1.5rem',
-        alignItems: 'start',
-      }}>
+      <div className="course-layout">
 
         {/* LEFT: Video Player */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

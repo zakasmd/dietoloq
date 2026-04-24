@@ -138,6 +138,19 @@
   }
 }
 
+.course-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .course-layout {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
   .section {
     padding-top: 6rem;
     padding-bottom: 6rem;
