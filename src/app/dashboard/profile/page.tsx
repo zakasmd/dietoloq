@@ -3,13 +3,15 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { createClient } from '@/lib/supabase/client';
-import { Save, User } from 'lucide-react';
+import { Save, User, CheckCircle, Mail, Phone } from 'lucide-react';
 
 type ProfileForm = { full_name: string; phone: string };
 
 export default function ProfilePage() {
   const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
   const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [pwSent, setPwSent] = useState(false);
   const { register, handleSubmit, reset } = useForm<ProfileForm>();
 
   useEffect(() => {
@@ -25,6 +27,12 @@ export default function ProfilePage() {
           .single();
         if (profile) {
           reset({ full_name: profile.full_name || '', phone: profile.phone || '' });
+        } else {
+          // Pre-fill from auth metadata
+          reset({
+            full_name: session.user.user_metadata?.full_name || '',
+            phone: session.user.user_metadata?.phone || '',
+          });
         }
       }
     };
@@ -33,84 +41,257 @@ export default function ProfilePage() {
 
   const onSubmit = async (data: ProfileForm) => {
     if (!user) return;
+    setSaving(true);
     const supabase = createClient();
     await supabase.from('profiles').upsert({
       id: user.id,
-      full_name: data.full_name,
-      phone: data.phone,
+      full_name: data.full_name.trim(),
+      phone: data.phone.trim(),
+      updated_at: new Date().toISOString(),
     });
+    setSaving(false);
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };
 
+  const handleResetPassword = async () => {
+    if (!user?.email) return;
+    const supabase = createClient();
+    await supabase.auth.resetPasswordForEmail(user.email, {
+      redirectTo: `${window.location.origin}/dashboard/profile`,
+    });
+    setPwSent(true);
+    setTimeout(() => setPwSent(false), 5000);
+  };
+
+  const avatarLetter = (user?.email?.[0] || 'U').toUpperCase();
+
   return (
-    <div>
-      <div style={{ marginBottom: '1.5rem' }}>
-        <h2 style={{ fontSize: '1.25rem' }}>Profil məlumatları</h2>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>Hesab məlumatlarınızı yeniləyin</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '900px' }}>
+
+      {/* Page header */}
+      <div>
+        <h1 style={{
+          fontFamily: 'Space Grotesk, system-ui',
+          fontSize: '1.5rem', fontWeight: 700,
+          color: '#0F172A', letterSpacing: '-0.02em',
+          marginBottom: '0.375rem',
+        }}>
+          Profil
+        </h1>
+        <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.9rem', color: '#64748B' }}>
+          Hesab məlumatlarınızı idarə edin
+        </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-        {/* Profile Form */}
-        <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '1.5rem', alignItems: 'start' }}>
+
+        {/* Profile Form Card */}
+        <div style={{
+          background: 'white',
+          borderRadius: '16px',
+          padding: '2rem',
+          boxShadow: '0 1px 4px rgba(15,23,42,0.08)',
+          border: '1px solid #E2E8F0',
+        }}>
+          {/* Avatar row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem', paddingBottom: '1.5rem', borderBottom: '1px solid #F1F5F9' }}>
             <div style={{
-              width: 64, height: 64, borderRadius: '50%',
-              background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              color: 'white', fontSize: '1.75rem', fontWeight: 800, fontFamily: 'var(--font-heading)',
+              width: 60, height: 60, borderRadius: '50%',
+              background: 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              color: 'hsl(165 60% 8%)',
+              fontFamily: 'Space Grotesk, system-ui',
+              fontSize: '1.5rem', fontWeight: 800,
+              flexShrink: 0,
             }}>
-              {user?.email?.[0].toUpperCase() || 'U'}
+              {avatarLetter}
             </div>
             <div>
-              <div style={{ fontWeight: 700, fontSize: '1rem' }}>{user?.email}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>Hesab</div>
+              <div style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '1rem', color: '#0F172A' }}>
+                {user?.email}
+              </div>
+              <div style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#059669', fontWeight: 600, marginTop: '0.2rem' }}>
+                ● Aktiv hesab
+              </div>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '1.125rem' }}>
-            <div className="form-group">
-              <label className="form-label">Ad Soyad</label>
-              <input {...register('full_name')} className="form-input" placeholder="Ad Soyad" />
-            </div>
-            <div className="form-group">
-              <label className="form-label">E-mail</label>
-              <input className="form-input" value={user?.email || ''} disabled style={{ background: 'var(--color-bg-secondary)', cursor: 'not-allowed' }} />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Telefon</label>
-              <input {...register('phone')} className="form-input" placeholder="+994 XX XXX XX XX" />
+          <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-group" style={{ margin: 0 }}>
+                <label className="form-label" style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+                  Ad Soyad
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <User size={15} style={{ position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF', pointerEvents: 'none' }} />
+                  <input
+                    {...register('full_name')}
+                    style={{
+                      width: '100%', boxSizing: 'border-box',
+                      padding: '0.65rem 0.875rem 0.65rem 2.5rem',
+                      borderRadius: '8px', border: '1.5px solid #E5E7EB',
+                      fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                      color: '#1F2937', background: 'white',
+                      outline: 'none', transition: 'border-color 0.2s',
+                    }}
+                    placeholder="Ad Soyad"
+                    onFocus={(e) => e.target.style.borderColor = '#059669'}
+                    onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
+                  />
+                </div>
+              </div>
+
+              <div className="form-group" style={{ margin: 0 }}>
+                <label style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+                  Telefon
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <Phone size={15} style={{ position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF', pointerEvents: 'none' }} />
+                  <input
+                    {...register('phone')}
+                    style={{
+                      width: '100%', boxSizing: 'border-box',
+                      padding: '0.65rem 0.875rem 0.65rem 2.5rem',
+                      borderRadius: '8px', border: '1.5px solid #E5E7EB',
+                      fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                      color: '#1F2937', background: 'white',
+                      outline: 'none', transition: 'border-color 0.2s',
+                    }}
+                    placeholder="+994 XX XXX XX XX"
+                    onFocus={(e) => e.target.style.borderColor = '#059669'}
+                    onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
+                  />
+                </div>
+              </div>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-              <Save size={16} /> {saved ? '✓ Yadda saxlanıldı!' : 'Yadda saxla'}
+            <div>
+              <label style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+                E-mail
+              </label>
+              <div style={{ position: 'relative' }}>
+                <Mail size={15} style={{ position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF', pointerEvents: 'none' }} />
+                <input
+                  value={user?.email || ''}
+                  disabled
+                  style={{
+                    width: '100%', boxSizing: 'border-box',
+                    padding: '0.65rem 0.875rem 0.65rem 2.5rem',
+                    borderRadius: '8px', border: '1.5px solid #E5E7EB',
+                    fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                    color: '#6B7280', background: '#F9FAFB',
+                    cursor: 'not-allowed',
+                  }}
+                />
+              </div>
+              <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#9CA3AF', marginTop: '0.3rem' }}>
+                Email dəyişdirilə bilməz
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              disabled={saving}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+                padding: '0.75rem 1.5rem',
+                background: saved ? '#059669' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
+                color: saved ? 'white' : 'hsl(165 60% 8%)',
+                border: 'none', borderRadius: '10px', cursor: saving ? 'not-allowed' : 'pointer',
+                fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.9rem',
+                transition: 'all 0.2s',
+                opacity: saving ? 0.7 : 1,
+              }}
+            >
+              {saved ? (
+                <><CheckCircle size={16} /> Yadda saxlanıldı!</>
+              ) : (
+                <><Save size={16} /> {saving ? 'Saxlanır...' : 'Yadda saxla'}</>
+              )}
             </button>
           </form>
         </div>
 
-        {/* Account Info */}
+        {/* Right column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div style={{ background: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)', borderRadius: 'var(--radius-2xl)', padding: '1.75rem', border: '1.5px solid var(--color-primary-200)' }}>
-            <User size={24} color="var(--color-primary)" style={{ marginBottom: '1rem' }} />
-            <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>Hesabınız aktifdir</h3>
-            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+
+          {/* Account status */}
+          <div style={{
+            background: 'white', borderRadius: '16px',
+            padding: '1.5rem',
+            boxShadow: '0 1px 4px rgba(15,23,42,0.08)',
+            border: '1px solid #E2E8F0',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ width: 36, height: 36, borderRadius: '8px', background: '#F0FDF4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <User size={18} color="#059669" />
+              </div>
+              <h3 style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A' }}>
+                Hesabınız aktifdir
+              </h3>
+            </div>
+            <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6 }}>
               Hesabınız uğurla yaradılmışdır. Kurs almaq üçün WhatsApp vasitəsilə müraciət edin.
             </p>
-          </div>
-          <div style={{ background: 'white', borderRadius: 'var(--radius-xl)', padding: '1.5rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)' }}>
-            <h3 style={{ fontSize: '0.95rem', marginBottom: '0.75rem' }}>🔐 Şifrə dəyişmə</h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>
-              Şifrənizi dəyişmək üçün e-mailinizə link göndəriləcək.
-            </p>
-            <button
-              className="btn btn-outline btn-sm"
-              onClick={async () => {
-                const supabase = createClient();
-                await supabase.auth.resetPasswordForEmail(user?.email || '');
-                alert('Şifrə sıfırlama linki e-mailinizə göndərildi!');
+            <a
+              href="https://wa.me/994506684823"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                marginTop: '1rem',
+                padding: '0.6rem 1.25rem',
+                background: '#25D366', color: 'white',
+                borderRadius: '8px',
+                fontFamily: 'Inter, system-ui', fontWeight: 600, fontSize: '0.85rem',
+                textDecoration: 'none',
               }}
             >
-              Şifrəni sıfırla
-            </button>
+              WhatsApp
+            </a>
+          </div>
+
+          {/* Password reset */}
+          <div style={{
+            background: 'white', borderRadius: '16px',
+            padding: '1.5rem',
+            boxShadow: '0 1px 4px rgba(15,23,42,0.08)',
+            border: '1px solid #E2E8F0',
+          }}>
+            <h3 style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A', marginBottom: '0.625rem' }}>
+              🔐 Şifrə dəyişmə
+            </h3>
+            <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6, marginBottom: '1rem' }}>
+              Şifrənizi dəyişmək üçün e-mailinizə link göndəriləcək.
+            </p>
+            {pwSent ? (
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: '0.5rem',
+                padding: '0.625rem 1rem',
+                background: '#F0FDF4', borderRadius: '8px',
+                fontFamily: 'Inter, system-ui', fontSize: '0.84rem',
+                color: '#059669', fontWeight: 600,
+              }}>
+                <CheckCircle size={15} /> Link göndərildi!
+              </div>
+            ) : (
+              <button
+                onClick={handleResetPassword}
+                style={{
+                  padding: '0.625rem 1.25rem',
+                  background: 'white', color: '#374151',
+                  border: '1.5px solid #E5E7EB',
+                  borderRadius: '8px', cursor: 'pointer',
+                  fontFamily: 'Inter, system-ui', fontWeight: 600, fontSize: '0.85rem',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#059669')}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#E5E7EB')}
+              >
+                Şifrəni sıfırla
+              </button>
+            )}
           </div>
         </div>
       </div>

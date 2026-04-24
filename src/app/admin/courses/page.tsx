@@ -31,7 +31,6 @@ export default function CoursesAdminPage() {
   };
 
   const fetchLessons = async (courseId: string) => {
-    if (lessons[courseId]) return;
     const supabase = createClient();
     const { data } = await supabase.from('lessons').select('*').eq('course_id', courseId).order('order_index');
     setLessons((prev) => ({ ...prev, [courseId]: data || [] }));
@@ -45,10 +44,18 @@ export default function CoursesAdminPage() {
 
   const createCourse = async (data: CourseForm) => {
     const supabase = createClient();
-    await supabase.from('courses').insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null });
+    const { data: newCourse } = await supabase
+      .from('courses')
+      .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
+      .select()
+      .single();
     setShowCourseForm(false);
     courseForm.reset();
-    fetchCourses();
+    await fetchCourses();
+    if (newCourse) {
+      setExpandedCourse(newCourse.id);
+      setLessons((prev) => ({ ...prev, [newCourse.id]: [] }));
+    }
   };
 
   const togglePublish = async (courseId: string, current: boolean) => {
@@ -67,10 +74,16 @@ export default function CoursesAdminPage() {
       duration_minutes: parseInt(data.duration_minutes) || null,
       is_published: true,
     });
-    setLessons((prev) => ({ ...prev, [addLessonFor]: [] }));
-    fetchLessons(addLessonFor);
+    const courseId = addLessonFor;
     setAddLessonFor(null);
     lessonForm.reset();
+    // Clear cache and re-fetch fresh lessons
+    setLessons((prev) => { const u = { ...prev }; delete u[courseId]; return u; });
+    const supabase2 = createClient();
+    const { data: fresh } = await supabase2
+      .from('lessons').select('*').eq('course_id', courseId).order('order_index');
+    setLessons((prev) => ({ ...prev, [courseId]: fresh || [] }));
+    setExpandedCourse(courseId);
   };
 
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;

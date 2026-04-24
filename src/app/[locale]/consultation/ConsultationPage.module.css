@@ -121,7 +121,13 @@
 .formGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
+  align-items: start;
+}
+
+.formGrid .form-group {
+  margin: 0;
+  position: relative;
 }
 
 /* Success Box */
