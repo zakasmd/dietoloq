@@ -60,6 +60,20 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      {/* Background blobs for Neon Mint Design */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="blob animate-float-slow"
+             style={{ top: '-10%', left: '-5%', width: 500, height: 500,
+                      background: 'radial-gradient(circle, hsl(150 100% 50% / 0.45), transparent 70%)' }} />
+        <div className="blob animate-float-slow"
+             style={{ top: '30%', right: '-10%', width: 600, height: 600,
+                      background: 'radial-gradient(circle, hsl(175 90% 45% / 0.35), transparent 70%)',
+                      animationDelay: '-6s' }} />
+        <div className="blob animate-float-slow"
+             style={{ bottom: '-15%', left: '20%', width: 550, height: 550,
+                      background: 'radial-gradient(circle, hsl(165 80% 40% / 0.30), transparent 70%)',
+                      animationDelay: '-12s' }} />
+      </div>
       <Navbar />
       <main>{children}</main>
       <Footer />

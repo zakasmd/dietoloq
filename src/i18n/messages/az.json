@@ -104,8 +104,40 @@
     "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent"
   },
   "testimonials": {
-    "title": "Müştəri Rəyləri",
-    "subtitle": "Real insanlar, real nəticələr"
+    "title": "Müştəri rəyləri",
+    "subtitle": "Xidmətlərimizdən razı qalan müştərilərimizin rəyləri",
+    "items": [
+      {
+        "name": "Aynur M.",
+        "text": "Leyla xanımın planı ilə 2 ayda 8 kq arıqladım. Heç vaxt aclıq hiss etmədim, enerji səviyyəm çox yüksəldi!",
+        "result": "-8 kq / 2 ay",
+        "avatar": "👩"
+      },
+      {
+        "name": "Sevinc H.",
+        "text": "İdmansız arıqlama metodunu başlanğıcda inanmamışdım, amma 6 həftədə 5 kq itirdim. Çox minnətdaram!",
+        "result": "-5 kq / 6 həftə",
+        "avatar": "👩‍🦱"
+      },
+      {
+        "name": "Rəna Ə.",
+        "text": "Hamiləlik dövründə çox narahat idim. Leyla xanım mənə xüsusi plan hazırladı, özümü çox yaxşı hiss etdim.",
+        "result": "Hamiləlik planı",
+        "avatar": "🤰"
+      },
+      {
+        "name": "Könül S.",
+        "text": "Anti-ageing qidalanma planından sonra özümü 10 yaş cavan hiss edirəm. Dərim də çox yaxşılaşdı.",
+        "result": "Anti-ageing proqramı",
+        "avatar": "👩‍🦳"
+      },
+      {
+        "name": "Lalə T.",
+        "text": "3 ay ərzində 12 kq arıqladım. Plan tamamilə fərdiləşdirilmişdi, ailəm belə fərqi gördü!",
+        "result": "-12 kq / 3 ay",
+        "avatar": "👩‍🦰"
+      }
+    ]
   },
   "faq": {
     "title": "Tez-tez soruşulan suallar",
@@ -142,6 +174,7 @@
     "description": "Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
     "contact": "Əlaqə",
+    "address": "Bakı, Azərbaycan",
     "followUs": "Bizi izlə",
     "rights": "Bütün hüquqlar qorunur.",
     "phone": "Telefon",

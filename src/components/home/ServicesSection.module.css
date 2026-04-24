@@ -6,59 +6,51 @@
 }
 
 .card {
-  background: var(--color-white);
-  border: 1.5px solid var(--color-border-light);
-  border-radius: var(--radius-2xl);
-  padding: 2rem 1.75rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: all var(--transition-base);
+  gap: 1.25rem;
   position: relative;
   overflow: hidden;
+  border-radius: var(--radius);
 }
 
-.card::before {
-  content: '';
+.cardIconWrapper {
+  position: relative;
+}
+
+.cardIconGlow {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.card:hover {
-  border-color: var(--color-primary-200);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-}
-
-.card:hover::before {
-  opacity: 1;
+  inset: -10px;
+  background: hsl(var(--primary) / 0.2);
+  filter: blur(20px);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .iconBox {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-lg);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background: var(--gradient-mint);
+  position: relative;
+  z-index: 1;
 }
 
 .cardTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--color-text);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
 }
 
 .cardDesc {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  color: hsl(var(--foreground) / 0.7);
   line-height: 1.65;
   flex: 1;
 }
@@ -69,10 +61,11 @@
   gap: 0.35rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: hsl(var(--primary));
   text-decoration: none;
-  font-family: var(--font-heading);
-  transition: gap var(--transition-fast);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  transition: gap 0.2s ease;
+  margin-top: 0.5rem;
 }
 
 .cardLink:hover {

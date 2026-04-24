@@ -1,6 +1,6 @@
 .section {
-  padding: var(--space-20) 0;
-  background: var(--color-white);
+  padding: 8rem 0;
+  background: transparent;
 }
 
 .inner {
@@ -23,8 +23,8 @@
   left: -16px;
   right: 16px;
   top: 16px;
-  background: linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-accent-light) 100%);
-  border-radius: var(--radius-2xl);
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  border-radius: var(--radius);
   z-index: 0;
 }
 
@@ -34,65 +34,76 @@
   width: 100%;
   max-width: 420px;
   height: 500px;
-  border-radius: var(--radius-2xl);
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow:
-    0 20px 60px rgba(5, 150, 105, 0.15),
-    0 8px 24px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(5, 150, 105, 0.1);
+  box-shadow: var(--shadow-glass);
+  border: 1px solid hsl(var(--glass-border));
 }
 
 .image {
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover;
 }
 
 /* Cert Badge */
 .certBadge {
   position: absolute;
   bottom: 24px;
-  right: 0;
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: 0.75rem 1.1rem;
+  right: -20px;
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(24px);
+  border-radius: var(--radius);
+  padding: 0.875rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(5, 150, 105, 0.1);
+  gap: 0.75rem;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid hsl(var(--glass-border));
   z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.certBadge:hover {
+  box-shadow: var(--glow-mint), var(--shadow-glass);
+  transform: translateY(-4px);
+  border-color: hsl(var(--primary) / 0.4);
 }
 
 .certTitle {
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--color-text);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
   line-height: 1;
 }
 
 .certSub {
-  font-size: 0.68rem;
-  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  color: hsl(var(--primary));
   margin-top: 0.2rem;
+  font-weight: 500;
 }
 
 /* Content */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 800;
-  color: var(--color-text);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
 }
 
 .bio {
-  font-size: 1rem;
-  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  color: hsl(var(--foreground) / 0.7);
   line-height: 1.8;
 }
 
@@ -100,53 +111,59 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .statCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-xl);
-  padding: 1.125rem 0.875rem;
-  border: 1px solid var(--color-primary-100);
-  transition: all 0.2s ease;
+  gap: 0.5rem;
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(24px);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem;
+  border: 1px solid hsl(var(--glass-border));
+  transition: all 0.3s ease;
 }
 
 .statCard:hover {
-  background: var(--color-primary-50);
-  border-color: var(--color-primary-200);
-  transform: translateY(-2px);
+  background: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary) / 0.5);
+  transform: translateY(-4px);
+  box-shadow: var(--glow-mint);
 }
 
 .statIcon { font-size: 1.5rem; }
 
 .statVal {
-  font-family: var(--font-heading);
-  font-size: 1.375rem;
-  font-weight: 900;
-  color: var(--color-primary);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
 }
 
 .statLabel {
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  color: hsl(var(--foreground) / 0.7);
   text-align: center;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
   .imageWrapper { max-width: 420px; margin: 0 auto; }
+  .certBadge { right: 0; }
 }
 
 @media (max-width: 640px) {
   .imageCard { height: 380px; }
   .statsGrid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .certBadge { bottom: 16px; padding: 0.75rem 1rem; }
 }

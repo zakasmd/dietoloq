@@ -49,7 +49,7 @@ export default function AboutSnippet() {
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.4 }}
             >
-              <CheckCircle size={16} color="#059669" />
+              <CheckCircle size={16} color="hsl(var(--primary))" />
               <div>
                 <div className={styles.certTitle}>15+ Sertifikat</div>
                 <div className={styles.certSub}>Klinik Nutrisyon</div>
@@ -65,9 +65,8 @@ export default function AboutSnippet() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="section-label">✦ {t('title')}</div>
+            <div className="eyebrow">✦ {t('title')}</div>
             <h2 className={styles.title}>Leyla Zülfüqarlı</h2>
-            <div className="divider divider-left" />
             <p className={styles.bio}>{t('shortBio')}</p>
 
             {/* Stats */}

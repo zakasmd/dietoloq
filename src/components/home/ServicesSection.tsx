@@ -32,10 +32,9 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>Xidmətlər</span>
-          <h2>{t('title')}</h2>
-          <div className="divider" />
-          <p>{t('subtitle')}</p>
+          <div className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>✨ Xidmətlər</div>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-4">{t('title')}</h2>
+          <p className="text-lg text-foreground/75 max-w-2xl mx-auto">{t('subtitle')}</p>
         </motion.div>
 
         <div className={styles.grid}>
@@ -45,17 +44,17 @@ export default function ServicesSection() {
             return (
               <motion.div
                 key={key}
-                className={styles.card}
+                className={`glass hover-glow ${styles.card}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div
-                  className={styles.iconBox}
-                  style={{ background: color.bg }}
-                >
-                  <Icon size={24} color={color.icon} />
+                <div className={styles.cardIconWrapper}>
+                  <div className={styles.cardIconGlow} />
+                  <div className={styles.iconBox}>
+                    <Icon size={24} color="hsl(var(--primary-foreground))" />
+                  </div>
                 </div>
                 <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
                 <p className={styles.cardDesc}>{t(`items.${key}.desc`)}</p>
