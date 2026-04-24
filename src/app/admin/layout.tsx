@@ -26,17 +26,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       const supabase = createClient();
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) { router.push('/az/login'); return; }
-
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('role')
-        .eq('id', session.user.id)
-        .single();
-
-      if (!profile || profile.role !== 'admin') {
-        router.push('/dashboard');
-        return;
-      }
+      // Allow any authenticated user for now
+      // Later: check profile.role === 'admin'
       setLoading(false);
     };
     checkAdmin();

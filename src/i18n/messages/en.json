@@ -70,11 +70,38 @@
   },
   "about": {
     "title": "About",
-    "shortBio": "Professional dietitian Leyla Zülfüqarlı has developed personalized, science-based nutrition plans for over 200 clients across 8+ years, supporting them on their journey to better health.",
+    "shortBio": "Professional dietitian Leyla Zülfüqarlı has developed personalized nutrition plans for over 200 clients across 8+ years.",
     "readMore": "Read More",
     "experience": "Years Exp.",
     "certificates": "Certifications",
-    "clients": "Clients"
+    "clients": "Clients",
+    "bio1": "Leyla Zülfüqarlı is a professional dietitian with over 8 years of experience, having developed personalized, science-based nutrition plans for more than 200 clients. She applies a holistic approach, considering lifestyle, psychological state and health goals.",
+    "bio2": "Leyla is also the author of a book on healthy nutrition, shares educational content on YouTube and social media, and presents expert nutritional advice at seminars and in media.",
+    "missionTitle": "My Mission",
+    "missionText1": "Knowing that every person is unique, creating an individual nutrition plan for each one. Healthy living should be a pleasure, not a restriction.",
+    "missionText2": "My goal is to improve not just my clients' weight, but their energy levels and quality of life.",
+    "servicesTitle": "What I Do for Clients",
+    "servicesList": [
+      "Personalized weight loss diet programs",
+      "Exercise-free weight loss",
+      "Healthy nutrition consultations",
+      "Anti-aging & nutrition science",
+      "Weight gain nutrition plans",
+      "Detox program",
+      "Hydration planning",
+      "Seminars, events, media"
+    ],
+    "certsLabel": "Certifications",
+    "certsTitle": "Education & Certifications",
+    "certsList": [
+      "Clinical Nutritiology Certification",
+      "Anti-Aging Nutrition Certification",
+      "Exercise-Free Weight Loss Method",
+      "Nutritionist-Dietitian Certification",
+      "Pediatric Nutrition Certification"
+    ],
+    "socialTitle": "Social Media",
+    "socialDesc": "Educational content on nutrition and healthy living on YouTube and social media"
   },
   "testimonials": {
     "title": "Client Reviews",

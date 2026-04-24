@@ -33,10 +33,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         router.push('/az/login');
         return;
       }
+      // User data comes from auth session metadata
       setUser(session.user);
       setLoading(false);
     };
     checkAuth();
+
+    // Also listen for auth state changes
+    const supabase = createClient();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session) {
+        router.push('/az/login');
+      }
+    });
+    return () => subscription.unsubscribe();
   }, [router]);
 
   const handleLogout = async () => {

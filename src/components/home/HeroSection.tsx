@@ -119,8 +119,8 @@ export default function HeroSection() {
                 <Award size={14} color="white" />
               </div>
               <div>
-                <div className={styles.floatTitle}>8+ il</div>
-                <div className={styles.floatSub}>Təcrübə</div>
+                <div className={styles.floatTitle}>8+</div>
+                <div className={styles.floatSub}>{t('stat1Label')}</div>
               </div>
             </motion.div>
 
@@ -136,7 +136,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <div className={styles.floatTitle}>200+</div>
-                <div className={styles.floatSub}>Müştəri</div>
+                <div className={styles.floatSub}>{t('stat3Label')}</div>
               </div>
             </motion.div>
 

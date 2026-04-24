@@ -1,6 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Clock, Users, BookOpen } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { Award, Clock, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const InstagramIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,38 +20,34 @@ const YoutubeIcon = () => (
   </svg>
 );
 
-const services = [
-  'Arıqlama və çəki azaltma üçün fərdi diet proqramları',
-  'İdmansız arıqlama metodları üzrə proqram',
-  'Sağlam qidalanma konsultasiyası',
-  'Anti-ageing və nutrisyon sahəsində məsləhət',
-  'Kökəlmək üçün çəki artırma planları',
-  'Ramazan və xüsusi dövrlərdə qidalanma',
-  'Su qəbulunun düzgün planlaşdırılması',
-  'Seminarlar, tədbirlər, media çıxışları',
-];
-
-const certificates = [
-  'Klinik Nutrisyologiya Sertifikatı',
-  'Anti-Ageing Qidalanma Sertifikatı',
-  'Hamiləlik Diyetologiyası Sertifikatı',
-  'İdmansız Arıqlama Metodu Sertifikatı',
-  'Uşaq Qidalanması Sertifikatı',
-];
-
 export default function AboutPage() {
+  const t = useTranslations('about');
+  const ct = useTranslations('cta');
+  const locale = useLocale();
+
+  const stats = [
+    { icon: <Clock size={20} color="var(--color-primary)" />, val: '8+', key: 'experience' },
+    { icon: <Award size={20} color="var(--color-primary)" />, val: '15+', key: 'certificates' },
+    { icon: <Users size={20} color="var(--color-primary)" />, val: '200+', key: 'clients' },
+  ] as const;
+
   return (
     <div style={{ paddingTop: '5rem' }}>
       {/* Hero */}
       <section style={{
-        background: 'linear-gradient(135deg, #faf5ff 0%, #fdf2f8 100%)',
+        background: 'linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%)',
         padding: '5rem 0 4rem',
-        borderBottom: '1px solid var(--color-border-light)',
+        borderBottom: '1px solid var(--color-primary-100)',
       }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '4rem', alignItems: 'center' }}>
             {/* Image */}
-            <div style={{ position: 'relative' }}>
+            <motion.div
+              style={{ position: 'relative' }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
               <div style={{
                 position: 'absolute', bottom: '-20px', left: '-20px', right: '20px', top: '20px',
                 background: 'linear-gradient(135deg, var(--color-primary-200) 0%, var(--color-primary-100) 100%)',
@@ -61,65 +61,64 @@ export default function AboutPage() {
                 unoptimized
                 style={{ borderRadius: 'var(--radius-2xl)', position: 'relative', zIndex: 1, width: '100%', height: 'auto', objectFit: 'cover', boxShadow: 'var(--shadow-xl)' }}
               />
-            </div>
+            </motion.div>
 
             {/* Text */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <span className="badge badge-primary">Haqqında</span>
+            <motion.div
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <div className="section-label">✦ {t('title')}</div>
               <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>Leyla Zülfüqarlı</h1>
               <div className="divider divider-left" />
               <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-text-secondary)' }}>
-                Peşəkar diyetoloq kimi 8 ildən artıq təcrübəyə malik olan Leyla xanım, 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamışdır. O, yalnız diyet proqramları deyil, həm də müştərilərin həyat tərzi, psixoloji vəziyyəti və sağlamlıq hədəflərini nəzərə alaraq bütöv bir yanaşma tətbiq edir.
+                {t('bio1')}
               </p>
               <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--color-text-secondary)' }}>
-                Leyla xanım eyni zamanda sağlam qidalanma mövzusunda kitab müəllifidir, YouTube kanalında və sosial mediada maarifləndirici kontent paylaşır, seminarlar və media çıxışları vasitəsilə geniş auditoriyaya qidalanma üzrə ekspert rəyi təqdim edir.
+                {t('bio2')}
               </p>
 
               {/* Stats */}
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                {[
-                  { icon: <Clock size={20} color="#8B5CF6" />, val: '8+', label: 'İl Təcrübə' },
-                  { icon: <Award size={20} color="#10B981" />, val: '15+', label: 'Sertifikat' },
-                  { icon: <Users size={20} color="#F59E0B" />, val: '200+', label: 'Müştəri' },
-                ].map((s) => (
-                  <div key={s.label} className="card card-body" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flex: 1, minWidth: '120px', padding: '1rem 1.25rem' }}>
+                {stats.map((s) => (
+                  <div key={s.key} className="card card-body" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flex: 1, minWidth: '110px', padding: '1rem 1.25rem' }}>
                     {s.icon}
                     <div>
-                      <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.25rem' }}>{s.val}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>{s.label}</div>
+                      <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-text)' }}>{s.val}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)' }}>{t(s.key)}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Link href="/az/consultation" className="btn btn-primary">Konsultasiya al</Link>
-            </div>
+              <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+                {ct('button')}
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Mission & Services */}
       <section className="section" style={{ background: 'var(--color-white)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
             {/* Mission */}
-            <div style={{ background: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)', padding: '2.5rem', borderRadius: 'var(--radius-2xl)' }}>
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>🎯 Mənim missiyam</h2>
-              <p style={{ lineHeight: '1.8' }}>
-                Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.
-              </p>
+            <div style={{ background: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)', padding: '2.5rem', borderRadius: 'var(--radius-2xl)', border: '1px solid var(--color-primary-200)' }}>
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>🎯 {t('missionTitle')}</h2>
+              <p style={{ lineHeight: '1.8' }}>{t('missionText1')}</p>
               <br />
-              <p style={{ lineHeight: '1.8' }}>
-                Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.
-              </p>
+              <p style={{ lineHeight: '1.8' }}>{t('missionText2')}</p>
             </div>
 
-            {/* What I do */}
+            {/* Services */}
             <div>
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>💼 Müştərilərim üçün nə edirəm?</h2>
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>💼 {t('servicesTitle')}</h2>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {services.map((s) => (
-                  <li key={s} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                {(t.raw('servicesList') as string[]).map((s: string, i: number) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                     <span style={{ color: 'var(--color-primary)', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>✓</span>
                     {s}
                   </li>
@@ -131,16 +130,16 @@ export default function AboutPage() {
       </section>
 
       {/* Certificates */}
-      <section className="section" style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #fff 100%)' }}>
+      <section className="section" style={{ background: 'linear-gradient(135deg, #ECFDF5 0%, #fff 100%)' }}>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>🏆 Sertifikatlar</span>
-            <h2>Təhsil və sertifikatlar</h2>
+            <div className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>🏆 {t('certsLabel')}</div>
+            <h2>{t('certsTitle')}</h2>
             <div className="divider" />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', maxWidth: '900px', margin: '0 auto' }}>
-            {certificates.map((cert) => (
-              <div key={cert} className="card card-body" style={{ textAlign: 'center', padding: '1.5rem' }}>
+            {(t.raw('certsList') as string[]).map((cert: string, i: number) => (
+              <div key={i} className="card card-body" style={{ textAlign: 'center', padding: '1.5rem' }}>
                 <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>🏅</div>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text)', fontWeight: 600, fontFamily: 'var(--font-heading)' }}>{cert}</p>
               </div>
@@ -149,20 +148,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Social Media */}
+      {/* Social */}
       <section className="section" style={{ background: 'var(--color-white)' }}>
         <div className="container">
           <div className="section-header">
-            <h2>Sosial media</h2>
+            <h2>{t('socialTitle')}</h2>
             <div className="divider" />
-            <p>YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent</p>
+            <p>{t('socialDesc')}</p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg" style={{ gap: '0.5rem' }}>
+            <a href="https://www.youtube.com/@DiyetoloqLeyla" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg" style={{ gap: '0.5rem' }}>
               <YoutubeIcon />
-              YouTube Kanalı
+              YouTube
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg" style={{ gap: '0.5rem', borderColor: '#E1306C', color: '#E1306C' }}>
+            <a href="https://www.instagram.com/dietoloqleylazulfuqarli/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg" style={{ gap: '0.5rem', borderColor: '#E1306C', color: '#E1306C' }}>
               <InstagramIcon />
               Instagram
             </a>
@@ -171,12 +170,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #EC4899 100%)', padding: '4rem 0', textAlign: 'center' }}>
+      <section style={{ background: 'var(--gradient-primary)', padding: '4rem 0', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ color: 'white', marginBottom: '1rem' }}>Konsultasiya almağa hazırsınız?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>Fərdi planınızı alın, sağlam həyata başlayın</p>
-          <Link href="/az/consultation" className="btn btn-white btn-lg">
-            Konsultasiya üçün qeydiyyat
+          <h2 style={{ color: 'white', marginBottom: '1rem' }}>{ct('title')}</h2>
+          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>{ct('subtitle')}</p>
+          <Link href={`/${locale}/consultation`} className="btn btn-white btn-lg">
+            {ct('button')}
           </Link>
         </div>
       </section>

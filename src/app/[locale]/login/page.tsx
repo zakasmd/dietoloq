@@ -13,6 +13,9 @@ type LoginForm = { email: string; password: string };
 type RegisterForm = { full_name: string; email: string; password: string; confirm: string };
 
 export default function LoginPage() {
+  const t = useTranslations('login');
+  const tr = useTranslations('register');
+  const ct = useTranslations('cta');
   const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -44,11 +47,11 @@ export default function LoginPage() {
     });
     if (error) {
       if (error.message.includes('Invalid login credentials') || error.message.includes('invalid')) {
-        setError('Email və ya şifrə yanlışdır');
+        setError(locale === 'az' ? 'Email və ya şifrə yanlışdır' : locale === 'ru' ? 'Неверный email или пароль' : 'Invalid email or password');
       } else if (error.message.includes('Email not confirmed')) {
-        setError('Email təsdiqlənməyib. Zəhmət olmasa email göndərilən linki yoxlayın.');
+        setError(locale === 'az' ? 'Email təsdiqlənməyib. Zəhmət olmasa email göndərilən linki yoxlayın.' : locale === 'ru' ? 'Email не подтвержден. Пожалуйста, проверьте ссылку, отправленную на email.' : 'Email not confirmed. Please check the link sent to your email.');
       } else {
-        setError('Giriş zamanı xəta baş verdi. Yenidən cəhd edin.');
+        setError(locale === 'az' ? 'Giriş zamanı xəta baş verdi. Yenidən cəhd edin.' : locale === 'ru' ? 'Произошла ошибка при входе. Попробуйте еще раз.' : 'An error occurred during login. Please try again.');
       }
     } else {
       router.push('/dashboard');
@@ -58,11 +61,11 @@ export default function LoginPage() {
 
   const handleRegister = async (data: RegisterForm) => {
     if (data.password !== data.confirm) {
-      setError('Şifrələr uyğun gəlmir');
+      setError(locale === 'az' ? 'Şifrələr uyğun gəlmir' : locale === 'ru' ? 'Пароли не совпадают' : 'Passwords do not match');
       return;
     }
     if (data.password.length < 6) {
-      setError('Şifrə ən azı 6 hərf olmalıdır');
+      setError(locale === 'az' ? 'Şifrə ən azı 6 hərf olmalıdır' : locale === 'ru' ? 'Пароль должен содержать минимум 6 символов' : 'Password must be at least 6 characters');
       return;
     }
     setLoading(true);
@@ -80,13 +83,13 @@ export default function LoginPage() {
 
     if (error) {
       if (error.message.includes('already registered') || error.message.includes('already been registered')) {
-        setError('Bu email artıq qeydiyyatdan keçib. Daxil olmağa çalışın.');
+        setError(locale === 'az' ? 'Bu email artıq qeydiyyatdan keçib. Daxil olmağa çalışın.' : locale === 'ru' ? 'Этот email уже зарегистрирован. Попробуйте войти.' : 'This email is already registered. Try to log in.');
       } else if (error.message.includes('invalid') || error.message.includes('Invalid')) {
-        setError('Düzgün email ünvanı daxil edin (məs: ad@gmail.com)');
+        setError(locale === 'az' ? 'Düzgün email ünvanı daxil edin (məs: ad@gmail.com)' : locale === 'ru' ? 'Введите правильный адрес электронной почты (например: ad@gmail.com)' : 'Enter a valid email address (e.g. ad@gmail.com)');
       } else if (error.message.includes('rate limit')) {
-        setError('Çox sayda cəhd. Bir neçə dəqiqə gözləyin.');
+        setError(locale === 'az' ? 'Çox sayda cəhd. Bir neçə dəqiqə gözləyin.' : locale === 'ru' ? 'Слишком много попыток. Подождите несколько минут.' : 'Too many attempts. Wait a few minutes.');
       } else {
-        setError('Xəta baş verdi: ' + error.message);
+        setError((locale === 'az' ? 'Xəta baş verdi: ' : locale === 'ru' ? 'Произошла ошибка: ' : 'An error occurred: ') + error.message);
       }
     } else {
       // Check if user session exists (email confirmation disabled)
@@ -94,7 +97,7 @@ export default function LoginPage() {
         router.push('/dashboard');
       } else {
         // Email confirmation required
-        setSuccessMsg('Qeydiyyat uğurludur! Email göndərildi, zəhmət olmasa emailinizi yoxlayın.');
+        setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! Email göndərildi, zəhmət olmasa emailinizi yoxlayın.' : locale === 'ru' ? 'Регистрация прошла успешно! Письмо отправлено, пожалуйста, проверьте ваш email.' : 'Registration successful! Email sent, please check your email.');
         setIsRegister(false);
         regForm.reset();
       }
@@ -117,7 +120,7 @@ export default function LoginPage() {
           </div>
           <div>
             <div className={styles.logoName}>Leyla Zülfüqarlı</div>
-            <div className={styles.logoSub}>Diyetoloq Platforması</div>
+            <div className={styles.logoSub}>{t('title')} / {tr('title')}</div>
           </div>
         </div>
 
@@ -127,13 +130,13 @@ export default function LoginPage() {
             className={`${styles.tab} ${!isRegister ? styles.tabActive : ''}`}
             onClick={() => { setIsRegister(false); setError(''); setSuccessMsg(''); }}
           >
-            <Lock size={14} /> Daxil ol
+            <Lock size={14} /> {t('title')}
           </button>
           <button
             className={`${styles.tab} ${isRegister ? styles.tabActive : ''}`}
             onClick={() => { setIsRegister(true); setError(''); setSuccessMsg(''); }}
           >
-            <User size={14} /> Qeydiyyat
+            <User size={14} /> {tr('title')}
           </button>
         </div>
 
@@ -156,10 +159,10 @@ export default function LoginPage() {
         {!isRegister ? (
           /* LOGIN FORM */
           <form onSubmit={loginForm.handleSubmit(handleLogin)} className={styles.form} noValidate>
-            <div className={styles.formTitle}>Hesabınıza daxil olun</div>
+            <div className={styles.formTitle}>{t('subtitle')}</div>
 
             <div className="form-group">
-              <label className="form-label">E-mail</label>
+              <label className="form-label">{t('email')}</label>
               <div className={styles.inputWrapper}>
                 <Mail size={16} className={styles.inputIcon} />
                 <input
@@ -175,7 +178,7 @@ export default function LoginPage() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Şifrə</label>
+              <label className="form-label">{t('password')}</label>
               <div className={styles.inputWrapper}>
                 <Lock size={16} className={styles.inputIcon} />
                 <input
@@ -203,23 +206,23 @@ export default function LoginPage() {
               style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}
               disabled={loading}
             >
-              {loading ? 'Daxil olunur...' : 'Daxil ol'}
+              {loading ? '...' : t('submit')}
             </button>
 
             <p className={styles.switchText}>
-              Hesabınız yoxdur?{' '}
+              {t('noAccount')}{' '}
               <button type="button" className={styles.switchBtn} onClick={() => { setIsRegister(true); setError(''); }}>
-                Qeydiyyat
+                {t('register')}
               </button>
             </p>
           </form>
         ) : (
           /* REGISTER FORM */
           <form onSubmit={regForm.handleSubmit(handleRegister)} className={styles.form} noValidate>
-            <div className={styles.formTitle}>Yeni hesab yaradın</div>
+            <div className={styles.formTitle}>{tr('subtitle')}</div>
 
             <div className="form-group">
-              <label className="form-label">Ad Soyad</label>
+              <label className="form-label">{tr('fullName')}</label>
               <div className={styles.inputWrapper}>
                 <User size={16} className={styles.inputIcon} />
                 <input
@@ -236,7 +239,7 @@ export default function LoginPage() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">E-mail</label>
+              <label className="form-label">{tr('email')}</label>
               <div className={styles.inputWrapper}>
                 <Mail size={16} className={styles.inputIcon} />
                 <input
@@ -261,7 +264,7 @@ export default function LoginPage() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Şifrə</label>
+              <label className="form-label">{tr('password')}</label>
               <div className={styles.inputWrapper}>
                 <Lock size={16} className={styles.inputIcon} />
                 <input
@@ -282,7 +285,7 @@ export default function LoginPage() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Şifrəni təkrarla</label>
+              <label className="form-label">{tr('confirmPassword')}</label>
               <div className={styles.inputWrapper}>
                 <Lock size={16} className={styles.inputIcon} />
                 <input
@@ -305,20 +308,20 @@ export default function LoginPage() {
               style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}
               disabled={loading}
             >
-              {loading ? 'Qeydiyyat edilir...' : 'Qeydiyyat ol'}
+              {loading ? '...' : tr('submit')}
             </button>
 
             <p className={styles.switchText}>
-              Hesabınız var?{' '}
+              {tr('haveAccount')}{' '}
               <button type="button" className={styles.switchBtn} onClick={() => { setIsRegister(false); setError(''); }}>
-                Daxil ol
+                {tr('login')}
               </button>
             </p>
           </form>
         )}
 
         <div className={styles.back}>
-          <Link href={`/${locale}`} className={styles.backLink}>← Ana səhifəyə qayıt</Link>
+          <Link href={`/${locale}`} className={styles.backLink}>← {t('title')} (Home)</Link>
         </div>
       </div>
     </div>

@@ -74,7 +74,34 @@
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
-    "clients": "Müştəri"
+    "clients": "Müştəri",
+    "bio1": "Peşəkar diyetoloq kimi 8 ildən artıq təcrübəyə malik olan Leyla xanım, 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamışdır. O, yalnız diyet proqramları deyil, həm də müştərilərin həyat tərzi, psixoloji vəziyyəti və sağlamlıq hədəflərini nəzərə alaraq bütöv bir yanaşma tətbiq edir.",
+    "bio2": "Leyla xanım eyni zamanda sağlam qidalanma mövzusunda kitab müəllifidir, YouTube kanalında və sosial mediada maarifləndirici kontent paylaşır, seminarlar və media çıxışları vasitəsilə geniş auditoriyaya qidalanma üzrə ekspert rəyi təqdim edir.",
+    "missionTitle": "Mənim missiyam",
+    "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
+    "missionText2": "Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",
+    "servicesTitle": "Müştərilərim üçün nə edirəm?",
+    "servicesList": [
+      "Arıqlama və çəki azaltma üçün fərdi diet proqramları",
+      "İdmansız arıqlama metodları üzrə proqram",
+      "Sağlam qidalanma konsultasiyası",
+      "Qocalmağın qarşısını almaq — nutrisyon sahəsində məsləhət",
+      "Kökəlmək üçün çəki artırma planları",
+      "Detoks proqramı və detoks çayı",
+      "Su qəbulunun düzgün planlaşdırılması",
+      "Seminarlar, tədbirlər, media çıxışları"
+    ],
+    "certsLabel": "Sertifikatlar",
+    "certsTitle": "Təhsil və sertifikatlar",
+    "certsList": [
+      "Klinik Nutrisyologiya Sertifikatı",
+      "Qocalmanın Qarşısının Alınması Sertifikatı",
+      "İdmansız Arıqlama Metodu Sertifikatı",
+      "Nutrisyon və Diyetoloq Sertifikatı",
+      "Uşaq Qidalanması Sertifikatı"
+    ],
+    "socialTitle": "Sosial media",
+    "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent"
   },
   "testimonials": {
     "title": "Müştəri Rəyləri",
