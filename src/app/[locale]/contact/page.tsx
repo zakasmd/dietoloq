@@ -43,11 +43,11 @@ export default function ContactPage() {
 
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'start' }}>
+          <div className="responsive-grid" style={{ alignItems: 'start' }}>
             {/* Left: contact info */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
@@ -92,7 +92,7 @@ export default function ContactPage() {
             {/* Right: CTA cards */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}

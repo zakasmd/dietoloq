@@ -17,58 +17,51 @@ export default function BookPage() {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
-      {/* Hero */}
-      <section style={{ padding: '5rem 0' }}>
+      {/* ─── Hero / Intro ─── */}
+      <section style={{ padding: '4rem 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
-            {/* Book Image */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'center' }}>
+            {/* Image */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              style={{ position: 'relative', display: 'flex', justifyContent: 'center', flex: '1 1 300px' }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto' }}
             >
-              {/* Glow behind book */}
               <div style={{
-                position: 'absolute', inset: '10%',
-                background: 'radial-gradient(circle, hsl(var(--primary)/0.3) 0%, transparent 70%)',
-                borderRadius: '50%', zIndex: 0,
+                position: 'absolute', inset: 0,
+                background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)/0.2), transparent 70%)',
+                borderRadius: '50%', zIndey: 0,
               }} />
-
-              {/* Badge */}
-              <div style={{
-                position: 'absolute', top: '-10px', right: '10px', zIndex: 3,
-                background: 'var(--gradient-mint)', color: 'hsl(var(--primary-foreground))',
-                padding: '0.4rem 1rem', borderRadius: '0 var(--radius) var(--radius) var(--radius)',
-                fontSize: '0.8rem', fontWeight: 700, fontFamily: 'Space Grotesk,sans-serif',
-                boxShadow: 'var(--glow-mint)',
-              }}>
-                {t('badge')}
-              </div>
-
               <div className="glass" style={{
-                position: 'relative', zIndex: 1,
-                borderRadius: 'var(--radius)', overflow: 'hidden',
-                boxShadow: 'var(--shadow-glass)',
-                maxWidth: '340px', width: '100%',
+                padding: '1rem', borderRadius: 'var(--radius-xl)',
+                position: 'relative', zIndex: 1, border: '1px solid hsl(var(--glass-border))'
               }}>
+                <div style={{
+                  position: 'absolute', top: '-10px', right: '10px', zIndex: 3,
+                  background: '#EF4444', color: 'white', fontWeight: 700,
+                  padding: '0.4rem 1rem', borderRadius: '20px', fontSize: '0.85rem',
+                  boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)',
+                  transform: 'rotate(5deg)'
+                }}>
+                  {t('bestseller')}
+                </div>
                 <Image
-                  src="/images/kitab.png"
-                  alt={t('title')}
-                  width={340}
-                  height={340}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                  priority
+                  src="/images/book.png"
+                  alt="Köklüyün sirri - Arıqlığın açarı"
+                  width={350}
+                  height={450}
+                  style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius)', display: 'block' }}
                 />
               </div>
             </motion.div>
 
-            {/* Text */}
+            {/* Text & Form */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', flex: '1 1 400px' }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%' }}
             >
               <div className="eyebrow">📖 {t('author')}</div>
               <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', lineHeight: 1.2, fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))' }}>

@@ -81,7 +81,7 @@ export default function ConsultationPage() {
           <motion.div
             className={styles.infoCol}
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.infoCard}>
@@ -137,7 +137,7 @@ export default function ConsultationPage() {
           <motion.div
             className={styles.formCol}
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {success ? (
