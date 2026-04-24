@@ -45,8 +45,7 @@ export default function DashboardPage() {
         const { data: coursesData } = await supabase
           .from('courses')
           .select('id, title_az, description_az')
-          .in('id', ids)
-          .eq('is_published', true);
+          .in('id', ids);
         setCourses(coursesData || []);
 
         // Get lesson counts per course
@@ -56,8 +55,7 @@ export default function DashboardPage() {
             const { count } = await supabase
               .from('lessons')
               .select('*', { count: 'exact', head: true })
-              .eq('course_id', c.id)
-              .eq('is_published', true);
+              .eq('course_id', c.id);
             counts[c.id] = count || 0;
           })
         );

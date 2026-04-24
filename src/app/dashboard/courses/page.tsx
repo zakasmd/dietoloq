@@ -55,7 +55,6 @@ function CoursesContent() {
         .from('courses')
         .select('id, title_az, description_az')
         .in('id', ids)
-        .eq('is_published', true)
         .order('created_at', { ascending: true });
 
       if (coursesData?.length) {
@@ -81,7 +80,6 @@ function CoursesContent() {
       .from('lessons')
       .select('*')
       .eq('course_id', courseId)
-      .eq('is_published', true)
       .order('order_index');
     setLessons(data || []);
     setLessonsLoading(false);
