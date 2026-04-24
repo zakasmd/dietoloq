@@ -279,7 +279,14 @@
 
 @media (max-width: 640px) {
   .hero { padding: 100px 0 40px; }
-  .statsRow { flex-wrap: wrap; gap: 0.75rem; width: 100%; justify-content: center; }
+  .statsRow { 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    width: 100%; 
+    justify-content: center; 
+    padding: 1.5rem;
+  }
+  .statDivider { display: none; }
   .ctaGroup { justify-content: center; }
   .imageContainer { width: 300px; height: 380px; }
 }

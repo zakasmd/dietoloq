@@ -70,7 +70,7 @@ export default async function LocaleLayout({
         ].join(','),
       }} />
       <Navbar />
-      <main>{children}</main>
+      <main style={{ overflowX: 'hidden', width: '100%' }}>{children}</main>
       <Footer />
       <WhatsAppButton />
     </NextIntlClientProvider>
