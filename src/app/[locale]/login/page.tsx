@@ -15,6 +15,7 @@ type RegisterForm = { full_name: string; email: string; password: string; confir
 function LoginContent() {
   const t = useTranslations('login');
   const tr = useTranslations('register');
+  const nav = useTranslations('nav');
   const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -80,10 +81,13 @@ function LoginContent() {
         setError((locale === 'az' ? 'Xəta: ' : locale === 'ru' ? 'Ошибка: ' : 'Error: ') + error.message);
       }
     } else {
-      // Always show success message - don't auto-redirect to dashboard after signup
-      setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! İndi daxil ola bilərsiniz.' : locale === 'ru' ? 'Регистрация успешна! Теперь вы можете войти.' : 'Registration successful! You can now log in.');
-      setIsRegister(false);
-      regForm.reset();
+      if (authData?.session) {
+        router.push('/dashboard');
+      } else {
+        setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! İndi daxil ola bilərsiniz.' : locale === 'ru' ? 'Регистрация успешна! Теперь вы можете войти.' : 'Registration successful! You can now log in.');
+        setIsRegister(false);
+        regForm.reset();
+      }
     }
     setLoading(false);
   };
@@ -289,7 +293,7 @@ function LoginContent() {
         )}
 
         <div className={styles.back}>
-          <Link href={`/${locale}`} className={styles.backLink}>← Ana Səhifə</Link>
+          <Link href={`/${locale}`} className={styles.backLink}>← {nav('home')}</Link>
         </div>
       </div>
     </div>
