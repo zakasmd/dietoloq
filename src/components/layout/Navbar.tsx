@@ -54,7 +54,7 @@ export default function Navbar() {
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>Leyla Zülfüqarlı</span>
-              <span className={styles.logoSub}>Diyetoloq</span>
+              <span className={styles.logoSub}>Dietoloq</span>
             </div>
           </Link>
 

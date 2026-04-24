@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Leyla Zülfüqarlı | Diyetoloq',
-  description: 'Peşəkar diyetoloq Leyla Zülfüqarlı',
+  title: 'Leyla Zülfüqarlı | Dietoloq',
+  description: 'Peşəkar dietoloq Leyla Zülfüqarlı',
 };
 
 export default function RootLayout({

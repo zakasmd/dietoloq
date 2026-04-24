@@ -21,12 +21,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    az: 'Leyla Zülfüqarlı | Peşəkar Diyetoloq',
+    az: 'Leyla Zülfüqarlı | Peşəkar Dietoloq',
     ru: 'Лейла Зюльфюгарлы | Профессиональный Диетолог',
     en: 'Leyla Zülfüqarlı | Professional Dietitian',
   };
   const descriptions: Record<string, string> = {
-    az: 'Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planları, konsultasiya və kurslar. 8+ il təcrübə, 200+ müştəri.',
+    az: 'Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planları, konsultasiya və kurslar. 8+ il təcrübə, 200+ müştəri.',
     ru: 'Профессиональный диетолог Лейла Зюльфюгарлы — индивидуальные планы питания, консультации и курсы. 8+ лет опыта, 200+ клиентов.',
     en: 'Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses. 8+ years experience, 200+ clients.',
   };

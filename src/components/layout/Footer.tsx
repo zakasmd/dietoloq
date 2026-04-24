@@ -44,7 +44,7 @@ export default function Footer() {
               <span className={styles.logoIcon}>🥗</span>
               <div>
                 <div className={styles.logoName}>Leyla Zülfüqarlı</div>
-                <div className={styles.logoSub}>Peşəkar Diyetoloq</div>
+                <div className={styles.logoSub}>Peşəkar Dietoloq</div>
               </div>
             </div>
             <p className={styles.description}>{t('description')}</p>

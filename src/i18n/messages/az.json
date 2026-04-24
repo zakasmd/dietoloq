@@ -14,7 +14,7 @@
     "logout": "Çıxış"
   },
   "hero": {
-    "badge": "Peşəkar Diyetoloq · Bakı",
+    "badge": "Peşəkar Dietoloq · Bakı",
     "title": "Sağlam həyat üçün",
     "titleHighlight": "fərdi qidalanma planı",
     "subtitle": "Leyla Zülfüqarlı ilə elmi əsaslı diet proqramları, konsultasiya və real nəticələr. İdmansız arıqlama metodları üzrə 8+ il təcrübə.",
@@ -70,12 +70,12 @@
   },
   "about": {
     "title": "Haqqında",
-    "shortBio": "Leyla Zülfüqarlı peşəkar diyetoloq kimi 8+ il ərzində 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamış, onlara sağlam həyat yolunda dəstək vermişdir.",
+    "shortBio": "Leyla Zülfüqarlı peşəkar dietoloq kimi 8+ il ərzində 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamış, onlara sağlam həyat yolunda dəstək vermişdir.",
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
     "clients": "Müştəri",
-    "bio1": "Peşəkar diyetoloq kimi 8 ildən artıq təcrübəyə malik olan Leyla xanım, 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamışdır. O, yalnız diyet proqramları deyil, həm də müştərilərin həyat tərzi, psixoloji vəziyyəti və sağlamlıq hədəflərini nəzərə alaraq bütöv bir yanaşma tətbiq edir.",
+    "bio1": "Peşəkar dietoloq kimi 8 ildən artıq təcrübəyə malik olan Leyla xanım, 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamışdır. O, yalnız diyet proqramları deyil, həm də müştərilərin həyat tərzi, psixoloji vəziyyəti və sağlamlıq hədəflərini nəzərə alaraq bütöv bir yanaşma tətbiq edir.",
     "bio2": "Leyla xanım eyni zamanda sağlam qidalanma mövzusunda kitab müəllifidir, YouTube kanalında və sosial mediada maarifləndirici kontent paylaşır, seminarlar və media çıxışları vasitəsilə geniş auditoriyaya qidalanma üzrə ekspert rəyi təqdim edir.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
@@ -97,7 +97,7 @@
       "Klinik Nutrisyologiya Sertifikatı",
       "Qocalmanın Qarşısının Alınması Sertifikatı",
       "İdmansız Arıqlama Metodu Sertifikatı",
-      "Nutrisyon və Diyetoloq Sertifikatı",
+      "Nutrisyon və Dietoloq Sertifikatı",
       "Uşaq Qidalanması Sertifikatı"
     ],
     "socialTitle": "Sosial media",
@@ -171,7 +171,7 @@
     "whatsapp": "WhatsApp-da yaz"
   },
   "footer": {
-    "description": "Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
+    "description": "Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
     "contact": "Əlaqə",
     "address": "Bakı, Azərbaycan",
@@ -215,7 +215,7 @@
       "f4": "Su qəbulu cədvəlləri"
     },
     "badge": "2-ci kitab",
-    "author": "Diyetoloq Dr. Leyla Zülfüqarlı"
+    "author": "Dietoloq Dr. Leyla Zülfüqarlı"
   },
   "login": {
     "title": "Daxil ol",
