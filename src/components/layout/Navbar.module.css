@@ -253,6 +253,7 @@
 @media (max-width: 900px) {
   .navLinks { display: none; }
   .authBtns { display: none; }
+  .langSwitcher { display: none; }
   .menuToggle { display: flex; }
   .ctaBtn { display: none; }
 }
