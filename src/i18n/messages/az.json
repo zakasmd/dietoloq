@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "Ana Səhifə",
+    "about": "Haqqında",
+    "services": "Xidmətlər",
+    "results": "Nəticələr",
+    "blog": "Blog",
+    "contact": "Əlaqə",
+    "consultation": "Konsultasiya",
+    "book": "Kitab",
+    "login": "Daxil ol",
+    "register": "Qeydiyyat",
+    "dashboard": "Dashboard",
+    "logout": "Çıxış"
+  },
+  "hero": {
+    "badge": "Peşəkar Diyetoloq · Bakı",
+    "title": "Sağlam həyat üçün",
+    "titleHighlight": "fərdi qidalanma planı",
+    "subtitle": "Leyla Zülfüqarlı ilə elmi əsaslı diet proqramları, konsultasiya və real nəticələr. İdmansız arıqlama metodları üzrə 8+ il təcrübə.",
+    "cta1": "Konsultasiya üçün qeydiyyat",
+    "cta2": "Kurslara bax",
+    "whatsapp": "WhatsApp-da yaz",
+    "stat1": "200+",
+    "stat1Label": "Müştəri",
+    "stat2": "8+",
+    "stat2Label": "İl Təcrübə",
+    "stat3": "15+",
+    "stat3Label": "Sertifikat",
+    "stat4": "50+",
+    "stat4Label": "Uğurlu Plan"
+  },
+  "services": {
+    "title": "Xidmətlər",
+    "subtitle": "Hər bir müştəriyə fərdi yanaşma ilə sağlamlıq yolculuğunuzu birlikdə planlaşdırırıq",
+    "items": {
+      "weightLoss": {
+        "title": "Arıqlama Proqramı",
+        "desc": "Fərdi arıqlama və çəki azaltma diet proqramları. İdmansız metod, elmi əsaslı yanaşma."
+      },
+      "weightGain": {
+        "title": "Çəki Artırma",
+        "desc": "Kökəlmək istəyənlər üçün sağlam çəki artırma və qidalanma planları."
+      },
+      "antiAging": {
+        "title": "Anti-Ageing & Nutrisyon",
+        "desc": "Yaşlanma əleyhinə qidalanma tövsiyələri, nutrisyon sahəsində ekspert yönləndirilməsi."
+      },
+      "consultation": {
+        "title": "Sağlam Qidalanma",
+        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması."
+      },
+      "detox": {
+        "title": "Detoks Proqramı",
+        "desc": "Orqanizmi təmizləmə, detoks çayı və qidalanma ilə bədəni yeniləmə proqramı."
+      },
+      "media": {
+        "title": "Seminar & Media",
+        "desc": "Tədbirlər, seminarlar və media çıxışları vasitəsilə qidalanma üzrə ekspert rəyi."
+      }
+    },
+    "learnMore": "Ətraflı"
+  },
+  "results": {
+    "title": "Real Nəticələr",
+    "subtitle": "Müştərilərimizin real transformasiya hekayələri",
+    "beforeLabel": "Əvvəl",
+    "afterLabel": "Sonra",
+    "viewAll": "Hamısına bax"
+  },
+  "about": {
+    "title": "Haqqında",
+    "shortBio": "Leyla Zülfüqarlı peşəkar diyetoloq kimi 8+ il ərzində 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamış, onlara sağlam həyat yolunda dəstək vermişdir.",
+    "readMore": "Ətraflı oxu",
+    "experience": "İl Təcrübə",
+    "certificates": "Sertifikat",
+    "clients": "Müştəri"
+  },
+  "testimonials": {
+    "title": "Müştəri Rəyləri",
+    "subtitle": "Real insanlar, real nəticələr"
+  },
+  "faq": {
+    "title": "Tez-tez soruşulan suallar",
+    "items": [
+      {
+        "q": "Konsultasiya necə olur?",
+        "a": "Konsultasiya həm onlayn (video zəng), həm də şəxsi görüş formatında həyata keçirilir. İlk görüşdə sağlamlıq vəziyyətiniz, hədəfləriniz və yaşam tərziniz təhlil edilir."
+      },
+      {
+        "q": "Neçə günə nəticə görmək olar?",
+        "a": "İlk 2 həftədən başlayaraq nəticələr görünməyə başlayır. Orta hesabla 1 ayda 3-5 kq sağlam çəki itkisi mümkündür. Nəticə fərdi məqsədlərə görə dəyişir."
+      },
+      {
+        "q": "Planlar fərdiləşdirilirmi?",
+        "a": "Bəli, hər plan tamamilə fərdi hazırlanır. Yaşınız, çəkiniz, sağlamlıq vəziyyətiniz, qida seçimləriniz və həyat tərzinizə görə xüsusi plan yaradılır."
+      },
+      {
+        "q": "İdmansız arıqlamaq mümkündürmü?",
+        "a": "Bəli. Leyla xanımın metodologiyası idmansız arıqlama üzərində qurulmuşdur. Düzgün qidalanma planı ilə idman olmadan da effektiv nəticə əldə etmək mümkündür."
+      },
+      {
+        "q": "Kitabı haradan almaq olar?",
+        "a": "\"Köklüyün sirri - Arıqlığın açarı\" kitabı WhatsApp vasitəsilə sifariş edə bilərsiniz. Həmçinin BakuBookCenter və Alinino.az saytlarında satışdadır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "İndi qeydiyyatdan keç",
+    "subtitle": "Fərdi qidalanma planını al və sağlam həyata doğru ilk addımı at",
+    "button": "Konsultasiyaya qeydiyyat",
+    "whatsapp": "WhatsApp-da yaz"
+  },
+  "footer": {
+    "description": "Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
+    "quickLinks": "Sürətli linklər",
+    "contact": "Əlaqə",
+    "followUs": "Bizi izlə",
+    "rights": "Bütün hüquqlar qorunur.",
+    "phone": "Telefon",
+    "email": "E-mail"
+  },
+  "consultation": {
+    "title": "Konsultasiya üçün qeydiyyat",
+    "subtitle": "Aşağıdakı formu doldurun, tezliklə sizinlə əlaqə saxlayacağıq",
+    "fullName": "Ad və soyad",
+    "phone": "Telefon nömrəsi",
+    "email": "E-mail (opsional)",
+    "age": "Yaş",
+    "goal": "Məqsədiniz",
+    "goalOptions": {
+      "weightLoss": "Arıqlamaq",
+      "weightGain": "Kökəlmək",
+      "maintenance": "Çəkini saxlamaq",
+      "detox": "Detoks proqramı",
+      "antiAging": "Qocalmağın qarşısını almaq",
+      "other": "Digər"
+    },
+    "message": "Əlavə qeydlər",
+    "submit": "Müraciəti göndər",
+    "success": "Müraciətiniz qəbul edildi! Tezliklə sizinlə əlaqə saxlayacağıq.",
+    "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin."
+  },
+  "book": {
+    "title": "Köklüyün Sirri — Arıqlığın Açarı",
+    "subtitle": "Dr. Leyla Zülfüqarlının bestseller kitabı",
+    "description": "Azərbaycanda çox satılan bu kitabda idmansız arıqlama sirləri, fərdi diet planlaması, su qəbulunun düzgün idarəsi və sağlam qidalanma vərdişlərinin formalaşdırılması üzrə ətraflı məlumat tapa bilərsiniz. Detoks çayı ilə birlikdə xüsusi paket kimi də əldə etmək mümkündür.",
+    "orderWhatsApp": "WhatsApp-dan sifariş et",
+    "orderBakuBook": "BakuBookCenter-dən al",
+    "orderAlinino": "Alinino.az-dan al",
+    "features": {
+      "f1": "İdmansız arıqlama metodu",
+      "f2": "Fərdi diet planları",
+      "f3": "Detoks çayı paketi",
+      "f4": "Su qəbulu cədvəlləri"
+    },
+    "badge": "2-ci kitab",
+    "author": "Diyetoloq Dr. Leyla Zülfüqarlı"
+  },
+  "login": {
+    "title": "Daxil ol",
+    "subtitle": "Dashboard-a daxil olmaq üçün hesabınıza giriş edin",
+    "email": "E-mail",
+    "password": "Şifrə",
+    "submit": "Daxil ol",
+    "noAccount": "Hesabınız yoxdur?",
+    "register": "Qeydiyyat",
+    "forgotPassword": "Şifrəni unutdum"
+  },
+  "register": {
+    "title": "Qeydiyyat",
+    "subtitle": "Yeni hesab yaradın",
+    "fullName": "Ad və soyad",
+    "email": "E-mail",
+    "password": "Şifrə",
+    "confirmPassword": "Şifrəni təkrarla",
+    "submit": "Qeydiyyat ol",
+    "haveAccount": "Hesabınız var?",
+    "login": "Daxil ol"
+  },
+  "dashboard": {
+    "welcome": "Xoş gəldiniz",
+    "myCourses": "Kurslarım",
+    "materials": "Materiallar",
+    "profile": "Profil",
+    "noCourses": "Hələ heç bir kursa qeydiyyatınız yoxdur.",
+    "watchLesson": "Dərsi izlə",
+    "downloadPdf": "PDF yüklə"
+  }
+}

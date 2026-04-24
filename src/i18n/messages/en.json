@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "results": "Results",
+    "blog": "Blog",
+    "contact": "Contact",
+    "consultation": "Consultation",
+    "book": "Book",
+    "login": "Log In",
+    "register": "Sign Up",
+    "dashboard": "Dashboard",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "badge": "Professional Dietitian · Baku",
+    "title": "Achieve your health goals with",
+    "titleHighlight": "a personalized nutrition plan",
+    "subtitle": "With Leyla Zülfüqarlı — science-based diet programs, consultations and real results. 8+ years of expertise in exercise-free weight loss.",
+    "cta1": "Book a Consultation",
+    "cta2": "View Courses",
+    "whatsapp": "Message on WhatsApp",
+    "stat1": "200+",
+    "stat1Label": "Clients",
+    "stat2": "8+",
+    "stat2Label": "Years of Experience",
+    "stat3": "15+",
+    "stat3Label": "Certifications",
+    "stat4": "50+",
+    "stat4Label": "Successful Plans"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "A personalized approach for each client on the journey to better health",
+    "items": {
+      "weightLoss": {
+        "title": "Weight Loss Program",
+        "desc": "Personalized weight loss diet programs. Exercise-free method, science-backed approach."
+      },
+      "weightGain": {
+        "title": "Weight Gain",
+        "desc": "Healthy weight gain and nutrition plans for those who want to bulk up."
+      },
+      "antiAging": {
+        "title": "Anti-Aging & Nutrition",
+        "desc": "Anti-aging dietary advice and expert guidance in the field of nutrition science."
+      },
+      "consultation": {
+        "title": "Healthy Nutrition Consultation",
+        "desc": "Correction of daily eating habits and proper hydration planning."
+      },
+      "detox": {
+        "title": "Detox Program",
+        "desc": "Body cleansing, detox tea and a nutrition-based body renewal program."
+      },
+      "media": {
+        "title": "Seminars & Media",
+        "desc": "Events, seminars and media appearances — expert opinion on nutrition."
+      }
+    },
+    "learnMore": "Learn More"
+  },
+  "results": {
+    "title": "Real Results",
+    "subtitle": "Transformation stories from our clients",
+    "beforeLabel": "Before",
+    "afterLabel": "After",
+    "viewAll": "View All"
+  },
+  "about": {
+    "title": "About",
+    "shortBio": "Professional dietitian Leyla Zülfüqarlı has developed personalized, science-based nutrition plans for over 200 clients across 8+ years, supporting them on their journey to better health.",
+    "readMore": "Read More",
+    "experience": "Years Exp.",
+    "certificates": "Certifications",
+    "clients": "Clients"
+  },
+  "testimonials": {
+    "title": "Client Reviews",
+    "subtitle": "Real people, real results"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How does a consultation work?",
+        "a": "Consultations take place both online (video call) and in person. In the first session, your health status, goals and lifestyle are analyzed."
+      },
+      {
+        "q": "How soon will I see results?",
+        "a": "Results begin to appear within the first 2 weeks. On average, a healthy weight loss of 3-5 kg per month is achievable. Results vary by individual goals."
+      },
+      {
+        "q": "Are the plans personalized?",
+        "a": "Yes, every plan is completely customized based on your age, weight, health status, food preferences and lifestyle."
+      },
+      {
+        "q": "Is it possible to lose weight without exercise?",
+        "a": "Yes. Leyla's methodology is built around exercise-free weight loss. With the right nutrition plan, effective results are possible without workouts."
+      },
+      {
+        "q": "Where can I buy the book?",
+        "a": "\"The Secret of Weight — The Key to Slimness\" is available to order via WhatsApp, and also on BakuBookCenter and Alinino.az."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Get started today",
+    "subtitle": "Get your personalized nutrition plan and take the first step toward a healthy life",
+    "button": "Book a Consultation",
+    "whatsapp": "Message on WhatsApp"
+  },
+  "footer": {
+    "description": "Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "consultation": {
+    "title": "Book a Consultation",
+    "subtitle": "Fill out the form below and we'll contact you shortly",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email (optional)",
+    "age": "Age",
+    "goal": "Your Goal",
+    "goalOptions": {
+      "weightLoss": "Lose Weight",
+      "weightGain": "Gain Weight",
+      "maintenance": "Maintain Weight",
+      "detox": "Detox",
+      "antiAging": "Anti-Aging",
+      "other": "Other"
+    },
+    "message": "Additional Notes",
+    "submit": "Submit Request",
+    "success": "Your request has been received! We'll contact you shortly.",
+    "error": "An error occurred. Please try again."
+  },
+  "book": {
+    "title": "The Secret of Weight — The Key to Slimness",
+    "subtitle": "Bestselling book by Dr. Leyla Zülfüqarlı",
+    "description": "This bestselling book in Azerbaijan reveals the secrets of exercise-free weight loss, personalized diet planning, proper hydration management and forming healthy eating habits. Also available as a special bundle with detox tea.",
+    "orderWhatsApp": "Order via WhatsApp",
+    "orderBakuBook": "Buy on BakuBookCenter",
+    "orderAlinino": "Buy on Alinino.az",
+    "features": {
+      "f1": "Exercise-free weight loss method",
+      "f2": "Personalized diet plans",
+      "f3": "Detox tea bundle",
+      "f4": "Hydration schedule charts"
+    },
+    "badge": "2nd Book",
+    "author": "Dietitian Dr. Leyla Zülfüqarlı"
+  },
+  "login": {
+    "title": "Log In",
+    "subtitle": "Sign in to your account to access the dashboard",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log In",
+    "noAccount": "Don't have an account?",
+    "register": "Sign Up",
+    "forgotPassword": "Forgot password?"
+  },
+  "register": {
+    "title": "Sign Up",
+    "subtitle": "Create a new account",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Create Account",
+    "haveAccount": "Already have an account?",
+    "login": "Log In"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "myCourses": "My Courses",
+    "materials": "Materials",
+    "profile": "Profile",
+    "noCourses": "You are not enrolled in any courses yet.",
+    "watchLesson": "Watch Lesson",
+    "downloadPdf": "Download PDF"
+  }
+}

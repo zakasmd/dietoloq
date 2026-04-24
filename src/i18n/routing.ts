@@ -1,0 +1,18 @@
+import { defineRouting } from 'next-intl/routing';
+
+export const routing = defineRouting({
+  locales: ['az', 'ru', 'en'],
+  defaultLocale: 'az',
+  pathnames: {
+    '/': '/',
+    '/about': '/about',
+    '/services': '/services',
+    '/results': '/results',
+    '/blog': '/blog',
+    '/contact': '/contact',
+    '/consultation': '/consultation',
+    '/book': '/book',
+    '/login': '/login',
+    '/register': '/register',
+  },
+});

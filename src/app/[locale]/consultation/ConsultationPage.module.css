@@ -1,0 +1,157 @@
+.page {
+  padding-top: 5rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 100%);
+  padding: 4rem 0 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 5rem;
+}
+
+/* Info Column */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.infoCard {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+}
+
+.infoCard h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.infoIcon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.steps {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.steps li {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  background: var(--color-primary-50);
+  border: 1.5px solid var(--color-primary-200);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+}
+
+.contactLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.contactPhone {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+/* Form Column */
+.formCol {}
+
+.form {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* Success Box */
+.successBox {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: 4rem 2.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.successBox h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.successBox p {
+  color: var(--color-text-secondary);
+  max-width: 400px;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    padding: 1.75rem;
+  }
+}
