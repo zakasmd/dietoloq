@@ -92,9 +92,6 @@ export default function Navbar() {
               <Link href={`/${locale}/login`} className={styles.loginBtn}>
                 {t('login')}
               </Link>
-              <Link href={`/${locale}/login?tab=register`} className="btn btn-primary btn-sm">
-                {t('register')}
-              </Link>
             </div>
 
             {/* Consultation CTA (desktop) */}

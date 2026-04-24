@@ -24,15 +24,6 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <motion.div
-              className={styles.eyebrow}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              <Star size={12} fill="currentColor" /> {t('badge')}
-            </motion.div>
-
             <motion.h1
               className={styles.title}
               initial={{ opacity: 0, y: 20 }}
