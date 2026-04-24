@@ -1,77 +1,69 @@
+/* LoginPage.module.css — Neon Mint Glassmorphism */
+
 .page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  padding: 2rem 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.bgDecor, .bgDecor2 {
-  display: none;
+  padding: 6rem 1rem 2rem;
 }
 
 .card {
   width: 100%;
-  max-width: 460px;
+  max-width: 440px;
   background: hsl(var(--glass-bg));
-  backdrop-filter: blur(24px);
-  border-radius: var(--radius);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid hsl(var(--glass-border));
-  position: relative;
-  z-index: 1;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-glass);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* Logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  justify-content: center;
+  gap: 0.875rem;
 }
 
 .logoIconWrap {
   width: 40px;
   height: 40px;
-  background: var(--gradient-mint);
   border-radius: 10px;
+  background: var(--gradient-mint);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--glow-mint);
   flex-shrink: 0;
 }
 
 .logoName {
   font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 1.1rem;
   color: hsl(var(--foreground));
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .logoSub {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: hsl(var(--primary));
-  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  font-weight: 600;
 }
 
 /* Tabs */
 .tabs {
   display: flex;
-  background: hsl(var(--input) / 0.3);
-  border-radius: 9999px;
+  background: hsl(var(--muted));
+  border-radius: calc(var(--radius) - 4px);
   padding: 4px;
   gap: 4px;
-  margin-bottom: 1.75rem;
-  border: 1px solid hsl(var(--border) / 0.5);
 }
 
 .tab {
@@ -80,51 +72,34 @@
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.625rem;
-  border-radius: 9999px;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: hsl(var(--foreground) / 0.6);
+  padding: 0.6rem 1rem;
+  border-radius: calc(var(--radius) - 6px);
   border: none;
   background: transparent;
+  color: hsl(var(--foreground) / 0.6);
+  font-size: 0.85rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: hsl(var(--foreground));
+  background: hsl(var(--glass-bg));
 }
 
 .tabActive {
-  background: var(--gradient-mint);
-  color: hsl(var(--primary-foreground)) !important;
-  box-shadow: var(--glow-mint);
-}
-
-/* Messages */
-.errorBox {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  background: hsl(var(--destructive) / 0.1);
-  border: 1px solid hsl(var(--destructive) / 0.3);
-  border-radius: var(--radius);
-  padding: 0.75rem 1rem;
-  font-size: 0.85rem;
-  color: hsl(var(--destructive));
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.successBox {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  background: hsl(var(--primary) / 0.1);
-  border: 1px solid hsl(var(--primary) / 0.3);
-  border-radius: var(--radius);
-  padding: 0.75rem 1rem;
-  font-size: 0.85rem;
+  background: hsl(var(--glass-bg));
   color: hsl(var(--primary));
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  box-shadow: 0 1px 4px hsl(var(--background) / 0.4);
+}
+
+/* Form title */
+.formTitle {
+  font-size: 0.875rem;
+  color: hsl(var(--foreground) / 0.65);
+  text-align: center;
 }
 
 /* Form */
@@ -134,14 +109,7 @@
   gap: 1rem;
 }
 
-.formTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.25rem;
-}
-
+/* Input wrapper */
 .inputWrapper {
   position: relative;
 }
@@ -151,7 +119,7 @@
   left: 0.875rem;
   top: 50%;
   transform: translateY(-50%);
-  color: hsl(var(--foreground) / 0.5);
+  color: hsl(var(--foreground) / 0.4);
   pointer-events: none;
 }
 
@@ -162,20 +130,20 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  cursor: pointer;
   color: hsl(var(--foreground) / 0.5);
-  padding: 0.25rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  transition: color 0.15s;
+  padding: 0;
+  transition: color 0.2s;
 }
 .eyeBtn:hover { color: hsl(var(--primary)); }
 
-/* Switch link */
+/* Switch text */
 .switchText {
   text-align: center;
-  font-size: 0.85rem;
-  color: hsl(var(--foreground) / 0.7);
+  font-size: 0.82rem;
+  color: hsl(var(--foreground) / 0.6);
   margin-top: 0.25rem;
 }
 
@@ -183,29 +151,52 @@
   background: none;
   border: none;
   color: hsl(var(--primary));
-  font-weight: 500;
   cursor: pointer;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
   padding: 0;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+.switchBtn:hover { text-decoration-color: hsl(var(--primary)); }
+
+/* Error & success */
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: hsl(0 80% 60% / 0.12);
+  border: 1px solid hsl(0 80% 60% / 0.3);
+  border-radius: calc(var(--radius) - 4px);
+  color: hsl(0 80% 70%);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.successBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: hsl(var(--primary) / 0.12);
+  border: 1px solid hsl(var(--primary) / 0.3);
+  border-radius: calc(var(--radius) - 4px);
+  color: hsl(var(--primary));
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 /* Back link */
 .back {
   text-align: center;
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid hsl(var(--border) / 0.5);
 }
 
 .backLink {
-  font-size: 0.85rem;
-  color: hsl(var(--foreground) / 0.6);
+  font-size: 0.82rem;
+  color: hsl(var(--foreground) / 0.5);
   text-decoration: none;
   transition: color 0.2s;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 500;
 }
 .backLink:hover { color: hsl(var(--primary)); }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
@@ -12,10 +12,9 @@ import styles from './LoginPage.module.css';
 type LoginForm = { email: string; password: string };
 type RegisterForm = { full_name: string; email: string; password: string; confirm: string };
 
-export default function LoginPage() {
+function LoginContent() {
   const t = useTranslations('login');
   const tr = useTranslations('register');
-  const ct = useTranslations('cta');
   const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -29,7 +28,6 @@ export default function LoginPage() {
   const loginForm = useForm<LoginForm>();
   const regForm = useForm<RegisterForm>();
 
-  // Check if user already logged in
   useEffect(() => {
     const supabase = createClient();
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -49,9 +47,9 @@ export default function LoginPage() {
       if (error.message.includes('Invalid login credentials') || error.message.includes('invalid')) {
         setError(locale === 'az' ? 'Email və ya şifrə yanlışdır' : locale === 'ru' ? 'Неверный email или пароль' : 'Invalid email or password');
       } else if (error.message.includes('Email not confirmed')) {
-        setError(locale === 'az' ? 'Email təsdiqlənməyib. Zəhmət olmasa email göndərilən linki yoxlayın.' : locale === 'ru' ? 'Email не подтвержден. Пожалуйста, проверьте ссылку, отправленную на email.' : 'Email not confirmed. Please check the link sent to your email.');
+        setError(locale === 'az' ? 'Email təsdiqlənməyib. Zəhmət olmasa emailinizi yoxlayın.' : locale === 'ru' ? 'Email не подтверждён. Проверьте письмо.' : 'Email not confirmed. Check your inbox.');
       } else {
-        setError(locale === 'az' ? 'Giriş zamanı xəta baş verdi. Yenidən cəhd edin.' : locale === 'ru' ? 'Произошла ошибка при входе. Попробуйте еще раз.' : 'An error occurred during login. Please try again.');
+        setError(locale === 'az' ? 'Giriş zamanı xəta baş verdi.' : locale === 'ru' ? 'Ошибка входа. Попробуйте снова.' : 'Login error. Please try again.');
       }
     } else {
       router.push('/dashboard');
@@ -65,39 +63,29 @@ export default function LoginPage() {
       return;
     }
     if (data.password.length < 6) {
-      setError(locale === 'az' ? 'Şifrə ən azı 6 hərf olmalıdır' : locale === 'ru' ? 'Пароль должен содержать минимум 6 символов' : 'Password must be at least 6 characters');
+      setError(locale === 'az' ? 'Şifrə ən azı 6 hərf olmalıdır' : locale === 'ru' ? 'Пароль минимум 6 символов' : 'Password must be at least 6 characters');
       return;
     }
     setLoading(true);
     setError('');
     setSuccessMsg('');
     const supabase = createClient();
-
     const { data: authData, error } = await supabase.auth.signUp({
       email: data.email.trim(),
       password: data.password,
-      options: {
-        data: { full_name: data.full_name.trim() },
-      },
+      options: { data: { full_name: data.full_name.trim() } },
     });
-
     if (error) {
-      if (error.message.includes('already registered') || error.message.includes('already been registered')) {
-        setError(locale === 'az' ? 'Bu email artıq qeydiyyatdan keçib. Daxil olmağa çalışın.' : locale === 'ru' ? 'Этот email уже зарегистрирован. Попробуйте войти.' : 'This email is already registered. Try to log in.');
-      } else if (error.message.includes('invalid') || error.message.includes('Invalid')) {
-        setError(locale === 'az' ? 'Düzgün email ünvanı daxil edin (məs: ad@gmail.com)' : locale === 'ru' ? 'Введите правильный адрес электронной почты (например: ad@gmail.com)' : 'Enter a valid email address (e.g. ad@gmail.com)');
-      } else if (error.message.includes('rate limit')) {
-        setError(locale === 'az' ? 'Çox sayda cəhd. Bir neçə dəqiqə gözləyin.' : locale === 'ru' ? 'Слишком много попыток. Подождите несколько минут.' : 'Too many attempts. Wait a few minutes.');
+      if (error.message.includes('already registered')) {
+        setError(locale === 'az' ? 'Bu email artıq qeydiyyatdan keçib.' : locale === 'ru' ? 'Этот email уже зарегистрирован.' : 'This email is already registered.');
       } else {
-        setError((locale === 'az' ? 'Xəta baş verdi: ' : locale === 'ru' ? 'Произошла ошибка: ' : 'An error occurred: ') + error.message);
+        setError((locale === 'az' ? 'Xəta: ' : locale === 'ru' ? 'Ошибка: ' : 'Error: ') + error.message);
       }
     } else {
-      // Check if user session exists (email confirmation disabled)
       if (authData.session) {
         router.push('/dashboard');
       } else {
-        // Email confirmation required
-        setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! Email göndərildi, zəhmət olmasa emailinizi yoxlayın.' : locale === 'ru' ? 'Регистрация прошла успешно! Письмо отправлено, пожалуйста, проверьте ваш email.' : 'Registration successful! Email sent, please check your email.');
+        setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! Emailinizi yoxlayın.' : locale === 'ru' ? 'Регистрация успешна! Проверьте email.' : 'Registration successful! Check your email.');
         setIsRegister(false);
         regForm.reset();
       }
@@ -107,9 +95,6 @@ export default function LoginPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.bgDecor} />
-      <div className={styles.bgDecor2} />
-
       <div className={styles.card}>
         {/* Logo */}
         <div className={styles.logo}>
@@ -140,7 +125,6 @@ export default function LoginPage() {
           </button>
         </div>
 
-        {/* Error */}
         {error && (
           <div className={styles.errorBox}>
             <AlertCircle size={16} />
@@ -148,7 +132,6 @@ export default function LoginPage() {
           </div>
         )}
 
-        {/* Success */}
         {successMsg && (
           <div className={styles.successBox}>
             <CheckCircle size={16} />
@@ -157,7 +140,6 @@ export default function LoginPage() {
         )}
 
         {!isRegister ? (
-          /* LOGIN FORM */
           <form onSubmit={loginForm.handleSubmit(handleLogin)} className={styles.form} noValidate>
             <div className={styles.formTitle}>{t('subtitle')}</div>
 
@@ -189,12 +171,7 @@ export default function LoginPage() {
                   placeholder="••••••••"
                   autoComplete="current-password"
                 />
-                <button
-                  type="button"
-                  className={styles.eyeBtn}
-                  onClick={() => setShowPass(!showPass)}
-                  aria-label="Şifrəni göstər/gizlə"
-                >
+                <button type="button" className={styles.eyeBtn} onClick={() => setShowPass(!showPass)}>
                   {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
                 </button>
               </div>
@@ -217,7 +194,6 @@ export default function LoginPage() {
             </p>
           </form>
         ) : (
-          /* REGISTER FORM */
           <form onSubmit={regForm.handleSubmit(handleRegister)} className={styles.form} noValidate>
             <div className={styles.formTitle}>{tr('subtitle')}</div>
 
@@ -245,10 +221,7 @@ export default function LoginPage() {
                 <input
                   {...regForm.register('email', {
                     required: true,
-                    pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: 'Düzgün email daxil edin'
-                    }
+                    pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Düzgün email daxil edin' }
                   })}
                   className="form-input"
                   style={{ paddingLeft: '2.75rem' }}
@@ -321,9 +294,21 @@ export default function LoginPage() {
         )}
 
         <div className={styles.back}>
-          <Link href={`/${locale}`} className={styles.backLink}>← {t('title')} (Home)</Link>
+          <Link href={`/${locale}`} className={styles.backLink}>← Ana Səhifə</Link>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ color: 'hsl(var(--primary))', fontFamily: 'Space Grotesk,sans-serif' }}>Yüklənir...</div>
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }

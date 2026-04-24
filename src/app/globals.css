@@ -242,6 +242,62 @@
     margin-top: 0.25rem;
   }
 
+  /* WhatsApp inline button */
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    border: none;
+  }
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+  }
+
+  /* Floating WhatsApp FAB */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.6);
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+  }
+
+  /* Eyebrow / badge label above headings */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    background: hsl(var(--primary) / 0.12);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary));
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
 /* ==========================================
    UTILITIES
    ========================================== */
