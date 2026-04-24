@@ -36,7 +36,7 @@ export default function AboutPage() {
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)/0.25), transparent 70%)',
-                borderRadius: '50%', filter: 'blur(40px)', zIndey: 0,
+                borderRadius: '50%', filter: 'blur(40px)', zIndex: 0,
               }} />
               <div className="glass" style={{
                 borderRadius: 'var(--radius)', overflow: 'hidden',

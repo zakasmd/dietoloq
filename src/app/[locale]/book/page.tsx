@@ -31,7 +31,7 @@ export default function BookPage() {
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)/0.2), transparent 70%)',
-                borderRadius: '50%', zIndey: 0,
+                borderRadius: '50%', zIndex: 0,
               }} />
               <div className="glass" style={{
                 padding: '1rem', borderRadius: 'var(--radius-xl)',
