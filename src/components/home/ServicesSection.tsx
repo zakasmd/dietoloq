@@ -20,6 +20,7 @@ const serviceKeys = ['weightLoss', 'weightGain', 'antiAging', 'consultation', 'd
 
 export default function ServicesSection() {
   const t = useTranslations('services');
+  const nav = useTranslations('nav');
   const locale = useLocale();
 
   return (
@@ -32,7 +33,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>✨ Xidmətlər</div>
+          <div className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>✨ {nav('servicesBadge')}</div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-4">{t('title')}</h2>
           <p className="text-lg text-foreground/75 max-w-2xl mx-auto">{t('subtitle')}</p>
         </motion.div>
@@ -50,12 +51,9 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className={styles.cardIconWrapper}>
-                  <div className={styles.cardIconGlow} />
-                  <div className={styles.iconBox}>
+                <div className={styles.iconBox}>
                     <Icon size={24} color="hsl(var(--primary-foreground))" />
                   </div>
-                </div>
                 <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
                 <p className={styles.cardDesc}>{t(`items.${key}.desc`)}</p>
                 <Link href={`/${locale}/services`} className={styles.cardLink}>

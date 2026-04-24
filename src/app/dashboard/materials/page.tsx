@@ -49,10 +49,10 @@ export default function MaterialsPage() {
 
   if (!materials.length) {
     return (
-      <div style={{ textAlign: 'center', padding: '5rem 2rem', background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)' }}>
+      <div style={{ textAlign: 'center', padding: '5rem 2rem', background: 'hsl(var(--glass-bg))', borderRadius: 'var(--radius)', border: '1px solid hsl(var(--glass-border))' }}>
         <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📄</div>
-        <h2 style={{ marginBottom: '0.75rem' }}>Hələ material yoxdur</h2>
-        <p style={{ color: 'var(--color-text-secondary)' }}>Kurs alındıqdan sonra materiallar burada görünəcək</p>
+        <h2 style={{ marginBottom: '0.75rem', color: 'hsl(var(--foreground))' }}>Hələ material yoxdur</h2>
+        <p style={{ color: 'hsl(var(--foreground)/0.6)' }}>Kurs alındıqdan sonra materiallar burada görünəcək</p>
       </div>
     );
   }
@@ -69,17 +69,17 @@ export default function MaterialsPage() {
           <div
             key={m.id}
             style={{
-              background: 'white', borderRadius: 'var(--radius-xl)', padding: '1.25rem 1.5rem',
+              background: 'hsl(var(--glass-bg))', borderRadius: 'var(--radius)', padding: '1.25rem 1.5rem',
               display: 'flex', alignItems: 'center', gap: '1rem',
-              boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)',
+              border: '1px solid hsl(var(--glass-border))',
             }}
           >
-            <div style={{ width: 44, height: 44, background: '#F5F3FF', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <FileText size={20} color="#8B5CF6" />
+            <div style={{ width: 44, height: 44, background: 'hsl(var(--primary)/0.15)', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <FileText size={20} color="hsl(var(--primary))" />
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-text)' }}>{m.title_az}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>PDF Material</div>
+              <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>{m.title_az}</div>
+              <div style={{ fontSize: '0.75rem', color: 'hsl(var(--foreground)/0.5)', marginTop: '0.15rem' }}>PDF Material</div>
             </div>
             <a
               href={m.pdf_url!}

@@ -12,7 +12,10 @@
     "register": "Sign Up",
     "dashboard": "Dashboard",
     "logout": "Log Out",
-    "brandName": "Leyla Zulfuqarli"
+    "brandName": "Leyla Zulfuqarli",
+    "subTitle": "Dietitian",
+    "servicesBadge": "Services",
+    "reviewsBadge": "Reviews"
   },
   "hero": {
     "badge": "Professional Dietitian · Baku",
@@ -37,30 +40,55 @@
     "items": {
       "weightLoss": {
         "title": "Weight Loss Program",
-        "desc": "Personalized weight loss diet programs. Exercise-free method, science-backed approach."
+        "desc": "Personalized weight loss diet programs. Exercise-free method, science-backed approach.",
+        "f1": "Individual calorie calculation",
+        "f2": "Weekly meal plan",
+        "f3": "Hydration plan",
+        "f4": "Progress tracking"
       },
       "weightGain": {
         "title": "Weight Gain",
-        "desc": "Healthy weight gain and nutrition plans for those who want to bulk up."
+        "desc": "Healthy weight gain and nutrition plans for those who want to bulk up.",
+        "f1": "High-calorie plan",
+        "f2": "Protein optimization",
+        "f3": "Regular monitoring",
+        "f4": "Personalized approach"
       },
       "antiAging": {
         "title": "Anti-Aging & Nutrition",
-        "desc": "Anti-aging dietary advice and expert guidance in the field of nutrition science."
+        "desc": "Anti-aging dietary advice and expert guidance in the field of nutrition science.",
+        "f1": "Antioxidant plan",
+        "f2": "Skin health",
+        "f3": "Hormonal balance",
+        "f4": "Youth nutrition"
       },
       "consultation": {
         "title": "Healthy Nutrition Consultation",
-        "desc": "Correction of daily eating habits and proper hydration planning."
+        "desc": "Correction of daily eating habits and proper hydration planning.",
+        "f1": "Hydration plan",
+        "f2": "Eating habits",
+        "f3": "Diet monitoring",
+        "f4": "Guidance"
       },
       "detox": {
         "title": "Detox Program",
-        "desc": "Body cleansing, detox tea and a nutrition-based body renewal program."
+        "desc": "Body cleansing, detox tea and a nutrition-based body renewal program.",
+        "f1": "Detox tea",
+        "f2": "Weekly program",
+        "f3": "Body cleansing",
+        "f4": "Nutrition plan"
       },
       "media": {
         "title": "Seminars & Media",
-        "desc": "Events, seminars and media appearances — expert opinion on nutrition."
+        "desc": "Events, seminars and media appearances — expert opinion on nutrition.",
+        "f1": "Corporate seminar",
+        "f2": "Media appearance",
+        "f3": "Online lecture",
+        "f4": "Q&A session"
       }
     },
     "learnMore": "Learn More",
+    "popular": "Popular",
     "ctaTitle": "Which service is right for you?",
     "ctaSubtitle": "Let's discuss together in a free first consultation",
     "ctaButton": "Get a Consultation"

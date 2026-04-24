@@ -10,6 +10,7 @@ import styles from './TestimonialSlider.module.css';
 
 export default function TestimonialSlider() {
   const t = useTranslations('testimonials');
+  const nav = useTranslations('nav');
   const items = t.raw('items') as Array<{ name: string; text: string; result: string; avatar: string }>;
   const [current, setCurrent] = useState(0);
 
@@ -28,7 +29,7 @@ export default function TestimonialSlider() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="badge badge-accent" style={{ marginBottom: '1rem' }}>⭐ Rəylər</span>
+          <span className="badge badge-accent" style={{ marginBottom: '1rem' }}>⭐ {nav('reviewsBadge')}</span>
           <h2>{t('title')}</h2>
           <div className="divider" />
           <p>{t('subtitle')}</p>

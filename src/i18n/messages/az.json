@@ -12,7 +12,10 @@
     "register": "Qeydiyyat",
     "dashboard": "Dashboard",
     "logout": "Çıxış",
-    "brandName": "Leyla Zülfüqarlı"
+    "brandName": "Leyla Zülfüqarlı",
+    "subTitle": "Dietoloq",
+    "servicesBadge": "Xidmətlər",
+    "reviewsBadge": "Rəylər"
   },
   "hero": {
     "badge": "Peşəkar Dietoloq · Bakı",
@@ -37,27 +40,51 @@
     "items": {
       "weightLoss": {
         "title": "Arıqlama Proqramı",
-        "desc": "Fərdi arıqlama və çəki azaltma diet proqramları. İdmansız metod, elmi əsaslı yanaşma."
+        "desc": "Fərdi arıqlama və çəki azaltma diet proqramları. İdmansız metod, elmi əsaslı yanaşma.",
+        "f1": "Fərdi kalori hesablaması",
+        "f2": "Həftəlik menyu planı",
+        "f3": "Su qəbulu planı",
+        "f4": "Nəticə izlənməsi"
       },
       "weightGain": {
         "title": "Çəki Artırma",
-        "desc": "Kökəlmək istəyənlər üçün sağlam çəki artırma və qidalanma planları."
+        "desc": "Kökəlmək istəyənlər üçün sağlam çəki artırma və qidalanma planları.",
+        "f1": "Yüksək kalorili plan",
+        "f2": "Protein optimallaşdırma",
+        "f3": "Müntəzəm izləmə",
+        "f4": "Fərdi yanaşma"
       },
       "antiAging": {
         "title": "Anti-Ageing & Nutrisyon",
-        "desc": "Yaşlanma əleyhinə qidalanma tövsiyələri, nutrisyon sahəsində ekspert yönləndirilməsi."
+        "desc": "Yaşlanma əleyhinə qidalanma tövsiyələri, nutrisyon sahəsində ekspert yönləndirilməsi.",
+        "f1": "Antioxidant plan",
+        "f2": "Dəri sağlamlığı",
+        "f3": "Hormon balansı",
+        "f4": "Gənclik qidalanması"
       },
       "consultation": {
         "title": "Sağlam Qidalanma",
-        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması."
+        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması.",
+        "f1": "Su qəbulu planı",
+        "f2": "Qidalanma vərdişi",
+        "f3": "Diet nəzarəti",
+        "f4": "Yönləndirilmə"
       },
       "detox": {
         "title": "Detoks Proqramı",
-        "desc": "Orqanizmi təmizləmə, detoks çayı və qidalanma ilə bədəni yeniləmə proqramı."
+        "desc": "Orqanizmi təmizləmə, detoks çayı və qidalanma ilə bədəni yeniləmə proqramı.",
+        "f1": "Detoks çayı",
+        "f2": "Həftəlik proqram",
+        "f3": "Bədən təmizliyi",
+        "f4": "Qidalanma planı"
       },
       "media": {
         "title": "Seminar & Media",
-        "desc": "Tədbirlər, seminarlar və media çıxışları vasitəsilə qidalanma üzrə ekspert rəyi."
+        "desc": "Tədbirlər, seminarlar və media çıxışları vasitəsilə qidalanma üzrə ekspert rəyi.",
+        "f1": "Korporativ seminar",
+        "f2": "Media çıxışı",
+        "f3": "Online məruzə",
+        "f4": "Q&A sessiyası"
       }
     },
     "learnMore": "Ətraflı",

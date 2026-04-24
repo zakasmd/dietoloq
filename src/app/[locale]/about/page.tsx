@@ -16,6 +16,7 @@ const fadeUp = (delay = 0) => ({
 export default function AboutPage() {
   const t = useTranslations('about');
   const ct = useTranslations('cta');
+  const nav = useTranslations('nav');
   const locale = useLocale();
 
   const stats = [
@@ -60,17 +61,17 @@ export default function AboutPage() {
               }}>
                 <span style={{ fontSize: '1.5rem' }}>🏅</span>
                 <div>
-                  <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>15+ Sertifikat</div>
-                  <div style={{ fontSize: '0.7rem', color: 'hsl(var(--primary))', fontWeight: 500 }}>Klinik Nutrisyon</div>
+                  <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>{t('certsBadgeTitle')}</div>
+                  <div style={{ fontSize: '0.7rem', color: 'hsl(var(--primary))', fontWeight: 500 }}>{t('certsBadgeSub')}</div>
                 </div>
               </div>
             </motion.div>
 
             {/* Text */}
             <motion.div {...fadeUp(0.15)} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="eyebrow">✦ {t('title')}</div>
+              <div className="eyebrow">❖ {t('title')}</div>
               <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', lineHeight: 1.1 }}>
-                Leyla <span className="text-gradient-mint">Zülfüqarlı</span>
+                {nav('brandName').split(' ')[0]} <span className="text-gradient-mint">{nav('brandName').split(' ').slice(1).join(' ')}</span>
               </h1>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.75)' }}>{t('bio1')}</p>
               <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.65)' }}>{t('bio2')}</p>

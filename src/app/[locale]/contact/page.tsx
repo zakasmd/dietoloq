@@ -43,7 +43,7 @@ export default function ContactPage() {
 
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '3rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'start' }}>
             {/* Left: contact info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -76,14 +76,14 @@ export default function ContactPage() {
               })}
 
               <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1rem', color: 'hsl(var(--foreground))', marginTop: '0.5rem' }}>{t('socialMedia')}</h3>
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ flex: 1, justifyContent: 'center' }}>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px' }}>
                   <WaIcon /> WhatsApp
                 </a>
-                <a href="https://www.instagram.com/dietoloqleylazulfuqarli/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, justifyContent: 'center', borderColor: '#E1306C', color: '#E1306C' }}>
+                <a href="https://www.instagram.com/dietoloqleylazulfuqarli/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px', borderColor: '#E1306C', color: '#E1306C' }}>
                   <IgIcon /> Instagram
                 </a>
-                <a href="https://www.youtube.com/@DiyetoloqLeyla" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, justifyContent: 'center', borderColor: '#FF0000', color: '#FF0000' }}>
+                <a href="https://www.youtube.com/@DiyetoloqLeyla" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px', borderColor: '#FF0000', color: '#FF0000' }}>
                   <YtIcon /> YouTube
                 </a>
               </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                 <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                   {t('consultDesc')}
                 </p>
-                <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', display: 'flex', boxSizing: 'border-box' }}>
                   {t('consultBtn')}
                 </Link>
               </div>
@@ -122,6 +122,7 @@ export default function ContactPage() {
                   background: '#25D366', color: 'white', borderRadius: '10px',
                   fontFamily: 'Space Grotesk,sans-serif', fontWeight: 700, fontSize: '0.95rem',
                   textDecoration: 'none', boxShadow: '0 4px 16px rgba(37,211,102,0.25)',
+                  boxSizing: 'border-box',
                 }}>
                   <WaIcon /> {t('quickBtn')}
                 </a>

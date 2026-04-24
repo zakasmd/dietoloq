@@ -80,13 +80,10 @@ function LoginContent() {
         setError((locale === 'az' ? 'Xəta: ' : locale === 'ru' ? 'Ошибка: ' : 'Error: ') + error.message);
       }
     } else {
-      if (authData.session) {
-        router.push('/dashboard');
-      } else {
-        setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! Emailinizi yoxlayın.' : locale === 'ru' ? 'Регистрация успешна! Проверьте email.' : 'Registration successful! Check your email.');
-        setIsRegister(false);
-        regForm.reset();
-      }
+      // Always show success message - don't auto-redirect to dashboard after signup
+      setSuccessMsg(locale === 'az' ? 'Qeydiyyat uğurludur! İndi daxil ola bilərsiniz.' : locale === 'ru' ? 'Регистрация успешна! Теперь вы можете войти.' : 'Registration successful! You can now log in.');
+      setIsRegister(false);
+      regForm.reset();
     }
     setLoading(false);
   };
@@ -177,8 +174,8 @@ function LoginContent() {
 
             <button
               type="submit"
-              className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}
+              className="btn btn-primary btn-lg"
+              style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem', fontSize: '1rem', fontWeight: 600 }}
               disabled={loading}
             >
               {loading ? '...' : t('submit')}
@@ -275,8 +272,8 @@ function LoginContent() {
 
             <button
               type="submit"
-              className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}
+              className="btn btn-primary btn-lg"
+              style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem', fontSize: '1rem', fontWeight: 600 }}
               disabled={loading}
             >
               {loading ? '...' : tr('submit')}
