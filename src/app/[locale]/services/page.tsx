@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center' }}>
             {serviceKeys.map((key, index) => {
               const Icon = serviceIcons[index];
               const isPopular = index === 0;
@@ -43,7 +43,7 @@ export default function ServicesPage() {
                   style={{
                     padding: '2rem', borderRadius: 'var(--radius)', position: 'relative', overflow: 'hidden',
                     border: isPopular ? '1px solid hsl(var(--primary)/0.4)' : '1px solid hsl(var(--glass-border))',
-                    display: 'flex', flexDirection: 'column',
+                    display: 'flex', flexDirection: 'column', flex: '1 1 300px', maxWidth: '400px'
                   }}
                 >
                   {isPopular && (

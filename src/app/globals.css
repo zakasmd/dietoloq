@@ -298,6 +298,18 @@
     text-transform: uppercase;
     font-family: 'Space Grotesk', system-ui, sans-serif;
   }
+  @media (max-width: 640px) {
+    .whatsapp-float {
+      width: 48px;
+      height: 48px;
+      bottom: 1.25rem;
+      right: 1.25rem;
+    }
+    .whatsapp-float svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
 /* ==========================================
    UTILITIES

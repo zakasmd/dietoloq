@@ -20,13 +20,13 @@ export default function BookPage() {
       {/* Hero */}
       <section style={{ padding: '5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
             {/* Book Image */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
-              style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
+              style={{ position: 'relative', display: 'flex', justifyContent: 'center', flex: '1 1 300px' }}
             >
               {/* Glow behind book */}
               <div style={{
@@ -68,7 +68,7 @@ export default function BookPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', flex: '1 1 400px' }}
             >
               <div className="eyebrow">📖 {t('author')}</div>
               <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', lineHeight: 1.2, fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))' }}>
@@ -122,13 +122,13 @@ export default function BookPage() {
               Bu paket orqanizmi təmizləmək və arıqlama prosesini sürətləndirmək üçün ideal həldir.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem', marginBottom: '2.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
               {[
                 { emoji: '📖', title: 'Bestseller Kitab', desc: 'İdmansız arıqlama metodunun bütün sirləri' },
                 { emoji: '🍵', title: 'Detoks Çayı', desc: 'Orqanizmi təmizləyən xüsusi çay qarışığı' },
                 { emoji: '📋', title: 'Qidalanma Planı', desc: 'Kitabla birgə istifadə üçün fərdi plan' },
               ].map((item) => (
-                <div key={item.title} className="glass hover-glow" style={{ textAlign: 'center', padding: '2rem 1.5rem', borderRadius: 'var(--radius)' }}>
+                <div key={item.title} className="glass hover-glow" style={{ textAlign: 'center', padding: '2rem 1.5rem', borderRadius: 'var(--radius)', flex: '1 1 250px' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
                   <h4 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.5rem' }}>{item.title}</h4>
                   <p style={{ fontSize: '0.85rem', color: 'hsl(var(--foreground)/0.7)' }}>{item.desc}</p>

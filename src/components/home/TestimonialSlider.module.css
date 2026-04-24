@@ -126,3 +126,14 @@
   background: var(--gradient-mint);
   box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
 }
+
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem 1.25rem;
+  }
+  .quoteIcon {
+    font-size: 3.5rem;
+    top: 1rem;
+    left: 1rem;
+  }
+}

@@ -84,10 +84,11 @@ export default function ProfilePage() {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '1.5rem', alignItems: 'start' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'start' }}>
 
         {/* Profile Form Card */}
         <div style={{
+          flex: '1 1 300px',
           background: 'white',
           borderRadius: '16px',
           padding: '2rem',
@@ -214,7 +215,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Right column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1 1 300px' }}>
 
           {/* Account status */}
           <div style={{

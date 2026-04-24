@@ -104,9 +104,9 @@ export default function BlogPage() {
       {/* Posts Grid */}
       <section className="section" style={{ background: 'var(--color-bg)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.75rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.75rem', justifyContent: 'center' }}>
             {posts.map((post) => (
-              <article key={post.slug} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
+              <article key={post.slug} className="card" style={{ display: 'flex', flexDirection: 'column', flex: '1 1 300px', maxWidth: '400px' }}>
                 {/* Thumbnail */}
                 <div style={{
                   height: '180px',
