@@ -42,13 +42,22 @@ export default function CoursesAdminPage() {
     fetchLessons(courseId);
   };
 
+  const [formError, setFormError] = useState<string | null>(null);
+
   const createCourse = async (data: CourseForm) => {
+    setFormError(null);
     const supabase = createClient();
-    const { data: newCourse } = await supabase
+    const { data: newCourse, error } = await supabase
       .from('courses')
       .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
       .select()
       .single();
+    
+    if (error) {
+      setFormError(error.message);
+      return;
+    }
+
     setShowCourseForm(false);
     courseForm.reset();
     await fetchCourses();
@@ -66,14 +75,21 @@ export default function CoursesAdminPage() {
 
   const addLesson = async (data: LessonForm) => {
     if (!addLessonFor) return;
+    setFormError(null);
     const supabase = createClient();
-    await supabase.from('lessons').insert({
+    const { error } = await supabase.from('lessons').insert({
       course_id: addLessonFor, title_az: data.title_az,
       youtube_url: data.youtube_url || null, pdf_url: data.pdf_url || null,
       order_index: parseInt(data.order_index) || 1,
       duration_minutes: parseInt(data.duration_minutes) || null,
       is_published: true,
     });
+    
+    if (error) {
+      setFormError(error.message);
+      return;
+    }
+    
     const courseId = addLessonFor;
     setAddLessonFor(null);
     lessonForm.reset();
@@ -104,6 +120,7 @@ export default function CoursesAdminPage() {
       {showCourseForm && (
         <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)' }}>
           <h3 style={{ marginBottom: '1.25rem' }}>Yeni Kurs Əlavə Et</h3>
+          {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
           <form onSubmit={courseForm.handleSubmit(createCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div className="form-group">
               <label className="form-label">Kursun adı (AZ) *</label>
@@ -157,6 +174,7 @@ export default function CoursesAdminPage() {
           {addLessonFor === course.id && (
             <div style={{ padding: '1.25rem 1.5rem', background: 'var(--color-primary-50)', borderTop: '1px solid var(--color-primary-200)' }}>
               <h4 style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Yeni Dərs Əlavə Et</h4>
+              {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
               <form onSubmit={lessonForm.handleSubmit(addLesson)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                 <div className="form-group" style={{ gridColumn: '1 / -1' }}>
                   <label className="form-label">Dərsin adı *</label>

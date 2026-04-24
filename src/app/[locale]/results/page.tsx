@@ -43,7 +43,7 @@ export default function ResultsPage() {
       {/* Stats */}
       <section style={{ padding: '0 0 4rem' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', justifyContent: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1.25rem', justifyContent: 'center' }}>
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -52,7 +52,7 @@ export default function ResultsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                style={{ padding: '1.5rem', borderRadius: 'var(--radius)', textAlign: 'center', flex: '1 1 200px', maxWidth: '280px' }}
+                style={{ padding: '1.5rem', borderRadius: 'var(--radius)', textAlign: 'center' }}
               >
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{s.icon}</div>
                 <div style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.75rem', fontWeight: 700, color: 'hsl(var(--primary))', marginBottom: '0.25rem' }}>{s.val}</div>
@@ -66,7 +66,7 @@ export default function ResultsPage() {
       {/* Results grid */}
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', justifyContent: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', justifyContent: 'center' }}>
             {results.map((r, i) => (
               <motion.div
                 key={r.id}
@@ -75,7 +75,7 @@ export default function ResultsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ padding: '1.75rem', borderRadius: 'var(--radius)', flex: '1 1 300px', maxWidth: '400px' }}
+                style={{ padding: '1.75rem', borderRadius: 'var(--radius)' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                   <div style={{
