@@ -17,7 +17,7 @@ export default function UsersAdminPage() {
       const supabase = createClient();
       const [{ data: profiles }, { data: coursesData }] = await Promise.all([
         supabase.from('profiles').select('*').order('created_at', { ascending: false }),
-        supabase.from('courses').select('id, title_az').eq('is_published', true),
+        supabase.from('courses').select('id, title_az'),
       ]);
       setUsers(profiles || []);
       setCourses(coursesData || []);
