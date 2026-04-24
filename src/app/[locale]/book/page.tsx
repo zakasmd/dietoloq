@@ -23,7 +23,7 @@ export default function BookPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
             {/* Book Image */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               style={{ position: 'relative', display: 'flex', justifyContent: 'center', flex: '1 1 300px' }}
@@ -65,7 +65,7 @@ export default function BookPage() {
 
             {/* Text */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', flex: '1 1 400px' }}

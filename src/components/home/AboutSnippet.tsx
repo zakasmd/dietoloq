@@ -25,7 +25,7 @@ export default function AboutSnippet() {
           {/* Image */}
           <motion.div
             className={styles.imageWrapper}
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
@@ -61,7 +61,7 @@ export default function AboutSnippet() {
           {/* Content */}
           <motion.div
             className={styles.content}
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}

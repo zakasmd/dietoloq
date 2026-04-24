@@ -20,7 +20,7 @@ export default function HeroSection() {
           {/* Left — Text Content */}
           <motion.div
             className={styles.content}
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
@@ -87,7 +87,7 @@ export default function HeroSection() {
           {/* Right — Image */}
           <motion.div
             className={styles.imageWrapper}
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >

@@ -30,9 +30,9 @@ export default function AboutPage() {
       {/* ─── Hero ─── */}
       <section style={{ padding: '5rem 0 4rem' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'center' }}>
             {/* Image */}
-            <motion.div {...fadeUp()} style={{ position: 'relative', flex: '1 1 300px', maxWidth: '420px', margin: '0 auto' }}>
+            <motion.div {...fadeUp()} style={{ position: 'relative', width: '100%', maxWidth: '420px', margin: '0 auto' }}>
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)/0.25), transparent 70%)',
@@ -68,7 +68,7 @@ export default function AboutPage() {
             </motion.div>
 
             {/* Text */}
-            <motion.div {...fadeUp(0.15)} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', flex: '1 1 400px' }}>
+            <motion.div {...fadeUp(0.15)} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
               <div className="eyebrow">❖ {t('title')}</div>
               <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', lineHeight: 1.1 }}>
                 {nav('brandName').split(' ')[0]} <span className="text-gradient-mint">{nav('brandName').split(' ').slice(1).join(' ')}</span>

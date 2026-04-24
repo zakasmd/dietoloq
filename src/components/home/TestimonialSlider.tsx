@@ -40,9 +40,9 @@ export default function TestimonialSlider() {
             <motion.div
               key={current}
               className={`glass hover-glow ${styles.card}`}
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
               <div className={styles.quoteIcon}>"</div>
