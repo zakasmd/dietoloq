@@ -106,7 +106,7 @@ export default function AboutPage() {
       {/* ─── Mission & Services ─── */}
       <section style={{ padding: '5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          <div className="responsive-grid" style={{ gap: '2rem' }}>
             {/* Mission */}
             <motion.div {...fadeUp()} className="glass" style={{ padding: '2.5rem', borderRadius: 'var(--radius)' }}>
               <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
@@ -142,7 +142,7 @@ export default function AboutPage() {
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>🏆 {t('certsLabel')}</div>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('certsTitle')}</h2>
           </motion.div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1rem', maxWidth: '900px', margin: '0 auto' }}>
             {(t.raw('certsList') as string[]).map((cert: string, i: number) => (
               <motion.div key={i} {...fadeUp(i * 0.08)} className="glass hover-glow" style={{ textAlign: 'center', padding: '1.75rem 1.25rem', borderRadius: 'var(--radius)' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🏅</div>
