@@ -107,9 +107,6 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {currentYear} Leyla Zülfüqarlı. {t('rights')}
           </p>
-          <p className={styles.copyright} style={{ marginLeft: 'auto' }}>
-            Made with <span style={{ color: 'hsl(var(--primary))' }}>♥</span>
-          </p>
         </div>
       </div>
     </footer>
