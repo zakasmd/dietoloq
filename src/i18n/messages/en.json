@@ -25,14 +25,14 @@
     "cta1": "Book a Consultation",
     "cta2": "View Courses",
     "whatsapp": "Message on WhatsApp",
-    "stat1": "200+",
+    "stat1": "2000+",
     "stat1Label": "Clients",
-    "stat2": "8+",
-    "stat2Label": "Years of Experience",
-    "stat3": "15+",
+    "stat2": "13+",
+    "stat2Label": "Years of Exp.",
+    "stat3": "50+",
     "stat3Label": "Certifications",
-    "stat4": "50+",
-    "stat4Label": "Successful Plans"
+    "stat4": "100+",
+    "stat4Label": "Successful Seminars"
   },
   "services": {
     "title": "Services",
@@ -146,7 +146,7 @@
     ],
     "socialTitle": "Social Media",
     "socialDesc": "Educational content on nutrition and healthy living on YouTube and social media",
-    "certsBadgeTitle": "15+ Certifications",
+    "certsBadgeTitle": "50+ Certifications",
     "certsBadgeSub": "Clinical Nutrition"
   },
   "testimonials": {

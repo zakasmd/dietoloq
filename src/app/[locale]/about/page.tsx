@@ -75,6 +75,8 @@ export default function AboutPage() {
               </h1>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.75)' }}>{t('bio1')}</p>
               <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.65)' }}>{t('bio2')}</p>
+              <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.65)' }}>{t('bio3')}</p>
+              <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.65)' }}>{t('bio4')}</p>
 
               {/* Stats */}
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

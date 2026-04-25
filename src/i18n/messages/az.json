@@ -25,14 +25,14 @@
     "cta1": "Konsultasiya üçün qeydiyyat",
     "cta2": "Kurslara bax",
     "whatsapp": "WhatsApp-da yaz",
-    "stat1": "200+",
+    "stat1": "2000+",
     "stat1Label": "Müştəri",
-    "stat2": "8+",
+    "stat2": "13+",
     "stat2Label": "İl Təcrübə",
-    "stat3": "15+",
+    "stat3": "50+",
     "stat3Label": "Sertifikat",
-    "stat4": "50+",
-    "stat4Label": "Uğurlu Plan"
+    "stat4": "100+",
+    "stat4Label": "Uğurlu Seminar"
   },
   "services": {
     "title": "Xidmətlər",
@@ -40,7 +40,7 @@
     "items": {
       "weightLoss": {
         "title": "Arıqlama Proqramı",
-        "desc": "Fərdi arıqlama və çəki azaltma diet proqramları. İdmansız metod, elmi əsaslı yanaşma.",
+        "desc": "Fərdi arıqlama və çəki azaltma diet proqramları. İdmansız və ac qalmadan, tamamilə elmi əsaslı yanaşma ilə hədəfinizə çatmağınızı təmin edirik. 'Düşmənimiz yağ deyil, şəkərdir' prinsipi ilə metabolizmanızı sürətləndiririk.",
         "f1": "Fərdi kalori hesablaması",
         "f2": "Həftəlik menyu planı",
         "f3": "Su qəbulu planı",
@@ -48,7 +48,7 @@
       },
       "weightGain": {
         "title": "Çəki Artırma",
-        "desc": "Kökəlmək istəyənlər üçün sağlam çəki artırma və qidalanma planları.",
+        "desc": "Kökəlmək istəyənlər üçün xüsusi hazırlanmış sağlam çəki artırma və qidalanma planları. Zərərli qidalarsız, əzələ və sağlam yağ kütləsini artıraraq ideal çəkiyə çatmağınıza kömək edirik.",
         "f1": "Yüksək kalorili plan",
         "f2": "Protein optimallaşdırma",
         "f3": "Müntəzəm izləmə",
@@ -56,7 +56,7 @@
       },
       "antiAging": {
         "title": "Anti-Ageing & Nutrisyon",
-        "desc": "Yaşlanma əleyhinə qidalanma tövsiyələri, nutrisyon sahəsində ekspert yönləndirilməsi.",
+        "desc": "Yaşlanma əleyhinə xüsusi qidalanma tövsiyələri və nutrisyon sahəsində ekspert yönləndirilməsi. Dəri sağlamlığını yaxşılaşdıran və orqanizmi gəncləşdirən hüceyrə yeniləyici qidalanma proqramı.",
         "f1": "Antioxidant plan",
         "f2": "Dəri sağlamlığı",
         "f3": "Hormon balansı",
@@ -64,7 +64,7 @@
       },
       "consultation": {
         "title": "Sağlam Qidalanma",
-        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması.",
+        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması və sağlam həyat tərzi üçün ətraflı məsləhətlər. İlk görüşdən etibarən bədəninizin ehtiyacları tam analiz edilir.",
         "f1": "Su qəbulu planı",
         "f2": "Qidalanma vərdişi",
         "f3": "Diet nəzarəti",
@@ -72,7 +72,7 @@
       },
       "detox": {
         "title": "Detoks Proqramı",
-        "desc": "Orqanizmi təmizləmə, detoks çayı və qidalanma ilə bədəni yeniləmə proqramı.",
+        "desc": "Orqanizmi zərərli toksinlərdən təmizləmə, xüsusi detoks çayı və qidalanma ilə bədəni yeniləmə proqramı. İsveçrə təcrübəsinə əsaslanan 7 günlük effektiv təmizlənmə və enerji bərpası.",
         "f1": "Detoks çayı",
         "f2": "Həftəlik proqram",
         "f3": "Bədən təmizliyi",
@@ -80,7 +80,7 @@
       },
       "media": {
         "title": "Seminar & Media",
-        "desc": "Tədbirlər, seminarlar və media çıxışları vasitəsilə qidalanma üzrə ekspert rəyi.",
+        "desc": "Tədbirlər, seminarlar və TV (ARB, İTV, Lider və s.) çıxışları vasitəsilə qidalanma üzrə ekspert rəyi. Korporativ təlimlər və kütləvi sağlamlıq layihələrinin təşkili.",
         "f1": "Korporativ seminar",
         "f2": "Media çıxışı",
         "f3": "Online məruzə",
@@ -114,39 +114,40 @@
   },
   "about": {
     "title": "Haqqında",
-    "shortBio": "Leyla Zülfüqarlı peşəkar dietoloq kimi 8+ il ərzində 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamış, onlara sağlam həyat yolunda dəstək vermişdir.",
+    "shortBio": "Leyla Zülfüqarlı – 13+ il təcrübəyə malik peşəkar dietoloq, Azərbaycanda ilk diyet kitablarının müəllifi. ARB, İTV kimi kanallarda çıxışları, beynəlxalq (İsveçrə, Almaniya) detoks proqramları və 2000-dən çox məmnun müştərisi ilə sağlam qidalanmada fərq yaradır.",
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
     "clients": "Müştəri",
-    "bio1": "Peşəkar dietoloq kimi 8 ildən artıq təcrübəyə malik olan Leyla xanım, 200-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlamışdır. O, yalnız diyet proqramları deyil, həm də müştərilərin həyat tərzi, psixoloji vəziyyəti və sağlamlıq hədəflərini nəzərə alaraq bütöv bir yanaşma tətbiq edir.",
-    "bio2": "Leyla xanım eyni zamanda sağlam qidalanma mövzusunda kitab müəllifidir, YouTube kanalında və sosial mediada maarifləndirici kontent paylaşır, seminarlar və media çıxışları vasitəsilə geniş auditoriyaya qidalanma üzrə ekspert rəyi təqdim edir.",
+    "bio1": "Peşəkar dietoloq kimi 13 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 2000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
+    "bio2": "Leyla Zülfüqarlı təkcə Azərbaycanda deyil, Almaniya, İsveçrə, Türkiyə, Slovakiya, İngiltərə və Fransa kimi ölkələrdə də fəaliyyət göstərmişdir. O, İsveçrədə azərbaycanlılar üçün xüsusi olaraq 7 günlük detoks və arıqlama proqramları təşkil edərək, insanların həm bədən, həm də ruh sağlamlığını artırmışdır.",
+    "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, ARB, AsTV, Lider TV, Şou TV və İctimai TV (İTV) kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
+    "bio4": "\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Leyla xanım, həm idmansız arıqlamaq istəyənlərə, həm də kökəlmək istəyən şəxslərə fərdi yanaşma ilə kömək edir. O, Youtube, Facebook və Instagram kanallarında mütəmadi olaraq maarifləndirici videolar paylaşır. Ona müraciət edən hər bir şəxs yüksək məmnuniyyətlə və sağlam şəkildə onun yanından ayrılır.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
     "missionText2": "Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",
     "servicesTitle": "Müştərilərim üçün nə edirəm?",
     "servicesList": [
-      "Arıqlama və çəki azaltma üçün fərdi diet proqramları",
-      "İdmansız arıqlama metodları üzrə proqram",
-      "Sağlam qidalanma konsultasiyası",
+      "Arıqlama və çəki azaltma üçün fərdi diet proqramları (idmansız)",
+      "Kökəlmək istəyənlər üçün fərdi çəki artırma planları",
+      "Sağlam qidalanma konsultasiyası və su qəbulu planı",
       "Qocalmağın qarşısını almaq — nutrisyon sahəsində məsləhət",
-      "Kökəlmək üçün çəki artırma planları",
-      "Detoks proqramı və detoks çayı",
-      "Su qəbulunun düzgün planlaşdırılması",
-      "Seminarlar, tədbirlər, media çıxışları"
+      "Detoks proqramı və detoks çayı ilə bədən təmizliyi",
+      "Beynəlxalq (İsveçrə, Almaniya və s.) 7 günlük proqramlar",
+      "Seminarlar, tədbirlər, media və TV çıxışları"
     ],
     "certsLabel": "Sertifikatlar",
     "certsTitle": "Təhsil və sertifikatlar",
     "certsList": [
+      "Ukrayna Dietologiya Təhsili",
+      "İstanbul Medipol Universiteti - Beslenme və Diyet",
       "Klinik Nutrisyologiya Sertifikatı",
       "Qocalmanın Qarşısının Alınması Sertifikatı",
-      "İdmansız Arıqlama Metodu Sertifikatı",
-      "Nutrisyon və Dietoloq Sertifikatı",
-      "Uşaq Qidalanması Sertifikatı"
+      "İdmansız Arıqlama Metodu Sertifikatı"
     ],
     "socialTitle": "Sosial media",
     "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent",
-    "certsBadgeTitle": "15+ Sertifikat",
+    "certsBadgeTitle": "50+ Sertifikat",
     "certsBadgeSub": "Klinik Nutrisyon"
   },
   "testimonials": {
@@ -193,20 +194,20 @@
         "a": "Konsultasiya həm onlayn (video zəng), həm də şəxsi görüş formatında həyata keçirilir. İlk görüşdə sağlamlıq vəziyyətiniz, hədəfləriniz və yaşam tərziniz təhlil edilir."
       },
       {
-        "q": "Neçə günə nəticə görmək olar?",
-        "a": "İlk 2 həftədən başlayaraq nəticələr görünməyə başlayır. Orta hesabla 1 ayda 3-5 kq sağlam çəki itkisi mümkündür. Nəticə fərdi məqsədlərə görə dəyişir."
+        "q": "Mən arıqlamaq istəyirəm, amma idman etməyə vaxtım yoxdur. Bu mümkündürmü?",
+        "a": "Bəli, əlbəttə! Leyla xanımın tətbiq etdiyi metodologiya məhz idmansız arıqlama üzərində qurulmuşdur. Düzgün, elmi əsaslı qidalanma və \"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə idman olmadan da sürətli və sağlam şəkildə artıq çəkidən azad ola bilərsiniz."
       },
       {
-        "q": "Planlar fərdiləşdirilirmi?",
-        "a": "Bəli, hər plan tamamilə fərdi hazırlanır. Yaşınız, çəkiniz, sağlamlıq vəziyyətiniz, qida seçimləriniz və həyat tərzinizə görə xüsusi plan yaradılır."
+        "q": "Kökəlmək, sağlam çəki almaq üçün müraciət edə bilərəm?",
+        "a": "Bəli. Bir çox insan yalnız arıqlamaq üçün deyil, həm də çəki artırmaq üçün bizə müraciət edir. Sizin maddələr mübadilənizə və orqanizminizə uyğun xüsusi yüksək kalorili, sağlam protein və karbohidratlarla zəngin proqramlar hazırlayırıq."
       },
       {
-        "q": "İdmansız arıqlamaq mümkündürmü?",
-        "a": "Bəli. Leyla xanımın metodologiyası idmansız arıqlama üzərində qurulmuşdur. Düzgün qidalanma planı ilə idman olmadan da effektiv nəticə əldə etmək mümkündür."
+        "q": "Leyla Zülfüqarlının kitablarını haradan əldə etmək olar?",
+        "a": "\"Sağlam bəslən, arıqla\" və \"Köklüyün sirri - Arıqlığın açarı\" kitablarını WhatsApp vasitəsilə birbaşa bizdən sifariş edə bilərsiniz. Həmçinin BakuBookCenter və Alinino.az saytlarında satışdadır."
       },
       {
-        "q": "Kitabı haradan almaq olar?",
-        "a": "\"Köklüyün sirri - Arıqlığın açarı\" kitabı WhatsApp vasitəsilə sifariş edə bilərsiniz. Həmçinin BakuBookCenter və Alinino.az saytlarında satışdadır."
+        "q": "Televiziyalarda (ARB, İTV, Lider və s.) izlədiyim məsləhətləri fərdi necə ala bilərəm?",
+        "a": "Televiziyalarda verilən məsləhətlər ümumi xarakter daşıyır. Tam fərdi və sizə uyğun nəticə almaq üçün saytımızdan və ya WhatsApp vasitəsilə birbaşa konsultasiya təyin edə bilərsiniz."
       }
     ]
   },
