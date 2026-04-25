@@ -43,7 +43,7 @@ export default function ResultsPage() {
       {/* Stats */}
       <section style={{ padding: '0 0 4rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1.25rem', justifyContent: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '1rem', justifyContent: 'center' }}>
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}

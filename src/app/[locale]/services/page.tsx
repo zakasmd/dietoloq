@@ -75,7 +75,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                  <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', boxSizing: 'border-box' }}>
                     {t('learnMore')}
                   </Link>
                 </motion.div>

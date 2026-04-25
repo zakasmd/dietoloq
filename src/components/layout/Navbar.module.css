@@ -257,3 +257,9 @@
   .menuToggle { display: flex; }
   .ctaBtn { display: none; }
 }
+
+@media (max-width: 480px) {
+  .logoName { font-size: 0.9rem; }
+  .logoSub { font-size: 0.6rem; }
+  .nav { gap: 0.5rem; }
+}

@@ -142,12 +142,12 @@ export default function Navbar() {
               <Link href={`/${locale}/login`} className="btn btn-outline" onClick={() => setIsOpen(false)}>
                 {t('login')}
               </Link>
-              <Link href={`/${locale}/login?tab=register`} className="btn btn-primary" onClick={() => setIsOpen(false)}>
+              <Link href={`/${locale}/login?tab=register`} className="btn btn-primary" style={{ boxSizing: 'border-box' }} onClick={() => setIsOpen(false)}>
                 {t('register')}
               </Link>
             </div>
 
-            <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center' }} onClick={() => setIsOpen(false)}>
+            <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center', boxSizing: 'border-box' }} onClick={() => setIsOpen(false)}>
               {t('consultation')}
             </Link>
           </div>

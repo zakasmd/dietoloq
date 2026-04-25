@@ -145,12 +145,12 @@ export default function BookPage() {
       {/* CTA */}
       <section style={{ padding: '0 0 5rem', textAlign: 'center' }}>
         <div className="container">
-          <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)' }}>
+          <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)', boxSizing: 'border-box' }}>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               Fərdi konsultasiya da almaq istəyirsiniz?
             </h2>
             <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>Kitabla birlikdə fərdi diet planı alın</p>
-            <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg">
+            <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg" style={{ boxSizing: 'border-box' }}>
               Konsultasiyaya qeydiyyat
             </Link>
           </div>
