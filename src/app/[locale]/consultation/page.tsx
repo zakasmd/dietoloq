@@ -124,6 +124,7 @@ export default function ConsultationPage() {
                 boxShadow: '0 4px 16px rgba(37,211,102,0.35)',
                 transition: 'all 0.2s',
                 letterSpacing: '-0.01em',
+                boxSizing: 'border-box',
               }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -224,7 +225,7 @@ export default function ConsultationPage() {
                   type="submit"
                   className="btn btn-primary btn-lg"
                   disabled={loading}
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: '100%', justifyContent: 'center', boxSizing: 'border-box' }}
                 >
                   {loading ? t('sending') : t('submit')}
                 </button>

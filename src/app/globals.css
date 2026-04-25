@@ -70,7 +70,8 @@
     color: hsl(var(--foreground));
     font-family: 'Inter', system-ui, sans-serif;
     background-image: var(--gradient-hero);
-    background-attachment: fixed;
+    background-attachment: scroll;
+    background-size: cover;
     min-height: 100vh;
   }
 
