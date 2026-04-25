@@ -304,8 +304,9 @@
     padding: 0 1rem;
     color: hsl(var(--foreground));
     outline: none;
-    transition: colors 0.2s;
+    transition: border-color 0.2s, background-color 0.2s;
     backdrop-filter: blur(12px);
+    font-size: 16px; /* Prevents auto-zoom on iOS */
   }
   
   .form-input:focus-visible {

@@ -47,6 +47,7 @@ export default function ConsultationPage() {
       if (error) throw error;
       setSuccess(true);
       reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error(err);
       alert(t('error'));

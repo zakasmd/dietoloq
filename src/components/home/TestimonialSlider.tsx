@@ -36,14 +36,15 @@ export default function TestimonialSlider() {
         </motion.div>
 
         <div className={styles.sliderWrapper}>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={current}
-              className={`glass hover-glow ${styles.card}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className={`glass ${styles.card}`}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              style={{ willChange: 'transform, opacity' }}
             >
               <div className={styles.quoteIcon}>"</div>
               <p className={styles.text}>{items[current].text}</p>
