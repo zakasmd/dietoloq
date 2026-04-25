@@ -47,7 +47,7 @@ export default function BookPage() {
                   {t('bestseller')}
                 </div>
                 <Image
-                  src="/images/book.png"
+                  src="/images/kitab.png"
                   alt="Köklüyün sirri - Arıqlığın açarı"
                   width={350}
                   height={450}

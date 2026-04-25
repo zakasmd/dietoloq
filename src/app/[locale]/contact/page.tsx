@@ -43,7 +43,7 @@ export default function ContactPage() {
 
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div className="responsive-grid" style={{ alignItems: 'start' }}>
+          <div className="responsive-grid" style={{ alignItems: 'start', gap: '3rem' }}>
             {/* Left: contact info */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -75,15 +75,15 @@ export default function ContactPage() {
                 );
               })}
 
-              <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1rem', color: 'hsl(var(--foreground))', marginTop: '0.5rem' }}>{t('socialMedia')}</h3>
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px' }}>
+              <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1rem', color: 'hsl(var(--foreground))', marginTop: '1rem' }}>{t('socialMedia')}</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '0.75rem' }}>
+                <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ justifyContent: 'center' }}>
                   <WaIcon /> WhatsApp
                 </a>
-                <a href="https://www.instagram.com/dietoloqleylazulfuqarli/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px', borderColor: '#E1306C', color: '#E1306C' }}>
+                <a href="https://www.instagram.com/dietoloqleylazulfuqarli/" target="_blank" rel="noopener noreferrer" className="btn" style={{ justifyContent: 'center', background: '#E1306C', color: 'white', border: 'none' }}>
                   <IgIcon /> Instagram
                 </a>
-                <a href="https://www.youtube.com/@DiyetoloqLeyla" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: '1 1 auto', justifyContent: 'center', minWidth: '100px', borderColor: '#FF0000', color: '#FF0000' }}>
+                <a href="https://www.youtube.com/@DiyetoloqLeyla" target="_blank" rel="noopener noreferrer" className="btn" style={{ justifyContent: 'center', background: '#FF0000', color: 'white', border: 'none' }}>
                   <YtIcon /> YouTube
                 </a>
               </div>
