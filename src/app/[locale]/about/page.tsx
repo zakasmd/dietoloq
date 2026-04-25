@@ -106,7 +106,7 @@ export default function AboutPage() {
       {/* ─── Mission & Services ─── */}
       <section style={{ padding: '5rem 0' }}>
         <div className="container">
-          <div className="responsive-grid" style={{ gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '2rem', alignItems: 'start' }}>
             {/* Mission */}
             <motion.div {...fadeUp()} className="glass" style={{ padding: '2.5rem', borderRadius: 'var(--radius)' }}>
               <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
