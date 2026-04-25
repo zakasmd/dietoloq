@@ -43,33 +43,44 @@ export default function CoursesAdminPage() {
   };
 
   const [formError, setFormError] = useState<string | null>(null);
+  const [editCourseId, setEditCourseId] = useState<string | null>(null);
 
-  const createCourse = async (data: CourseForm) => {
+  const createOrUpdateCourse = async (data: CourseForm) => {
     setFormError(null);
     const supabase = createClient();
-    const { data: newCourse, error } = await supabase
-      .from('courses')
-      .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
-      .select()
-      .single();
     
-    if (error) {
-      setFormError(error.message);
-      return;
+    if (editCourseId) {
+      const { error } = await supabase
+        .from('courses')
+        .update({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
+        .eq('id', editCourseId);
+      if (error) { setFormError(error.message); return; }
+    } else {
+      const { data: newCourse, error } = await supabase
+        .from('courses')
+        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
+        .select()
+        .single();
+      if (error) { setFormError(error.message); return; }
+      if (newCourse) {
+        setExpandedCourse(newCourse.id);
+        setLessons((prev) => ({ ...prev, [newCourse.id]: [] }));
+      }
     }
 
     setShowCourseForm(false);
+    setEditCourseId(null);
     courseForm.reset();
     await fetchCourses();
-    if (newCourse) {
-      setExpandedCourse(newCourse.id);
-      setLessons((prev) => ({ ...prev, [newCourse.id]: [] }));
-    }
   };
 
   const togglePublish = async (courseId: string, current: boolean) => {
     const supabase = createClient();
-    await supabase.from('courses').update({ is_published: !current }).eq('id', courseId);
+    const { error } = await supabase.from('courses').update({ is_published: !current }).eq('id', courseId);
+    if (error) {
+      alert('Xəta baş verdi: ' + error.message + '\nBöyük ehtimalla bazada icazə (RLS) problemi var.');
+      return;
+    }
     setCourses((prev) => prev.map((c) => c.id === courseId ? { ...c, is_published: !current } : c));
   };
 
@@ -116,12 +127,12 @@ export default function CoursesAdminPage() {
         </button>
       </div>
 
-      {/* New Course Form */}
+      {/* New/Edit Course Form */}
       {showCourseForm && (
         <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)' }}>
-          <h3 style={{ marginBottom: '1.25rem' }}>Yeni Kurs Əlavə Et</h3>
+          <h3 style={{ marginBottom: '1.25rem' }}>{editCourseId ? 'Kursu Redaktə Et' : 'Yeni Kurs Əlavə Et'}</h3>
           {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
-          <form onSubmit={courseForm.handleSubmit(createCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <form onSubmit={courseForm.handleSubmit(createOrUpdateCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div className="form-group">
               <label className="form-label">Kursun adı (AZ) *</label>
               <input {...courseForm.register('title_az', { required: true })} className="form-input" placeholder="Kursun adı" />
@@ -135,8 +146,8 @@ export default function CoursesAdminPage() {
               <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
             </div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button type="submit" className="btn btn-primary">Kurs yarat</button>
-              <button type="button" className="btn btn-outline" onClick={() => setShowCourseForm(false)}>Ləğv et</button>
+              <button type="submit" className="btn btn-primary">{editCourseId ? 'Yadda Saxla' : 'Kurs yarat'}</button>
+              <button type="button" className="btn btn-outline" onClick={() => { setShowCourseForm(false); setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
             </div>
           </form>
         </div>
@@ -148,13 +159,10 @@ export default function CoursesAdminPage() {
           <div style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             <div style={{ flex: 1 }}>
               <h3 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{course.title_az}</h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>{course.description_az || '—'}</p>
+              <p style={{ fontSize: '0.825rem', color: 'var(--color-text-muted)' }}>{course.description_az?.slice(0, 80)}...</p>
               {course.price && <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '0.25rem' }}>{course.price} AZN</div>}
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <span style={{ padding: '0.2rem 0.625rem', borderRadius: 'var(--radius-full)', fontSize: '0.72rem', fontWeight: 700, background: course.is_published ? '#DCFCE7' : '#F3F4F6', color: course.is_published ? '#059669' : 'var(--color-text-muted)' }}>
-                {course.is_published ? '✓ Aktiv' : '○ Gizli'}
-              </span>
               <button className="btn btn-outline btn-sm" onClick={() => togglePublish(course.id, course.is_published)}>
                 {course.is_published ? 'Gizlə' : 'Aktiv et'}
               </button>

@@ -255,6 +255,30 @@
     color: hsl(var(--foreground));
   }
 
+  .btn-white {
+    background: white;
+    color: #064E3B;
+    border: none;
+  }
+  
+  .btn-white:hover {
+    background: #F8FAFC;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+  }
+
+  .btn-whatsapp:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+  }
+
   /* Forms */
   .form-group {
     display: flex;
