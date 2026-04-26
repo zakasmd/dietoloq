@@ -314,6 +314,28 @@
     "haveAccount": "Hesabınız var?",
     "login": "Daxil ol"
   },
+  "results": {
+    "eyebrow": "MÜŞTƏRİ NƏTİCƏLƏRİ",
+    "title": "Uğur Hekayələriniz",
+    "subtitle": "Bizimlə sağlam çəki və həyat tərzinə qovuşan yüzlərlə xoşbəxt pasientin nəticələri ilə tanış olun.",
+    "case1Goal": "Arıqlama prosesi",
+    "case1Title": "1 həftəyə 4 kilo nəticə!",
+    "case2Goal": "Çəki Artırma",
+    "case2Title": "1 aya 5 kilo kökələn pasient dəyişimi!",
+    "case3Goal": "Arıqlama prosesi",
+    "case3Title": "30 kiloya yaxın arıqlama nəticəsi! Murad Arif",
+    "case4Goal": "Yaşlanmaya qarşı proses",
+    "case4Title": "Həyat keyfiyyətini artıraraq yaşlanmaya qarşı xüsusi proses",
+    "case5Goal": "Selülit Müalicə",
+    "case5Title": "Selülitdən tam azad olmaq üçün fərdi yanaşma",
+    "case6Goal": "IV Terapiya",
+    "case6Title": "Enerjinizi bərpa edən və immunitetinizi gücləndirən xüsusi IV Terapiya",
+    "directContact": "Birbaşa əlaqə",
+    "phoneLabel": "TELEFON",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ÜNVAN",
+    "addressValue": "The Club Port Baku, Baku, Azerbaijan"
+  },
   "contact": {
     "eyebrow": "Əlaqə",
     "title": "Bizimlə əlaqə saxlayın",

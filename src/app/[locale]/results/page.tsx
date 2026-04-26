@@ -10,21 +10,16 @@ export default function ResultsPage() {
 
   const results: Array<{
     id: number;
-    name: string;
-    before: string;
-    after: string;
-    lost: string;
-    duration: string;
+    title: string;
     goal: string;
-    img?: string;
-    video?: string;
+    video: string;
   }> = [
-    { id: 1, name: 'S.T.', before: '160 kq', after: '130 kq', lost: '-30 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-2.jpg.jpg' },
-    { id: 2, name: 'A.K.', before: '94 kq', after: '79 kq', lost: '-15 kq', duration: `2.5 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-1.jpg.jpg' },
-    { id: 3, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss'), video: 'https://www.youtube.com/embed/ZnHr1I7SIAE' },
-    { id: 4, name: 'S.H.', before: '92 kq', after: '80 kq', lost: '-12 kq', duration: `10 ${t('weekLabel')}`, goal: t('goalLoss') },
-    { id: 5, name: 'R.Ə.', before: '55 kq', after: '62 kq', lost: '+7 kq', duration: `2 ${t('monthLabel')}`, goal: t('goalGain') },
-    { id: 6, name: 'K.S.', before: '85 kq', after: '70 kq', lost: '-15 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss') },
+    { id: 1, title: t('case1Title'), goal: t('case1Goal'), video: 'https://www.youtube.com/embed/Qq0KKjlfw2A' },
+    { id: 2, title: t('case2Title'), goal: t('case2Goal'), video: 'https://www.youtube.com/embed/IJM9V7uJHHo' },
+    { id: 3, title: t('case3Title'), goal: t('case3Goal'), video: 'https://www.youtube.com/embed/1zQK8Wn1xag' },
+    { id: 4, title: t('case4Title'), goal: t('case4Goal'), video: 'https://www.youtube.com/embed/n_pp1dwXl6Y' },
+    { id: 5, title: t('case5Title'), goal: t('case5Goal'), video: 'https://www.youtube.com/embed/eaZbsC4gZko' },
+    { id: 6, title: t('case6Title'), goal: t('case6Goal'), video: 'https://www.youtube.com/embed/jTspMwR0xIY' },
   ];
 
   const stats = [
@@ -87,8 +82,8 @@ export default function ResultsPage() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 style={{ padding: '1.75rem', borderRadius: 'var(--radius)', overflow: 'hidden' }}
               >
-                {r.video ? (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative' }}>
+                {r.video && (
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', background: '#000' }}>
                     <iframe 
                       src={r.video} 
                       title="YouTube video player" 
@@ -98,35 +93,13 @@ export default function ResultsPage() {
                       style={{ width: '100%', height: '100%', border: 'none' }}
                     />
                   </div>
-                ) : r.img ? (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', backgroundColor: '#000' }}>
-                    <img src={r.img} alt="Before After Result" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                  </div>
-                ) : null}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-                  <div style={{
-                    width: 40, height: 40, borderRadius: '50%',
-                    background: 'var(--gradient-mint)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: 'Space Grotesk,sans-serif', fontWeight: 700, fontSize: '0.85rem', color: 'hsl(var(--primary-foreground))'
-                  }}>
-                    {r.name}
-                  </div>
-                  <span style={{ fontSize: '0.75rem', background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))', padding: '0.25rem 0.75rem', borderRadius: 20, fontWeight: 600 }}>{r.goal}</span>
+                )}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
+                  <span style={{ fontSize: '0.75rem', background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))', padding: '0.35rem 0.85rem', borderRadius: 20, fontWeight: 600 }}>{r.goal}</span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                  <div style={{ textAlign: 'center', padding: '0.75rem', background: 'hsl(var(--foreground)/0.04)', borderRadius: 10 }}>
-                    <div style={{ fontSize: '0.7rem', color: 'hsl(var(--foreground)/0.5)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('beforeLabel')}</div>
-                    <div style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--foreground))' }}>{r.before}</div>
-                  </div>
-                  <div style={{ textAlign: 'center', padding: '0.75rem', background: 'hsl(var(--primary)/0.08)', borderRadius: 10, border: '1px solid hsl(var(--primary)/0.2)' }}>
-                    <div style={{ fontSize: '0.7rem', color: 'hsl(var(--primary)/0.7)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('afterLabel')}</div>
-                    <div style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--primary))' }}>{r.after}</div>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid hsl(var(--foreground)/0.06)' }}>
-                  <span style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.25rem', fontWeight: 700, color: 'hsl(var(--primary))' }}>{r.lost}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'hsl(var(--foreground)/0.5)' }}>{r.duration}</span>
-                </div>
+                <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.2rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.5rem', lineHeight: 1.4 }}>
+                  {r.title}
+                </h3>
               </motion.div>
             ))}
           </div>
