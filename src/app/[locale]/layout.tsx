@@ -78,7 +78,7 @@ export default async function LocaleLayout({
       }} />
       <div style={{ position: 'relative', width: '100%', overflowX: 'hidden', overflowY: 'visible', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
-        <main style={{ flex: 1, width: '100%' }}>{children}</main>
+        <main style={{ flex: 1, width: '100%', overflowX: 'hidden' }}>{children}</main>
         <Footer />
       </div>
       <WhatsAppButton />

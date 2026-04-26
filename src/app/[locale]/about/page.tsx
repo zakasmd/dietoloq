@@ -26,7 +26,7 @@ export default function AboutPage() {
   ] as const;
 
   return (
-    <div style={{ paddingTop: '5rem' }}>
+    <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       {/* ─── Hero ─── */}
       <section style={{ padding: '5rem 0 4rem' }}>
         <div className="container">

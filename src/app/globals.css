@@ -65,7 +65,13 @@
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
-    touch-action: pan-y;
+  }
+
+  /* iOS Safari input zoom fix — font-size must be >= 16px on inputs */
+  @media (max-width: 768px) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
   }
 
   html { scroll-behavior: smooth; }

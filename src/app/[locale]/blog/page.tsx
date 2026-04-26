@@ -61,7 +61,7 @@ const categories = ['Hamısı', 'Arıqlama', 'Sağlamlıq', 'Ramazan', 'Anti-Age
 
 export default function BlogPage() {
   return (
-    <div style={{ paddingTop: '5rem' }}>
+    <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       {/* Hero */}
       <section style={{
         background: 'linear-gradient(135deg, #faf5ff 0%, #fdf2f8 100%)',

@@ -16,7 +16,7 @@ export default function BookPage() {
   const features = ['f1', 'f2', 'f3', 'f4'] as const;
 
   return (
-    <div style={{ paddingTop: '5rem' }}>
+    <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       {/* ─── Hero / Intro ─── */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">

@@ -29,7 +29,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div style={{ paddingTop: '5rem' }}>
+    <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       <section style={{ padding: '5rem 0 4rem', textAlign: 'center' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
