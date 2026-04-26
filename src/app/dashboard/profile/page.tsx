@@ -54,12 +54,17 @@ export default function ProfilePage() {
     setTimeout(() => setSaved(false), 3000);
   };
   const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [changingPw, setChangingPw] = useState(false);
   const [pwError, setPwError] = useState('');
 
   const handleChangePassword = async () => {
     if (newPassword.length < 6) {
       setPwError('Şifrə ən azı 6 simvol olmalıdır');
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setPwError('Şifrələr eyni deyil');
       return;
     }
     setChangingPw(true);
@@ -73,6 +78,7 @@ export default function ProfilePage() {
     } else {
       setPwSent(true);
       setNewPassword('');
+      setConfirmPassword('');
       setTimeout(() => setPwSent(false), 3000);
     }
   };
@@ -295,6 +301,22 @@ export default function ProfilePage() {
                 onFocus={(e) => e.target.style.borderColor = '#059669'}
                 onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
               />
+              <input
+                type="password"
+                placeholder="Yeni şifrəni təkrarla"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                style={{
+                  width: '100%', boxSizing: 'border-box',
+                  padding: '0.65rem 0.875rem',
+                  borderRadius: '8px', border: '1.5px solid #E5E7EB',
+                  fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                  color: '#1F2937', background: 'white',
+                  outline: 'none', transition: 'border-color 0.2s',
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#059669'}
+                onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
+              />
               {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: 'Inter' }}>{pwError}</div>}
               
               {pwSent ? (
@@ -310,13 +332,13 @@ export default function ProfilePage() {
               ) : (
                 <button
                   onClick={handleChangePassword}
-                  disabled={changingPw || !newPassword}
+                  disabled={changingPw || !newPassword || !confirmPassword}
                   style={{
                     padding: '0.625rem 1.25rem',
-                    background: changingPw || !newPassword ? '#E5E7EB' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
-                    color: changingPw || !newPassword ? '#9CA3AF' : 'hsl(165 60% 8%)',
+                    background: changingPw || !newPassword || !confirmPassword ? '#E5E7EB' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
+                    color: changingPw || !newPassword || !confirmPassword ? '#9CA3AF' : 'hsl(165 60% 8%)',
                     border: 'none',
-                    borderRadius: '8px', cursor: changingPw || !newPassword ? 'not-allowed' : 'pointer',
+                    borderRadius: '8px', cursor: changingPw || !newPassword || !confirmPassword ? 'not-allowed' : 'pointer',
                     fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.85rem',
                     transition: 'all 0.2s',
                     width: 'fit-content'
