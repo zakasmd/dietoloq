@@ -316,13 +316,21 @@
   .statDivider { display: none; }
   .ctaGroup { justify-content: center; width: 100%; }
 
-  /* imageWrapper MUST be square so neon rings (border-radius:50%) form a circle */
+  /* imageWrapper MUST be square so rings (border-radius:50%) form a circle */
   .imageWrapper {
     width: 300px;
     height: 300px;
     padding: 0;
     margin: 0 auto;
     flex-shrink: 0;
+  }
+
+  /* Rings: place INSIDE the 300x300 wrapper (not outside) so they appear as circles */
+  .neonRing1, .neonRing2 {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
   }
 
   .imageContainer {
@@ -348,6 +356,13 @@
   .imageWrapper {
     width: 260px;
     height: 260px;
+  }
+  /* Rings inside 260x260 wrapper */
+  .neonRing1, .neonRing2 {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
   }
   .imageContainer {
     width: 220px;
