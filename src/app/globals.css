@@ -176,6 +176,17 @@ html, body {
     padding-bottom: 6rem;
   }
 
+/* ── Mobile: drastically reduce section gaps ── */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .section-header {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
   .glass {
     background: hsl(var(--glass-bg));
     backdrop-filter: blur(12px) saturate(140%);

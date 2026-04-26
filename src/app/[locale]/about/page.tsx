@@ -28,7 +28,7 @@ export default function AboutPage() {
   return (
     <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       {/* ─── Hero ─── */}
-      <section style={{ padding: '5rem 0 4rem' }}>
+      <section style={{ padding: '3rem 0 2.5rem' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'center' }}>
             {/* Image */}
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 })}
               </div>
 
-              <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+              <Link href={`/${locale}/consultation`} className="btn btn-primary" style={{ alignSelf: 'center', width: '100%', justifyContent: 'center', boxSizing: 'border-box' }}>
                 {ct('button')}
               </Link>
             </motion.div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Mission & Services ─── */}
-      <section style={{ padding: '5rem 0' }}>
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '2rem', alignItems: 'start' }}>
             {/* Mission */}
@@ -138,9 +138,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Certificates ─── */}
-      <section style={{ padding: '5rem 0' }}>
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
-          <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>🏆 {t('certsLabel')}</div>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('certsTitle')}</h2>
           </motion.div>
@@ -156,9 +156,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Social ─── */}
-      <section style={{ padding: '5rem 0' }}>
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
-          <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('socialTitle')}</h2>
             <p style={{ marginTop: '1rem', color: 'hsl(var(--foreground)/0.65)' }}>{t('socialDesc')}</p>
           </motion.div>
@@ -176,9 +176,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section style={{ padding: '5rem 0', textAlign: 'center' }}>
+      <section style={{ padding: '2.5rem 0', textAlign: 'center' }}>
         <div className="container">
-          <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.1)' }}>
+          <div className="glass" style={{ padding: '2.5rem 1.5rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.1)' }}>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>{ct('title')}</h2>
             <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>{ct('subtitle')}</p>
             <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg">

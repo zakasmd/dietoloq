@@ -18,9 +18,9 @@ export default function BookPage() {
   return (
     <div style={{ paddingTop: '5rem', overflowX: 'hidden', width: '100%' }}>
       {/* ─── Hero / Intro ─── */}
-      <section style={{ padding: '4rem 0' }}>
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
             {/* Book 1 */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'center' }}>
               <motion.div
@@ -158,7 +158,7 @@ export default function BookPage() {
         </div>
       </section>
       {/* Detox Tea Section */}
-      <section style={{ padding: '5rem 0' }}>
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -203,9 +203,9 @@ export default function BookPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '0 0 5rem', textAlign: 'center' }}>
+      <section style={{ padding: '0 0 2.5rem', textAlign: 'center' }}>
         <div className="container">
-          <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)', boxSizing: 'border-box' }}>
+          <div className="glass" style={{ padding: '2.5rem 1.5rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)', boxSizing: 'border-box' }}>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('ctaTitle')}
             </h2>
