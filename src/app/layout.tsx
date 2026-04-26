@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning style={{ overflowX: 'hidden' }}>
-      <body suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100vw', touchAction: 'pan-y' }}>{children}</body>
+      <body suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100%', touchAction: 'pan-y', position: 'relative' }}>{children}</body>
     </html>
   );
 }

@@ -27,7 +27,7 @@ export default function BookPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto' }}
+                style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto', overflow: 'hidden' }}
               >
                 <div style={{
                   position: 'absolute', inset: 0,
@@ -43,7 +43,6 @@ export default function BookPage() {
                     background: '#EF4444', color: 'white', fontWeight: 700,
                     padding: '0.4rem 1rem', borderRadius: '20px', fontSize: '0.85rem',
                     boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)',
-                    transform: 'rotate(5deg)'
                   }}>
                     {t('bestseller')}
                   </div>

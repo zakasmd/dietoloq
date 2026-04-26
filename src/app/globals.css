@@ -412,8 +412,8 @@ html, body {
 @layer utilities {
   @keyframes float-slow {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -40px) scale(1.05); }
-    66% { transform: translate(-20px, 20px) scale(0.95); }
+    33% { transform: translate(0, -40px) scale(1.05); }
+    66% { transform: translate(0, 20px) scale(0.95); }
   }
   @keyframes spin-slow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
   @keyframes pulse-glow {

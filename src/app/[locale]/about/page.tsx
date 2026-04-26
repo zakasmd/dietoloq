@@ -54,7 +54,7 @@ export default function AboutPage() {
 
               {/* Badge */}
               <div className="glass" style={{
-                position: 'absolute', bottom: '1.5rem', right: '-1rem',
+                position: 'absolute', bottom: '1.5rem', right: '0',
                 padding: '0.875rem 1.25rem', borderRadius: 'var(--radius)',
                 display: 'flex', alignItems: 'center', gap: '0.75rem', zIndex: 2,
                 boxShadow: 'var(--shadow-glass)',
