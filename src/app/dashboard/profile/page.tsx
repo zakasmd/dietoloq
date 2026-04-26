@@ -53,17 +53,29 @@ export default function ProfilePage() {
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };
+  const [newPassword, setNewPassword] = useState('');
+  const [changingPw, setChangingPw] = useState(false);
+  const [pwError, setPwError] = useState('');
 
-  const handleResetPassword = async () => {
-    if (!user?.email) return;
+  const handleChangePassword = async () => {
+    if (newPassword.length < 6) {
+      setPwError('Şifrə ən azı 6 simvol olmalıdır');
+      return;
+    }
+    setChangingPw(true);
+    setPwError('');
     const supabase = createClient();
-    await supabase.auth.resetPasswordForEmail(user.email, {
-      redirectTo: `${window.location.origin}/dashboard/profile`,
-    });
-    setPwSent(true);
-    setTimeout(() => setPwSent(false), 5000);
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    setChangingPw(false);
+    
+    if (error) {
+      setPwError('Xəta baş verdi: ' + error.message);
+    } else {
+      setPwSent(true);
+      setNewPassword('');
+      setTimeout(() => setPwSent(false), 3000);
+    }
   };
-
   const avatarLetter = (user?.email?.[0] || 'U').toUpperCase();
 
   return (
@@ -263,35 +275,57 @@ export default function ProfilePage() {
               🔐 Şifrə dəyişmə
             </h3>
             <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Şifrənizi dəyişmək üçün e-mailinizə link göndəriləcək.
+              Yeni şifrənizi daxil edərək dərhal dəyişdirə bilərsiniz.
             </p>
-            {pwSent ? (
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.625rem 1rem',
-                background: '#F0FDF4', borderRadius: '8px',
-                fontFamily: 'Inter, system-ui', fontSize: '0.84rem',
-                color: '#059669', fontWeight: 600,
-              }}>
-                <CheckCircle size={15} /> Link göndərildi!
-              </div>
-            ) : (
-              <button
-                onClick={handleResetPassword}
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <input
+                type="password"
+                placeholder="Yeni şifrə (ən azı 6 simvol)"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
                 style={{
-                  padding: '0.625rem 1.25rem',
-                  background: 'white', color: '#374151',
-                  border: '1.5px solid #E5E7EB',
-                  borderRadius: '8px', cursor: 'pointer',
-                  fontFamily: 'Inter, system-ui', fontWeight: 600, fontSize: '0.85rem',
-                  transition: 'all 0.2s',
+                  width: '100%', boxSizing: 'border-box',
+                  padding: '0.65rem 0.875rem',
+                  borderRadius: '8px', border: '1.5px solid #E5E7EB',
+                  fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                  color: '#1F2937', background: 'white',
+                  outline: 'none', transition: 'border-color 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#059669')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#E5E7EB')}
-              >
-                Şifrəni sıfırla
-              </button>
-            )}
+                onFocus={(e) => e.target.style.borderColor = '#059669'}
+                onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
+              />
+              {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: 'Inter' }}>{pwError}</div>}
+              
+              {pwSent ? (
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: '0.5rem',
+                  padding: '0.625rem 1rem',
+                  background: '#F0FDF4', borderRadius: '8px',
+                  fontFamily: 'Inter, system-ui', fontSize: '0.84rem',
+                  color: '#059669', fontWeight: 600,
+                }}>
+                  <CheckCircle size={15} /> Şifrəniz uğurla dəyişdirildi!
+                </div>
+              ) : (
+                <button
+                  onClick={handleChangePassword}
+                  disabled={changingPw || !newPassword}
+                  style={{
+                    padding: '0.625rem 1.25rem',
+                    background: changingPw || !newPassword ? '#E5E7EB' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
+                    color: changingPw || !newPassword ? '#9CA3AF' : 'hsl(165 60% 8%)',
+                    border: 'none',
+                    borderRadius: '8px', cursor: changingPw || !newPassword ? 'not-allowed' : 'pointer',
+                    fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.85rem',
+                    transition: 'all 0.2s',
+                    width: 'fit-content'
+                  }}
+                >
+                  {changingPw ? 'Dəyişdirilir...' : 'Şifrəni yenilə'}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
