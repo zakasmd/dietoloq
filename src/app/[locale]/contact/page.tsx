@@ -25,7 +25,7 @@ export default function ContactPage() {
   const contactItems = [
     { icon: Phone, label: t('phoneLabel'), value: '+994 50 668 48 23', href: 'tel:+994506684823', color: 'hsl(var(--primary))' },
     { icon: Mail, label: t('emailLabel'), value: 'diyetoloq.leyla@yandex.com', href: 'mailto:diyetoloq.leyla@yandex.com', color: 'hsl(var(--accent))' },
-    { icon: MapPin, label: t('addressLabel'), value: t('addressValue'), href: null, color: 'hsl(var(--secondary))' },
+    { icon: MapPin, label: t('addressLabel'), value: t('addressValue'), href: 'https://maps.app.goo.gl/GqsFrSB7j7Pp4vfS7', color: 'hsl(var(--secondary))' },
   ];
 
   return (
@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <div>
                       <div style={{ fontSize: '0.75rem', color: 'hsl(var(--foreground)/0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{item.label}</div>
                       {item.href ? (
-                        <a href={item.href} style={{ fontWeight: 500, color: 'hsl(var(--foreground))', textDecoration: 'none', fontSize: '0.95rem' }}>{item.value}</a>
+                        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} style={{ fontWeight: 500, color: 'hsl(var(--foreground))', textDecoration: 'none', fontSize: '0.95rem' }}>{item.value}</a>
                       ) : (
                         <div style={{ fontWeight: 500, color: 'hsl(var(--foreground))', fontSize: '0.95rem' }}>{item.value}</div>
                       )}

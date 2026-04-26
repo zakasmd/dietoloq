@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li className={styles.contactItem}>
                 <MapPin size={16} className={styles.contactIcon} />
-                <span className={styles.footerLink}>{t('address')}</span>
+                <a href="https://maps.app.goo.gl/GqsFrSB7j7Pp4vfS7" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>{t('address')}</a>
               </li>
             </ul>
           </div>
