@@ -21,7 +21,7 @@ export default function ResultsPage() {
   }> = [
     { id: 1, name: 'S.T.', before: '160 kq', after: '130 kq', lost: '-30 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-2.jpg.jpg' },
     { id: 2, name: 'A.K.', before: '94 kq', after: '79 kq', lost: '-15 kq', duration: `2.5 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-1.jpg.jpg' },
-    { id: 3, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss') },
+    { id: 3, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss'), video: 'https://www.youtube.com/embed/ZnHr1I7SIAE' },
     { id: 4, name: 'S.H.', before: '92 kq', after: '80 kq', lost: '-12 kq', duration: `10 ${t('weekLabel')}`, goal: t('goalLoss') },
     { id: 5, name: 'R.Ə.', before: '55 kq', after: '62 kq', lost: '+7 kq', duration: `2 ${t('monthLabel')}`, goal: t('goalGain') },
     { id: 6, name: 'K.S.', before: '85 kq', after: '70 kq', lost: '-15 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss') },
