@@ -273,15 +273,17 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
+    justify-items: center;
   }
 
   .content {
     max-width: 100%;
     align-items: center;
+    width: 100%;
   }
 
   .eyebrow { margin: 0 auto 0.5rem; }
-  .subtitle { max-width: 560px; }
+  .subtitle { max-width: 560px; text-align: center; }
 
   .imageWrapper {
     max-width: 440px;
@@ -314,9 +316,13 @@
   .statDivider { display: none; }
   .ctaGroup { justify-content: center; width: 100%; }
 
-  /* Keep image as a proper circle - width MUST equal height */
+  /* imageWrapper MUST be square so neon rings (border-radius:50%) form a circle */
   .imageWrapper {
-    padding: 0.5rem 0;
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    margin: 0 auto;
+    flex-shrink: 0;
   }
 
   .imageContainer {
@@ -338,6 +344,11 @@
   .statsRow { padding: 1rem 0.75rem; }
   .statValue { font-size: 1.1rem; }
   .statLabel { font-size: 0.6rem; }
+  /* Keep square for circle ring on smallest phones */
+  .imageWrapper {
+    width: 260px;
+    height: 260px;
+  }
   .imageContainer {
     width: 220px;
     height: 220px;
