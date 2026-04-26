@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { Phone, Mail, MapPin } from 'lucide-react';
@@ -45,7 +46,9 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>🥗</span>
+              <div className={styles.logoIcon} style={{ background: 'transparent', padding: 0, boxShadow: 'none' }}>
+                <Image src="/images/logo.jpg" alt="Logo" width={48} height={48} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              </div>
               <div>
                 <div className={styles.logoName}>{nav('brandName')}</div>
                 <div className={styles.logoSub}>{t('subTitle')}</div>

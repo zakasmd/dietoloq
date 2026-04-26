@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
@@ -47,10 +48,8 @@ export default function Navbar() {
         <nav className={styles.nav}>
           {/* Logo */}
           <Link href={`/${locale}`} className={styles.logo}>
-            <div className={styles.logoIcon}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
-              </svg>
+            <div className={styles.logoIcon} style={{ background: 'transparent', padding: 0, boxShadow: 'none' }}>
+              <Image src="/images/logo.jpg" alt="Leyla Zülfüqarlı" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>{t('brandName')}</span>

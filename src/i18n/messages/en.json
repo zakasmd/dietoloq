@@ -110,7 +110,19 @@
     "weekLabel": "weeks",
     "ctaTitle": "You can achieve results too",
     "ctaSubtitle": "Let's build your personalized nutrition plan",
-    "ctaButton": "Get a Consultation"
+    "ctaButton": "Get a Consultation",
+    "case1Goal": "Weight Loss Process",
+    "case1Title": "4 kg result in 1 week!",
+    "case2Goal": "Weight Gain",
+    "case2Title": "Change of a patient who gained 5 kg in 1 month!",
+    "case3Goal": "Weight Loss Process",
+    "case3Title": "Weight loss result of nearly 30 kg! Murad Arif",
+    "case4Goal": "Anti-Aging Process",
+    "case4Title": "Special anti-aging process by increasing quality of life",
+    "case5Goal": "Cellulite Treatment",
+    "case5Title": "Personalized approach to get rid of cellulite completely",
+    "case6Goal": "IV Therapy",
+    "case6Title": "Special IV Therapy to restore your energy and strengthen immunity"
   },
   "about": {
     "title": "About",
@@ -313,23 +325,7 @@
     "haveAccount": "Already have an account?",
     "login": "Log In"
   },
-  "results": {
-    "eyebrow": "CLIENT RESULTS",
-    "title": "Your Success Stories",
-    "subtitle": "Meet hundreds of happy patients who achieved a healthy weight and lifestyle with us.",
-    "case1Goal": "Weight Loss Process",
-    "case1Title": "4 kg result in 1 week!",
-    "case2Goal": "Weight Gain",
-    "case2Title": "Change of a patient who gained 5 kg in 1 month!",
-    "case3Goal": "Weight Loss Process",
-    "case3Title": "Weight loss result of nearly 30 kg! Murad Arif",
-    "case4Goal": "Anti-Aging Process",
-    "case4Title": "Special anti-aging process by increasing quality of life",
-    "case5Goal": "Cellulite Treatment",
-    "case5Goal": "Personalized approach to get rid of cellulite completely",
-    "case6Goal": "IV Therapy",
-    "case6Title": "Special IV Therapy to restore your energy and strengthen immunity"
-  },
+
   "contact": {
     "eyebrow": "Contact",
     "title": "Get in touch with us",
