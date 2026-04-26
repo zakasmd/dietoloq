@@ -24,7 +24,7 @@ export default function ServicesSection() {
   const locale = useLocale();
 
   return (
-    <section className="section" style={{ background: 'var(--color-white)' }}>
+    <section className="section" style={{ background: 'var(--color-white)', paddingTop: '3rem' }}>
       <div className="container">
         <motion.div
           className="section-header"

@@ -1,6 +1,7 @@
 .section {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: transparent;
+  overflow: hidden;
 }
 
 .inner {
@@ -20,7 +21,7 @@
 .imageBg {
   position: absolute;
   bottom: -16px;
-  left: -16px;
+  left: 0;
   right: 16px;
   top: 16px;
   background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
@@ -50,7 +51,7 @@
 .certBadge {
   position: absolute;
   bottom: 24px;
-  right: -20px;
+  right: -12px;
   background: hsl(var(--glass-bg));
   backdrop-filter: blur(24px);
   border-radius: var(--radius);
@@ -156,9 +157,9 @@
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
-  .imageWrapper { max-width: 420px; margin: 0 auto; }
+  .imageWrapper { max-width: 420px; margin: 0 auto; overflow: hidden; }
   .certBadge { right: 0; }
 }
 

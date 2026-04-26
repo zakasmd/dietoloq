@@ -2,8 +2,23 @@
   background: linear-gradient(135deg, #064E3B 0%, #059669 50%, #0D9488 100%);
   padding: 6rem 1.5rem;
   position: relative;
+  /* overflow: clip is more aggressive than hidden — prevents ALL scroll overflow including on Android */
   overflow: hidden;
+  overflow: clip;
   text-align: center;
+  /* Force GPU compositing layer for proper overflow clipping */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Contain paint so children cannot bleed outside this element */
+  contain: paint;
+}
+
+/* Decorative circles are wrapped in a clipped container so they CANNOT cause scroll */
+.decorBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .circle1 {
@@ -62,4 +77,13 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+  .circle1, .circle2 {
+    display: none;
+  }
 }
