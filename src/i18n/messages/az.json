@@ -21,11 +21,11 @@
     "badge": "Peşəkar Dietoloq · Bakı",
     "title": "Sağlam həyat üçün",
     "titleHighlight": "fərdi qidalanma planı",
-    "subtitle": "Leyla Zülfüqarlı ilə elmi əsaslı diet proqramları, konsultasiya və real nəticələr. İdmansız arıqlama metodları üzrə 8+ il təcrübə.",
+    "subtitle": "Leyla Zülfüqarlı ilə elmi əsaslı diet proqramları, konsultasiya və real nəticələr. İdmansız arıqlama metodları üzrə 13+ il təcrübə.",
     "cta1": "Konsultasiya üçün qeydiyyat",
     "cta2": "Kurslara bax",
     "whatsapp": "WhatsApp-da yaz",
-    "stat1": "2000+",
+    "stat1": "1000+",
     "stat1Label": "Müştəri",
     "stat2": "13+",
     "stat2Label": "İl Təcrübə",
@@ -79,12 +79,12 @@
         "f4": "Qidalanma planı"
       },
       "media": {
-        "title": "Seminar & Media",
-        "desc": "Tədbirlər, seminarlar və TV (ARB, İTV, Lider və s.) çıxışları vasitəsilə qidalanma üzrə ekspert rəyi. Korporativ təlimlər və kütləvi sağlamlıq layihələrinin təşkili.",
-        "f1": "Korporativ seminar",
-        "f2": "Media çıxışı",
-        "f3": "Online məruzə",
-        "f4": "Q&A sessiyası"
+        "title": "İV Terapiya",
+        "desc": "İntravenöz (İV) terapiya qan dövranına birbaşa infuziya yolu ilə qida maddələrinin, vitamin və mineralların bədən toxumalarına çatdırılmasının ən effektiv üsuludur. Enerjini artırır və immuniteti gücləndirir.",
+        "f1": "Vitamin infuziyası",
+        "f2": "İmmunitet gücləndirmə",
+        "f3": "Enerji bərpası",
+        "f4": "100% absorbsiya"
       }
     },
     "learnMore": "Ətraflı",
@@ -100,8 +100,8 @@
     "beforeLabel": "Əvvəl",
     "afterLabel": "Sonra",
     "viewAll": "Hamısına bax",
-    "statsClients": "Uğurlu müştəri",
-    "statsSatisfy": "Məmnuniyyət dərəcəsi",
+    "statsClients": "1000+ Uğurlu müştəri",
+    "statsSatisfy": "100% Məmnuniyyət dərəcəsi",
     "statsLoss": "Ortalama çəki itkisi",
     "statsTime": "İlk nəticə müddəti",
     "goalLoss": "Arıqlama",
@@ -121,7 +121,7 @@
     "clients": "Müştəri",
     "bio1": "Peşəkar dietoloq kimi 13 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 2000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
     "bio2": "Leyla Zülfüqarlı təkcə Azərbaycanda deyil, Almaniya, İsveçrə, Türkiyə, Slovakiya, İngiltərə və Fransa kimi ölkələrdə də fəaliyyət göstərmişdir. O, İsveçrədə azərbaycanlılar üçün xüsusi olaraq 7 günlük detoks və arıqlama proqramları təşkil edərək, insanların həm bədən, həm də ruh sağlamlığını artırmışdır.",
-    "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, ARB, AsTV, Lider TV, Şou TV və İctimai TV (İTV) kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
+    "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, ARB, AzTV, Lider TV, SHOW TV və İctimai TV (İTV) kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
     "bio4": "\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Leyla xanım, həm idmansız arıqlamaq istəyənlərə, həm də kökəlmək istəyən şəxslərə fərdi yanaşma ilə kömək edir. O, Youtube, Facebook və Instagram kanallarında mütəmadi olaraq maarifləndirici videolar paylaşır. Ona müraciət edən hər bir şəxs yüksək məmnuniyyətlə və sağlam şəkildə onun yanından ayrılır.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
@@ -155,34 +155,28 @@
     "subtitle": "Xidmətlərimizdən razı qalan müştərilərimizin rəyləri",
     "items": [
       {
-        "name": "Aynur M.",
-        "text": "Leyla xanımın planı ilə 2 ayda 8 kq arıqladım. Heç vaxt aclıq hiss etmədim, enerji səviyyəm çox yüksəldi!",
-        "result": "-8 kq / 2 ay",
+        "name": "Murad Arif (Bəstəkar, Prodüser)",
+        "text": "5 il ərzində Leyla xanımla çalışdıq və bu müddətdə heç bir əməliyyat olmadan 30 kiloya yaxın çəki itirdim. İstədiyim səviyyəyə gəldim və ən əsası, itirdiyim çəkini bir daha geri almadım!",
+        "result": "-30 kq (Əməliyyatsız)",
+        "avatar": "👨"
+      },
+      {
+        "name": "Nərminə xanım",
+        "text": "9-10 il idi ki, köklükdən əziyyət çəkirdim. Artıq yeriyə bilmir, böyük çətinlik çəkirdim. Çox yerə müraciət etsəm də, nəticə ala bilməmişdim. Leyla xanımın fərdiləşdirilmiş proqramı sayəsində 4 ayda düz 30 kq atdım! İndi özümü çox yüngül hiss edirəm.",
+        "result": "-30 kq / 4 ay",
         "avatar": "👩"
       },
       {
-        "name": "Sevinc H.",
-        "text": "İdmansız arıqlama metodunu başlanğıcda inanmamışdım, amma 6 həftədə 5 kq itirdim. Çox minnətdaram!",
-        "result": "-5 kq / 6 həftə",
-        "avatar": "👩‍🦱"
-      },
-      {
-        "name": "Rəna Ə.",
-        "text": "Hamiləlik dövründə çox narahat idim. Leyla xanım mənə xüsusi plan hazırladı, özümü çox yaxşı hiss etdim.",
-        "result": "Hamiləlik planı",
-        "avatar": "🤰"
-      },
-      {
-        "name": "Könül S.",
-        "text": "Anti-ageing qidalanma planından sonra özümü 10 yaş cavan hiss edirəm. Dərim də çox yaxşılaşdı.",
-        "result": "Anti-ageing proqramı",
-        "avatar": "👩‍🦳"
-      },
-      {
-        "name": "Lalə T.",
-        "text": "3 ay ərzində 12 kq arıqladım. Plan tamamilə fərdiləşdirilmişdi, ailəm belə fərqi gördü!",
-        "result": "-12 kq / 3 ay",
+        "name": "Günay xanım",
+        "text": "Çox xoşbəxtəm, çünki bu mənim ilk dietam idi və 1 ayda 7 kilo çəki itirdim. Hashimoto xəstəsiyəm deyə, əvvəllər maksimum 1-2 kilo ata bilirdim. Ancaq Leyla xanımın xüsusi yanaşması sayəsində bu uğura nail oldum!",
+        "result": "-7 kq / 1 ay",
         "avatar": "👩‍🦰"
+      },
+      {
+        "name": "Rəvanə xanım (54 yaş)",
+        "text": "Proqrama başlayanda çox ümidsiz idim. 2 il idi ki, şəkərsiz, karbohidratsız çox sərt dietalar və idman etsəm də, 1 kq belə itirə bilmirdim. Ciddi allergiya və qaşınmalardan da əziyyət çəkirdim. Amma 1 ay sonra həm qaşınmalar azaldı, həm də 10 kilo atdım, üstəlik 20 sm yağ parçalandı!",
+        "result": "-10 kq / 1 ay",
+        "avatar": "👩‍🦳"
       }
     ]
   },
@@ -264,20 +258,26 @@
     "goalPlaceholder": "Seçin..."
   },
   "book": {
-    "title": "Köklüyün Sirri — Arıqlığın Açarı",
-    "subtitle": "Dr. Leyla Zülfüqarlının bestseller kitabı",
-    "description": "Azərbaycanda çox satılan bu kitabda idmansız arıqlama sirləri, fərdi diet planlaması, su qəbulunun düzgün idarəsi və sağlam qidalanma vərdişlərinin formalaşdırılması üzrə ətraflı məlumat tapa bilərsiniz. Detoks çayı ilə birlikdə xüsusi paket kimi də əldə etmək mümkündür.",
-    "orderWhatsApp": "WhatsApp-dan sifariş et",
-    "orderBakuBook": "BakuBookCenter-dən al",
-    "orderAlinino": "Alinino.az-dan al",
+    "pdfNotice": "Diqqət: Bu kitabları hazırda yalnız PDF formatında (Elektron kitab) əldə edə bilərsiniz.",
+    "title1": "Köklüyün sirri - Arıqlığın açarı",
+    "title2": "Sağlam bəslən, arıqla!",
+    "author": "Leyla Zülfüqarlı",
+    "description1": "Mənim uzun illər apardığım təcrübələr və elmi araşdırmalar əsasında yazılmış bu kitabda arıqlamağın və sağlam bədənə sahib olmağın ən vacib sirləri açılır. İdmansız və ac qalmadan necə arıqlamaq olar? Cavabı bu kitabdadır.",
+    "description2": "Leyla Zülfüqarlının ilk və ən məşhur kitablarından biri. Sağlam qidalanmanın əsas prinsipləri, orqanizmin yenilənməsi və ömürboyu formanı qoruyub saxlamaq üçün praktik məsləhətlər.",
+    "bestseller": "BESTSELLER",
+    "orderWhatsApp": "PDF Sifariş Et",
     "features": {
-      "f1": "İdmansız arıqlama metodu",
-      "f2": "Fərdi diet planları",
-      "f3": "Detoks çayı paketi",
-      "f4": "Su qəbulu cədvəlləri"
+      "f1": "İdmansız arıqlama metodikası",
+      "f2": "Metabolizmanın sürətləndirilməsi",
+      "f3": "Düzgün qida birləşmələri",
+      "f4": "Praktiki məsləhətlər və nümunə menyular"
     },
-    "badge": "2-ci kitab",
-    "author": "Dietoloq Dr. Leyla Zülfüqarlı"
+    "features2": {
+      "f1": "Sağlam qidalanmanın təməlləri",
+      "f2": "Zərərli vərdişlərdən qurtulma",
+      "f3": "Hüceyrə səviyyəsində təmizlənmə",
+      "f4": "Detoks reseptləri"
+    }
   },
   "login": {
     "title": "Daxil ol",

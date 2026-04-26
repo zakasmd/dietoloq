@@ -9,17 +9,17 @@ export default function ResultsPage() {
   const locale = useLocale();
 
   const results = [
-    { id: 1, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss') },
-    { id: 2, name: 'S.H.', before: '92 kq', after: '80 kq', lost: '-12 kq', duration: `10 ${t('weekLabel')}`, goal: t('goalLoss') },
-    { id: 3, name: 'R.Ə.', before: '55 kq', after: '62 kq', lost: '+7 kq', duration: `2 ${t('monthLabel')}`, goal: t('goalGain') },
-    { id: 4, name: 'K.S.', before: '85 kq', after: '70 kq', lost: '-15 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss') },
-    { id: 5, name: 'L.T.', before: '74 kq', after: '62 kq', lost: '-12 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss') },
-    { id: 6, name: 'N.M.', before: '68 kq', after: '58 kq', lost: '-10 kq', duration: `8 ${t('weekLabel')}`, goal: t('goalLoss') },
+    { id: 1, name: 'S.T.', before: '160 kq', after: '130 kq', lost: '-30 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-2.jpg' },
+    { id: 2, name: 'A.K.', before: '94 kq', after: '79 kq', lost: '-15 kq', duration: `2.5 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-1.jpg' },
+    { id: 3, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss') },
+    { id: 4, name: 'S.H.', before: '92 kq', after: '80 kq', lost: '-12 kq', duration: `10 ${t('weekLabel')}`, goal: t('goalLoss') },
+    { id: 5, name: 'R.Ə.', before: '55 kq', after: '62 kq', lost: '+7 kq', duration: `2 ${t('monthLabel')}`, goal: t('goalGain') },
+    { id: 6, name: 'K.S.', before: '85 kq', after: '70 kq', lost: '-15 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss') },
   ];
 
   const stats = [
-    { val: '200+', label: t('statsClients'), icon: '👥' },
-    { val: '95%', label: t('statsSatisfy'), icon: '⭐' },
+    { val: '1000+', label: t('statsClients'), icon: '👥' },
+    { val: '100%', label: t('statsSatisfy'), icon: '⭐' },
     { val: '-8 kq', label: t('statsLoss'), icon: '📉' },
     { val: `2 ${t('weekLabel')}`, label: t('statsTime'), icon: '⏱️' },
   ];
@@ -75,8 +75,13 @@ export default function ResultsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ padding: '1.75rem', borderRadius: 'var(--radius)' }}
+                style={{ padding: '1.75rem', borderRadius: 'var(--radius)', overflow: 'hidden' }}
               >
+                {r.img && (
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '280px', overflow: 'hidden', position: 'relative' }}>
+                    <img src={r.img} alt="Before After Result" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: '50%',

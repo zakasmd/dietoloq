@@ -21,11 +21,11 @@
     "badge": "Professional Dietitian · Baku",
     "title": "Achieve your health goals with",
     "titleHighlight": "a personalized nutrition plan",
-    "subtitle": "With Leyla Zülfüqarlı — science-based diet programs, consultations and real results. 8+ years of expertise in exercise-free weight loss.",
+    "subtitle": "Science-based diet programs, consultations, and real results with Leyla Zulfuqarli. 13+ years of experience in no-exercise weight loss methods.",
     "cta1": "Book a Consultation",
     "cta2": "View Courses",
     "whatsapp": "Message on WhatsApp",
-    "stat1": "2000+",
+    "stat1": "1000+",
     "stat1Label": "Clients",
     "stat2": "13+",
     "stat2Label": "Years of Exp.",
@@ -40,51 +40,51 @@
     "items": {
       "weightLoss": {
         "title": "Weight Loss Program",
-        "desc": "Personalized weight loss diet programs. Exercise-free method, science-backed approach.",
+        "desc": "Personalized weight loss diet programs. We ensure you reach your goal without starving or exercising, using a purely science-based approach. We accelerate your metabolism with the principle 'Our enemy is not fat, but sugar'.",
         "f1": "Individual calorie calculation",
         "f2": "Weekly meal plan",
-        "f3": "Hydration plan",
-        "f4": "Progress tracking"
+        "f3": "Water intake plan",
+        "f4": "Results tracking"
       },
       "weightGain": {
         "title": "Weight Gain",
-        "desc": "Healthy weight gain and nutrition plans for those who want to bulk up.",
+        "desc": "Specially tailored healthy weight gain and nutrition plans for those who want to bulk up. We help you reach your ideal weight by increasing muscle and healthy fat mass without harmful foods.",
         "f1": "High-calorie plan",
         "f2": "Protein optimization",
-        "f3": "Regular monitoring",
+        "f3": "Regular tracking",
         "f4": "Personalized approach"
       },
       "antiAging": {
         "title": "Anti-Aging & Nutrition",
-        "desc": "Anti-aging dietary advice and expert guidance in the field of nutrition science.",
+        "desc": "Special anti-aging nutrition advice and expert guidance in the field of nutrition. A cell-renewing nutrition program that improves skin health and rejuvenates the body.",
         "f1": "Antioxidant plan",
         "f2": "Skin health",
         "f3": "Hormonal balance",
         "f4": "Youth nutrition"
       },
       "consultation": {
-        "title": "Healthy Nutrition Consultation",
-        "desc": "Correction of daily eating habits and proper hydration planning.",
-        "f1": "Hydration plan",
+        "title": "Healthy Nutrition",
+        "desc": "Correction of daily eating habits, water intake planning, and detailed advice for a healthy lifestyle. From the first meeting, your body's needs are fully analyzed.",
+        "f1": "Water intake plan",
         "f2": "Eating habits",
-        "f3": "Diet monitoring",
+        "f3": "Diet control",
         "f4": "Guidance"
       },
       "detox": {
         "title": "Detox Program",
-        "desc": "Body cleansing, detox tea and a nutrition-based body renewal program.",
+        "desc": "Cleansing the body of harmful toxins, rejuvenating the body with special detox tea and nutrition. A 7-day effective cleansing and energy recovery based on Swiss experience.",
         "f1": "Detox tea",
         "f2": "Weekly program",
         "f3": "Body cleansing",
         "f4": "Nutrition plan"
       },
       "media": {
-        "title": "Seminars & Media",
-        "desc": "Events, seminars and media appearances — expert opinion on nutrition.",
-        "f1": "Corporate seminar",
-        "f2": "Media appearance",
-        "f3": "Online lecture",
-        "f4": "Q&A session"
+        "title": "IV Therapy",
+        "desc": "Intravenous (IV) therapy is the most effective way to deliver nutrients, vitamins, and minerals directly to body tissues via infusion. It boosts energy and strengthens immunity.",
+        "f1": "Vitamin infusion",
+        "f2": "Immunity boost",
+        "f3": "Energy recovery",
+        "f4": "100% absorption"
       }
     },
     "learnMore": "Learn More",
@@ -100,8 +100,8 @@
     "beforeLabel": "Before",
     "afterLabel": "After",
     "viewAll": "View All",
-    "statsClients": "Successful clients",
-    "statsSatisfy": "Satisfaction rate",
+    "statsClients": "1000+ Successful clients",
+    "statsSatisfy": "100% Satisfaction rate",
     "statsLoss": "Average weight loss",
     "statsTime": "First results in",
     "goalLoss": "Weight Loss",
@@ -114,35 +114,36 @@
   },
   "about": {
     "title": "About",
-    "shortBio": "Professional dietitian Leyla Zülfüqarlı has developed personalized nutrition plans for over 200 clients across 8+ years.",
+    "shortBio": "Leyla Zulfuqarli – Professional dietitian with 13+ years of experience, author of the first diet books in Azerbaijan. With appearances on TV channels like ARB and ITV, international detox programs (Switzerland, Germany), and over 1000 satisfied clients, she makes a real difference in healthy eating.",
     "readMore": "Read More",
     "experience": "Years Exp.",
-    "certificates": "Certifications",
+    "certificates": "Certs",
     "clients": "Clients",
-    "bio1": "Leyla Zülfüqarlı is a professional dietitian with over 8 years of experience, having developed personalized, science-based nutrition plans for more than 200 clients. She applies a holistic approach, considering lifestyle, psychological state and health goals.",
-    "bio2": "Leyla is also the author of a book on healthy nutrition, shares educational content on YouTube and social media, and presents expert nutritional advice at seminars and in media.",
+    "bio1": "With over 13 years of experience as a professional dietitian, Leyla Zulfuqarli has created personalized, science-based nutrition plans for more than 1000 clients, transforming their lives. She studied Medical Biology at the Medical University and later worked as a surgical assistant. Driven by a desire to help people more effectively, she continued her education in dietology in Ukraine in 2010, and later specialized in 'Nutrition and Dietetics' at Istanbul Medipol University in 2012.",
+    "bio2": "Leyla Zulfuqarli's expertise extends beyond Azerbaijan; she has worked in countries like Germany, Switzerland, Turkey, Slovakia, the UK, and France. Notably, she organized special 7-day detox and weight loss programs for Azerbaijanis in Switzerland, enhancing both physical and mental well-being.",
+    "bio3": "Recognized as the author of the first diet books in Azerbaijan, Leyla is the creator of two successful books: 'Eat Healthy, Lose Weight' and 'The Secret of Obesity, The Key to Weight Loss'. Her articles on healthy eating have been published multiple times in both local and Turkish newspapers. Furthermore, she has shared her secrets to healthy nutrition with thousands by appearing on numerous prominent TV channels including ARB, AzTV, Lider TV, SHOW TV, and Ictimai TV (ITV).",
+    "bio4": "Operating on the principle that 'Our enemy is not fat, but sugar', Leyla helps both those looking to lose weight without exercise and those wanting to gain weight through a customized approach. She regularly shares educational videos on her YouTube, Facebook, and Instagram channels. Every person who consults her leaves highly satisfied and healthier.",
     "missionTitle": "My Mission",
-    "missionText1": "Knowing that every person is unique, creating an individual nutrition plan for each one. Healthy living should be a pleasure, not a restriction.",
-    "missionText2": "My goal is to improve not just my clients' weight, but their energy levels and quality of life.",
-    "servicesTitle": "What I Do for Clients",
+    "missionText1": "Knowing that everyone is different, preparing a unique nutrition plan for everyone. To live a healthy life, food should be a pleasure, a lifestyle — not a restriction.",
+    "missionText2": "Elevating not just my client's weight, but their health, energy levels, and quality of life — this is my goal.",
+    "servicesTitle": "What I do for my clients?",
     "servicesList": [
-      "Personalized weight loss diet programs",
-      "Exercise-free weight loss",
-      "Healthy nutrition consultations",
-      "Anti-aging & nutrition science",
-      "Weight gain nutrition plans",
-      "Detox program",
-      "Hydration planning",
-      "Seminars, events, media"
+      "Personalized diet programs for weight loss (without exercise)",
+      "Healthy weight gain plans for those looking to bulk up",
+      "Healthy nutrition consultation and water intake planning",
+      "Anti-aging — expert advice in the field of nutrition",
+      "Body cleansing with detox programs and detox tea",
+      "International (Switzerland, Germany, etc.) 7-day programs",
+      "Seminars, events, media, and TV appearances"
     ],
     "certsLabel": "Certifications",
-    "certsTitle": "Education & Certifications",
+    "certsTitle": "Education and certifications",
     "certsList": [
-      "Clinical Nutritiology Certification",
-      "Anti-Aging Nutrition Certification",
-      "Exercise-Free Weight Loss Method",
-      "Nutritionist-Dietitian Certification",
-      "Pediatric Nutrition Certification"
+      "Ukraine Dietology Education",
+      "Istanbul Medipol University - Nutrition and Dietetics",
+      "Clinical Nutrition Certificate",
+      "Anti-Aging Certificate",
+      "Exercise-Free Weight Loss Method Certificate"
     ],
     "socialTitle": "Social Media",
     "socialDesc": "Educational content on nutrition and healthy living on YouTube and social media",
@@ -150,38 +151,32 @@
     "certsBadgeSub": "Clinical Nutrition"
   },
   "testimonials": {
-    "title": "Client Reviews",
+    "title": "Client Testimonials",
     "subtitle": "Reviews from our satisfied clients",
     "items": [
       {
-        "name": "Aynur M.",
-        "text": "With Dr. Leyla's plan, I lost 8 kg in 2 months. I never felt hungry and my energy levels skyrocketed!",
-        "result": "-8 kg / 2 months",
+        "name": "Murad Arif (Composer, Producer)",
+        "text": "We have worked with Leyla for 5 years, and during this time, I lost nearly 30kg without any surgery. I reached my desired level, and most importantly, I never regained the lost weight!",
+        "result": "-30 kg (No surgery)",
+        "avatar": "👨"
+      },
+      {
+        "name": "Nermine",
+        "text": "I suffered from obesity for 9-10 years. I could no longer walk and struggled a lot. I tried many places but got no results. Thanks to Leyla's personalized program, I lost exactly 30 kg in 4 months! I feel so light now.",
+        "result": "-30 kg / 4 months",
         "avatar": "👩"
       },
       {
-        "name": "Sevinc H.",
-        "text": "I didn't believe in the no-exercise weight loss method at first, but I lost 5 kg in 6 weeks. So grateful!",
-        "result": "-5 kg / 6 weeks",
-        "avatar": "👩‍🦱"
-      },
-      {
-        "name": "Rena A.",
-        "text": "I was very anxious during pregnancy. Dr. Leyla prepared a special plan for me, and I felt great throughout.",
-        "result": "Pregnancy plan",
-        "avatar": "🤰"
-      },
-      {
-        "name": "Konul S.",
-        "text": "After the anti-aging nutrition plan, I feel 10 years younger. My skin has also improved significantly.",
-        "result": "Anti-aging program",
-        "avatar": "👩‍🦳"
-      },
-      {
-        "name": "Lala T.",
-        "text": "I lost 12 kg in 3 months. The plan was completely personalized, even my family noticed the difference!",
-        "result": "-12 kg / 3 months",
+        "name": "Gunay",
+        "text": "I am so happy because this was my first diet and I lost 7 kilos in 1 month. Since I have Hashimoto's disease, I could only lose 1-2 kilos at most before. But thanks to Leyla's special approach, I achieved this success!",
+        "result": "-7 kg / 1 month",
         "avatar": "👩‍🦰"
+      },
+      {
+        "name": "Ravane (54 years old)",
+        "text": "I was very hopeless when starting the program. For 2 years, I did very strict sugar-free, carb-free diets and sports, but couldn't even lose 1 kg. I also suffered from severe allergies and itching. But 1 month later, the itching decreased, I lost 10 kilos, and 20 cm of fat broke down!",
+        "result": "-10 kg / 1 month",
+        "avatar": "👩‍🦳"
       }
     ]
   },
@@ -263,20 +258,26 @@
     "goalPlaceholder": "Select..."
   },
   "book": {
-    "title": "The Secret of Weight — The Key to Slimness",
-    "subtitle": "Bestselling book by Dr. Leyla Zülfüqarlı",
-    "description": "This bestselling book in Azerbaijan reveals the secrets of exercise-free weight loss, personalized diet planning, proper hydration management and forming healthy eating habits. Also available as a special bundle with detox tea.",
-    "orderWhatsApp": "Order via WhatsApp",
-    "orderBakuBook": "Buy on BakuBookCenter",
-    "orderAlinino": "Buy on Alinino.az",
+    "pdfNotice": "Attention: These books are currently available in PDF format only (E-book).",
+    "title1": "The Secret of Obesity - The Key to Weight Loss",
+    "title2": "Eat Healthy, Lose Weight!",
+    "author": "Leyla Zulfuqarli",
+    "description1": "Based on my years of experience and scientific research, this book reveals the most important secrets of losing weight and having a healthy body. How to lose weight without exercise or starving? The answer is in this book.",
+    "description2": "One of Leyla Zulfuqarli's first and most famous books. Practical tips on the core principles of healthy eating, body rejuvenation, and maintaining your shape for life.",
+    "bestseller": "BESTSELLER",
+    "orderWhatsApp": "Order PDF",
     "features": {
       "f1": "Exercise-free weight loss method",
-      "f2": "Personalized diet plans",
-      "f3": "Detox tea bundle",
-      "f4": "Hydration schedule charts"
+      "f2": "Speeding up metabolism",
+      "f3": "Proper food combinations",
+      "f4": "Practical tips and sample menus"
     },
-    "badge": "2nd Book",
-    "author": "Dietitian Dr. Leyla Zülfüqarlı"
+    "features2": {
+      "f1": "Basics of healthy nutrition",
+      "f2": "Breaking bad habits",
+      "f3": "Cell-level cleansing",
+      "f4": "Detox recipes"
+    }
   },
   "login": {
     "title": "Log In",

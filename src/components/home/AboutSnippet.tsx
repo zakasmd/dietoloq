@@ -15,7 +15,7 @@ export default function AboutSnippet() {
   const highlights = [
     { icon: '⏱️', val: '13+', label: t('experience') },
     { icon: '🏅', val: '50+', label: t('certificates') },
-    { icon: '👤', val: '2000+', label: t('clients') },
+    { icon: '👤', val: '1000+', label: t('clients') },
   ];
 
   return (
