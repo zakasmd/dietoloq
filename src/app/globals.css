@@ -108,6 +108,9 @@
   ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
 }
 
+/* HARD OVERFLOW FIX - outside @layer, cannot be overridden by Tailwind */
+html, body { overflow-x: hidden !important; max-width: 100% !important; }
+
 /* ==========================================
    COMPONENTS (Moved out of @layer to ensure load)
    ========================================== */

@@ -80,26 +80,28 @@ export default function ResultsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ padding: '1.75rem', borderRadius: 'var(--radius)', overflow: 'hidden' }}
+                style={{ borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
               >
                 {r.video && (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', background: '#000' }}>
-                    <iframe 
-                      src={r.video} 
-                      title="YouTube video player" 
-                      frameBorder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  <div style={{ width: '100%', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', background: '#000', flexShrink: 0 }}>
+                    <iframe
+                      src={r.video}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
-                      style={{ width: '100%', height: '100%', border: 'none' }}
+                      style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
                     />
                   </div>
                 )}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
-                  <span style={{ fontSize: '0.75rem', background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))', padding: '0.35rem 0.85rem', borderRadius: 20, fontWeight: 600 }}>{r.goal}</span>
+                <div style={{ padding: '1.25rem 1.75rem 1.75rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
+                    <span style={{ fontSize: '0.75rem', background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))', padding: '0.35rem 0.85rem', borderRadius: 20, fontWeight: 600 }}>{r.goal}</span>
+                  </div>
+                  <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--foreground))', lineHeight: 1.4, margin: 0 }}>
+                    {r.title}
+                  </h3>
                 </div>
-                <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.2rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.5rem', lineHeight: 1.4 }}>
-                  {r.title}
-                </h3>
               </motion.div>
             ))}
           </div>

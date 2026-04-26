@@ -40,11 +40,11 @@ export default function TestimonialSlider() {
             <motion.div
               key={current}
               className={`glass ${styles.card}`}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              style={{ willChange: 'transform, opacity' }}
+              style={{ willChange: 'opacity' }}
             >
               <div className={styles.quoteIcon}>"</div>
               <p className={styles.text}>{items[current].text}</p>
