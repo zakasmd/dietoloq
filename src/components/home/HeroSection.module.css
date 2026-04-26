@@ -119,14 +119,14 @@
   align-items: center;
   padding: 2rem;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .imageContainer {
   position: relative;
   z-index: 1;
   width: 380px;
-  height: 480px;
+  height: 380px;
   border-radius: 50%;
   padding: 8px;
   background: hsl(150 40% 10% / 0.65);
@@ -144,15 +144,15 @@
   object-position: top center;
 }
 
-/* Neon Rings */
+/* Neon Rings — now inside imageContainer, sized relative to it */
 .neonRing1, .neonRing2 {
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
   border-radius: 50%;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
   will-change: transform;
   border: 1px solid transparent;
@@ -316,7 +316,7 @@
   .statDivider { display: none; }
   .ctaGroup { justify-content: center; width: 100%; }
 
-  /* imageWrapper MUST be square so rings (border-radius:50%) form a circle */
+  /* imageWrapper MUST be square so floatCards are contained */
   .imageWrapper {
     width: 300px;
     height: 300px;
@@ -325,12 +325,12 @@
     flex-shrink: 0;
   }
 
-  /* Rings: place INSIDE the 300x300 wrapper (not outside) so they appear as circles */
+  /* Rings are inside imageContainer (260x260), -15px inset = 290x290 circle */
   .neonRing1, .neonRing2 {
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
   }
 
   .imageContainer {
@@ -354,15 +354,8 @@
   .statLabel { font-size: 0.6rem; }
   /* Keep square for circle ring on smallest phones */
   .imageWrapper {
-    width: 260px;
-    height: 260px;
-  }
-  /* Rings inside 260x260 wrapper */
-  .neonRing1, .neonRing2 {
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
+    width: 280px;
+    height: 280px;
   }
   .imageContainer {
     width: 220px;

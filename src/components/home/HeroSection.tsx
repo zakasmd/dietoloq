@@ -91,9 +91,6 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            {/* Neon Rings */}
-            <div className={styles.neonRing1} />
-            <div className={styles.neonRing2} />
 
             {/* Floating Card 1 */}
             <motion.div
@@ -128,6 +125,9 @@ export default function HeroSection() {
             </motion.div>
 
             <div className={styles.imageContainer}>
+              {/* Neon Rings — inside imageContainer for perfect circular shape */}
+              <div className={styles.neonRing1} />
+              <div className={styles.neonRing2} />
               <Image
                 src="/images/dietolog-1.jpg"
                 alt="Leyla Zülfüqarlı — Peşəkar Dietoloq"
