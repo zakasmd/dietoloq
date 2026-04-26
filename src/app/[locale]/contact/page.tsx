@@ -24,7 +24,7 @@ export default function ContactPage() {
 
   const contactItems = [
     { icon: Phone, label: t('phoneLabel'), value: '+994 50 668 48 23', href: 'tel:+994506684823', color: 'hsl(var(--primary))' },
-    { icon: Mail, label: t('emailLabel'), value: 'leyla@dietoloq.az', href: 'mailto:leyla@dietoloq.az', color: 'hsl(var(--accent))' },
+    { icon: Mail, label: t('emailLabel'), value: 'diyetoloq.leyla@yandex.com', href: 'mailto:diyetoloq.leyla@yandex.com', color: 'hsl(var(--accent))' },
     { icon: MapPin, label: t('addressLabel'), value: t('addressValue'), href: null, color: 'hsl(var(--secondary))' },
   ];
 

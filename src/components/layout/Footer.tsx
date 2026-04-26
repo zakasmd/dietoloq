@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li className={styles.contactItem}>
                 <Mail size={16} className={styles.contactIcon} />
-                <a href="mailto:leyla@dietoloq.az" className={styles.footerLink}>leyla@dietoloq.az</a>
+                <a href="mailto:diyetoloq.leyla@yandex.com" className={styles.footerLink}>diyetoloq.leyla@yandex.com</a>
               </li>
               <li className={styles.contactItem}>
                 <MapPin size={16} className={styles.contactIcon} />
