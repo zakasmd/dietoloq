@@ -76,7 +76,7 @@ export default function ResultsPage() {
       {/* Results grid */}
       <section style={{ padding: '0 0 5rem' }}>
         <div className="container">
-          <div className="responsive-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '2rem', alignItems: 'start' }}>
             {results.map((r, i) => (
               <motion.div
                 key={r.id}
@@ -88,7 +88,7 @@ export default function ResultsPage() {
                 style={{ padding: '1.75rem', borderRadius: 'var(--radius)', overflow: 'hidden' }}
               >
                 {r.video ? (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '440px', overflow: 'hidden', position: 'relative' }}>
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative' }}>
                     <iframe 
                       src={r.video} 
                       title="YouTube video player" 
@@ -99,8 +99,8 @@ export default function ResultsPage() {
                     />
                   </div>
                 ) : r.img ? (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '440px', overflow: 'hidden', position: 'relative' }}>
-                    <img src={r.img} alt="Before After Result" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', backgroundColor: '#000' }}>
+                    <img src={r.img} alt="Before After Result" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </div>
                 ) : null}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
