@@ -419,3 +419,48 @@ html, body { overflow-x: hidden !important; max-width: 100% !important; }
   .animate-spin-slow { animation: spin-slow 12s linear infinite; }
   .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 }
+
+/* ==========================================
+   GLOBAL MOBILE SAFETY RULES
+   ========================================== */
+@media (max-width: 640px) {
+  /* Prevent any element from exceeding viewport width */
+  * {
+    max-width: 100%;
+  }
+  /* Allow images and iframes to shrink */
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Smaller buttons on mobile */
+  .btn-lg {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+  /* Prevent long words from overflowing */
+  p, h1, h2, h3, h4, h5, h6, span, li, a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  /* Container padding on very small screens */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  .container {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+}
