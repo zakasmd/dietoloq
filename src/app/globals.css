@@ -56,6 +56,10 @@
     --shadow-glass: 0 8px 32px hsl(165 60% 5% / 0.5), inset 0 1px 0 hsl(150 100% 80% / 0.1);
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html, body {
     width: 100%;
     max-width: 100%;
