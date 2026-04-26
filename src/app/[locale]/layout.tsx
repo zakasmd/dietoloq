@@ -14,6 +14,13 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -69,7 +76,7 @@ export default async function LocaleLayout({
           'radial-gradient(ellipse 50% 45% at 50% 50%, hsl(165 50% 5%) 0%, hsl(165 45% 7%) 100%)',
         ].join(','),
       }} />
-      <div style={{ position: 'relative', width: '100%', overflowX: 'clip', overflowY: 'visible', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ position: 'relative', width: '100%', overflowX: 'hidden', overflowY: 'visible', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
         <main style={{ flex: 1, width: '100%' }}>{children}</main>
         <Footer />
