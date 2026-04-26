@@ -125,8 +125,8 @@
 .imageContainer {
   position: relative;
   z-index: 1;
-  width: min(380px, 80vw);
-  height: min(480px, 60vw);
+  width: 380px;
+  height: 480px;
   border-radius: 50%;
   padding: 8px;
   background: hsl(150 40% 10% / 0.65);
@@ -286,7 +286,7 @@
   .imageWrapper {
     max-width: 440px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .floatCard1 { left: 0; top: 5%; }
@@ -314,12 +314,15 @@
   .statDivider { display: none; }
   .ctaGroup { justify-content: center; width: 100%; }
 
-  .imageContainer {
-    width: min(280px, 75vw);
-    height: min(360px, 55vw);
+  /* Keep image as a proper circle - width MUST equal height */
+  .imageWrapper {
+    padding: 0.5rem 0;
   }
 
-  .imageWrapper { padding: 0.5rem; }
+  .imageContainer {
+    width: 260px;
+    height: 260px;
+  }
 
   /* Hide floating cards on small mobile to prevent overflow */
   .floatCard { display: none; }
@@ -336,7 +339,7 @@
   .statValue { font-size: 1.1rem; }
   .statLabel { font-size: 0.6rem; }
   .imageContainer {
-    width: min(240px, 70vw);
-    height: min(300px, 50vw);
+    width: 220px;
+    height: 220px;
   }
 }

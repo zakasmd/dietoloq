@@ -109,7 +109,12 @@
 }
 
 /* HARD OVERFLOW FIX - outside @layer, cannot be overridden by Tailwind */
-html, body { overflow-x: hidden !important; max-width: 100% !important; }
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  /* Prevent horizontal swipe on Android Chrome */
+  touch-action: pan-y !important;
+}
 
 /* ==========================================
    COMPONENTS (Moved out of @layer to ensure load)
@@ -424,14 +429,12 @@ html, body { overflow-x: hidden !important; max-width: 100% !important; }
    GLOBAL MOBILE SAFETY RULES
    ========================================== */
 @media (max-width: 640px) {
-  /* Prevent any element from exceeding viewport width */
-  * {
+  /* Only target specific potentially overflowing elements */
+  img, video, table {
     max-width: 100%;
   }
-  /* Allow images and iframes to shrink */
-  img, iframe, video {
+  iframe {
     max-width: 100%;
-    height: auto;
   }
   /* Smaller buttons on mobile */
   .btn-lg {
@@ -439,7 +442,7 @@ html, body { overflow-x: hidden !important; max-width: 100% !important; }
     font-size: 1rem;
   }
   /* Prevent long words from overflowing */
-  p, h1, h2, h3, h4, h5, h6, span, li, a {
+  p, h1, h2, h3, h4, h5, h6, li {
     overflow-wrap: break-word;
     word-break: break-word;
   }
