@@ -45,8 +45,8 @@ export default function ContactPage() {
       </section>
 
       <section style={{ padding: '0 0 5rem' }}>
-        <div className="container">
-          <div className="responsive-grid" style={{ alignItems: 'start', gap: '3rem' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'start' }}>
             {/* Left: contact info */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

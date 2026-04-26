@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import styles from './FAQSection.module.css';
 
@@ -47,19 +47,17 @@ export default function FAQSection() {
                   <ChevronDown size={20} />
                 </span>
               </button>
-              <AnimatePresence>
-                {openIndex === i && (
-                  <motion.div
-                    className={styles.answer}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  >
-                    <div className={styles.answerInner}>{item.a}</div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateRows: openIndex === i ? '1fr' : '0fr',
+                  transition: 'grid-template-rows 0.3s ease-in-out',
+                }}
+              >
+                <div className={styles.answer}>
+                  <div className={styles.answerInner}>{item.a}</div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

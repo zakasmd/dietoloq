@@ -180,20 +180,19 @@ export default function BookPage() {
             transition={{ duration: 0.6 }}
             style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}
           >
-            <div className="eyebrow" style={{ marginBottom: '1.5rem' }}>🍵 Detoks Paketi</div>
+            <div className="eyebrow" style={{ marginBottom: '1.5rem' }}>{t('detoxEyebrow')}</div>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1.25rem' }}>
-              Kitab + Detoks Çayı Paketi
+              {t('detoxTitle')}
             </h2>
             <p style={{ fontSize: '1rem', color: 'hsl(var(--foreground)/0.7)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-              &quot;Köklüyün sirri - Arıqlığın açarı&quot; kitabını xüsusi detoks çayı ilə birlikdə əldə edin.
-              Bu paket orqanizmi təmizləmək və arıqlama prosesini sürətləndirmək üçün ideal həldir.
+              {t('detoxDesc')}
             </p>
 
             <div className="responsive-grid" style={{ marginBottom: '2.5rem' }}>
               {[
-                { emoji: '📖', title: 'Bestseller Kitab', desc: 'İdmansız arıqlama metodunun bütün sirləri' },
-                { emoji: '🍵', title: 'Detoks Çayı', desc: 'Orqanizmi təmizləyən xüsusi çay qarışığı' },
-                { emoji: '📋', title: 'Qidalanma Planı', desc: 'Kitabla birgə istifadə üçün fərdi plan' },
+                { emoji: '📖', title: t('detoxFeature1Title'), desc: t('detoxFeature1Desc') },
+                { emoji: '🍵', title: t('detoxFeature2Title'), desc: t('detoxFeature2Desc') },
+                { emoji: '📋', title: t('detoxFeature3Title'), desc: t('detoxFeature3Desc') },
               ].map((item) => (
                 <div key={item.title} className="glass hover-glow" style={{ textAlign: 'center', padding: '2rem 1.5rem', borderRadius: 'var(--radius)' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{item.emoji}</div>
@@ -210,7 +209,7 @@ export default function BookPage() {
               className="btn btn-whatsapp btn-lg"
               style={{ display: 'inline-flex' }}
             >
-              <WaIcon /> Detoks Paketi Sifariş et
+              <WaIcon /> {t('detoxOrderBtn')}
             </a>
           </motion.div>
         </div>
@@ -221,11 +220,11 @@ export default function BookPage() {
         <div className="container">
           <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)', boxSizing: 'border-box' }}>
             <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
-              Fərdi konsultasiya da almaq istəyirsiniz?
+              {t('ctaTitle')}
             </h2>
-            <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>Kitabla birlikdə fərdi diet planı alın</p>
+            <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>{t('ctaDesc')}</p>
             <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg" style={{ boxSizing: 'border-box' }}>
-              Konsultasiyaya qeydiyyat
+              {t('ctaBtn')}
             </Link>
           </div>
         </div>

@@ -277,7 +277,20 @@
       "f2": "Breaking bad habits",
       "f3": "Cell-level cleansing",
       "f4": "Detox recipes"
-    }
+    },
+    "detoxEyebrow": "🍵 Detox Package",
+    "detoxTitle": "Book + Detox Tea Package",
+    "detoxDesc": "Get 'The Secret of Obesity - The Key to Weight Loss' book along with a special detox tea. This package is the ideal solution to cleanse the body and speed up the weight loss process.",
+    "detoxFeature1Title": "Bestseller Book",
+    "detoxFeature1Desc": "All the secrets of the no-exercise weight loss method",
+    "detoxFeature2Title": "Detox Tea",
+    "detoxFeature2Desc": "A special tea blend that cleanses the body",
+    "detoxFeature3Title": "Nutrition Plan",
+    "detoxFeature3Desc": "A personalized plan to use along with the book",
+    "detoxOrderBtn": "Order Detox Package",
+    "ctaTitle": "Do you also want a personal consultation?",
+    "ctaDesc": "Get a personalized diet plan along with the book",
+    "ctaBtn": "Register for Consultation"
   },
   "login": {
     "title": "Log In",

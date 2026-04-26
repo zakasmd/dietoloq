@@ -114,12 +114,12 @@
   },
   "about": {
     "title": "Haqqında",
-    "shortBio": "Leyla Zülfüqarlı – 13+ il təcrübəyə malik peşəkar dietoloq, Azərbaycanda ilk diyet kitablarının müəllifi. ARB, İTV kimi kanallarda çıxışları, beynəlxalq (İsveçrə, Almaniya) detoks proqramları və 2000-dən çox məmnun müştərisi ilə sağlam qidalanmada fərq yaradır.",
+    "shortBio": "Leyla Zülfüqarlı – 13+ il təcrübəyə malik peşəkar dietoloq, Azərbaycanda ilk diyet kitablarının müəllifi. ARB, İTV kimi kanallarda çıxışları, beynəlxalq (İsveçrə, Almaniya) detoks proqramları və 1000-dən çox məmnun müştərisi ilə sağlam qidalanmada fərq yaradır.",
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
     "clients": "Müştəri",
-    "bio1": "Peşəkar dietoloq kimi 13 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 2000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
+    "bio1": "Peşəkar dietoloq kimi 13 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 1000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
     "bio2": "Leyla Zülfüqarlı təkcə Azərbaycanda deyil, Almaniya, İsveçrə, Türkiyə, Slovakiya, İngiltərə və Fransa kimi ölkələrdə də fəaliyyət göstərmişdir. O, İsveçrədə azərbaycanlılar üçün xüsusi olaraq 7 günlük detoks və arıqlama proqramları təşkil edərək, insanların həm bədən, həm də ruh sağlamlığını artırmışdır.",
     "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, ARB, AzTV, Lider TV, SHOW TV və İctimai TV (İTV) kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
     "bio4": "\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Leyla xanım, həm idmansız arıqlamaq istəyənlərə, həm də kökəlmək istəyən şəxslərə fərdi yanaşma ilə kömək edir. O, Youtube, Facebook və Instagram kanallarında mütəmadi olaraq maarifləndirici videolar paylaşır. Ona müraciət edən hər bir şəxs yüksək məmnuniyyətlə və sağlam şəkildə onun yanından ayrılır.",
@@ -142,9 +142,10 @@
       "Ukrayna Dietologiya Təhsili",
       "İstanbul Medipol Universiteti - Beslenme və Diyet",
       "Klinik Nutrisyologiya Sertifikatı",
-      "Qocalmanın Qarşısının Alınması Sertifikatı",
       "İdmansız Arıqlama Metodu Sertifikatı"
     ],
+    "certsBadgeTitle": "Sertifikatlı",
+    "certsBadgeSub": "Beynəlxalq dərəcəli",
     "socialTitle": "Sosial media",
     "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent",
     "certsBadgeTitle": "50+ Sertifikat",
@@ -277,7 +278,20 @@
       "f2": "Zərərli vərdişlərdən qurtulma",
       "f3": "Hüceyrə səviyyəsində təmizlənmə",
       "f4": "Detoks reseptləri"
-    }
+    },
+    "detoxEyebrow": "🍵 Detoks Paketi",
+    "detoxTitle": "Kitab + Detoks Çayı Paketi",
+    "detoxDesc": "\"Köklüyün sirri - Arıqlığın açarı\" kitabını xüsusi detoks çayı ilə birlikdə əldə edin. Bu paket orqanizmi təmizləmək və arıqlama prosesini sürətləndirmək üçün ideal həldir.",
+    "detoxFeature1Title": "Bestseller Kitab",
+    "detoxFeature1Desc": "İdmansız arıqlama metodunun bütün sirləri",
+    "detoxFeature2Title": "Detoks Çayı",
+    "detoxFeature2Desc": "Orqanizmi təmizləyən xüsusi çay qarışığı",
+    "detoxFeature3Title": "Qidalanma Planı",
+    "detoxFeature3Desc": "Kitabla birgə istifadə üçün fərdi plan",
+    "detoxOrderBtn": "Detoks Paketi Sifariş et",
+    "ctaTitle": "Fərdi konsultasiya da almaq istəyirsiniz?",
+    "ctaDesc": "Kitabla birlikdə fərdi diet planı alın",
+    "ctaBtn": "Konsultasiyaya qeydiyyat"
   },
   "login": {
     "title": "Daxil ol",
