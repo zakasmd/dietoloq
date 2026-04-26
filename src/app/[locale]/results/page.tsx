@@ -8,7 +8,17 @@ export default function ResultsPage() {
   const t = useTranslations('results');
   const locale = useLocale();
 
-  const results = [
+  const results: Array<{
+    id: number;
+    name: string;
+    before: string;
+    after: string;
+    lost: string;
+    duration: string;
+    goal: string;
+    img?: string;
+    video?: string;
+  }> = [
     { id: 1, name: 'S.T.', before: '160 kq', after: '130 kq', lost: '-30 kq', duration: `4 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-2.jpg.jpg' },
     { id: 2, name: 'A.K.', before: '94 kq', after: '79 kq', lost: '-15 kq', duration: `2.5 ${t('monthLabel')}`, goal: t('goalLoss'), img: '/images/results/result-1.jpg.jpg' },
     { id: 3, name: 'A.M.', before: '78 kq', after: '65 kq', lost: '-13 kq', duration: `3 ${t('monthLabel')}`, goal: t('goalLoss') },
@@ -77,11 +87,22 @@ export default function ResultsPage() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 style={{ padding: '1.75rem', borderRadius: 'var(--radius)', overflow: 'hidden' }}
               >
-                {r.img && (
-                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '280px', overflow: 'hidden', position: 'relative' }}>
+                {r.video ? (
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '440px', overflow: 'hidden', position: 'relative' }}>
+                    <iframe 
+                      src={r.video} 
+                      title="YouTube video player" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      allowFullScreen
+                      style={{ width: '100%', height: '100%', border: 'none' }}
+                    />
+                  </div>
+                ) : r.img ? (
+                  <div style={{ margin: '-1.75rem -1.75rem 1.25rem', height: '440px', overflow: 'hidden', position: 'relative' }}>
                     <img src={r.img} alt="Before After Result" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                )}
+                ) : null}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: '50%',

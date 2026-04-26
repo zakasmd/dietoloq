@@ -20,18 +20,6 @@ export default function BookPage() {
       {/* ─── Hero / Intro ─── */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
-          <div style={{
-            background: 'hsl(var(--primary)/0.1)',
-            padding: '1rem',
-            borderRadius: 'var(--radius)',
-            textAlign: 'center',
-            marginBottom: '3rem',
-            color: 'hsl(var(--primary))',
-            fontWeight: 500
-          }}>
-            {t('pdfNotice')}
-          </div>
-
           <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
             {/* Book 1 */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem', alignItems: 'center' }}>
