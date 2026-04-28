@@ -173,10 +173,10 @@ export default function CoursesAdminPage() {
         </button>
       </div>
 
-      {/* New/Edit Course Form */}
-      {showCourseForm && (
+      {/* New Course Form (at the top) */}
+      {showCourseForm && !editCourseId && (
         <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)' }}>
-          <h3 style={{ marginBottom: '1.25rem' }}>{editCourseId ? 'Kursu Redaktə Et' : 'Yeni Kurs Əlavə Et'}</h3>
+          <h3 style={{ marginBottom: '1.25rem' }}>Yeni Kurs Əlavə Et</h3>
           {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
           <form onSubmit={courseForm.handleSubmit(createOrUpdateCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div className="form-group">
@@ -192,11 +192,11 @@ export default function CoursesAdminPage() {
               <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
             </div>
             <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <input type="checkbox" id="is_public" {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
-              <label htmlFor="is_public" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
+              <input type="checkbox" id="is_public_new" {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+              <label htmlFor="is_public_new" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button type="submit" className="btn btn-primary">{editCourseId ? 'Yadda Saxla' : 'Kurs yarat'}</button>
+              <button type="submit" className="btn btn-primary">Kurs yarat</button>
               <button type="button" className="btn btn-outline" onClick={() => { setShowCourseForm(false); setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
             </div>
           </form>
@@ -205,109 +205,146 @@ export default function CoursesAdminPage() {
 
       {/* Course List */}
       {courses.map((course) => (
-        <div key={course.id} style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', overflow: 'hidden' }}>
-          <div style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <div style={{ flex: 1 }}>
-              <h3 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{course.title_az}</h3>
-              <p style={{ fontSize: '0.825rem', color: 'var(--color-text-muted)' }}>{course.description_az?.slice(0, 80)}...</p>
-              {course.price && <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '0.25rem' }}>{course.price} AZN</div>}
-            </div>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <button className="btn btn-outline btn-sm" onClick={() => { 
-                setEditCourseId(course.id);
-                setShowCourseForm(true);
-                courseForm.reset({
-                  title_az: course.title_az,
-                  description_az: course.description_az || '',
-                  price: course.price?.toString() || '',
-                  is_public: course.is_public
-                });
-              }}>
-                Redaktə
-              </button>
-              <button className="btn btn-outline btn-sm" onClick={() => togglePublish(course.id, course.is_published)}>
-                {course.is_published ? 'Gizlə' : 'Aktiv et'}
-              </button>
-              <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: course.id, title: course.title_az }); fetchAllowedUsers(course.id); }} title="Girişi olan istifadəçilər">
-                <UsersIcon size={14} />
-              </button>
-              <button className="btn btn-primary btn-sm" onClick={() => setAddLessonFor(course.id)}>
-                <Plus size={14} /> Dərs
-              </button>
-              <button
-                className="btn btn-sm"
-                style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer' }}
-                onClick={() => deleteCourse(course.id)}
-              >
-                <Trash2 size={14} />
-              </button>
-              <button
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)', padding: '0.25rem' }}
-                onClick={() => toggleExpand(course.id)}
-              >
-                {expandedCourse === course.id ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Lesson Add Form */}
-          {addLessonFor === course.id && (
-            <div style={{ padding: '1.25rem 1.5rem', background: 'var(--color-primary-50)', borderTop: '1px solid var(--color-primary-200)' }}>
-              <h4 style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Yeni Dərs Əlavə Et</h4>
+        <div key={course.id}>
+          {editCourseId === course.id ? (
+            /* Inline Edit Form */
+            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)', marginBottom: '1.5rem' }}>
+              <h3 style={{ marginBottom: '1.25rem' }}>Kursu Redaktə Et</h3>
               {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
-              <form onSubmit={lessonForm.handleSubmit(addLesson)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                <div className="form-group" style={{ gridColumn: '1 / -1' }}>
-                  <label className="form-label">Dərsin adı *</label>
-                  <input {...lessonForm.register('title_az', { required: true })} className="form-input" placeholder="Dərs 1: Giriş" />
+              <form onSubmit={courseForm.handleSubmit(createOrUpdateCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div className="form-group">
+                  <label className="form-label">Kursun adı (AZ) *</label>
+                  <input {...courseForm.register('title_az', { required: true })} className="form-input" placeholder="Kursun adı" />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">YouTube URL</label>
-                  <input {...lessonForm.register('youtube_url')} className="form-input" placeholder="https://youtube.com/watch?v=..." />
+                  <label className="form-label">Açıqlama (AZ)</label>
+                  <textarea {...courseForm.register('description_az')} className="form-input form-textarea" placeholder="Kursun açıqlaması" />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">PDF URL (opsional)</label>
-                  <input {...lessonForm.register('pdf_url')} className="form-input" placeholder="https://..." />
+                  <label className="form-label">Qiymət (AZN)</label>
+                  <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Sıra №</label>
-                  <input {...lessonForm.register('order_index')} className="form-input" type="number" defaultValue="1" />
+                <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <input type="checkbox" id={`is_public_edit_${course.id}`} {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+                  <label htmlFor={`is_public_edit_${course.id}`} className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Müddət (dəqiqə)</label>
-                  <input {...lessonForm.register('duration_minutes')} className="form-input" type="number" placeholder="30" />
-                </div>
-                <div style={{ gridColumn: '1 / -1', display: 'flex', gap: '0.75rem' }}>
-                  <button type="submit" className="btn btn-primary btn-sm">Dərs yarat</button>
-                  <button type="button" className="btn btn-outline btn-sm" onClick={() => setAddLessonFor(null)}>Ləğv et</button>
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <button type="submit" className="btn btn-primary">Yadda Saxla</button>
+                  <button type="button" className="btn btn-outline" onClick={() => { setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
                 </div>
               </form>
             </div>
-          )}
-
-          {/* Lessons */}
-          {expandedCourse === course.id && (
-            <div style={{ borderTop: '1px solid var(--color-border-light)' }}>
-              {(lessons[course.id] || []).map((lesson, i) => (
-                <div key={lesson.id} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.875rem 1.5rem', borderBottom: i < (lessons[course.id].length - 1) ? '1px solid var(--color-border-light)' : 'none', background: i % 2 === 0 ? 'white' : 'var(--color-bg)' }}>
-                  <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--color-primary-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary)', flexShrink: 0 }}>
-                    {lesson.order_index}
+          ) : (
+            /* Course Card */
+            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', overflow: 'hidden', marginBottom: '1rem' }}>
+              <div style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1rem' }}>{course.title_az}</h3>
+                    {course.is_public && <span style={{ fontSize: '0.65rem', background: '#DCFCE7', color: '#166534', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 700 }}>AÇIQ</span>}
                   </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{lesson.title_az}</div>
-                    {lesson.youtube_url && <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>▶ {lesson.youtube_url.slice(0, 50)}...</div>}
-                  </div>
-                  {lesson.pdf_url && <span style={{ fontSize: '0.72rem', color: '#059669', background: '#DCFCE7', padding: '0.2rem 0.5rem', borderRadius: 6 }}>PDF</span>}
+                  <p style={{ fontSize: '0.825rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>{course.description_az?.slice(0, 80)}...</p>
+                  {course.price && <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '0.25rem' }}>{course.price} AZN</div>}
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <button className="btn btn-outline btn-sm" onClick={() => { 
+                    setEditCourseId(course.id);
+                    setShowCourseForm(true); // Ensure form state is true but editId is what matters
+                    setAddLessonFor(null); // Close lesson form if open
+                    courseForm.reset({
+                      title_az: course.title_az,
+                      description_az: course.description_az || '',
+                      price: course.price?.toString() || '',
+                      is_public: course.is_public
+                    });
+                  }}>
+                    Redaktə
+                  </button>
+                  <button className="btn btn-outline btn-sm" onClick={() => togglePublish(course.id, course.is_published)}>
+                    {course.is_published ? 'Gizlə' : 'Aktiv et'}
+                  </button>
+                  <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: course.id, title: course.title_az }); fetchAllowedUsers(course.id); }} title="Girişi olan istifadəçilər">
+                    <UsersIcon size={14} />
+                  </button>
+                  <button className="btn btn-primary btn-sm" onClick={() => { setAddLessonFor(course.id); setEditCourseId(null); }}>
+                    <Plus size={14} /> Dərs
+                  </button>
                   <button
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#EF4444', padding: '0.25rem', flexShrink: 0 }}
-                    onClick={() => deleteLesson(lesson.id, course.id)}
-                    title="Dərsi sil"
+                    className="btn btn-sm"
+                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer' }}
+                    onClick={() => deleteCourse(course.id)}
                   >
-                    <Trash2 size={15} />
+                    <Trash2 size={14} />
+                  </button>
+                  <button
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)', padding: '0.25rem' }}
+                    onClick={() => toggleExpand(course.id)}
+                  >
+                    {expandedCourse === course.id ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                   </button>
                 </div>
-              ))}
-              {(!lessons[course.id] || !lessons[course.id].length) && (
-                <div style={{ padding: '1.5rem', textAlign: 'center', color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>Hələ dərs yoxdur</div>
+              </div>
+
+              {/* Lesson Add Form */}
+              {addLessonFor === course.id && (
+                <div style={{ padding: '1.25rem 1.5rem', background: 'var(--color-primary-50)', borderTop: '1px solid var(--color-primary-200)' }}>
+                  <h4 style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Yeni Dərs Əlavə Et</h4>
+                  {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
+                  <form onSubmit={lessonForm.handleSubmit(addLesson)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <div className="form-group" style={{ gridColumn: '1 / -1' }}>
+                      <label className="form-label">Dərsin adı *</label>
+                      <input {...lessonForm.register('title_az', { required: true })} className="form-input" placeholder="Dərs 1: Giriş" />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">YouTube URL</label>
+                      <input {...lessonForm.register('youtube_url')} className="form-input" placeholder="https://youtube.com/watch?v=..." />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">PDF URL (opsional)</label>
+                      <input {...lessonForm.register('pdf_url')} className="form-input" placeholder="https://..." />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Sıra №</label>
+                      <input {...lessonForm.register('order_index')} className="form-input" type="number" defaultValue="1" />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Müddət (dəqiqə)</label>
+                      <input {...lessonForm.register('duration_minutes')} className="form-input" type="number" placeholder="30" />
+                    </div>
+                    <div style={{ gridColumn: '1 / -1', display: 'flex', gap: '0.75rem' }}>
+                      <button type="submit" className="btn btn-primary btn-sm">Dərs yarat</button>
+                      <button type="button" className="btn btn-outline btn-sm" onClick={() => setAddLessonFor(null)}>Ləğv et</button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
+              {/* Lessons */}
+              {expandedCourse === course.id && (
+                <div style={{ borderTop: '1px solid var(--color-border-light)' }}>
+                  {(lessons[course.id] || []).map((lesson, i) => (
+                    <div key={lesson.id} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.875rem 1.5rem', borderBottom: i < (lessons[course.id].length - 1) ? '1px solid var(--color-border-light)' : 'none', background: i % 2 === 0 ? 'white' : 'var(--color-bg)' }}>
+                      <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--color-primary-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary)', flexShrink: 0 }}>
+                        {lesson.order_index}
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{lesson.title_az}</div>
+                        {lesson.youtube_url && <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>▶ {lesson.youtube_url.slice(0, 50)}...</div>}
+                      </div>
+                      {lesson.pdf_url && <span style={{ fontSize: '0.72rem', color: '#059669', background: '#DCFCE7', padding: '0.2rem 0.5rem', borderRadius: 6 }}>PDF</span>}
+                      <button
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#EF4444', padding: '0.25rem', flexShrink: 0 }}
+                        onClick={() => deleteLesson(lesson.id, course.id)}
+                        title="Dərsi sil"
+                      >
+                        <Trash2 size={15} />
+                      </button>
+                    </div>
+                  ))}
+                  {(!lessons[course.id] || !lessons[course.id].length) && (
+                    <div style={{ padding: '1.5rem', textAlign: 'center', color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>Hələ dərs yoxdur</div>
+                  )}
+                </div>
               )}
             </div>
           )}
