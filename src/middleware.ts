@@ -7,8 +7,8 @@ const intlMiddleware = createMiddleware(routing);
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip for dashboard and admin
-  if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin')) {
+  // Skip for dashboard, admin and api
+  if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin') || pathname.startsWith('/api')) {
     return NextResponse.next();
   }
 
