@@ -8,12 +8,13 @@ type User = { id: string; email: string; full_name: string | null; phone: string
 export default function UsersAdminPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [courses, setCourses] = useState<{ id: string; title_az: string }[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [grantModal, setGrantModal] = useState<{ userId: string; userName: string; type: 'course' | 'material' } | null>(null);
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedMaterial, setSelectedMaterial] = useState('');
   const [materials, setMaterials] = useState<{ id: string; title_az: string }[]>([]);
   const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
   const [showBulkModal, setShowBulkModal] = useState<'course' | 'material' | null>(null);
-  const [grantModal, setGrantModal] = useState<{ userId: string; userName: string; type: 'course' | 'material' } | null>(null);
 
   useEffect(() => {
     const load = async () => {
@@ -117,14 +118,14 @@ export default function UsersAdminPage() {
                       className="btn btn-primary btn-sm"
                       onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'course' })}
                     >
-                      🎓 Kurs
+                      🎓 Kurs ver
                     </button>
                     <button
                       className="btn btn-outline btn-sm"
                       style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }}
                       onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'material' })}
                     >
-                      📄 PDF
+                      📄 PDF ver
                     </button>
                   </div>
                 </td>
