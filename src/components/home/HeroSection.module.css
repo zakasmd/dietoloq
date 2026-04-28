@@ -58,13 +58,15 @@
 
 /* Stats */
 .statsRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   align-items: center;
-  gap: 0.5rem;
+  justify-content: start;
+  gap: 0;
   background: hsl(var(--glass-bg));
   backdrop-filter: blur(24px);
   border-radius: var(--radius);
-  padding: 1.25rem 2.5rem;
+  padding: 1.25rem 2rem 1.25rem 1.5rem;
   box-shadow: var(--shadow-glass);
   border: 1px solid hsl(var(--glass-border));
   width: fit-content;
