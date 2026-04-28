@@ -100,7 +100,7 @@
     "beforeLabel": "Əvvəl",
     "afterLabel": "Sonra",
     "viewAll": "Hamısına bax",
-    "statsClients": "1000+ Uğurlu müştəri",
+    "statsClients": "8000+ Uğurlu müştəri",
     "statsSatisfy": "100% Məmnuniyyət dərəcəsi",
     "statsLoss": "Ortalama çəki itkisi",
     "statsTime": "İlk nəticə müddəti",
@@ -159,10 +159,6 @@
       "Klinik Nutrisyologiya Sertifikatı",
       "İdmansız Arıqlama Metodu Sertifikatı"
     ],
-    "certsBadgeTitle": "Sertifikatlı",
-    "certsBadgeSub": "Beynəlxalq dərəcəli",
-    "socialTitle": "Sosial media",
-    "socialDesc": "YouTube kanalı və sosial mediada qidalanma, sağlam həyat mövzularında maarifləndirici kontent",
     "certsBadgeTitle": "55+ Sertifikat",
     "certsBadgeSub": "Klinik Nutrisyon"
   },
@@ -228,7 +224,7 @@
     "whatsapp": "WhatsApp-da yaz"
   },
   "footer": {
-    "subTitle": "Peşəkar Diyetoloq",
+    "subTitle": "Peşəkar DİYETOLOQ",
     "copyrightName": "Leyla Zülfüqarlı",
     "description": "Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
