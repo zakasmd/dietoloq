@@ -42,14 +42,13 @@ export default function DashboardPage() {
       
       const purchasedIds = (userCourses || []).map(uc => uc.course_id);
 
-      // Fetch courses: (Purchased OR Public) AND Published
+      // Fetch courses
       const { data: coursesData } = await supabase
         .from('courses')
-        .select('id, title_az, description_az, is_public, is_published')
-        .eq('is_published', true);
+        .select('id, title_az, description_az, is_public, is_published');
 
-      // Filter in JS to handle OR logic easily without complex Supabase filter strings
-      const visibleCourses = (coursesData || []).filter(c => c.is_public || purchasedIds.includes(c.id));
+      // Filter in JS: Show if (Public) OR (Purchased AND Published)
+      const visibleCourses = (coursesData || []).filter(c => c.is_public || (purchasedIds.includes(c.id) && c.is_published));
       setCourses(visibleCourses);
 
       // Get lesson counts per course

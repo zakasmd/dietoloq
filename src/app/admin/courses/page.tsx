@@ -60,7 +60,7 @@ export default function CoursesAdminPage() {
     } else {
       const { data: newCourse, error } = await supabase
         .from('courses')
-        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public })
+        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public, is_published: true })
         .select()
         .single();
       if (error) { setFormError(error.message); return; }
