@@ -8,8 +8,9 @@ export async function POST(request: Request) {
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!botToken || !chatId) {
-      console.error('Telegram credentials missing');
-      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+      const missing = !botToken ? 'TELEGRAM_BOT_TOKEN' : 'TELEGRAM_CHAT_ID';
+      console.error(`Telegram configuration error: ${missing} is missing`);
+      return NextResponse.json({ error: `Server configuration error: ${missing} missing` }, { status: 500 });
     }
 
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -21,15 +22,19 @@ export async function POST(request: Request) {
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Telegram API error:', errorData);
-      return NextResponse.json({ error: 'Failed to send Telegram message' }, { status: 502 });
+      console.error('Telegram API error:', data);
+      return NextResponse.json({ 
+        error: 'Failed to send Telegram message', 
+        details: data.description || 'Unknown error' 
+      }, { status: 502 });
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Telegram notification error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Internal server error', details: error.message }, { status: 500 });
   }
 }

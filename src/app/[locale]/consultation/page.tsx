@@ -51,7 +51,14 @@ export default function ConsultationPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg }),
-      }).catch(() => {}); // Səssiz xəta, formu dayandırmasın
+      })
+      .then(async (res) => {
+        if (!res.ok) {
+          const err = await res.json();
+          console.error('Telegram notification error:', err.details || err.error);
+        }
+      })
+      .catch((err) => console.error('Telegram fetch failed:', err));
 
       setSuccess(true);
       reset();
