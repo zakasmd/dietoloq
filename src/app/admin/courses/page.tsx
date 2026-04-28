@@ -54,13 +54,24 @@ export default function CoursesAdminPage() {
     if (editCourseId) {
       const { error } = await supabase
         .from('courses')
-        .update({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public })
+        .update({ 
+          title_az: data.title_az, 
+          description_az: data.description_az, 
+          price: data.price ? parseFloat(data.price) : null, 
+          is_public: !!data.is_public 
+        })
         .eq('id', editCourseId);
       if (error) { setFormError(error.message); return; }
     } else {
       const { data: newCourse, error } = await supabase
         .from('courses')
-        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public, is_published: true })
+        .insert({ 
+          title_az: data.title_az, 
+          description_az: data.description_az, 
+          price: data.price ? parseFloat(data.price) : null, 
+          is_public: !!data.is_public, 
+          is_published: true 
+        })
         .select()
         .single();
       if (error) { setFormError(error.message); return; }
@@ -202,6 +213,18 @@ export default function CoursesAdminPage() {
               {course.price && <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '0.25rem' }}>{course.price} AZN</div>}
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <button className="btn btn-outline btn-sm" onClick={() => { 
+                setEditCourseId(course.id);
+                setShowCourseForm(true);
+                courseForm.reset({
+                  title_az: course.title_az,
+                  description_az: course.description_az || '',
+                  price: course.price?.toString() || '',
+                  is_public: course.is_public
+                });
+              }}>
+                Redaktə
+              </button>
               <button className="btn btn-outline btn-sm" onClick={() => togglePublish(course.id, course.is_published)}>
                 {course.is_published ? 'Gizlə' : 'Aktiv et'}
               </button>
