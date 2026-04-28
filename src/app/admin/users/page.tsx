@@ -8,38 +8,45 @@ type User = { id: string; email: string; full_name: string | null; phone: string
 export default function UsersAdminPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [courses, setCourses] = useState<{ id: string; title_az: string }[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [grantModal, setGrantModal] = useState<{ userId: string; userName: string } | null>(null);
   const [selectedCourse, setSelectedCourse] = useState('');
+  const [selectedMaterial, setSelectedMaterial] = useState('');
+  const [materials, setMaterials] = useState<{ id: string; title_az: string }[]>([]);
   const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
-  const [showBulkModal, setShowBulkModal] = useState(false);
+  const [showBulkModal, setShowBulkModal] = useState<'course' | 'material' | null>(null);
+  const [grantModal, setGrantModal] = useState<{ userId: string; userName: string; type: 'course' | 'material' } | null>(null);
 
   useEffect(() => {
     const load = async () => {
       const supabase = createClient();
-      const [{ data: profiles }, { data: coursesData }] = await Promise.all([
+      const [{ data: profiles }, { data: coursesData }, { data: materialsData }] = await Promise.all([
         supabase.from('profiles').select('*').order('created_at', { ascending: false }),
         supabase.from('courses').select('id, title_az'),
+        supabase.from('materials').select('id, title_az'),
       ]);
       setUsers(profiles || []);
       setCourses(coursesData || []);
+      setMaterials(materialsData || []);
       setLoading(false);
     };
     load();
   }, []);
 
   const handleBulkGrant = async () => {
-    if (!selectedCourse || selectedUserIds.length === 0) return;
+    if (selectedUserIds.length === 0) return;
     const supabase = createClient();
-    const records = selectedUserIds.map(uid => ({
-      user_id: uid,
-      course_id: selectedCourse
-    }));
-    const { error } = await supabase.from('user_courses').upsert(records);
-    if (error) { alert('Xəta: ' + error.message); return; }
-    setShowBulkModal(false);
+    
+    if (showBulkModal === 'course' && selectedCourse) {
+      const records = selectedUserIds.map(uid => ({ user_id: uid, course_id: selectedCourse }));
+      await supabase.from('user_courses').upsert(records);
+      alert('Kurslar verildi!');
+    } else if (showBulkModal === 'material' && selectedMaterial) {
+      const records = selectedUserIds.map(uid => ({ user_id: uid, material_id: selectedMaterial }));
+      await supabase.from('user_materials').upsert(records);
+      alert('PDF-lər verildi!');
+    }
+
+    setShowBulkModal(null);
     setSelectedUserIds([]);
-    alert(`${selectedUserIds.length} istifadəçiyə kurs verildi!`);
   };
 
   const deleteSelectedUsers = async () => {
@@ -105,12 +112,21 @@ export default function UsersAdminPage() {
                   {new Date(user.created_at).toLocaleDateString('az-AZ')}
                 </td>
                 <td style={{ padding: '1rem 1.25rem' }}>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email })}
-                  >
-                    🎓 Kurs ver
-                  </button>
+                  <div style={{ display: 'flex', gap: '0.4rem' }}>
+                    <button
+                      className="btn btn-primary btn-sm"
+                      onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'course' })}
+                    >
+                      🎓 Kurs
+                    </button>
+                    <button
+                      className="btn btn-outline btn-sm"
+                      style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }}
+                      onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'material' })}
+                    >
+                      📄 PDF
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -126,7 +142,8 @@ export default function UsersAdminPage() {
         <div style={{ position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', background: 'var(--color-primary)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius-full)', boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '1.5rem', zIndex: 100 }}>
           <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>{selectedUserIds.length} istifadəçi seçilib</span>
           <div style={{ display: 'flex', gap: '0.75rem' }}>
-            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal(true)}>Kurs Ver</button>
+            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal('course')}>Toplu Kurs</button>
+            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal('material')}>Toplu PDF</button>
             <button className="btn btn-sm" style={{ background: '#FECACA', color: '#991B1B', border: 'none' }} onClick={deleteSelectedUsers}>Sil</button>
             <button className="btn btn-sm" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none' }} onClick={() => setSelectedUserIds([])}>Ləğv Et</button>
           </div>
@@ -137,51 +154,59 @@ export default function UsersAdminPage() {
       {showBulkModal && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
           <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '420px' }}>
-            <h3 style={{ marginBottom: '0.5rem' }}>Toplu Kurs Ver</h3>
+            <h3 style={{ marginBottom: '0.5rem' }}>{showBulkModal === 'course' ? 'Toplu Kurs Ver' : 'Toplu PDF Ver'}</h3>
             <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: '1.25rem' }}>
-              Seçilmiş <strong>{selectedUserIds.length}</strong> istifadəçiyə kurs verin.
+              Seçilmiş <strong>{selectedUserIds.length}</strong> istifadəçiyə {showBulkModal === 'course' ? 'kurs' : 'PDF'} verin.
             </p>
-            <select
-              value={selectedCourse}
-              onChange={(e) => setSelectedCourse(e.target.value)}
-              className="form-input form-select"
-              style={{ marginBottom: '1.25rem' }}
-            >
-              <option value="">Kurs seçin...</option>
-              {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
-            </select>
+            {showBulkModal === 'course' ? (
+              <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} className="form-input form-select" style={{ marginBottom: '1.25rem' }}>
+                <option value="">Kurs seçin...</option>
+                {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
+              </select>
+            ) : (
+              <select value={selectedMaterial} onChange={(e) => setSelectedMaterial(e.target.value)} className="form-input form-select" style={{ marginBottom: '1.25rem' }}>
+                <option value="">PDF seçin...</option>
+                {materials.map((m) => <option key={m.id} value={m.id}>{m.title_az}</option>)}
+              </select>
+            )}
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={handleBulkGrant}>Kursları Ver</button>
-              <button className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setShowBulkModal(false)}>Ləğv et</button>
+              <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={handleBulkGrant}>Təsdiqlə</button>
+              <button className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setShowBulkModal(null)}>Ləğv et</button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Grant Course Modal (Single) */}
+      {/* Grant Modal (Single) */}
       {grantModal && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
           <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '420px' }}>
-            <h3 style={{ marginBottom: '0.5rem' }}>Kurs ver</h3>
+            <h3 style={{ marginBottom: '0.5rem' }}>{grantModal.type === 'course' ? 'Kurs ver' : 'PDF ver'}</h3>
             <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: '1.25rem' }}>
-              <strong>{grantModal.userName}</strong> istifadəçisinə kurs ver
+              <strong>{grantModal.userName}</strong> istifadəçisinə {grantModal.type === 'course' ? 'kurs' : 'PDF'} ver
             </p>
-            <select
-              value={selectedCourse}
-              onChange={(e) => setSelectedCourse(e.target.value)}
-              className="form-input form-select"
-              style={{ marginBottom: '1.25rem' }}
-            >
-              <option value="">Kurs seçin...</option>
-              {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
-            </select>
+            {grantModal.type === 'course' ? (
+              <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} className="form-input form-select" style={{ marginBottom: '1.25rem' }}>
+                <option value="">Kurs seçin...</option>
+                {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
+              </select>
+            ) : (
+              <select value={selectedMaterial} onChange={(e) => setSelectedMaterial(e.target.value)} className="form-input form-select" style={{ marginBottom: '1.25rem' }}>
+                <option value="">PDF seçin...</option>
+                {materials.map((m) => <option key={m.id} value={m.id}>{m.title_az}</option>)}
+              </select>
+            )}
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={async () => {
                 const supabase = createClient();
-                await supabase.from('user_courses').upsert({ user_id: grantModal.userId, course_id: selectedCourse });
+                if (grantModal.type === 'course') {
+                  await supabase.from('user_courses').upsert({ user_id: grantModal.userId, course_id: selectedCourse });
+                } else {
+                  await supabase.from('user_materials').upsert({ user_id: grantModal.userId, material_id: selectedMaterial });
+                }
                 setGrantModal(null);
-                alert('Kurs verildi!');
-              }}>Kurs ver</button>
+                alert('Giriş verildi!');
+              }}>Təsdiqlə</button>
               <button className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setGrantModal(null)}>Ləğv et</button>
             </div>
           </div>

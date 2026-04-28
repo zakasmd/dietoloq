@@ -24,6 +24,8 @@ export default function BooksAdminPage() {
   const [success, setSuccess] = useState<string | null>(null);
   const [showUsersFor, setShowUsersFor] = useState<{ id: string; title: string } | null>(null);
   const [allowedUsers, setAllowedUsers] = useState<{ user_id: string; profiles: { full_name: string | null; email: string } }[]>([]);
+  const [searchEmail, setSearchEmail] = useState('');
+  const [searchResult, setSearchResult] = useState<{ id: string; full_name: string | null; email: string } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => { fetchMaterials(); }, []);
@@ -124,6 +126,25 @@ export default function BooksAdminPage() {
     setAllowedUsers((prev) => prev.filter((u) => u.user_id !== userId));
   };
 
+  const findUserByEmail = async () => {
+    if (!searchEmail.includes('@')) return;
+    const supabase = createClient();
+    const { data, error } = await supabase.from('profiles').select('id, full_name, email').eq('email', searchEmail.trim()).single();
+    if (error) { alert('İstifadəçi tapılmadı'); return; }
+    setSearchResult(data);
+  };
+
+  const grantAccess = async () => {
+    if (!searchResult || !showUsersFor) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('user_materials').upsert({ user_id: searchResult.id, material_id: showUsersFor.id });
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setSearchEmail('');
+    setSearchResult(null);
+    fetchAllowedUsers(showUsersFor.id);
+    alert('Giriş verildi!');
+  };
+
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
 
   return (
@@ -219,8 +240,22 @@ export default function BooksAdminPage() {
               <h3 style={{ fontSize: '1.1rem' }}>Materiala giriş icazəsi olanlar</h3>
               <button onClick={() => setShowUsersFor(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}><X size={20} /></button>
             </div>
-            <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1rem' }}>Fayl: <strong>{showUsersFor.title}</strong></p>
+            <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>Fayl: <strong>{showUsersFor.title}</strong></p>
             
+            <div style={{ marginBottom: '1.5rem', padding: '1rem', background: '#F1F5F9', borderRadius: '12px' }}>
+              <label className="form-label" style={{ fontSize: '0.8rem' }}>Yeni istifadəçi əlavə et (Email)</label>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <input value={searchEmail} onChange={(e) => setSearchEmail(e.target.value)} className="form-input" placeholder="email@example.com" />
+                <button onClick={findUserByEmail} className="btn btn-primary btn-sm">Tap</button>
+              </div>
+              {searchResult && (
+                <div style={{ marginTop: '0.75rem', padding: '0.75rem', background: 'white', borderRadius: '8px', border: '1px solid var(--color-primary-200)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ fontSize: '0.85rem' }}>{searchResult.full_name} ({searchResult.email})</div>
+                  <button onClick={grantAccess} className="btn btn-primary btn-sm" style={{ padding: '0.2rem 0.5rem' }}>Əlavə et</button>
+                </div>
+              )}
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {allowedUsers.map((u) => (
                 <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
