@@ -11,6 +11,8 @@ export default function UsersAdminPage() {
   const [loading, setLoading] = useState(true);
   const [grantModal, setGrantModal] = useState<{ userId: string; userName: string } | null>(null);
   const [selectedCourse, setSelectedCourse] = useState('');
+  const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
+  const [showBulkModal, setShowBulkModal] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -26,16 +28,39 @@ export default function UsersAdminPage() {
     load();
   }, []);
 
-  const grantCourse = async () => {
-    if (!grantModal || !selectedCourse) return;
-    const supabase = createClient();
-    await supabase.from('user_courses').upsert({
-      user_id: grantModal.userId,
-      course_id: selectedCourse,
-    });
-    setGrantModal(null);
-    setSelectedCourse('');
     alert('Kurs verildi!');
+  };
+
+  const handleBulkGrant = async () => {
+    if (!selectedCourse || selectedUserIds.length === 0) return;
+    const supabase = createClient();
+    const records = selectedUserIds.map(uid => ({
+      user_id: uid,
+      course_id: selectedCourse
+    }));
+    const { error } = await supabase.from('user_courses').upsert(records);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setShowBulkModal(false);
+    setSelectedUserIds([]);
+    alert(`${selectedUserIds.length} istifadəçiyə kurs verildi!`);
+  };
+
+  const deleteSelectedUsers = async () => {
+    if (!confirm(`${selectedUserIds.length} istifadəçini silmək istədiyinizə əminsiniz?`)) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('profiles').delete().in('id', selectedUserIds);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setUsers(prev => prev.filter(u => !selectedUserIds.includes(u.id)));
+    setSelectedUserIds([]);
+  };
+
+  const toggleSelect = (id: string) => {
+    setSelectedUserIds(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedUserIds.length === users.length) setSelectedUserIds([]);
+    else setSelectedUserIds(users.map(u => u.id));
   };
 
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
@@ -51,6 +76,9 @@ export default function UsersAdminPage() {
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ background: 'var(--color-bg-secondary)', borderBottom: '1px solid var(--color-border)' }}>
+              <th style={{ padding: '0.875rem 1.25rem', width: 40 }}>
+                <input type="checkbox" checked={selectedUserIds.length === users.length && users.length > 0} onChange={toggleSelectAll} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+              </th>
               {['Ad Soyad', 'E-mail', 'Telefon', 'Rol', 'Qeydiyyat', 'Əməliyyat'].map((h) => (
                 <th key={h} style={{ padding: '0.875rem 1.25rem', textAlign: 'left', fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-text-muted)', fontFamily: 'var(--font-heading)', whiteSpace: 'nowrap' }}>{h}</th>
               ))}
@@ -58,7 +86,10 @@ export default function UsersAdminPage() {
           </thead>
           <tbody>
             {users.map((user, i) => (
-              <tr key={user.id} style={{ borderBottom: i < users.length - 1 ? '1px solid var(--color-border-light)' : 'none' }}>
+              <tr key={user.id} style={{ borderBottom: i < users.length - 1 ? '1px solid var(--color-border-light)' : 'none', background: selectedUserIds.includes(user.id) ? 'var(--color-primary-50)' : 'transparent' }}>
+                <td style={{ padding: '1rem 1.25rem' }}>
+                  <input type="checkbox" checked={selectedUserIds.includes(user.id)} onChange={() => toggleSelect(user.id)} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+                </td>
                 <td style={{ padding: '1rem 1.25rem', fontWeight: 600, fontSize: '0.875rem' }}>
                   {user.full_name || '—'}
                 </td>
@@ -93,7 +124,44 @@ export default function UsersAdminPage() {
         )}
       </div>
 
-      {/* Grant Course Modal */}
+      {/* Bulk Actions Floating Bar */}
+      {selectedUserIds.length > 0 && (
+        <div style={{ position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', background: 'var(--color-primary)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius-full)', boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '1.5rem', zIndex: 100 }}>
+          <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>{selectedUserIds.length} istifadəçi seçilib</span>
+          <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal(true)}>Kurs Ver</button>
+            <button className="btn btn-sm" style={{ background: '#FECACA', color: '#991B1B', border: 'none' }} onClick={deleteSelectedUsers}>Sil</button>
+            <button className="btn btn-sm" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none' }} onClick={() => setSelectedUserIds([])}>Ləğv Et</button>
+          </div>
+        </div>
+      )}
+
+      {/* Bulk Grant Modal */}
+      {showBulkModal && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
+          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '420px' }}>
+            <h3 style={{ marginBottom: '0.5rem' }}>Toplu Kurs Ver</h3>
+            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: '1.25rem' }}>
+              Seçilmiş <strong>{selectedUserIds.length}</strong> istifadəçiyə kurs verin.
+            </p>
+            <select
+              value={selectedCourse}
+              onChange={(e) => setSelectedCourse(e.target.value)}
+              className="form-input form-select"
+              style={{ marginBottom: '1.25rem' }}
+            >
+              <option value="">Kurs seçin...</option>
+              {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
+            </select>
+            <div style={{ display: 'flex', gap: '0.75rem' }}>
+              <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={handleBulkGrant}>Kursları Ver</button>
+              <button className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setShowBulkModal(false)}>Ləğv et</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Grant Course Modal (Single) */}
       {grantModal && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
           <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '420px' }}>
@@ -111,7 +179,12 @@ export default function UsersAdminPage() {
               {courses.map((c) => <option key={c.id} value={c.id}>{c.title_az}</option>)}
             </select>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={grantCourse}>Kurs ver</button>
+              <button className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }} onClick={async () => {
+                const supabase = createClient();
+                await supabase.from('user_courses').upsert({ user_id: grantModal.userId, course_id: selectedCourse });
+                setGrantModal(null);
+                alert('Kurs verildi!');
+              }}>Kurs ver</button>
               <button className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setGrantModal(null)}>Ləğv et</button>
             </div>
           </div>

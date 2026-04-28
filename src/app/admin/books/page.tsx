@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { Upload, Trash2, FileText, Globe, Lock } from 'lucide-react';
+import { Upload, Trash2, FileText, Globe, Lock, Users as UsersIcon, X, UserMinus } from 'lucide-react';
 
 type Material = {
   id: string;
@@ -22,6 +22,8 @@ export default function BooksAdminPage() {
   const [isPublic, setIsPublic] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const [showUsersFor, setShowUsersFor] = useState<{ id: string; title: string } | null>(null);
+  const [allowedUsers, setAllowedUsers] = useState<{ user_id: string; profiles: { full_name: string | null; email: string } }[]>([]);
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => { fetchMaterials(); }, []);
@@ -105,6 +107,23 @@ export default function BooksAdminPage() {
     setMaterials((prev) => prev.map((m) => m.id === id ? { ...m, is_public: !current } : m));
   };
 
+  const fetchAllowedUsers = async (materialId: string) => {
+    const supabase = createClient();
+    const { data } = await supabase
+      .from('user_materials')
+      .select('user_id, profiles(full_name, email)')
+      .eq('material_id', materialId);
+    setAllowedUsers(data as any || []);
+  };
+
+  const revokeAccess = async (userId: string, materialId: string) => {
+    if (!confirm('Bu istifadəçinin girişini ləğv etmək istədiyinizə əminsiniz?')) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('user_materials').delete().eq('user_id', userId).eq('material_id', materialId);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setAllowedUsers((prev) => prev.filter((u) => u.user_id !== userId));
+  };
+
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
 
   return (
@@ -173,6 +192,9 @@ export default function BooksAdminPage() {
               <button className="btn btn-outline btn-sm" onClick={() => togglePublic(m.id, m.is_public)}>
                 {m.is_public ? 'Məhdudlaşdır' : 'Açıq Et'}
               </button>
+              <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: m.id, title: m.title_az }); fetchAllowedUsers(m.id); }} title="Girişi olan istifadəçilər">
+                <UsersIcon size={14} />
+              </button>
               <button
                 className="btn btn-sm"
                 style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
@@ -189,6 +211,37 @@ export default function BooksAdminPage() {
           </div>
         )}
       </div>
+      {/* Allowed Users Modal */}
+      {showUsersFor && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
+          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem' }}>Materiala giriş icazəsi olanlar</h3>
+              <button onClick={() => setShowUsersFor(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}><X size={20} /></button>
+            </div>
+            <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1rem' }}>Fayl: <strong>{showUsersFor.title}</strong></p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {allowedUsers.map((u) => (
+                <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{u.profiles?.full_name || 'Adsız'}</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{u.profiles?.email}</div>
+                  </div>
+                  <button 
+                    onClick={() => revokeAccess(u.user_id, showUsersFor.id)}
+                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer' }}
+                    title="Girişi ləğv et"
+                  >
+                    <UserMinus size={16} />
+                  </button>
+                </div>
+              ))}
+              {allowedUsers.length === 0 && <div style={{ textAlign: 'center', padding: '2rem', color: '#94A3B8', fontSize: '0.875rem' }}>Bu materiala hələ heç kimə giriş icazəsi verilməyib.</div>}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
