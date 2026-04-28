@@ -34,33 +34,38 @@ export default function DashboardPage() {
       if (!session) return;
       setUser(session.user);
 
-      // Get user's courses
+      // Get user's purchased course IDs
       const { data: userCourses } = await supabase
         .from('user_courses')
         .select('course_id')
         .eq('user_id', session.user.id);
+      
+      const purchasedIds = (userCourses || []).map(uc => uc.course_id);
 
-      if (userCourses?.length) {
-        const ids = userCourses.map((uc: { course_id: string }) => uc.course_id);
-        const { data: coursesData } = await supabase
-          .from('courses')
-          .select('id, title_az, description_az')
-          .in('id', ids);
-        setCourses(coursesData || []);
+      // Fetch courses: (Purchased OR Public) AND Published
+      const { data: coursesData } = await supabase
+        .from('courses')
+        .select('id, title_az, description_az, is_public, is_published')
+        .eq('is_published', true);
 
-        // Get lesson counts per course
-        const counts: Record<string, number> = {};
-        await Promise.all(
-          (coursesData || []).map(async (c: Course) => {
-            const { count } = await supabase
-              .from('lessons')
-              .select('*', { count: 'exact', head: true })
-              .eq('course_id', c.id);
-            counts[c.id] = count || 0;
-          })
-        );
-        setLessonCounts(counts);
-      }
+      // Filter in JS to handle OR logic easily without complex Supabase filter strings
+      const visibleCourses = (coursesData || []).filter(c => c.is_public || purchasedIds.includes(c.id));
+      setCourses(visibleCourses);
+
+      // Get lesson counts per course
+      const counts: Record<string, number> = {};
+      await Promise.all(
+        visibleCourses.map(async (c: Course) => {
+          const { count } = await supabase
+            .from('lessons')
+            .select('*', { count: 'exact', head: true })
+            .eq('course_id', c.id)
+            .eq('is_published', true);
+          counts[c.id] = count || 0;
+        })
+      );
+      setLessonCounts(counts);
+      
       setLoading(false);
     };
     load();
