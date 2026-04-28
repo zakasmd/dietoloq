@@ -78,6 +78,18 @@ export default function UsersAdminPage() {
       </div>
 
       <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', overflow: 'hidden' }}>
+        {/* Static Bulk Actions Bar (Top) */}
+        <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--color-border-light)', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>
+            {selectedUserIds.length > 0 ? <strong>{selectedUserIds.length} nəfər seçilib</strong> : 'İstifadəçiləri seçin'}
+          </div>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button className="btn btn-primary btn-sm" disabled={selectedUserIds.length === 0} onClick={() => setShowBulkModal('course')}>Toplu Kurs Ver</button>
+            <button className="btn btn-outline btn-sm" disabled={selectedUserIds.length === 0} style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setShowBulkModal('material')}>Toplu PDF Ver</button>
+            <button className="btn btn-sm" disabled={selectedUserIds.length === 0} style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={deleteSelectedUsers}>Toplu Sil</button>
+          </div>
+        </div>
+
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ background: 'var(--color-bg-secondary)', borderBottom: '1px solid var(--color-border)' }}>
@@ -138,18 +150,7 @@ export default function UsersAdminPage() {
         )}
       </div>
 
-      {/* Bulk Actions Floating Bar */}
-      {selectedUserIds.length > 0 && (
-        <div style={{ position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', background: 'var(--color-primary)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius-full)', boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '1.5rem', zIndex: 100 }}>
-          <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>{selectedUserIds.length} istifadəçi seçilib</span>
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
-            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal('course')}>Toplu Kurs</button>
-            <button className="btn btn-sm" style={{ background: 'white', color: 'var(--color-primary)', border: 'none' }} onClick={() => setShowBulkModal('material')}>Toplu PDF</button>
-            <button className="btn btn-sm" style={{ background: '#FECACA', color: '#991B1B', border: 'none' }} onClick={deleteSelectedUsers}>Sil</button>
-            <button className="btn btn-sm" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none' }} onClick={() => setSelectedUserIds([])}>Ləğv Et</button>
-          </div>
-        </div>
-      )}
+      {/* Bulk actions moved to top bar above */}
 
       {/* Bulk Grant Modal */}
       {showBulkModal && (

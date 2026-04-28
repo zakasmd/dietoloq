@@ -111,10 +111,11 @@ export default function BooksAdminPage() {
 
   const fetchAllowedUsers = async (materialId: string) => {
     const supabase = createClient();
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('user_materials')
-      .select('user_id, profiles(full_name, email)')
+      .select('user_id, profiles:user_id(full_name, email)')
       .eq('material_id', materialId);
+    if (error) { console.error(error); return; }
     setAllowedUsers(data as any || []);
   };
 

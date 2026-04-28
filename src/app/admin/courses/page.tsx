@@ -19,6 +19,7 @@ export default function CoursesAdminPage() {
   const [showUsersFor, setShowUsersFor] = useState<{ id: string; title: string } | null>(null);
   const [allowedUsers, setAllowedUsers] = useState<{ user_id: string; profiles: { full_name: string | null; email: string } }[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCourseIds, setSelectedCourseIds] = useState<string[]>([]);
 
   const courseForm = useForm<CourseForm>();
   const lessonForm = useForm<LessonForm>();
@@ -144,10 +145,11 @@ export default function CoursesAdminPage() {
 
   const fetchAllowedUsers = async (courseId: string) => {
     const supabase = createClient();
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('user_courses')
-      .select('user_id, profiles(full_name, email)')
+      .select('user_id, profiles!user_id(full_name, email)')
       .eq('course_id', courseId);
+    if (error) { console.error(error); return; }
     setAllowedUsers(data as any || []);
   };
 
@@ -159,6 +161,24 @@ export default function CoursesAdminPage() {
     setAllowedUsers((prev) => prev.filter((u) => u.user_id !== userId));
   };
 
+  const toggleSelect = (id: string) => {
+    setSelectedCourseIds(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedCourseIds.length === courses.length) setSelectedCourseIds([]);
+    else setSelectedCourseIds(courses.map(c => c.id));
+  };
+
+  const deleteSelectedCourses = async () => {
+    if (!confirm(`${selectedCourseIds.length} kursu silmək istədiyinizə əminsiniz?`)) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('courses').delete().in('id', selectedCourseIds);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setCourses(prev => prev.filter(c => !selectedCourseIds.includes(c.id)));
+    setSelectedCourseIds([]);
+  };
+
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
 
   return (
@@ -168,10 +188,24 @@ export default function CoursesAdminPage() {
           <h1 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>Kurslar İdarəetməsi</h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Kursları və dərsləri idarə edin</p>
         </div>
-        <button className="btn btn-primary" onClick={() => setShowCourseForm(true)}>
-          <Plus size={16} /> Yeni Kurs
-        </button>
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
+          {selectedCourseIds.length > 0 && (
+            <button className="btn btn-sm" style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={deleteSelectedCourses}>
+              <Trash2 size={16} /> Seçilənləri Sil ({selectedCourseIds.length})
+            </button>
+          )}
+          <button className="btn btn-primary" onClick={() => setShowCourseForm(true)}>
+            <Plus size={16} /> Yeni Kurs
+          </button>
+        </div>
       </div>
+
+      {courses.length > 0 && (
+        <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <input type="checkbox" checked={selectedCourseIds.length === courses.length} onChange={toggleSelectAll} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+          <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Hamısını seç</span>
+        </div>
+      )}
 
       {/* New Course Form (at the top) */}
       {showCourseForm && !editCourseId && (
@@ -236,8 +270,11 @@ export default function CoursesAdminPage() {
             </div>
           ) : (
             /* Course Card */
-            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', overflow: 'hidden', marginBottom: '1rem' }}>
-              <div style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: selectedCourseIds.includes(course.id) ? '2px solid var(--color-primary)' : '1px solid var(--color-border-light)', overflow: 'hidden', marginBottom: '1rem', position: 'relative' }}>
+              <div style={{ position: 'absolute', left: '0.75rem', top: '1.25rem' }}>
+                <input type="checkbox" checked={selectedCourseIds.includes(course.id)} onChange={() => toggleSelect(course.id)} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+              </div>
+              <div style={{ padding: '1.25rem 1.5rem 1.25rem 3rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <h3 style={{ fontSize: '1rem' }}>{course.title_az}</h3>
@@ -365,8 +402,8 @@ export default function CoursesAdminPage() {
               {allowedUsers.map((u) => (
                 <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{u.profiles?.full_name || 'Adsız'}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{u.profiles?.email}</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{(u as any).profiles?.full_name || 'Adsız'}</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{(u as any).profiles?.email}</div>
                   </div>
                   <button 
                     onClick={() => revokeAccess(u.user_id, showUsersFor.id)}
