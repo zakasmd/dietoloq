@@ -44,6 +44,9 @@ export default function UsersAdminPage() {
       const records = selectedUserIds.map(uid => ({ user_id: uid, material_id: selectedMaterial }));
       await supabase.from('user_materials').upsert(records);
       alert('PDF-lər verildi!');
+    } else {
+      alert('Zəhmət olmasa bir seçim edin');
+      return;
     }
 
     setShowBulkModal(null);
@@ -72,21 +75,23 @@ export default function UsersAdminPage() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div>
-        <h1 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>İstifadəçilər</h1>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Cəmi: {users.length} istifadəçi</p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+        <div>
+          <h1 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>İstifadəçilər</h1>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Cəmi: {users.length} istifadəçi</p>
+        </div>
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <button className="btn btn-primary btn-sm" onClick={() => selectedUserIds.length ? setShowBulkModal('course') : alert('Zəhmət olmasa, əvvəlcə istifadəçiləri seçin')}>Toplu Kurs Ver</button>
+          <button className="btn btn-outline btn-sm" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => selectedUserIds.length ? setShowBulkModal('material') : alert('Zəhmət olmasa, əvvəlcə istifadəçiləri seçin')}>Toplu PDF Ver</button>
+          <button className="btn btn-sm" style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={() => selectedUserIds.length ? deleteSelectedUsers() : alert('Zəhmət olmasa, əvvəlcə istifadəçiləri seçin')}>Toplu Sil</button>
+        </div>
       </div>
 
       <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', overflow: 'hidden' }}>
-        {/* Static Bulk Actions Bar (Top) */}
-        <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--color-border-light)', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>
-            {selectedUserIds.length > 0 ? <strong>{selectedUserIds.length} nəfər seçilib</strong> : 'İstifadəçiləri seçin'}
-          </div>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <button className="btn btn-primary btn-sm" disabled={selectedUserIds.length === 0} onClick={() => setShowBulkModal('course')}>Toplu Kurs Ver</button>
-            <button className="btn btn-outline btn-sm" disabled={selectedUserIds.length === 0} style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setShowBulkModal('material')}>Toplu PDF Ver</button>
-            <button className="btn btn-sm" disabled={selectedUserIds.length === 0} style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={deleteSelectedUsers}>Toplu Sil</button>
+        <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--color-border-light)', background: '#F8FAFC' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <input type="checkbox" checked={selectedUserIds.length === users.length && users.length > 0} onChange={toggleSelectAll} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+            <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Hamısını seç ({selectedUserIds.length})</span>
           </div>
         </div>
 

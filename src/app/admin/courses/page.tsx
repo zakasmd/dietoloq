@@ -194,11 +194,9 @@ export default function CoursesAdminPage() {
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Kursları və dərsləri idarə edin</p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
-          {selectedCourseIds.length > 0 && (
-            <button className="btn btn-sm" style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={deleteSelectedCourses}>
-              <Trash2 size={16} /> Seçilənləri Sil ({selectedCourseIds.length})
-            </button>
-          )}
+          <button className="btn btn-sm" style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={() => selectedCourseIds.length ? deleteSelectedCourses() : alert('Zəhmət olmasa, əvvəlcə kursları seçin')}>
+            <Trash2 size={16} /> Seçilənləri Sil ({selectedCourseIds.length})
+          </button>
           <button className="btn btn-primary" onClick={() => setShowCourseForm(true)}>
             <Plus size={16} /> Yeni Kurs
           </button>
