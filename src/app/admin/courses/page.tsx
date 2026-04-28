@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { createClient } from '@/lib/supabase/client';
-import { Plus, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Plus, X, ChevronDown, ChevronUp, Trash2 } from 'lucide-react';
 
-type Course = { id: string; title_az: string; description_az: string; price: number | null; is_published: boolean };
+type Course = { id: string; title_az: string; description_az: string; price: number | null; is_published: boolean; is_public: boolean };
 type Lesson = { id: string; course_id: string; title_az: string; youtube_url: string | null; pdf_url: string | null; order_index: number; is_published: boolean };
-type CourseForm = { title_az: string; description_az: string; price: string };
+type CourseForm = { title_az: string; description_az: string; price: string; is_public: boolean };
 type LessonForm = { title_az: string; youtube_url: string; pdf_url: string; order_index: string; duration_minutes: string };
 
 export default function CoursesAdminPage() {
@@ -52,13 +52,13 @@ export default function CoursesAdminPage() {
     if (editCourseId) {
       const { error } = await supabase
         .from('courses')
-        .update({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
+        .update({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public })
         .eq('id', editCourseId);
       if (error) { setFormError(error.message); return; }
     } else {
       const { data: newCourse, error } = await supabase
         .from('courses')
-        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null })
+        .insert({ title_az: data.title_az, description_az: data.description_az, price: data.price ? parseFloat(data.price) : null, is_public: data.is_public })
         .select()
         .single();
       if (error) { setFormError(error.message); return; }
@@ -72,6 +72,22 @@ export default function CoursesAdminPage() {
     setEditCourseId(null);
     courseForm.reset();
     await fetchCourses();
+  };
+
+  const deleteCourse = async (courseId: string) => {
+    if (!confirm('Bu kursu silmək istədiyinizə əminsiniz?')) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('courses').delete().eq('id', courseId);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setCourses((prev) => prev.filter((c) => c.id !== courseId));
+  };
+
+  const deleteLesson = async (lessonId: string, courseId: string) => {
+    if (!confirm('Bu dərsi silmək istədiyinizə əminsiniz?')) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('lessons').delete().eq('id', lessonId);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setLessons((prev) => ({ ...prev, [courseId]: prev[courseId].filter((l) => l.id !== lessonId) }));
   };
 
   const togglePublish = async (courseId: string, current: boolean) => {
@@ -145,6 +161,10 @@ export default function CoursesAdminPage() {
               <label className="form-label">Qiymət (AZN)</label>
               <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
             </div>
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" id="is_public" {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+              <label htmlFor="is_public" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
+            </div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               <button type="submit" className="btn btn-primary">{editCourseId ? 'Yadda Saxla' : 'Kurs yarat'}</button>
               <button type="button" className="btn btn-outline" onClick={() => { setShowCourseForm(false); setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
@@ -168,6 +188,13 @@ export default function CoursesAdminPage() {
               </button>
               <button className="btn btn-primary btn-sm" onClick={() => setAddLessonFor(course.id)}>
                 <Plus size={14} /> Dərs
+              </button>
+              <button
+                className="btn btn-sm"
+                style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer' }}
+                onClick={() => deleteCourse(course.id)}
+              >
+                <Trash2 size={14} />
               </button>
               <button
                 style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)', padding: '0.25rem' }}
@@ -225,6 +252,13 @@ export default function CoursesAdminPage() {
                     {lesson.youtube_url && <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>▶ {lesson.youtube_url.slice(0, 50)}...</div>}
                   </div>
                   {lesson.pdf_url && <span style={{ fontSize: '0.72rem', color: '#059669', background: '#DCFCE7', padding: '0.2rem 0.5rem', borderRadius: 6 }}>PDF</span>}
+                  <button
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#EF4444', padding: '0.25rem', flexShrink: 0 }}
+                    onClick={() => deleteLesson(lesson.id, course.id)}
+                    title="Dərsi sil"
+                  >
+                    <Trash2 size={15} />
+                  </button>
                 </div>
               ))}
               {(!lessons[course.id] || !lessons[course.id].length) && (

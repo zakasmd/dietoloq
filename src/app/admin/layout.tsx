@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
-import { LayoutDashboard, Users, BookOpen, MessageSquare, LogOut, Menu, X, ChevronRight, ShieldCheck } from 'lucide-react';
+import { LayoutDashboard, Users, BookOpen, MessageSquare, LogOut, Menu, X, ChevronRight, ShieldCheck, FileUp } from 'lucide-react';
 import styles from './AdminLayout.module.css';
 
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@dietoloq.az';
@@ -13,6 +13,7 @@ const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/consultations', label: 'Konsultasiyalar', icon: MessageSquare },
   { href: '/admin/courses', label: 'Kurslar', icon: BookOpen },
+  { href: '/admin/books', label: 'PDF Kitablar', icon: FileUp },
   { href: '/admin/users', label: 'İstifadəçilər', icon: Users },
 ];
 
