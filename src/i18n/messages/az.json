@@ -116,7 +116,7 @@
     "case2Goal": "Çəki Artırma",
     "case2Title": "1 aya 5 kilo kökələn pasient dəyişimi!",
     "case3Goal": "Arıqlama prosesi",
-    "case3Title": "30 kiloya yaxın arıqlama nəticəsi! Murad Arif",
+    "case3Title": "3 aya 30 kilo arıqlamaq nəticəsi! Murad Arif",
     "case4Goal": "Yaşlanmaya qarşı proses",
     "case4Title": "Həyat keyfiyyətini artıraraq yaşlanmaya qarşı xüsusi proses",
     "case5Goal": "Selülit Müalicə",
@@ -168,8 +168,8 @@
     "items": [
       {
         "name": "Murad Arif (Bəstəkar, Prodüser)",
-        "text": "5 il ərzində Leyla xanımla çalışdıq və bu müddətdə heç bir əməliyyat olmadan 30 kiloya yaxın çəki itirdim. İstədiyim səviyyəyə gəldim və ən əsası, itirdiyim çəkini bir daha geri almadım!",
-        "result": "-30 kq (Əməliyyatsız)",
+        "text": "Leyla xanımın fərdi proqramı sayəsində 3 aya tam 30 kq arıqladım! Ən əsası isə heç bir əməliyyat olmadan, sağlam şəkildə istədiyim nəticəni əldə etdim və çəkimi qoruyuram.",
+        "result": "-30 kq / 3 ay",
         "avatar": "👨"
       },
       {

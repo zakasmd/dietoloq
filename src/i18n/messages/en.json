@@ -116,7 +116,7 @@
     "case2Goal": "Weight Gain",
     "case2Title": "Change of a patient who gained 5 kg in 1 month!",
     "case3Goal": "Weight Loss Process",
-    "case3Title": "Weight loss result of nearly 30 kg! Murad Arif",
+    "case3Title": "30 kg weight loss result in 3 months! Murad Arif",
     "case4Goal": "Anti-Aging Process",
     "case4Title": "Special anti-aging process by increasing quality of life",
     "case5Goal": "Cellulite Treatment",
@@ -171,8 +171,8 @@
     "items": [
       {
         "name": "Murad Arif (Composer, Producer)",
-        "text": "We have worked with Leyla for 5 years, and during this time, I lost nearly 30kg without any surgery. I reached my desired level, and most importantly, I never regained the lost weight!",
-        "result": "-30 kg (No surgery)",
+        "text": "Thanks to Leyla's personalized program, I lost exactly 30 kg in just 3 months! Most importantly, I achieved this result healthily without any surgery and I'm maintaining my weight.",
+        "result": "-30 kg / 3 months",
         "avatar": "👨"
       },
       {
