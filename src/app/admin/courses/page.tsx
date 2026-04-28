@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { createClient } from '@/lib/supabase/client';
-import { Plus, X, ChevronDown, ChevronUp, Trash2 } from 'lucide-react';
+import { Plus, X, ChevronDown, ChevronUp, Trash2, Users as UsersIcon, UserMinus } from 'lucide-react';
 
 type Course = { id: string; title_az: string; description_az: string; price: number | null; is_published: boolean; is_public: boolean };
 type Lesson = { id: string; course_id: string; title_az: string; youtube_url: string | null; pdf_url: string | null; order_index: number; is_published: boolean };
@@ -16,6 +16,8 @@ export default function CoursesAdminPage() {
   const [expandedCourse, setExpandedCourse] = useState<string | null>(null);
   const [showCourseForm, setShowCourseForm] = useState(false);
   const [addLessonFor, setAddLessonFor] = useState<string | null>(null);
+  const [showUsersFor, setShowUsersFor] = useState<{ id: string; title: string } | null>(null);
+  const [allowedUsers, setAllowedUsers] = useState<{ user_id: string; profiles: { full_name: string | null; email: string } }[]>([]);
   const [loading, setLoading] = useState(true);
 
   const courseForm = useForm<CourseForm>();
@@ -129,6 +131,23 @@ export default function CoursesAdminPage() {
     setExpandedCourse(courseId);
   };
 
+  const fetchAllowedUsers = async (courseId: string) => {
+    const supabase = createClient();
+    const { data } = await supabase
+      .from('user_courses')
+      .select('user_id, profiles(full_name, email)')
+      .eq('course_id', courseId);
+    setAllowedUsers(data as any || []);
+  };
+
+  const revokeAccess = async (userId: string, courseId: string) => {
+    if (!confirm('Bu istifadəçinin girişini ləğv etmək istədiyinizə əminsiniz?')) return;
+    const supabase = createClient();
+    const { error } = await supabase.from('user_courses').delete().eq('user_id', userId).eq('course_id', courseId);
+    if (error) { alert('Xəta: ' + error.message); return; }
+    setAllowedUsers((prev) => prev.filter((u) => u.user_id !== userId));
+  };
+
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
 
   return (
@@ -185,6 +204,9 @@ export default function CoursesAdminPage() {
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
               <button className="btn btn-outline btn-sm" onClick={() => togglePublish(course.id, course.is_published)}>
                 {course.is_published ? 'Gizlə' : 'Aktiv et'}
+              </button>
+              <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: course.id, title: course.title_az }); fetchAllowedUsers(course.id); }} title="Girişi olan istifadəçilər">
+                <UsersIcon size={14} />
               </button>
               <button className="btn btn-primary btn-sm" onClick={() => setAddLessonFor(course.id)}>
                 <Plus size={14} /> Dərs
@@ -269,9 +291,35 @@ export default function CoursesAdminPage() {
         </div>
       ))}
 
-      {!courses.length && (
-        <div style={{ textAlign: 'center', padding: '5rem 2rem', background: 'white', borderRadius: 'var(--radius-2xl)', color: 'var(--color-text-muted)' }}>
-          Hələ kurs yoxdur. Yeni kurs yaradın.
+      {/* Allowed Users Modal */}
+      {showUsersFor && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
+          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem' }}>Giriş icazəsi olanlar</h3>
+              <button onClick={() => setShowUsersFor(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}><X size={20} /></button>
+            </div>
+            <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1rem' }}>Kurs: <strong>{showUsersFor.title}</strong></p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {allowedUsers.map((u) => (
+                <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{u.profiles?.full_name || 'Adsız'}</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{u.profiles?.email}</div>
+                  </div>
+                  <button 
+                    onClick={() => revokeAccess(u.user_id, showUsersFor.id)}
+                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer' }}
+                    title="Girişi ləğv et"
+                  >
+                    <UserMinus size={16} />
+                  </button>
+                </div>
+              ))}
+              {allowedUsers.length === 0 && <div style={{ textAlign: 'center', padding: '2rem', color: '#94A3B8', fontSize: '0.875rem' }}>Bu kursa hələ heç kimə giriş icazəsi verilməyib.</div>}
+            </div>
+          </div>
         </div>
       )}
     </div>
