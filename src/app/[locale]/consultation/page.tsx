@@ -45,7 +45,7 @@ export default function ConsultationPage() {
       }]);
 
       // Telegram bildirişi (Server-side API üzərindən)
-      const msg = `📋 *Yeni Konsultasiya Müraciəti*\n\n👤 Ad: ${data.full_name}\n📞 Telefon: ${data.phone}${data.email ? `\n📧 Email: ${data.email}` : ''}${data.age ? `\n🎂 Yaş: ${data.age}` : ''}\n🎯 Məqsəd: ${data.goal}${data.message ? `\n💬 Qeyd: ${data.message}` : ''}`;
+      const msg = `📋 Yeni Konsultasiya Müraciəti\n\n👤 Ad: ${data.full_name}\n📞 Telefon: ${data.phone}${data.email ? `\n📧 Email: ${data.email}` : ''}${data.age ? `\n🎂 Yaş: ${data.age}` : ''}\n🎯 Məqsəd: ${data.goal}${data.message ? `\n💬 Qeyd: ${data.message}` : ''}`;
       
       fetch('/api/telegram', {
         method: 'POST',

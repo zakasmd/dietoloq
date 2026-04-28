@@ -78,8 +78,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 auto;
+  padding: 0 0.5rem;
 }
 
 .statValue {
