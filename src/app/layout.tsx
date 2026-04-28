@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: 'Leyla Zülfüqarlı | Diyetoloq',
   description: 'Peşəkar diyetoloq Leyla Zülfüqarlı',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/images/logo.jpg',
+    shortcut: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
   },
 };
 
