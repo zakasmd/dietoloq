@@ -113,9 +113,14 @@ export default function BooksAdminPage() {
     const supabase = createClient();
     const { data, error } = await supabase
       .from('user_materials')
-      .select('user_id, profiles:user_id(full_name, email)')
+      .select('user_id, profiles(full_name, email)')
       .eq('material_id', materialId);
-    if (error) { console.error(error); return; }
+    
+    if (error) { 
+      alert('Baza xətası (Giriş siyahısı): ' + error.message);
+      console.error(error); 
+      return; 
+    }
     setAllowedUsers(data as any || []);
   };
 

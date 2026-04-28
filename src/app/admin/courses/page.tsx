@@ -147,9 +147,14 @@ export default function CoursesAdminPage() {
     const supabase = createClient();
     const { data, error } = await supabase
       .from('user_courses')
-      .select('user_id, profiles!user_id(full_name, email)')
+      .select('user_id, profiles(full_name, email)')
       .eq('course_id', courseId);
-    if (error) { console.error(error); return; }
+    
+    if (error) { 
+      alert('Baza xətası (Kurs giriş siyahısı): ' + error.message);
+      console.error(error); 
+      return; 
+    }
     setAllowedUsers(data as any || []);
   };
 
