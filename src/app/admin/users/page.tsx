@@ -28,9 +28,6 @@ export default function UsersAdminPage() {
     load();
   }, []);
 
-    alert('Kurs verildi!');
-  };
-
   const handleBulkGrant = async () => {
     if (!selectedCourse || selectedUserIds.length === 0) return;
     const supabase = createClient();
