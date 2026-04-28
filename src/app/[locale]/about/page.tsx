@@ -20,9 +20,9 @@ export default function AboutPage() {
   const locale = useLocale();
 
   const stats = [
-    { icon: Clock, val: '13+', key: 'experience' },
-    { icon: Award, val: '50+', key: 'certificates' },
-    { icon: Users, val: '1000+', key: 'clients' },
+    { icon: Clock, val: t('experienceVal'), key: 'experience' },
+    { icon: Award, val: t('certificatesVal'), key: 'certificates' },
+    { icon: Users, val: t('clientsVal'), key: 'clients' },
   ] as const;
 
   return (

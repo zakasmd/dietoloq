@@ -44,19 +44,14 @@ export default function ConsultationPage() {
         message: data.message || null,
       }]);
 
-      if (error) throw error;
-
-      // Telegram bildirişi
-      const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
-      const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-      if (botToken && chatId) {
-        const msg = `📋 *Yeni Konsultasiya Müraciəti*\n\n👤 Ad: ${data.full_name}\n📞 Telefon: ${data.phone}${data.email ? `\n📧 Email: ${data.email}` : ''}${data.age ? `\n🎂 Yaş: ${data.age}` : ''}\n🎯 Məqsəd: ${data.goal}${data.message ? `\n💬 Qeyd: ${data.message}` : ''}`;
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: chatId, text: msg, parse_mode: 'Markdown' }),
-        }).catch(() => {}); // Telegram xətası formu dayandırmasın
-      }
+      // Telegram bildirişi (Server-side API üzərindən)
+      const msg = `📋 *Yeni Konsultasiya Müraciəti*\n\n👤 Ad: ${data.full_name}\n📞 Telefon: ${data.phone}${data.email ? `\n📧 Email: ${data.email}` : ''}${data.age ? `\n🎂 Yaş: ${data.age}` : ''}\n🎯 Məqsəd: ${data.goal}${data.message ? `\n💬 Qeyd: ${data.message}` : ''}`;
+      
+      fetch('/api/telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg }),
+      }).catch(() => {}); // Səssiz xəta, formu dayandırmasın
 
       setSuccess(true);
       reset();

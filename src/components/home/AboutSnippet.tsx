@@ -13,9 +13,9 @@ export default function AboutSnippet() {
   const locale = useLocale();
 
   const highlights = [
-    { icon: '⏱️', val: '13+', label: t('experience') },
-    { icon: '🏅', val: '50+', label: t('certificates') },
-    { icon: '👤', val: '1000+', label: t('clients') },
+    { icon: '⏱️', val: t('experienceVal'), label: t('experience') },
+    { icon: '🏅', val: t('certificatesVal'), label: t('certificates') },
+    { icon: '👤', val: t('clientsVal'), label: t('clients') },
   ];
 
   return (

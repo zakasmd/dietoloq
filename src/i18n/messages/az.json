@@ -131,6 +131,9 @@
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
     "clients": "Müştəri",
+    "experienceVal": "15+",
+    "certificatesVal": "55+",
+    "clientsVal": "8000+",
     "bio1": "Peşəkar diyetoloq kimi 15 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 8000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
     "bio2": "Leyla Zülfüqarlı təkcə Azərbaycanda deyil, Almaniya, İsveçrə, Türkiyə, Slovakiya, İngiltərə və Fransa kimi ölkələrdə də fəaliyyət göstərmişdir. O, İsveçrədə azərbaycanlılar üçün xüsusi olaraq 7 günlük detoks və arıqlama proqramları təşkil edərək, insanların həm bədən, həm də ruh sağlamlığını artırmışdır.",
     "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, AzTV, Xəzər TV, Show TV, İTV, ARB, Lider TV kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
@@ -225,9 +228,9 @@
     "whatsapp": "WhatsApp-da yaz"
   },
   "footer": {
-    "subTitle": "Peşəkar Dietoloq",
+    "subTitle": "Peşəkar Diyetoloq",
     "copyrightName": "Leyla Zülfüqarlı",
-    "description": "Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
+    "description": "Peşəkar diyetoloq Leyla Zülfüqarlı ilə fərdi qidalanma planı, konsultasiya və kurslar.",
     "quickLinks": "Sürətli linklər",
     "contact": "Əlaqə",
     "address": "The Club Port Baku, Baku, Azerbaijan",
