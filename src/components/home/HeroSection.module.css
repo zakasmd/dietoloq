@@ -60,18 +60,18 @@
 .statsRow {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 0.5rem;
   background: hsl(var(--glass-bg));
   backdrop-filter: blur(24px);
   border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 2.5rem;
   box-shadow: var(--shadow-glass);
   border: 1px solid hsl(var(--glass-border));
-  width: 100%;
+  width: fit-content;
   max-width: 100%;
   box-sizing: border-box;
-  margin-top: 1rem;
-  overflow: hidden;
+  margin-top: 1.5rem;
+  overflow: visible;
 }
 
 .statItem {
