@@ -82,11 +82,15 @@ export default function BlogPage() {
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
               const excerpt = content.length > 250 ? content.substring(0, 250) + '...' : content;
-              const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-              });
+              const d = new Date(post.created_at);
+              const monthsAz = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'İyun', 'İyul', 'Avqust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'];
+              const monthsRu = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+              const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+              
+              let date = '';
+              if (locale === 'az') date = `${d.getDate()} ${monthsAz[d.getMonth()]} ${d.getFullYear()}`;
+              else if (locale === 'ru') date = `${d.getDate()} ${monthsRu[d.getMonth()]} ${d.getFullYear()}`;
+              else date = `${d.getDate()} ${monthsEn[d.getMonth()]} ${d.getFullYear()}`;
 
               return (
                 <motion.article 
