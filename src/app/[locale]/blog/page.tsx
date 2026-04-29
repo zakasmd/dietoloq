@@ -83,8 +83,8 @@ export default function BlogPage() {
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
               const excerpt = content.length > 250 ? content.substring(0, 250) + '...' : content;
               const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
-                month: 'long',
                 day: 'numeric',
+                month: 'long',
                 year: 'numeric'
               });
 
