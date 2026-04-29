@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
-import { LayoutDashboard, Users, BookOpen, MessageSquare, LogOut, Menu, X, ChevronRight, ShieldCheck, FileUp, FileText } from 'lucide-react';
+import { LayoutDashboard, Users, BookOpen, MessageSquare, LogOut, Menu, X, ChevronRight, ShieldCheck, FileUp, Plus } from 'lucide-react';
 import styles from './AdminLayout.module.css';
 
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@dietoloq.az';
