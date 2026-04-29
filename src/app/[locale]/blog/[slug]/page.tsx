@@ -44,8 +44,8 @@ export default function BlogPostPage() {
     fetchPost();
   }, [params.slug]);
 
-  if (loading) return <div style={{ paddingTop: '10rem', textAlign: 'center', color: '#999' }}>Yüklənir...</div>;
-  if (!post) return <div style={{ paddingTop: '10rem', textAlign: 'center', color: '#999' }}>Məqalə tapılmadı.</div>;
+  if (loading) return <div style={{ paddingTop: '10rem', textAlign: 'center', color: 'hsl(var(--primary))' }}>Yüklənir...</div>;
+  if (!post) return <div style={{ paddingTop: '10rem', textAlign: 'center', color: 'hsl(var(--muted-foreground))' }}>Məqalə tapılmadı.</div>;
 
   const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
   const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
@@ -62,86 +62,83 @@ export default function BlogPostPage() {
   };
 
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
+  const readTime = Math.ceil(content.split(' ').length / 200) + ' dəq';
 
   return (
-    <div style={{ 
-      paddingTop: '8rem', 
-      paddingBottom: '12rem', 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)'
-    }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <Link href={`/${locale}/blog`} className="btn btn-outline btn-sm" style={{ marginBottom: '3rem', padding: '0.5rem 1rem', borderRadius: '100px' }}>
-          <ChevronLeft size={16} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад' : 'Back'}
+    <div style={{ paddingTop: '10rem', paddingBottom: '12rem', minHeight: '100vh' }}>
+      <div className="container" style={{ maxWidth: '1000px' }}>
+        <Link href={`/${locale}/blog`} className="btn btn-outline btn-sm" style={{ marginBottom: '3rem' }}>
+          <ChevronLeft size={18} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад' : 'Back'}
         </Link>
 
         <motion.article 
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="glass"
           style={{ 
-            padding: '4rem', 
+            padding: '5rem', 
             borderRadius: 'var(--radius-3xl)',
-            border: '1px solid rgba(255,255,255,0.6)',
-            boxShadow: '0 30px 60px rgba(0,0,0,0.05)'
+            border: '1px solid hsl(var(--primary)/0.15)',
+            boxShadow: 'var(--shadow-glass)'
           }}
         >
-          <header style={{ marginBottom: '3.5rem' }}>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2rem' }}>
-              <span className="badge badge-primary">{post.category}</span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#64748b', fontSize: '0.85rem', fontWeight: 600 }}>
-                <Calendar size={14} /> {date}
+          <header style={{ marginBottom: '4rem' }}>
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '2.5rem' }}>
+              <span className="eyebrow" style={{ fontSize: '0.7rem' }}>{post.category}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', fontWeight: 600 }}>
+                <Calendar size={16} className="text-primary" /> {date}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', fontWeight: 600 }}>
+                <Clock size={16} className="text-primary" /> {readTime}
               </div>
             </div>
 
-            <h1 style={{ 
-              fontFamily: 'Space Grotesk, sans-serif', 
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
-              lineHeight: 1.1, 
+            <h1 className="text-gradient-mint" style={{ 
+              fontSize: 'clamp(3rem, 7vw, 5rem)', 
+              lineHeight: 1.05, 
               fontWeight: 800, 
-              marginBottom: '2.5rem', 
-              color: '#1a1a1a',
+              marginBottom: '3rem',
               letterSpacing: '-0.04em'
             }}>
               {title}
             </h1>
 
-            {/* Author Header */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.5rem', background: 'rgba(255,255,255,0.4)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.5)' }}>
-              <div style={{ width: 60, height: 60, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '3px solid white' }}>
-                <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            {/* Premium Author Card */}
+            <div className="glass-strong" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '2rem', borderRadius: '24px', border: '1px solid hsl(var(--primary)/0.2)' }}>
+              <div style={{ width: 70, height: 70, borderRadius: '50%', border: '3px solid hsl(var(--primary)/0.4)', padding: '3px' }}>
+                <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
               </div>
               <div>
-                <div style={{ fontWeight: 800, fontSize: '1.1rem', color: '#1a1a1a' }}>Leyla Zülfüqarlı</div>
-                <div style={{ fontSize: '0.85rem', color: 'hsl(var(--primary))', fontWeight: 700 }}>Doktor, Nutrisioloji, Diyetoloq</div>
+                <div style={{ fontWeight: 800, fontSize: '1.25rem', color: 'hsl(var(--foreground))', marginBottom: '0.2rem' }}>Leyla Zülfüqarlı</div>
+                <div className="text-gradient-mint" style={{ fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</div>
               </div>
             </div>
           </header>
 
           {post.image_url && (
-            <div style={{ marginBottom: '4rem', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-              <img src={post.image_url} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <div style={{ marginBottom: '5rem', borderRadius: '32px', overflow: 'hidden', boxShadow: 'var(--glow-mint)' }}>
+              <img src={post.image_url} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           )}
 
           <div style={{ 
             fontSize: '1.25rem', 
             lineHeight: 1.8, 
-            color: '#334155', 
+            color: 'hsl(var(--foreground)/0.9)', 
             whiteSpace: 'pre-wrap', 
             fontFamily: 'Inter, system-ui, sans-serif',
-            marginBottom: '5rem'
+            marginBottom: '6rem'
           }}>
             {content}
           </div>
 
           {videoId && (
-            <div style={{ marginBottom: '5rem', borderRadius: '24px', overflow: 'hidden', aspectRatio: '16/9', background: '#000', boxShadow: '0 25px 50px rgba(0,0,0,0.15)' }}>
+            <div style={{ marginBottom: '6rem', borderRadius: '32px', overflow: 'hidden', aspectRatio: '16/9', background: '#000', boxShadow: 'var(--glow-mint)', border: '1px solid hsl(var(--primary)/0.2)' }}>
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -150,15 +147,15 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          <footer style={{ borderTop: '1px solid rgba(0,0,0,0.05)', paddingTop: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-               <span style={{ color: '#64748b', fontSize: '0.9rem', fontWeight: 600 }}>Paylaş:</span>
-               <button className="btn btn-outline btn-sm" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center' }} onClick={() => window.print()}>
-                 <Share2 size={16} />
+          <footer style={{ borderTop: '1px solid hsl(var(--primary)/0.1)', paddingTop: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+               <span style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', fontWeight: 700 }}>PAYLAŞIN:</span>
+               <button className="btn btn-outline" style={{ width: 50, height: 50, borderRadius: '50%', padding: 0, justifyContent: 'center' }} onClick={() => window.print()}>
+                 <Share2 size={20} />
                </button>
             </div>
-            <Link href={`/${locale}/blog`} className="btn btn-primary btn-sm">
-               Daha çox oxu
+            <Link href={`/${locale}/blog`} className="btn btn-primary">
+               Digər Məqalələr
             </Link>
           </footer>
         </motion.article>

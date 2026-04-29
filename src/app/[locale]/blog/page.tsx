@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, ChevronRight, ChevronLeft, Clock } from 'lucide-react';
+import { Calendar, ChevronRight, ChevronLeft, Clock, ArrowRight } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -55,49 +55,33 @@ export default function BlogPage() {
   };
 
   return (
-    <div style={{ 
-      paddingTop: '8rem', 
-      paddingBottom: '10rem', 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)',
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
-      {/* Background Decor */}
-      <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 70%)', zIndex: 0 }} />
-      <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%)', zIndex: 0 }} />
-
-      <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
-        <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>✍️ Blog</span>
-            <h1 style={{ 
-              fontFamily: 'Space Grotesk, sans-serif', 
-              fontSize: 'clamp(3rem, 7vw, 4.5rem)', 
+    <div style={{ paddingTop: '10rem', paddingBottom: '12rem', position: 'relative' }}>
+      <div className="container" style={{ maxWidth: '1100px' }}>
+        <header style={{ marginBottom: '6rem', textAlign: 'center' }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="eyebrow" style={{ marginBottom: '1.5rem' }}>✨ {t('eyebrow')}</span>
+            <h1 className="text-gradient-mint" style={{ 
+              fontSize: 'clamp(3.5rem, 8vw, 6rem)', 
               fontWeight: 800, 
-              letterSpacing: '-0.04em', 
-              marginBottom: '1rem',
-              background: 'linear-gradient(to right, #1a1a1a, #4a4a4a)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
+              lineHeight: 0.9,
+              marginBottom: '1.5rem'
             }}>
-              Məqalələr
+              {t('title')}
             </h1>
-            <div className="divider" style={{ margin: '0 auto 1.5rem' }} />
-            <p style={{ fontSize: '1.2rem', color: 'hsl(var(--foreground)/0.6)', maxWidth: '550px', margin: '0 auto' }}>
-              Diyetoloq Leyla Zülfüqarlı tərəfindən hazırlanmış qidalanma və sağlamlıq məsləhətləri.
+            <p style={{ fontSize: '1.25rem', color: 'hsl(var(--muted-foreground))', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+              {t('subtitle')}
             </p>
           </motion.div>
         </header>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '4rem', color: '#999' }}>Yüklənir...</div>
+            <div style={{ textAlign: 'center', padding: '6rem', color: 'hsl(var(--primary)/0.5)' }}>Yüklənir...</div>
           ) : currentPosts.length > 0 ? (
             currentPosts.map((post, idx) => {
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
-              const excerpt = content.length > 200 ? content.substring(0, 200) + '...' : content;
+              const excerpt = content.length > 250 ? content.substring(0, 250) + '...' : content;
               const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
                 month: 'long',
                 day: 'numeric',
@@ -107,73 +91,67 @@ export default function BlogPage() {
               return (
                 <motion.article 
                   key={post.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  transition={{ duration: 0.7, delay: idx * 0.1 }}
                   className="glass hover-glow"
                   style={{ 
-                    padding: '2.5rem',
+                    padding: '3.5rem',
                     borderRadius: 'var(--radius-3xl)',
-                    border: '1px solid rgba(255,255,255,0.5)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.03)'
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
-                  <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 280px' : '1fr', gap: '3rem', alignItems: 'center' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 320px' : '1fr', gap: '4rem', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                       {/* Author Header */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                        <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid white', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <div style={{ width: 50, height: 50, borderRadius: '50%', border: '2px solid hsl(var(--primary)/0.3)', padding: '2px' }}>
                           <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
-                          <span style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1a1a1a' }}>Leyla Zülfüqarlı</span>
-                          <span style={{ fontSize: '0.7rem', color: 'hsl(var(--primary))', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
+                          <span style={{ fontWeight: 700, fontSize: '1.05rem', color: 'hsl(var(--foreground))' }}>Leyla Zülfüqarlı</span>
+                          <span className="text-gradient-mint" style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
                         </div>
                       </div>
 
                       <div>
                         <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
                           <h2 style={{ 
-                            fontFamily: 'Space Grotesk, sans-serif', 
-                            fontSize: '1.75rem', 
+                            fontSize: '2.25rem', 
                             fontWeight: 700, 
-                            lineHeight: 1.25, 
-                            color: '#1a1a1a', 
-                            marginBottom: '0.75rem',
-                            letterSpacing: '-0.02em',
-                            transition: 'color 0.2s'
-                          }} className="title-hover">
+                            lineHeight: 1.15, 
+                            color: 'hsl(var(--foreground))', 
+                            marginBottom: '1rem',
+                            letterSpacing: '-0.03em'
+                          }}>
                             {title}
                           </h2>
                         </Link>
                         <p style={{ 
-                          fontSize: '1rem', 
-                          lineHeight: 1.6, 
-                          color: 'hsl(var(--foreground)/0.7)', 
-                          marginBottom: '1.5rem',
-                          display: '-webkit-box',
-                          WebkitLineClamp: 3,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden'
+                          fontSize: '1.1rem', 
+                          lineHeight: 1.7, 
+                          color: 'hsl(var(--muted-foreground))', 
+                          marginBottom: '2rem'
                         }}>
                           {excerpt}
                         </p>
                       </div>
 
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <div style={{ display: 'flex', gap: '1.5rem', color: 'hsl(var(--foreground)/0.4)', fontSize: '0.8rem', fontWeight: 500 }}>
-                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><Calendar size={14} /> {date}</span>
-                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><Clock size={14} /> 5 dəq</span>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid hsl(var(--primary)/0.1)', paddingTop: '1.5rem' }}>
+                        <div style={{ display: 'flex', gap: '2rem', color: 'hsl(var(--muted-foreground))', fontSize: '0.85rem' }}>
+                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Calendar size={16} className="text-primary" /> {date}</span>
+                           <span className="badge badge-primary" style={{ fontSize: '0.7rem' }}>{post.category}</span>
                         </div>
-                        <Link href={`/${locale}/blog/${post.slug}`} className="btn btn-primary btn-sm" style={{ padding: '0.6rem 1.25rem', borderRadius: '100px' }}>
-                          {locale === 'az' ? 'Ətraflı oxu' : locale === 'ru' ? 'Читать далее' : 'Read more'}
+                        <Link href={`/${locale}/blog/${post.slug}`} className="btn btn-primary btn-sm" style={{ gap: '0.5rem' }}>
+                          {locale === 'az' ? 'Davamını oxu' : locale === 'ru' ? 'Читать полностью' : 'Read full story'} <ArrowRight size={16} />
                         </Link>
                       </div>
                     </div>
 
                     {post.image_url && (
-                      <Link href={`/${locale}/blog/${post.slug}`} style={{ width: '100%', aspectRatio: '1/1', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', display: 'block' }}>
+                      <Link href={`/${locale}/blog/${post.slug}`} style={{ width: '100%', aspectRatio: '4/5', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', display: 'block', boxShadow: 'var(--glow-mint)' }}>
                         <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
                       </Link>
                     )}
@@ -182,26 +160,26 @@ export default function BlogPage() {
               );
             })
           ) : (
-            <div style={{ textAlign: 'center', padding: '5rem' }} className="glass">
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🍃</div>
-              <p style={{ color: '#999' }}>Hələ heç bir məqalə paylaşılmayıb.</p>
+            <div style={{ textAlign: 'center', padding: '8rem' }} className="glass">
+              <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>🍃</div>
+              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.2rem' }}>Hələ heç bir məqalə paylaşılmayıb.</p>
             </div>
           )}
         </div>
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5rem', gap: '0.75rem' }}>
-            <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className="btn btn-outline" style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
-              <ChevronLeft size={20} />
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '6rem', gap: '1rem' }}>
+            <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className="btn btn-outline" style={{ width: 56, height: 56, padding: 0, justifyContent: 'center' }}>
+              <ChevronLeft size={24} />
             </button>
             {[...Array(totalPages)].map((_, i) => (
-              <button key={i} onClick={() => paginate(i + 1)} className={`btn ${currentPage === i + 1 ? 'btn-primary' : 'btn-outline'}`} style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
+              <button key={i} onClick={() => paginate(i + 1)} className={`btn ${currentPage === i + 1 ? 'btn-primary' : 'btn-outline'}`} style={{ width: 56, height: 56, padding: 0, justifyContent: 'center' }}>
                 {i + 1}
               </button>
             ))}
-            <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages} className="btn btn-outline" style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
-              <ChevronRight size={20} />
+            <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages} className="btn btn-outline" style={{ width: 56, height: 56, padding: 0, justifyContent: 'center' }}>
+              <ChevronRight size={24} />
             </button>
           </div>
         )}
