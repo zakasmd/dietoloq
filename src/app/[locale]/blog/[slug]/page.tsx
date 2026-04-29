@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, ChevronLeft, Share2, Video, User, Clock } from 'lucide-react';
+import { Calendar, ChevronLeft, Share2, Video, Clock } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -62,135 +62,107 @@ export default function BlogPostPage() {
   };
 
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
-  const readTime = Math.ceil(content.split(' ').length / 200) + ' dəq';
 
   return (
-    <article style={{ paddingTop: '8rem', paddingBottom: '12rem', minHeight: '100vh', background: '#fff' }}>
-      <div className="container" style={{ maxWidth: '750px' }}>
-        <header style={{ marginBottom: '3.5rem' }}>
-          <Link href={`/${locale}/blog`} style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '0.5rem', 
-            color: '#757575', 
-            textDecoration: 'none', 
-            marginBottom: '3rem', 
-            fontSize: '0.9rem',
-            fontWeight: 500
-          }}>
-            <ChevronLeft size={16} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад' : 'Back'}
-          </Link>
+    <div style={{ 
+      paddingTop: '8rem', 
+      paddingBottom: '12rem', 
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)'
+    }}>
+      <div className="container" style={{ maxWidth: '900px' }}>
+        <Link href={`/${locale}/blog`} className="btn btn-outline btn-sm" style={{ marginBottom: '3rem', padding: '0.5rem 1rem', borderRadius: '100px' }}>
+          <ChevronLeft size={16} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад' : 'Back'}
+        </Link>
 
-          <h1 style={{ 
-            fontFamily: 'Space Grotesk, sans-serif', 
-            fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', 
-            lineHeight: 1.15, 
-            fontWeight: 800, 
-            marginBottom: '2rem', 
-            color: '#1a1a1a',
-            letterSpacing: '-0.04em'
-          }}>
-            {title}
-          </h1>
-
-          {/* Enhanced Author Header */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '3rem', padding: '1.5rem 0', borderTop: '1px solid #f0f0f0', borderBottom: '1px solid #f0f0f0' }}>
-            <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-              <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.1rem' }}>
-                <span style={{ fontWeight: 700, fontSize: '1.1rem', color: '#1a1a1a' }}>Leyla Zülfüqarlı</span>
-                <span className="badge badge-primary" style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem' }}>Müəllif</span>
-              </div>
-              <div style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 500 }}>
-                {locale === 'az' ? 'Doktor, Nutrisioloji, Diyetoloq' : locale === 'ru' ? 'Доктор, Нутрициолог, Диетолог' : 'Doctor, Nutriologist, Dietitian'}
+        <motion.article 
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="glass"
+          style={{ 
+            padding: '4rem', 
+            borderRadius: 'var(--radius-3xl)',
+            border: '1px solid rgba(255,255,255,0.6)',
+            boxShadow: '0 30px 60px rgba(0,0,0,0.05)'
+          }}
+        >
+          <header style={{ marginBottom: '3.5rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2rem' }}>
+              <span className="badge badge-primary">{post.category}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#64748b', fontSize: '0.85rem', fontWeight: 600 }}>
+                <Calendar size={14} /> {date}
               </div>
             </div>
-            <div style={{ textAlign: 'right', display: 'none' }}>
-              {/* Desktop metadata */}
+
+            <h1 style={{ 
+              fontFamily: 'Space Grotesk, sans-serif', 
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
+              lineHeight: 1.1, 
+              fontWeight: 800, 
+              marginBottom: '2.5rem', 
+              color: '#1a1a1a',
+              letterSpacing: '-0.04em'
+            }}>
+              {title}
+            </h1>
+
+            {/* Author Header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.5rem', background: 'rgba(255,255,255,0.4)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.5)' }}>
+              <div style={{ width: 60, height: 60, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '3px solid white' }}>
+                <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '1.1rem', color: '#1a1a1a' }}>Leyla Zülfüqarlı</div>
+                <div style={{ fontSize: '0.85rem', color: 'hsl(var(--primary))', fontWeight: 700 }}>Doktor, Nutrisioloji, Diyetoloq</div>
+              </div>
             </div>
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3rem', color: '#94a3b8', fontSize: '0.875rem', fontWeight: 500 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <Calendar size={16} /> {date}
+          </header>
+
+          {post.image_url && (
+            <div style={{ marginBottom: '4rem', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+              <img src={post.image_url} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <Clock size={16} /> {readTime} oxuma
+          )}
+
+          <div style={{ 
+            fontSize: '1.25rem', 
+            lineHeight: 1.8, 
+            color: '#334155', 
+            whiteSpace: 'pre-wrap', 
+            fontFamily: 'Inter, system-ui, sans-serif',
+            marginBottom: '5rem'
+          }}>
+            {content}
+          </div>
+
+          {videoId && (
+            <div style={{ marginBottom: '5rem', borderRadius: '24px', overflow: 'hidden', aspectRatio: '16/9', background: '#000', boxShadow: '0 25px 50px rgba(0,0,0,0.15)' }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
-          </div>
-        </header>
+          )}
 
-        {post.image_url && (
-          <figure style={{ margin: '0 0 3.5rem 0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>
-            <img src={post.image_url} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
-          </figure>
-        )}
-
-        <div style={{ 
-          fontSize: '1.2rem', 
-          lineHeight: 1.8, 
-          color: '#2d3748', 
-          whiteSpace: 'pre-wrap', 
-          fontFamily: 'Inter, system-ui, sans-serif',
-          marginBottom: '4.5rem',
-          letterSpacing: '-0.01em'
-        }}>
-          {content}
-        </div>
-
-        {videoId && (
-          <div style={{ marginBottom: '4.5rem', borderRadius: '16px', overflow: 'hidden', aspectRatio: '16/9', background: '#000', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        )}
-
-        <footer style={{ borderTop: '1px solid #f0f0f0', paddingTop: '3.5rem', marginTop: '5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+          <footer style={{ borderTop: '1px solid rgba(0,0,0,0.05)', paddingTop: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-               <span style={{ color: '#94a3b8', fontSize: '0.9rem', fontWeight: 600 }}>Kateqoriya:</span>
-               <span style={{ 
-                  background: '#f8fafc', 
-                  padding: '0.4rem 0.9rem', 
-                  borderRadius: '100px', 
-                  fontSize: '0.8rem', 
-                  fontWeight: 700,
-                  color: 'var(--color-primary)',
-                  border: '1px solid #e2e8f0'
-               }}>
-                 {post.category}
-               </span>
+               <span style={{ color: '#64748b', fontSize: '0.9rem', fontWeight: 600 }}>Paylaş:</span>
+               <button className="btn btn-outline btn-sm" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center' }} onClick={() => window.print()}>
+                 <Share2 size={16} />
+               </button>
             </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <button className="btn btn-outline btn-sm" style={{ gap: '0.5rem' }} onClick={() => window.print()}>
-                <Share2 size={16} /> Paylaş
-              </button>
-            </div>
-          </div>
-          
-          {/* Final Author Bio */}
-          <div style={{ marginTop: '5rem', background: '#f8fafc', borderRadius: '20px', padding: '2.5rem', display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-               <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            <div style={{ flex: 1, minWidth: '250px' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700 }}>Leyla Zülfüqarlı</h3>
-              <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
-                Doktor, Nutrisioloji, Diyetoloq. Sağlam qidalanma və həyat tərzi üzrə mütəxəssis. 15 ildən artıq təcrübə ilə minlərlə insana sağlamlıq yolunda bələdçilik edir.
-              </p>
-            </div>
-          </div>
-        </footer>
+            <Link href={`/${locale}/blog`} className="btn btn-primary btn-sm">
+               Daha çox oxu
+            </Link>
+          </footer>
+        </motion.article>
       </div>
-    </article>
+    </div>
   );
 }

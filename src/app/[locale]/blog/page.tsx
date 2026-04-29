@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, ChevronRight, User, ChevronLeft } from 'lucide-react';
+import { Calendar, ChevronRight, ChevronLeft, Clock } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -44,7 +44,6 @@ export default function BlogPage() {
     fetchPosts();
   }, []);
 
-  // Pagination logic
   const indexOfLastPost = currentPage * POSTS_PER_PAGE;
   const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
@@ -56,34 +55,49 @@ export default function BlogPage() {
   };
 
   return (
-    <div style={{ paddingTop: '8rem', paddingBottom: '10rem', background: '#fff' }}>
-      <div className="container" style={{ maxWidth: '850px' }}>
+    <div style={{ 
+      paddingTop: '8rem', 
+      paddingBottom: '10rem', 
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Background Decor */}
+      <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 70%)', zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%)', zIndex: 0 }} />
+
+      <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
         <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>✍️ Blog</span>
             <h1 style={{ 
               fontFamily: 'Space Grotesk, sans-serif', 
-              fontSize: 'clamp(3rem, 7vw, 5rem)', 
+              fontSize: 'clamp(3rem, 7vw, 4.5rem)', 
               fontWeight: 800, 
-              letterSpacing: '-0.05em', 
+              letterSpacing: '-0.04em', 
               marginBottom: '1rem',
-              color: '#1a1a1a'
+              background: 'linear-gradient(to right, #1a1a1a, #4a4a4a)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}>
-              Blog
+              Məqalələr
             </h1>
-            <p style={{ fontSize: '1.2rem', color: '#666', fontWeight: 400, maxWidth: '500px', margin: '0 auto' }}>
-              {locale === 'az' ? 'Sağlamlıq, qidalanma və həyat tərzi haqqında peşəkar tövsiyələr' : locale === 'ru' ? 'Профессиональные советы по здоровью и питанию' : 'Professional advice on health, nutrition and lifestyle'}
+            <div className="divider" style={{ margin: '0 auto 1.5rem' }} />
+            <p style={{ fontSize: '1.2rem', color: 'hsl(var(--foreground)/0.6)', maxWidth: '550px', margin: '0 auto' }}>
+              Diyetoloq Leyla Zülfüqarlı tərəfindən hazırlanmış qidalanma və sağlamlıq məsləhətləri.
             </p>
           </motion.div>
         </header>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {loading ? (
             <div style={{ textAlign: 'center', padding: '4rem', color: '#999' }}>Yüklənir...</div>
           ) : currentPosts.length > 0 ? (
             currentPosts.map((post, idx) => {
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
-              const excerpt = content.length > 250 ? content.substring(0, 250) + '...' : content;
+              const excerpt = content.length > 200 ? content.substring(0, 200) + '...' : content;
               const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
                 month: 'long',
                 day: 'numeric',
@@ -96,84 +110,71 @@ export default function BlogPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: idx * 0.1 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  className="glass hover-glow"
                   style={{ 
-                    borderBottom: idx === currentPosts.length - 1 ? 'none' : '1px solid #f0f0f0',
-                    paddingBottom: '5rem'
+                    padding: '2.5rem',
+                    borderRadius: 'var(--radius-3xl)',
+                    border: '1px solid rgba(255,255,255,0.5)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.03)'
                   }}
                 >
-                  {/* Author Header */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                    <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                      <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </div>
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: '1rem', color: '#292929', lineHeight: 1.2 }}>Leyla Zülfüqarlı</div>
-                      <div style={{ fontSize: '0.8rem', color: '#757575', fontWeight: 500 }}>
-                        {locale === 'az' ? 'Doktor, Nutrisioloji, Diyetoloq' : locale === 'ru' ? 'Доктор, Нутрициолог, Диетолог' : 'Doctor, Nutriologist, Dietitian'}
+                  <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 280px' : '1fr', gap: '3rem', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                      {/* Author Header */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                        <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid white', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                          <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <span style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1a1a1a' }}>Leyla Zülfüqarlı</span>
+                          <span style={{ fontSize: '0.7rem', color: 'hsl(var(--primary))', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
+                        </div>
                       </div>
-                    </div>
-                    <span style={{ color: '#e0e0e0', margin: '0 0.5rem' }}>·</span>
-                    <span style={{ color: '#757575', fontSize: '0.85rem' }}>{date}</span>
-                  </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 240px' : '1fr', gap: '2.5rem', alignItems: 'start' }}>
-                    <div>
-                      <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <h2 style={{ 
-                          fontFamily: 'Space Grotesk, sans-serif', 
-                          fontSize: '1.75rem', 
-                          fontWeight: 700, 
-                          lineHeight: 1.3, 
-                          color: '#1a1a1a', 
-                          marginBottom: '1rem',
-                          letterSpacing: '-0.02em'
-                        }}>
-                          {title}
-                        </h2>
+                      <div>
+                        <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                          <h2 style={{ 
+                            fontFamily: 'Space Grotesk, sans-serif', 
+                            fontSize: '1.75rem', 
+                            fontWeight: 700, 
+                            lineHeight: 1.25, 
+                            color: '#1a1a1a', 
+                            marginBottom: '0.75rem',
+                            letterSpacing: '-0.02em',
+                            transition: 'color 0.2s'
+                          }} className="title-hover">
+                            {title}
+                          </h2>
+                        </Link>
                         <p style={{ 
-                          fontSize: '1.05rem', 
+                          fontSize: '1rem', 
                           lineHeight: 1.6, 
-                          color: '#555', 
+                          color: 'hsl(var(--foreground)/0.7)', 
                           marginBottom: '1.5rem',
                           display: '-webkit-box',
-                          WebkitLineClamp: 4,
+                          WebkitLineClamp: 3,
                           WebkitBoxOrient: 'vertical',
                           overflow: 'hidden'
                         }}>
                           {excerpt}
                         </p>
-                      </Link>
-                      
+                      </div>
+
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{ 
-                          background: '#f8fafc', 
-                          padding: '0.4rem 0.9rem', 
-                          borderRadius: '100px', 
-                          fontSize: '0.75rem', 
-                          fontWeight: 600,
-                          color: '#64748b',
-                          border: '1px solid #f1f5f9'
-                        }}>
-                          {post.category}
-                        </span>
-                        <Link href={`/${locale}/blog/${post.slug}`} style={{ 
-                          color: 'var(--color-primary)', 
-                          fontWeight: 700, 
-                          fontSize: '0.95rem', 
-                          textDecoration: 'none',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.25rem'
-                        }}>
-                          {locale === 'az' ? 'Ətraflı oxu' : locale === 'ru' ? 'Читать далее' : 'Read more'} <ChevronRight size={18} />
+                        <div style={{ display: 'flex', gap: '1.5rem', color: 'hsl(var(--foreground)/0.4)', fontSize: '0.8rem', fontWeight: 500 }}>
+                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><Calendar size={14} /> {date}</span>
+                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><Clock size={14} /> 5 dəq</span>
+                        </div>
+                        <Link href={`/${locale}/blog/${post.slug}`} className="btn btn-primary btn-sm" style={{ padding: '0.6rem 1.25rem', borderRadius: '100px' }}>
+                          {locale === 'az' ? 'Ətraflı oxu' : locale === 'ru' ? 'Читать далее' : 'Read more'}
                         </Link>
                       </div>
                     </div>
-                    
+
                     {post.image_url && (
-                      <Link href={`/${locale}/blog/${post.slug}`} style={{ width: '240px', height: '160px', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', display: 'block' }}>
-                        <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} className="hover-scale" />
+                      <Link href={`/${locale}/blog/${post.slug}`} style={{ width: '100%', aspectRatio: '1/1', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', display: 'block' }}>
+                        <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
                       </Link>
                     )}
                   </div>
@@ -181,54 +182,28 @@ export default function BlogPage() {
               );
             })
           ) : (
-            <div style={{ textAlign: 'center', padding: '5rem', color: '#999' }}>Hələ heç bir məqalə paylaşılmayıb.</div>
+            <div style={{ textAlign: 'center', padding: '5rem' }} className="glass">
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🍃</div>
+              <p style={{ color: '#999' }}>Hələ heç bir məqalə paylaşılmayıb.</p>
+            </div>
           )}
         </div>
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <nav style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '4rem' }}>
-            <button 
-              onClick={() => paginate(currentPage - 1)} 
-              disabled={currentPage === 1}
-              style={{ 
-                background: 'none', border: '1px solid #e2e8f0', borderRadius: '50%', width: 40, height: 40, 
-                display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
-                opacity: currentPage === 1 ? 0.4 : 1
-              }}
-            >
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5rem', gap: '0.75rem' }}>
+            <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className="btn btn-outline" style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
               <ChevronLeft size={20} />
             </button>
-            
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              {[...Array(totalPages)].map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => paginate(i + 1)}
-                  style={{
-                    width: 40, height: 40, borderRadius: '50%', border: 'none',
-                    background: currentPage === i + 1 ? 'var(--gradient-primary)' : 'transparent',
-                    color: currentPage === i + 1 ? 'white' : '#64748b',
-                    fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s ease'
-                  }}
-                >
-                  {i + 1}
-                </button>
-              ))}
-            </div>
-
-            <button 
-              onClick={() => paginate(currentPage + 1)} 
-              disabled={currentPage === totalPages}
-              style={{ 
-                background: 'none', border: '1px solid #e2e8f0', borderRadius: '50%', width: 40, height: 40, 
-                display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
-                opacity: currentPage === totalPages ? 0.4 : 1
-              }}
-            >
+            {[...Array(totalPages)].map((_, i) => (
+              <button key={i} onClick={() => paginate(i + 1)} className={`btn ${currentPage === i + 1 ? 'btn-primary' : 'btn-outline'}`} style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
+                {i + 1}
+              </button>
+            ))}
+            <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages} className="btn btn-outline" style={{ borderRadius: '50%', width: 50, height: 50, padding: 0, justifyContent: 'center' }}>
               <ChevronRight size={20} />
             </button>
-          </nav>
+          </div>
         )}
       </div>
     </div>
