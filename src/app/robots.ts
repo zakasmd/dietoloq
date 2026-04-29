@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/admin/', '/dashboard/', '/api/'],
+      disallow: ['/api/'],
     },
     sitemap: 'https://www.leylazulfuqarli.com/sitemap.xml',
   };

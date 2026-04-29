@@ -34,7 +34,15 @@ export function middleware(request: NextRequest) {
 
   // Skip for dashboard, admin and api (after rate limit check)
   if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin') || pathname.startsWith('/api')) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    
+    // Add noindex header for sensitive routes to keep them out of search results 
+    // without exposing them in robots.txt
+    if (pathname.startsWith('/admin') || pathname.startsWith('/dashboard')) {
+      response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    }
+    
+    return response;
   }
 
   return intlMiddleware(request);
