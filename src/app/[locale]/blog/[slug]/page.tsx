@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, Tag, ChevronLeft, Share2, Video, User } from 'lucide-react';
+import { Calendar, ChevronLeft, Share2, Video, User } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -64,82 +64,85 @@ export default function BlogPostPage() {
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
 
   return (
-    <div style={{ paddingTop: '5rem', minHeight: '100vh' }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <Link href={`/${locale}/blog`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--primary))', textDecoration: 'none', marginBottom: '2rem', fontSize: '0.9rem', fontWeight: 600 }}>
-          <ChevronLeft size={16} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад в блог' : 'Back to blog'}
-        </Link>
+    <article style={{ paddingTop: '8rem', paddingBottom: '10rem', minHeight: '100vh', background: '#fff' }}>
+      <div className="container" style={{ maxWidth: '700px' }}>
+        <header style={{ marginBottom: '3rem' }}>
+          <Link href={`/${locale}/blog`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#757575', textDecoration: 'none', marginBottom: '2.5rem', fontSize: '0.9rem' }}>
+            <ChevronLeft size={16} /> {locale === 'az' ? 'Bloqa qayıt' : locale === 'ru' ? 'Назад' : 'Back'}
+          </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-            <span className="badge badge-primary">{post.category}</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'hsl(var(--foreground)/0.5)', fontSize: '0.85rem' }}>
-              <Calendar size={14} /> {date}
-            </div>
-          </div>
-
-          <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1, fontWeight: 300, marginBottom: '2.5rem', color: 'hsl(var(--foreground))' }}>
+          <h1 style={{ 
+            fontFamily: 'Space Grotesk, sans-serif', 
+            fontSize: 'clamp(2.25rem, 5vw, 3rem)', 
+            lineHeight: 1.2, 
+            fontWeight: 700, 
+            marginBottom: '2rem', 
+            color: '#1a1a1a',
+            letterSpacing: '-0.03em'
+          }}>
             {title}
           </h1>
 
-          {/* Author Card (Top) */}
-          <div className="glass" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.25rem', borderRadius: 'var(--radius-xl)', marginBottom: '3rem' }}>
-            <div style={{ width: 60, height: 60, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-              <img src="/logo.png" alt="Logo" style={{ width: '35px', height: 'auto' }} />
+          {/* Author Section */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src="/logo.png" alt="" style={{ width: 28, height: 'auto' }} />
             </div>
             <div>
-              <div style={{ fontWeight: 700, fontSize: '1.1rem', color: 'hsl(var(--foreground))' }}>Leyla Zülfüqarlı</div>
-              <div style={{ fontSize: '0.85rem', color: 'hsl(var(--foreground)/0.6)' }}>Doktor, Nutrisioloji, Diyetoloq</div>
-            </div>
-          </div>
-
-          {post.image_url && !videoId && (
-            <div style={{ marginBottom: '3rem', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: 'var(--shadow-xl)' }}>
-              <img src={post.image_url} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-          )}
-
-          <div style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'hsl(var(--foreground)/0.85)', whiteSpace: 'pre-wrap', marginBottom: '3rem' }}>
-            {content}
-          </div>
-
-          {videoId && (
-            <div style={{ marginBottom: '3rem', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: 'var(--shadow-xl)', aspectRatio: '16/9' }}>
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${videoId}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          )}
-
-          {/* Footer Author Card */}
-          <div style={{ borderTop: '1px solid hsl(var(--foreground)/0.1)', paddingTop: '3rem', marginTop: '4rem', marginBottom: '6rem' }}>
-            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <div style={{ width: 100, height: 100, borderRadius: '50%', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-                 <img src="/logo.png" alt="Logo" style={{ width: '60px', height: 'auto' }} />
-              </div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontWeight: 600 }}>Leyla Zülfüqarlı</h3>
-                <p style={{ color: 'hsl(var(--foreground)/0.6)', marginBottom: '1.25rem' }}>
-                   Doktor, Nutrisioloji, Diyetoloq. Sağlam qidalanma və həyat tərzi üzrə mütəxəssis.
-                </p>
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                  <button className="btn btn-outline btn-sm" onClick={() => window.print()}><Share2 size={14} /> Paylaş</button>
-                </div>
+              <div style={{ fontWeight: 600, fontSize: '1rem', color: '#292929' }}>Leyla Zülfüqarlı</div>
+              <div style={{ fontSize: '0.85rem', color: '#757575' }}>
+                 Doktor, Nutrisioloji, Diyetoloq
               </div>
             </div>
+            <div style={{ marginLeft: 'auto', color: '#757575', fontSize: '0.9rem' }}>
+              {date}
+            </div>
           </div>
-        </motion.div>
+        </header>
+
+        {post.image_url && (
+          <figure style={{ margin: '0 0 3rem 0', borderRadius: '4px', overflow: 'hidden' }}>
+            <img src={post.image_url} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </figure>
+        )}
+
+        <div style={{ 
+          fontSize: '1.25rem', 
+          lineHeight: 1.6, 
+          color: '#292929', 
+          whiteSpace: 'pre-wrap', 
+          fontFamily: 'Inter, sans-serif',
+          marginBottom: '4rem'
+        }}>
+          {content}
+        </div>
+
+        {videoId && (
+          <div style={{ marginBottom: '4rem', borderRadius: '8px', overflow: 'hidden', aspectRatio: '16/9', background: '#000' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${videoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+
+        <footer style={{ borderTop: '1px solid #eee', paddingTop: '3rem', marginTop: '4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+               <span style={{ color: '#757575', fontSize: '0.9rem' }}>Kateqoriya:</span>
+               <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{post.category}</span>
+            </div>
+            <button className="btn btn-outline btn-sm" onClick={() => window.print()}>
+              <Share2 size={16} /> Paylaş
+            </button>
+          </div>
+        </footer>
       </div>
-    </div>
+    </article>
   );
 }

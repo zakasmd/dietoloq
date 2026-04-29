@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { Plus, Trash2, Edit2, X, Save, ExternalLink, Video, Image as ImageIcon } from 'lucide-react';
+import { Plus, Trash2, Edit2, X, Save, ExternalLink, Video, Image as ImageIcon, Upload, Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 
 type BlogPost = {
@@ -25,6 +25,8 @@ export default function AdminBlogPage() {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const { register, handleSubmit, reset, setValue, watch } = useForm<Partial<BlogPost>>();
 
@@ -52,6 +54,29 @@ export default function AdminBlogPage() {
       .replace(/ö/g, 'o')
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '');
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    const supabase = createClient();
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
+    const filePath = `${fileName}`;
+
+    const { data, error } = await supabase.storage
+      .from('blog-images')
+      .upload(filePath, file);
+
+    if (error) {
+      alert('Şəkil yüklənərkən xəta: ' + error.message);
+    } else {
+      const { data: { publicUrl } } = supabase.storage.from('blog-images').getPublicUrl(filePath);
+      setValue('image_url', publicUrl);
+    }
+    setUploading(false);
   };
 
   const onSubmit = async (data: Partial<BlogPost>) => {
@@ -138,8 +163,27 @@ export default function AdminBlogPage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div className="form-group">
-                <label className="form-label"><ImageIcon size={14} style={{ marginRight: '4px' }} /> Şəkil URL</label>
-                <input {...register('image_url')} className="form-input" placeholder="https://..." />
+                <label className="form-label"><ImageIcon size={14} style={{ marginRight: '4px' }} /> Şəkil (Yüklə)</label>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileUpload}
+                    style={{ display: 'none' }}
+                    ref={fileInputRef}
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline btn-sm"
+                    style={{ flex: 1 }}
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={uploading}
+                  >
+                    {uploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+                    {uploading ? 'Yüklənir...' : 'Şəkil seç'}
+                  </button>
+                  <input {...register('image_url')} className="form-input" style={{ flex: 2 }} placeholder="Şəkil URL (avtomatik dolur)" readOnly />
+                </div>
               </div>
               <div className="form-group">
                 <label className="form-label"><Video size={14} style={{ marginRight: '4px' }} /> YouTube Video URL</label>
@@ -200,13 +244,6 @@ export default function AdminBlogPage() {
             </div>
           </div>
         ))}
-
-        {posts.length === 0 && !loading && (
-          <div style={{ textAlign: 'center', padding: '4rem', background: '#F8FAFC', borderRadius: 'var(--radius-2xl)', border: '2px dashed var(--color-border-light)' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📭</div>
-            <p style={{ color: 'var(--color-text-secondary)' }}>Hələ heç bir post paylaşılmayıb.</p>
-          </div>
-        )}
       </div>
     </div>
   );
