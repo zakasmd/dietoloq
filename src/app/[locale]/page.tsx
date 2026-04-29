@@ -1,5 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import ServicesSection from '@/components/home/ServicesSection';
+import BMICalculator from '@/components/home/BMICalculator';
 import AboutSnippet from '@/components/home/AboutSnippet';
 import TestimonialSlider from '@/components/home/TestimonialSlider';
 import FAQSection from '@/components/home/FAQSection';
@@ -10,6 +11,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
+      <BMICalculator />
       <AboutSnippet />
       <TestimonialSlider />
       <FAQSection />

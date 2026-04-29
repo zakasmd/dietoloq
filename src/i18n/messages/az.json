@@ -5,6 +5,30 @@
     "eyebrow": "Məqalələr",
     "read_more": "Ətraflı oxu"
   },
+  "bmi": {
+    "eyebrow": "Sağlamlıq Alətləri",
+    "title": "Bədən Kütlə İndeksi",
+    "description": "BÇİ sizin sağlamlıq vəziyyətinizi qiymətləndirmək üçün sadə və effektiv bir üsuldur.",
+    "weight": "Çəki",
+    "height": "Boy",
+    "table": {
+      "range": "BÇİ Aralığı",
+      "category": "Kateqoriya"
+    },
+    "categories": {
+      "underweight": "Çəki azlığı",
+      "normal": "Normal çəki",
+      "overweight": "Artıq çəki",
+      "obese1": "Piylənmə",
+      "obese2": "Kəskin Piylənmə"
+    },
+    "advice": {
+      "underweight": "Çəkiniz normadan aşağıdır. Balanslı qidalanma üçün bizimlə əlaqə saxlayın.",
+      "normal": "Təbriklər! Çəkiniz tam ideal formadadır. Belə davam edin.",
+      "overweight": "Bir az artıq çəkiniz var. Sağlam arıqlamaq üçün proqramlarımıza baxın.",
+      "obese": "Sağlamlığınız üçün riskli zonadasınız. Peşəkar dəstək almağınız tövsiyə olunur."
+    }
+  },
   "nav": {
     "home": "Ana Səhifə",
     "about": "Haqqında",

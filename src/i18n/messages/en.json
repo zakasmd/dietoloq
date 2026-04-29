@@ -5,6 +5,30 @@
     "eyebrow": "Articles",
     "read_more": "Read more"
   },
+  "bmi": {
+    "eyebrow": "Health Tools",
+    "title": "Body Mass Index",
+    "description": "BMI is a simple and effective way to assess your health status.",
+    "weight": "Weight",
+    "height": "Height",
+    "table": {
+      "range": "BMI Range",
+      "category": "Category"
+    },
+    "categories": {
+      "underweight": "Underweight",
+      "normal": "Normal weight",
+      "overweight": "Overweight",
+      "obese1": "Obesity",
+      "obese2": "Severely Obese"
+    },
+    "advice": {
+      "underweight": "Your weight is below normal. Contact us for a balanced nutrition plan.",
+      "normal": "Congratulations! Your weight is in ideal shape. Keep it up.",
+      "overweight": "You are slightly overweight. Check our programs for healthy weight loss.",
+      "obese": "You are in a health risk zone. Professional support is recommended."
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",
