@@ -59,6 +59,7 @@ export default function BMICalculator() {
             <span className="eyebrow">{t('eyebrow')}</span>
             <h2 className={styles.title}>{t('title')}</h2>
             <p className={styles.description}>{t('description')}</p>
+            <p className={styles.usage}>{t('usage')}</p>
 
             <div className={styles.tableCard}>
               <table className={styles.table}>
@@ -89,33 +90,47 @@ export default function BMICalculator() {
             <div className="glass-strong" style={{ padding: '2.5rem', borderRadius: '2rem', height: '100%' }}>
               <div className={styles.inputs}>
                 <div className={styles.inputGroup}>
-                  <div className={styles.labelRow}>
+                  <label htmlFor="weight-input" className={styles.labelRow}>
                     <span>{t('weight')} (kg)</span>
-                    <span className={styles.valueDisplay}>{weight}</span>
+                  </label>
+                  <div className={styles.inputWrapper}>
+                    <input 
+                      id="weight-input"
+                      type="number" 
+                      min="10" 
+                      max="300" 
+                      value={weight} 
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value);
+                        if (!isNaN(val)) setWeight(val);
+                        else if (e.target.value === '') setWeight(0);
+                      }}
+                      className={styles.numberInput}
+                      placeholder="70"
+                    />
                   </div>
-                  <input 
-                    type="range" 
-                    min="30" 
-                    max="200" 
-                    value={weight} 
-                    onChange={(e) => setWeight(parseInt(e.target.value))}
-                    className={styles.range}
-                  />
                 </div>
 
                 <div className={styles.inputGroup}>
-                  <div className={styles.labelRow}>
+                  <label htmlFor="height-input" className={styles.labelRow}>
                     <span>{t('height')} (cm)</span>
-                    <span className={styles.valueDisplay}>{height}</span>
+                  </label>
+                  <div className={styles.inputWrapper}>
+                    <input 
+                      id="height-input"
+                      type="number" 
+                      min="50" 
+                      max="250" 
+                      value={height} 
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value);
+                        if (!isNaN(val)) setHeight(val);
+                        else if (e.target.value === '') setHeight(0);
+                      }}
+                      className={styles.numberInput}
+                      placeholder="170"
+                    />
                   </div>
-                  <input 
-                    type="range" 
-                    min="100" 
-                    max="220" 
-                    value={height} 
-                    onChange={(e) => setHeight(parseInt(e.target.value))}
-                    className={styles.range}
-                  />
                 </div>
               </div>
 

@@ -9,6 +9,7 @@
     "eyebrow": "Sağlamlıq Alətləri",
     "title": "Bədən Kütlə İndeksi",
     "description": "BÇİ sizin sağlamlıq vəziyyətinizi qiymətləndirmək üçün sadə və effektiv bir üsuldur.",
+    "usage": "Aşağıdakı xanalara çəki və boyunuzu daxil edərək sağlamlıq statusunuzu dərhal öyrənin.",
     "weight": "Çəki",
     "height": "Boy",
     "table": {
@@ -176,7 +177,7 @@
       "Arıqlama və çəki azaltma üçün fərdi diet proqramları (idmansız)",
       "Kökəlmək istəyənlər üçün fərdi çəki artırma planları",
       "Sağlam qidalanma konsultasiyası və su qəbulu planı",
-      "Qocalmağın qarşısını almaq — nutrisyon sahəsində məsləhət",
+      "Qocalmağın qarşısını almaq — nutrisyon sahəsində məsləhet",
       "Detoks proqramı və detoks çayı ilə bədən təmizliyi",
       "Beynəlxalq (İsveçrə, Almaniya və s.) 7 günlük proqramlar",
       "Seminarlar, tədbirlər, media və TV çıxışları"
@@ -357,7 +358,6 @@
     "haveAccount": "Hesabınız var?",
     "login": "Daxil ol"
   },
-
   "contact": {
     "eyebrow": "Əlaqə",
     "title": "Bizimlə əlaqə saxlayın",

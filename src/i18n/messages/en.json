@@ -9,6 +9,7 @@
     "eyebrow": "Health Tools",
     "title": "Body Mass Index",
     "description": "BMI is a simple and effective way to assess your health status.",
+    "usage": "Enter your weight and height in the fields below to instantly learn your health status.",
     "weight": "Weight",
     "height": "Height",
     "table": {
