@@ -3,6 +3,12 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const { message } = await request.json();
+    const { sanitizeInput } = await import('@/lib/utils/sanitization');
+    const cleanMessage = sanitizeInput(message);
+    
+    if (!cleanMessage) {
+      return NextResponse.json({ error: 'Message content is required and must be safe' }, { status: 400 });
+    }
     
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -18,7 +24,7 @@ export async function POST(request: Request) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: chatId,
-        text: message,
+        text: cleanMessage,
       }),
     });
 

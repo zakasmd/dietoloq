@@ -34,19 +34,24 @@ export default function ConsultationPage() {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
+      const { sanitizeObject } = await import('@/lib/utils/sanitization');
+      const cleanData = sanitizeObject(data);
+      
       const supabase = createClient();
       const { error } = await supabase.from('consultations').insert([{
-        full_name: data.full_name,
-        phone: data.phone,
-        email: data.email || null,
-        age: data.age ? parseInt(data.age) : null,
-        goal: data.goal,
-        message: data.message || null,
+        full_name: cleanData.full_name,
+        phone: cleanData.phone,
+        email: cleanData.email || null,
+        age: cleanData.age ? parseInt(cleanData.age) : null,
+        goal: cleanData.goal,
+        message: cleanData.message || null,
       }]);
 
+      if (error) throw error;
+
       // Telegram bildirişi (Server-side API üzərindən)
-      const goalLabel = t(`goalOptions.${data.goal}`);
-      const msg = `📋 Yeni Konsultasiya Müraciəti\n\n👤 Ad: ${data.full_name}\n📞 Telefon: ${data.phone}${data.email ? `\n📧 Email: ${data.email}` : ''}${data.age ? `\n🎂 Yaş: ${data.age}` : ''}\n🎯 Məqsəd: ${goalLabel}${data.message ? `\n💬 Qeyd: ${data.message}` : ''}`;
+      const goalLabel = t(`goalOptions.${cleanData.goal}`);
+      const msg = `📋 Yeni Konsultasiya Müraciəti\n\n👤 Ad: ${cleanData.full_name}\n📞 Telefon: ${cleanData.phone}${cleanData.email ? `\n📧 Email: ${cleanData.email}` : ''}${cleanData.age ? `\n🎂 Yaş: ${cleanData.age}` : ''}\n🎯 Məqsəd: ${goalLabel}${cleanData.message ? `\n💬 Qeyd: ${cleanData.message}` : ''}`;
       
       fetch('/api/telegram', {
         method: 'POST',

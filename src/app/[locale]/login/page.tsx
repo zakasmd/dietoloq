@@ -68,11 +68,14 @@ function LoginContent() {
     setLoading(true);
     setError('');
     setSuccessMsg('');
+    const { sanitizeInput } = await import('@/lib/utils/sanitization');
+    const cleanFullName = sanitizeInput(data.full_name);
+    
     const supabase = createClient();
     const { data: authData, error } = await supabase.auth.signUp({
       email: data.email.trim(),
       password: data.password,
-      options: { data: { full_name: data.full_name.trim() } },
+      options: { data: { full_name: cleanFullName } },
     });
     if (error) {
       if (error.message.includes('already registered')) {
