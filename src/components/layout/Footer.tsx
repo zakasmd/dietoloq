@@ -116,6 +116,9 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p className={styles.copyright}>
             © {currentYear} {t('copyrightName')}. {t('rights')}
+            <Link href={`/${locale}/privacy`} style={{ marginLeft: '1.5rem', color: 'inherit', textDecoration: 'none', opacity: 0.6 }} className="hover:opacity-100 transition-opacity">
+              {locale === 'az' ? 'Məxfilik Siyasəti' : locale === 'ru' ? 'Конфиденциальность' : 'Privacy Policy'}
+            </Link>
           </p>
         </div>
       </div>

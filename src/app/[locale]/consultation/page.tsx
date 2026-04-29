@@ -242,6 +242,16 @@ export default function ConsultationPage() {
                   />
                 </div>
 
+                <div style={{ marginBottom: '1.5rem', fontSize: '0.8rem', color: 'hsl(var(--muted-foreground))', textAlign: 'center' }}>
+                  {locale === 'az' ? (
+                    <>Məlumatlarınızı göndərməklə <Link href={`/${locale}/privacy`} style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Məxfilik Siyasəti</Link> ilə razılaşırsınız.</>
+                  ) : locale === 'ru' ? (
+                    <>Отправляя свои данные, вы соглашаетесь с <Link href={`/${locale}/privacy`} style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Политикой конфиденциальности</Link>.</>
+                  ) : (
+                    <>By submitting your data, you agree to our <Link href={`/${locale}/privacy`} style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Privacy Policy</Link>.</>
+                  )}
+                </div>
+
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg"

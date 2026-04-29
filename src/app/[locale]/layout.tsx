@@ -7,6 +7,7 @@ import '@/app/globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import CookieConsent from '@/components/ui/CookieConsent';
 
 type Locale = 'az' | 'ru' | 'en';
 
@@ -80,8 +81,9 @@ export default async function LocaleLayout({
         <Navbar />
         <main style={{ flex: 1, width: '100%', overflowX: 'hidden' }}>{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <CookieConsent />
       </div>
-      <WhatsAppButton />
     </NextIntlClientProvider>
   );
 }
