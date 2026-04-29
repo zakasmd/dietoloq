@@ -38,7 +38,7 @@ export function middleware(request: NextRequest) {
     
     // Add noindex header for sensitive routes to keep them out of search results 
     // without exposing them in robots.txt
-    if (pathname.startsWith('/admin') || pathname.startsWith('/dashboard')) {
+    if (pathname.startsWith('/admin') || pathname.startsWith('/dashboard') || pathname.startsWith('/api')) {
       response.headers.set('X-Robots-Tag', 'noindex, nofollow');
     }
     
