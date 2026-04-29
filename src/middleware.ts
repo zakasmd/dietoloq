@@ -9,7 +9,7 @@ const rateLimitMap = new Map<string, { count: number, lastRequest: number }>();
 const RATE_LIMIT_THRESHOLD = 10; // 10 requests
 const RATE_LIMIT_WINDOW = 60 * 1000; // per minute
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const ip = request.headers.get('x-forwarded-for') || 'anonymous';
 
