@@ -100,10 +100,10 @@ export default function BMICalculator() {
                       value={weight === 0 ? '' : weight} 
                       onChange={(e) => {
                         const val = e.target.value;
-                        if (val.length > 3) return; // Limit to 3 digits
+                        if (val.length > 3) return;
                         const num = parseInt(val);
                         if (!isNaN(num)) {
-                          if (num > 600) setWeight(600); // Max weight limit
+                          if (num > 250) setWeight(250); // Updated limit
                           else setWeight(num);
                         } else {
                           setWeight(0);
@@ -111,6 +111,14 @@ export default function BMICalculator() {
                       }}
                       className={styles.numberInput}
                       placeholder="0"
+                    />
+                    <input 
+                      type="range" 
+                      min="10" 
+                      max="250" 
+                      value={weight} 
+                      onChange={(e) => setWeight(parseInt(e.target.value))}
+                      className={styles.rangeInput}
                     />
                   </div>
                 </div>
@@ -126,10 +134,10 @@ export default function BMICalculator() {
                       value={height === 0 ? '' : height} 
                       onChange={(e) => {
                         const val = e.target.value;
-                        if (val.length > 3) return; // Limit to 3 digits
+                        if (val.length > 3) return;
                         const num = parseInt(val);
                         if (!isNaN(num)) {
-                          if (num > 300) setHeight(300); // Max height limit
+                          if (num > 220) setHeight(220); // Updated limit
                           else setHeight(num);
                         } else {
                           setHeight(0);
@@ -137,6 +145,14 @@ export default function BMICalculator() {
                       }}
                       className={styles.numberInput}
                       placeholder="0"
+                    />
+                    <input 
+                      type="range" 
+                      min="50" 
+                      max="220" 
+                      value={height} 
+                      onChange={(e) => setHeight(parseInt(e.target.value))}
+                      className={styles.rangeInput}
                     />
                   </div>
                 </div>
