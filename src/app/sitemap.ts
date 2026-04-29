@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 const BASE_URL = 'https://leylazulfuqarli.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const supabase = createClient();
+  const supabase = await createClient();
   
   // Static pages
   const staticPages = [
