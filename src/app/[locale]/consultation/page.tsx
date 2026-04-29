@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
