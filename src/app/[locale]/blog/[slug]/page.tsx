@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, ChevronLeft, Video, Clock, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Calendar, ChevronLeft, Video, Clock, Share2 } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -22,6 +22,17 @@ type BlogPost = {
   category: string;
   created_at: string;
 };
+
+// Custom Social Icons (since lucide version is missing them)
+const WhatsAppIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3l-1.5 5.5Z"/></svg>
+);
+const FacebookIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+const InstagramIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+);
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -50,7 +61,6 @@ export default function BlogPostPage() {
   const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
   const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
   
-  // FIXED DATE FORMAT
   const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
     day: 'numeric',
     month: 'long',
@@ -163,13 +173,13 @@ export default function BlogPostPage() {
                <span style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', fontWeight: 700 }}>PAYLAŞIN:</span>
                <div style={{ display: 'flex', gap: '0.75rem' }}>
                  <button onClick={shareOnWhatsapp} className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}>
-                   <MessageCircle size={20} />
+                   <WhatsAppIcon />
                  </button>
                  <button onClick={shareOnFacebook} className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#1877F2', color: '#1877F2' }}>
-                   <Facebook size={20} />
+                   <FacebookIcon />
                  </button>
                  <Link href="https://instagram.com/leylazulfuqarli" target="_blank" className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F' }}>
-                   <Instagram size={20} />
+                   <InstagramIcon />
                  </Link>
                </div>
             </div>
