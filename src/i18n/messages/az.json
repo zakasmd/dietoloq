@@ -1,4 +1,10 @@
 {
+  "blog": {
+    "title": "Bloq",
+    "subtitle": "Sağlamlıq və qidalanma haqqında peşəkar tövsiyələr",
+    "eyebrow": "Məqalələr",
+    "read_more": "Ətraflı oxu"
+  },
   "nav": {
     "home": "Ana Səhifə",
     "about": "Haqqında",

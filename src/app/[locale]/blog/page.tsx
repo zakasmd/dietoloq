@@ -91,71 +91,79 @@ export default function BlogPage() {
               return (
                 <motion.article 
                   key={post.id}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: idx * 0.1 }}
                   className="glass hover-glow"
                   style={{ 
-                    padding: '3.5rem',
-                    borderRadius: 'var(--radius-3xl)',
+                    borderRadius: '2.5rem',
                     position: 'relative',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    cursor: 'pointer'
                   }}
                 >
-                  <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 320px' : '1fr', gap: '4rem', alignItems: 'center' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                      {/* Author Header */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div style={{ width: 50, height: 50, borderRadius: '50%', border: '2px solid hsl(var(--primary)/0.3)', padding: '2px' }}>
-                          <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                  <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', padding: '3.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 320px' : '1fr', gap: '4rem', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                        {/* Author Header */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                          <div style={{ width: 50, height: 50, borderRadius: '50%', border: '2px solid hsl(var(--primary)/0.3)', padding: '2px', overflow: 'hidden' }}>
+                            <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                          </div>
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontWeight: 700, fontSize: '1.05rem', color: 'hsl(var(--foreground))' }}>Leyla Zülfüqarlı</span>
+                            <span className="text-gradient-mint" style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
+                          </div>
                         </div>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                          <span style={{ fontWeight: 700, fontSize: '1.05rem', color: 'hsl(var(--foreground))' }}>Leyla Zülfüqarlı</span>
-                          <span className="text-gradient-mint" style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
-                        </div>
-                      </div>
 
-                      <div>
-                        <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                        <div>
                           <h2 style={{ 
                             fontSize: '2.25rem', 
                             fontWeight: 700, 
                             lineHeight: 1.15, 
                             color: 'hsl(var(--foreground))', 
                             marginBottom: '1rem',
-                            letterSpacing: '-0.03em'
+                            letterSpacing: '-0.03em',
+                            overflowWrap: 'break-word',
+                            wordBreak: 'break-word'
                           }}>
                             {title}
                           </h2>
-                        </Link>
-                        <p style={{ 
-                          fontSize: '1.1rem', 
-                          lineHeight: 1.7, 
-                          color: 'hsl(var(--muted-foreground))', 
-                          marginBottom: '2rem'
-                        }}>
-                          {excerpt}
-                        </p>
-                      </div>
-
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid hsl(var(--primary)/0.1)', paddingTop: '1.5rem' }}>
-                        <div style={{ display: 'flex', gap: '2rem', color: 'hsl(var(--muted-foreground))', fontSize: '0.85rem' }}>
-                           <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Calendar size={16} className="text-primary" /> {date}</span>
-                           <span className="badge badge-primary" style={{ fontSize: '0.7rem' }}>{post.category}</span>
+                          <p style={{ 
+                            fontSize: '1.1rem', 
+                            lineHeight: 1.7, 
+                            color: 'hsl(var(--muted-foreground))', 
+                            marginBottom: '2rem',
+                            overflowWrap: 'break-word',
+                            wordBreak: 'break-word',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 4,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden'
+                          }}>
+                            {excerpt}
+                          </p>
                         </div>
-                        <Link href={`/${locale}/blog/${post.slug}`} className="btn btn-primary btn-sm" style={{ gap: '0.5rem' }}>
-                          {locale === 'az' ? 'Davamını oxu' : locale === 'ru' ? 'Читать полностью' : 'Read full story'} <ArrowRight size={16} />
-                        </Link>
-                      </div>
-                    </div>
 
-                    {post.image_url && (
-                      <Link href={`/${locale}/blog/${post.slug}`} style={{ width: '100%', aspectRatio: '4/5', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', display: 'block', boxShadow: 'var(--glow-mint)' }}>
-                        <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
-                      </Link>
-                    )}
-                  </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid hsl(var(--primary)/0.1)', paddingTop: '1.5rem' }}>
+                          <div style={{ display: 'flex', gap: '2rem', color: 'hsl(var(--muted-foreground))', fontSize: '0.85rem' }}>
+                             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Calendar size={16} className="text-primary" /> {date}</span>
+                             <span className="badge badge-primary" style={{ fontSize: '0.7rem' }}>{post.category}</span>
+                          </div>
+                          <span className="btn btn-primary btn-sm" style={{ gap: '0.5rem' }}>
+                            {locale === 'az' ? 'Davamını oxu' : locale === 'ru' ? 'Читать полностью' : 'Read full story'} <ArrowRight size={16} />
+                          </span>
+                        </div>
+                      </div>
+
+                      {post.image_url && (
+                        <div style={{ width: '100%', aspectRatio: '4/5', borderRadius: '2rem', overflow: 'hidden', boxShadow: 'var(--glow-mint)' }}>
+                          <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
+                        </div>
+                      )}
+                    </div>
+                  </Link>
                 </motion.article>
               );
             })

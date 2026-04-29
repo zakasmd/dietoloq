@@ -1,4 +1,10 @@
 {
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Professional advice on health and nutrition",
+    "eyebrow": "Articles",
+    "read_more": "Read more"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
