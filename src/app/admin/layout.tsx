@@ -12,7 +12,7 @@ const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@dietoloq.az';
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/consultations', label: 'Konsultasiyalar', icon: MessageSquare },
-  { href: '/admin/blog', label: 'Blog', icon: FileText },
+  { href: '/admin/blog', label: 'Blog Yazıları', icon: Plus },
   { href: '/admin/courses', label: 'Kurslar', icon: BookOpen },
   { href: '/admin/books', label: 'PDF Kitablar', icon: FileUp },
   { href: '/admin/users', label: 'İstifadəçilər', icon: Users },
