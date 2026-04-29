@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, ChevronLeft, Share2, Video, Clock } from 'lucide-react';
+import { Calendar, ChevronLeft, Video, Clock, Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 type BlogPost = {
   id: string;
@@ -49,6 +49,8 @@ export default function BlogPostPage() {
 
   const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
   const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
+  
+  // FIXED DATE FORMAT
   const date = new Date(post.created_at).toLocaleDateString(locale === 'az' ? 'az-AZ' : locale === 'ru' ? 'ru-RU' : 'en-US', {
     day: 'numeric',
     month: 'long',
@@ -64,6 +66,11 @@ export default function BlogPostPage() {
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
   const readTime = Math.ceil(content.split(' ').length / 200) + ' dəq';
 
+  // Share handlers
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareOnFacebook = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+  const shareOnWhatsapp = () => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + shareUrl)}`, '_blank');
+
   return (
     <div style={{ paddingTop: '10rem', paddingBottom: '12rem', minHeight: '100vh' }}>
       <div className="container" style={{ maxWidth: '1100px' }}>
@@ -72,9 +79,9 @@ export default function BlogPostPage() {
         </Link>
 
         <motion.article 
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="glass"
           style={{ 
             padding: 'clamp(2rem, 5vw, 5rem)', 
@@ -152,11 +159,19 @@ export default function BlogPostPage() {
           )}
 
           <footer style={{ borderTop: '1px solid hsl(var(--primary)/0.1)', paddingTop: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                <span style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', fontWeight: 700 }}>PAYLAŞIN:</span>
-               <button className="btn btn-outline" style={{ width: 50, height: 50, borderRadius: '50%', padding: 0, justifyContent: 'center' }} onClick={() => window.print()}>
-                 <Share2 size={20} />
-               </button>
+               <div style={{ display: 'flex', gap: '0.75rem' }}>
+                 <button onClick={shareOnWhatsapp} className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}>
+                   <MessageCircle size={20} />
+                 </button>
+                 <button onClick={shareOnFacebook} className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#1877F2', color: '#1877F2' }}>
+                   <Facebook size={20} />
+                 </button>
+                 <Link href="https://instagram.com/leylazulfuqarli" target="_blank" className="btn btn-outline" style={{ width: 44, height: 44, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F' }}>
+                   <Instagram size={20} />
+                 </Link>
+               </div>
             </div>
             <Link href={`/${locale}/blog`} className="btn btn-primary" style={{ borderRadius: '100px' }}>
                Digər Məqalələr

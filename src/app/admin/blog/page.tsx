@@ -132,7 +132,16 @@ export default function AdminBlogPage() {
           <h1 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Blog İdarəetməsi</h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Məqalələr paylaşın və redaktə edin</p>
         </div>
-        <button className="btn btn-primary btn-sm" onClick={() => { setShowForm(true); setEditingPost(null); reset({}); }}>
+        <button className="btn btn-primary btn-sm" onClick={() => { 
+          setEditingPost(null);
+          reset({
+            title_az: '', title_ru: '', title_en: '',
+            content_az: '', content_ru: '', content_en: '',
+            image_url: '', youtube_url: '', category: 'Sağlamlıq',
+            slug: ''
+          });
+          setShowForm(true); 
+        }}>
           <Plus size={16} /> Yeni Post
         </button>
       </div>
