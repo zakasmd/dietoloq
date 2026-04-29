@@ -38,6 +38,7 @@ export default function Navbar() {
     { href: `/${locale}/about`, label: t('about') },
     { href: `/${locale}/services`, label: t('services') },
     { href: `/${locale}/results`, label: t('results') },
+    { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/book`, label: t('book') },
     { href: `/${locale}/contact`, label: t('contact') },
   ];
