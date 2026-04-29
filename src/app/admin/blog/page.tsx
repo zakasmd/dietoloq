@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { Plus, Trash2, Edit2, X, Save, ExternalLink, Youtube, Image as ImageIcon } from 'lucide-react';
+import { Plus, Trash2, Edit2, X, Save, ExternalLink, Video, Image as ImageIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 
 type BlogPost = {
@@ -142,7 +142,7 @@ export default function AdminBlogPage() {
                 <input {...register('image_url')} className="form-input" placeholder="https://..." />
               </div>
               <div className="form-group">
-                <label className="form-label"><Youtube size={14} style={{ marginRight: '4px' }} /> YouTube Video URL</label>
+                <label className="form-label"><Video size={14} style={{ marginRight: '4px' }} /> YouTube Video URL</label>
                 <input {...register('youtube_url')} className="form-input" placeholder="https://youtube.com/watch?v=..." />
               </div>
             </div>

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
-import { Calendar, Tag, ChevronLeft, Share2, Youtube, User } from 'lucide-react';
+import { Calendar, Tag, ChevronLeft, Share2, Video, User } from 'lucide-react';
 
 type BlogPost = {
   id: string;
