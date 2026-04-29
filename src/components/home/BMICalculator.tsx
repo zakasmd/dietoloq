@@ -97,16 +97,20 @@ export default function BMICalculator() {
                     <input 
                       id="weight-input"
                       type="number" 
-                      min="10" 
-                      max="300" 
-                      value={weight} 
+                      value={weight === 0 ? '' : weight} 
                       onChange={(e) => {
-                        const val = parseInt(e.target.value);
-                        if (!isNaN(val)) setWeight(val);
-                        else if (e.target.value === '') setWeight(0);
+                        const val = e.target.value;
+                        if (val.length > 3) return; // Limit to 3 digits
+                        const num = parseInt(val);
+                        if (!isNaN(num)) {
+                          if (num > 600) setWeight(600); // Max weight limit
+                          else setWeight(num);
+                        } else {
+                          setWeight(0);
+                        }
                       }}
                       className={styles.numberInput}
-                      placeholder="70"
+                      placeholder="0"
                     />
                   </div>
                 </div>
@@ -119,16 +123,20 @@ export default function BMICalculator() {
                     <input 
                       id="height-input"
                       type="number" 
-                      min="50" 
-                      max="250" 
-                      value={height} 
+                      value={height === 0 ? '' : height} 
                       onChange={(e) => {
-                        const val = parseInt(e.target.value);
-                        if (!isNaN(val)) setHeight(val);
-                        else if (e.target.value === '') setHeight(0);
+                        const val = e.target.value;
+                        if (val.length > 3) return; // Limit to 3 digits
+                        const num = parseInt(val);
+                        if (!isNaN(num)) {
+                          if (num > 300) setHeight(300); // Max height limit
+                          else setHeight(num);
+                        } else {
+                          setHeight(0);
+                        }
                       }}
                       className={styles.numberInput}
-                      placeholder="170"
+                      placeholder="0"
                     />
                   </div>
                 </div>
@@ -137,17 +145,25 @@ export default function BMICalculator() {
               <div className={styles.resultArea}>
                 <div className={styles.bmiDisplay}>
                   <div className={styles.bmiCircle} style={{ borderColor: color }}>
-                    <span className={styles.bmiValue}>{bmi}</span>
+                    <span className={styles.bmiValue}>
+                      {weight > 0 && height > 0 ? bmi : '--'}
+                    </span>
                     <span className={styles.bmiLabel}>BMI</span>
                   </div>
                 </div>
                 <div className={styles.categoryInfo}>
-                  <div className={styles.statusBadge} style={{ backgroundColor: `${color}20`, color: color }}>
-                    {category}
-                  </div>
-                  <p className={styles.advice}>
-                    {bmi < 18.5 ? t('advice.underweight') : bmi < 25 ? t('advice.normal') : bmi < 30 ? t('advice.overweight') : t('advice.obese')}
-                  </p>
+                  {weight > 0 && height > 0 ? (
+                    <>
+                      <div className={styles.statusBadge} style={{ backgroundColor: `${color}20`, color: color }}>
+                        {category}
+                      </div>
+                      <p className={styles.advice}>
+                        {bmi < 18.5 ? t('advice.underweight') : bmi < 25 ? t('advice.normal') : bmi < 30 ? t('advice.overweight') : t('advice.obese')}
+                      </p>
+                    </>
+                  ) : (
+                    <p className={styles.advice}>{t('usage')}</p>
+                  )}
                 </div>
               </div>
             </div>
