@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { createClient } from '@/lib/supabase/client';
+import { createClient } from '@/lib/supabase/server';
 
 const BASE_URL = 'https://leylazulfuqarli.com';
 
