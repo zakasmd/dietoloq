@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/az',
     '/ru',
     '/en',
+    '/de',
     '/az/about',
     '/az/services',
     '/az/blog',
@@ -43,6 +44,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/en/blog/${post.slug}`,
+      lastModified: new Date(post.created_at),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/de/blog/${post.slug}`,
       lastModified: new Date(post.created_at),
       changeFrequency: 'monthly' as const,
       priority: 0.6,

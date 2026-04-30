@@ -12,6 +12,7 @@ const locales = [
   { code: 'az', label: 'AZ', flag: '🇦🇿' },
   { code: 'ru', label: 'RU', flag: '🇷🇺' },
   { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'de', label: 'DE', flag: '🇩🇪' },
 ];
 
 export default function Navbar() {

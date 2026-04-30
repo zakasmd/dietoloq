@@ -9,7 +9,7 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import CookieConsent from '@/components/ui/CookieConsent';
 
-type Locale = 'az' | 'ru' | 'en';
+type Locale = 'az' | 'ru' | 'en' | 'de';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -32,11 +32,13 @@ export async function generateMetadata({
     az: 'Leyla Zülfüqarlı | Peşəkar Dietoloq',
     ru: 'Лейла Зюльфюгарлы | Профессиональный Диетолог',
     en: 'Leyla Zülfüqarlı | Professional Dietitian',
+    de: 'Leyla Zülfüqarlı | Professionelle Ernährungsberaterin',
   };
   const descriptions: Record<string, string> = {
-    az: 'Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planları, konsultasiya və kurslar. 8+ il təcrübə, 200+ müştəri.',
-    ru: 'Профессиональный диетолог Лейла Зюльфюгарлы — индивидуальные планы питания, консультации и курсы. 8+ лет опыта, 200+ клиентов.',
-    en: 'Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses. 8+ years experience, 200+ clients.',
+    az: 'Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planları, konsultasiya və kurslar. 15+ il təcrübə, 12000+ müştəri.',
+    ru: 'Профессиональный диетолог Лейла Зюльфюгарлы — индивидуальные планы питания, консультации и курсы. 15+ лет опыта, 12000+ клиентов.',
+    en: 'Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses. 15+ years experience, 12000+ clients.',
+    de: 'Professionelle Ernährungsberaterin Leyla Zülfüqarlı – personalisierte Ernährungspläne, Beratungen und Kurse. 15+ Jahre Erfahrung, 12.000+ Kunden.',
   };
   return {
     title: titles[locale] || titles.az,
@@ -46,6 +48,7 @@ export async function generateMetadata({
         az: '/az',
         ru: '/ru',
         en: '/en',
+        de: '/de',
       },
     },
   };

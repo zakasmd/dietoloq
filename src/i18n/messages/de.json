@@ -1,0 +1,388 @@
+{
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Professionelle Beratung zu Gesundheit und Ernährung",
+    "eyebrow": "Artikel",
+    "read_more": "Weiterlesen"
+  },
+  "bmi": {
+    "eyebrow": "Gesundheits-Tools",
+    "title": "Body-Mass-Index",
+    "description": "Der Body-Mass-Index ist eine einfache und effektive Methode, um Ihren Gesundheitszustand zu bewerten.",
+    "usage": "Geben Sie Ihr Gewicht und Ihre Größe in die untenstehenden Felder ein, um sofort Ihren Gesundheitsstatus zu erfahren.",
+    "weight": "Gewicht",
+    "height": "Größe",
+    "table": {
+      "range": "BMI-Bereich",
+      "category": "Kategorie"
+    },
+    "categories": {
+      "underweight": "Untergewicht",
+      "normal": "Normalgewicht",
+      "overweight": "Übergewicht",
+      "obese1": "Adipositas",
+      "obese2": "Schwere Adipositas"
+    },
+    "advice": {
+      "underweight": "Ihr Gewicht liegt unter dem Normalwert. Kontaktieren Sie uns für einen ausgewogenen Ernährungsplan.",
+      "normal": "Herzlichen Glückwunsch! Ihr Gewicht ist in idealer Form. Machen Sie weiter so.",
+      "overweight": "Sie haben leichtes Übergewicht. Informieren Sie sich über unsere Programme zur gesunden Gewichtsabnahme.",
+      "obese": "Sie befinden sich in einer Gesundheitsrisikozone. Professionelle Unterstützung wird empfohlen."
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Leistungen",
+    "results": "Ergebnisse",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "consultation": "Beratung",
+    "book": "Buch",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "dashboard": "Dashboard",
+    "logout": "Abmelden",
+    "brandName": "Leyla Zülfüqarlı",
+    "subTitle": "Ernährungsberaterin",
+    "servicesBadge": "Leistungen",
+    "reviewsBadge": "Bewertungen"
+  },
+  "hero": {
+    "badge": "Professionelle Ernährungsberaterin · Baku",
+    "title": "Erreichen Sie Ihre Gesundheitsziele mit",
+    "titleHighlight": "einem persönlichen Ernährungsplan",
+    "subtitle": "Wissenschaftlich fundierte Diätprogramme, Beratungen und echte Ergebnisse mit Leyla Zülfüqarlı. 15+ Jahre Erfahrung in Abnehm-Methoden ohne Sport.",
+    "cta1": "Beratung buchen",
+    "cta2": "Kurse ansehen",
+    "whatsapp": "Nachricht auf WhatsApp",
+    "stat1": "12000+",
+    "stat1Label": "Kunden",
+    "stat2": "15+",
+    "stat2Label": "Jahre Erfahrung",
+    "stat3": "55+",
+    "stat3Label": "Zertifikate",
+    "stat4": "100+",
+    "stat4Label": "Erfolgreiche Seminare"
+  },
+  "services": {
+    "title": "Leistungen",
+    "subtitle": "Ein persönlicher Ansatz für jeden Kunden auf dem Weg zu einer besseren Gesundheit",
+    "items": {
+      "weightLoss": {
+        "title": "Abnehmprogramm",
+        "desc": "Personalisierte Diätprogramme zum Abnehmen. Wir stellen sicher, dass Sie Ihr Ziel ohne Hungern oder Sport erreichen, mit einem rein wissenschaftlich fundierten Ansatz. Wir beschleunigen Ihren Stoffwechsel nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker'.",
+        "f1": "Individuelle Kalorienberechnung",
+        "f2": "Wöchentlicher Speiseplan",
+        "f3": "Wasseraufnahme-Plan",
+        "f4": "Ergebnisverfolgung"
+      },
+      "weightGain": {
+        "title": "Gewichtszunahme",
+        "desc": "Speziell zugeschnittene Pläne für gesunde Gewichtszunahme und Ernährung für diejenigen, die zunehmen möchten. Wir helfen Ihnen, Ihr Idealgewicht zu erreichen, indem wir Muskel- und gesunde Fettmasse ohne schädliche Lebensmittel aufbauen.",
+        "f1": "Kalorienreicher Plan",
+        "f2": "Protein-Optimierung",
+        "f3": "Regelmäßige Kontrolle",
+        "f4": "Persönlicher Ansatz"
+      },
+      "antiAging": {
+        "title": "Anti-Aging & Ernährung",
+        "desc": "Spezielle Ernährungsberatung gegen das Altern und fachkundige Anleitung im Bereich der Ernährung. Ein zellerneuerndes Ernährungsprogramm, das die Hautgesundheit verbessert und den Körper verjüngt.",
+        "f1": "Antioxidantien-Plan",
+        "f2": "Hautgesundheit",
+        "f3": "Hormonelles Gleichgewicht",
+        "f4": "Jugend-Ernährung"
+      },
+      "consultation": {
+        "title": "Gesunde Ernährung",
+        "desc": "Korrektur der täglichen Essgewohnheiten, Planung der Wasseraufnahme und detaillierte Beratung für einen gesunden Lebensstil. Bereits beim ersten Gespräch werden die Bedürfnisse Ihres Körpers umfassend analysiert.",
+        "f1": "Wasseraufnahme-Plan",
+        "f2": "Essgewohnheiten",
+        "f3": "Diätkontrolle",
+        "f4": "Anleitung"
+      },
+      "detox": {
+        "title": "Detox-Programm",
+        "desc": "Reinigung des Körpers von schädlichen Toxinen, Verjüngung des Körpers mit speziellem Detox-Tee und Ernährung. Eine 7-tägige effektive Reinigung und Energiewiederherstellung basierend auf Schweizer Erfahrung.",
+        "f1": "Detox-Tee",
+        "f2": "Wochenprogramm",
+        "f3": "Körperreinigung",
+        "f4": "Ernährungsplan"
+      },
+      "media": {
+        "title": "IV-Therapie",
+        "desc": "Die intravenöse (IV) Therapie ist der effektivste Weg, um Nährstoffe, Vitamine und Mineralien über eine Infusion direkt an das Körpergewebe zu liefern. Sie steigert die Energie und stärkt die Immunität.",
+        "f1": "Vitamininfusion",
+        "f2": "Immun-Boost",
+        "f3": "Energiewiederherstellung",
+        "f4": "100% Absorption"
+      }
+    },
+    "learnMore": "Mehr erfahren",
+    "popular": "Beliebt",
+    "ctaTitle": "Welche Leistung ist die richtige für Sie?",
+    "ctaSubtitle": "Lassen Sie uns gemeinsam in einer kostenlosen Erstberatung darüber sprechen",
+    "ctaButton": "Beratung erhalten"
+  },
+  "results": {
+    "title": "Echte Ergebnisse",
+    "subtitle": "Erfolgsgeschichten unserer Kunden",
+    "eyebrow": "Ergebnisse",
+    "beforeLabel": "Vorher",
+    "afterLabel": "Nachher",
+    "viewAll": "Alle ansehen",
+    "statsClients": "12000+ Erfolgreiche Kunden",
+    "statsSatisfy": "100% Zufriedenheitsrate",
+    "statsLoss": "Durchschnittlicher Gewichtsverlust",
+    "statsTime": "Erste Ergebnisse in",
+    "goalLoss": "Gewichtsabnahme",
+    "goalGain": "Gewichtszunahme",
+    "monthLabel": "Monate",
+    "weekLabel": "Wochen",
+    "ctaTitle": "Auch Sie können Ergebnisse erzielen",
+    "ctaSubtitle": "Lassen Sie uns Ihren persönlichen Ernährungsplan erstellen",
+    "ctaButton": "Beratung erhalten",
+    "case1Goal": "Abnehmprozess",
+    "case1Title": "4 kg Ergebnis in 1 Woche!",
+    "case2Goal": "Gewichtszunahme",
+    "case2Title": "Veränderung eines Patienten, der in 1 Monat 5 kg zugenommen hat!",
+    "case3Goal": "Abnehmprozess",
+    "case3Title": "30 kg Gewichtsverlust in 3 Monaten! Murad Arif",
+    "case4Goal": "Anti-Aging-Prozess",
+    "case4Title": "Spezieller Anti-Aging-Prozess durch Steigerung der Lebensqualität",
+    "case5Goal": "Cellulite-Behandlung",
+    "case5Title": "Persönlicher Ansatz, um Cellulite vollständig loszuwerden",
+    "case6Goal": "IV-Therapie",
+    "case6Title": "Spezielle IV-Therapie zur Wiederherstellung Ihrer Energie und Stärkung der Immunität"
+  },
+  "about": {
+    "title": "Über mich",
+    "shortBio": "Leyla Zülfüqarlı – Professionelle Ernährungsberaterin mit 15+ Jahren Erfahrung, Autorin der ersten Diätbücher in Aserbaidschan. Mit Auftritten in TV-Sendern wie AzTV, Xazar TV, Show TV, ITV und ARB, internationalen Detox-Programmen (Schweiz, Deutschland) und über 12.000 zufriedenen Kunden macht sie einen echten Unterschied in der gesunden Ernährung.",
+    "readMore": "Mehr lesen",
+    "experience": "Jahre Exp.",
+    "certificates": "Zertifikate",
+    "clients": "Kunden",
+    "experienceVal": "15+",
+    "certificatesVal": "55+",
+    "clientsVal": "12000+",
+    "bio1": "Mit über 15 Jahren Erfahrung als professionelle Ernährungsberaterin hat Leyla Zülfüqarlı personalisierte, wissenschaftlich fundierte Ernährungspläne für mehr als 12.000 Kunden erstellt und deren Leben verändert. Sie studierte Medizinische Biologie an der Medizinischen Universität und arbeitete später als chirurgische Assistentin. Getrieben von dem Wunsch, Menschen effektiver zu helfen, setzte sie ihre Ausbildung in Diätetik 2010 in der Ukraine fort und spezialisierte sich 2012 an der Istanbul Medipol Universität auf 'Ernährung und Diätetik'.",
+    "bio2": "Das Fachwissen von Leyla Zülfüqarlı reicht über Aserbaidschan hinaus; sie hat in Ländern wie Deutschland, der Schweiz, der Türkei, der Slowakei, Großbritannien und Frankreich gearbeitet. Insbesondere organisierte sie spezielle 7-tägige Detox- und Abnehmprogramme für Aserbaidschaner in der Schweiz, die sowohl das körperliche als auch das geistige Wohlbefinden steigerten.",
+    "bio3": "Anerkannt als Autorin der ersten Diätbücher in Aserbaidschan, ist Leyla die Schöpferin von zwei erfolgreichen Büchern: 'Gesund essen, abnehmen' und 'Das Geheimnis der Fettleibigkeit, der Schlüssel zur Gewichtsabnahme'. Ihre Artikel über gesunde Ernährung wurden mehrfach in lokalen und türkischen Zeitungen veröffentlicht. Darüber hinaus hat sie ihre Geheimnisse einer gesunden Ernährung mit Tausenden geteilt, indem sie in zahlreichen prominenten TV-Sendern auftrat, darunter AzTV, Xazar TV, Show TV, ITV, ARB und Lider TV.",
+    "bio4": "Nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker' hilft Leyla sowohl denjenigen, die ohne Sport abnehmen möchten, als auch denjenigen, die durch einen maßgeschneiderten Ansatz zunehmen wollen. Sie teilt regelmäßig Lehrvideos auf ihren YouTube-, Facebook- und Instagram-Kanälen. Jeder, der sie konsultiert, verlässt sie hochzufrieden und gesünder.",
+    "missionTitle": "Meine Mission",
+    "missionText1": "In dem Wissen, dass jeder Mensch anders ist, bereite ich für jeden einen einzigartigen Ernährungsplan vor. Um ein gesundes Leben zu führen, sollte Essen ein Vergnügen, ein Lebensstil sein – keine Einschränkung.",
+    "missionText2": "Nicht nur das Gewicht meiner Kunden zu verbessern, sondern auch ihre Gesundheit, ihr Energieniveau und ihre Lebensqualität – das ist mein Ziel.",
+    "servicesTitle": "Was ich für meine Kunden tue?",
+    "servicesList": [
+      "Personalisierte Diätprogramme zur Gewichtsabnahme (ohne Sport)",
+      "Gesunde Gewichtszunahme-Pläne für diejenigen, die zunehmen möchten",
+      "Gesunde Ernährungsberatung und Planung der Wasseraufnahme",
+      "Anti-Aging — fachkundige Beratung im Bereich der Ernährung",
+      "Körperreinigung mit Detox-Programmen und Detox-Tee",
+      "Internationale (Schweiz, Deutschland, etc.) 7-Tage-Programme",
+      "Seminare, Veranstaltungen, Medien- und TV-Auftritte"
+    ],
+    "certsLabel": "Zertifikate",
+    "certsTitle": "Ausbildung und Zertifikate",
+    "certsList": [
+      "Ukraine Diätetik-Ausbildung",
+      "Istanbul Medipol Universität - Ernährung und Diätetik",
+      "Zertifikat für klinische Ernährung",
+      "Anti-Aging-Zertifikat",
+      "Zertifikat für sportfreie Abnehm-Methoden"
+    ],
+    "socialTitle": "Folgen Sie mir",
+    "socialDesc": "Ich teile nützliche Tipps, Live-Übertragungen und Gesundheitsgeheimnisse in sozialen Netzwerken",
+    "certsBadgeTitle": "55+ Zertifikate",
+    "certsBadgeSub": "Klinische Ernährung"
+  },
+  "testimonials": {
+    "title": "Kundenstimmen",
+    "subtitle": "Bewertungen unserer zufriedenen Kunden",
+    "items": [
+      {
+        "name": "Murad Arif (Komponist, Produzent)",
+        "text": "Dank Leylas persönlichem Programm habe ich in nur 3 Monaten genau 30 kg abgenommen! Am wichtigsten ist, dass ich dieses Ergebnis auf gesunde Weise ohne Operation erreicht habe und mein Gewicht halte.",
+        "result": "-30 kg / 3 Monate",
+        "avatar": "👨"
+      },
+      {
+        "name": "Nermine",
+        "text": "Ich litt 9-10 Jahre lang an Fettleibigkeit. Ich konnte kaum noch gehen und hatte große Probleme. Ich habe vieles versucht, aber ohne Erfolg. Dank Leylas persönlichem Programm habe ich in 4 Monaten genau 30 kg verloren! Ich fühle mich jetzt so leicht.",
+        "result": "-30 kg / 4 Monate",
+        "avatar": "👩"
+      },
+      {
+        "name": "Gunay",
+        "text": "Ich bin so glücklich, denn dies war meine erste Diät und ich habe in 1 Monat 7 Kilo abgenommen. Da ich an Hashimoto leide, konnte ich vorher höchstens 1-2 Kilo abnehmen. Aber dank Leylas speziellem Ansatz habe ich diesen Erfolg erzielt!",
+        "result": "-7 kg / 1 Monat",
+        "avatar": "👩‍🦰"
+      },
+      {
+        "name": "Ravane (54 Jahre alt)",
+        "text": "Ich war sehr hoffnungslos, als ich mit dem Programm begann. 2 Jahre lang habe ich sehr strenge zucker- und kohlenhydratfreie Diäten und Sport gemacht, konnte aber nicht einmal 1 kg abnehmen. Ich litt auch an schweren Allergien und Juckreiz. Aber 1 Monat später ließ der Juckreiz nach, ich verlor 10 Kilo und 20 cm Fett wurden abgebaut!",
+        "result": "-10 kg / 1 Monat",
+        "avatar": "👩‍🦳"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "q": "Wie läuft eine Beratung ab?",
+        "a": "Beratungen finden sowohl online (Videoanruf) als auch persönlich statt. In der ersten Sitzung werden Ihr Gesundheitszustand, Ihre Ziele und Ihr Lebensstil analysiert."
+      },
+      {
+        "q": "Wie schnell werde ich Ergebnisse sehen?",
+        "a": "Erste Ergebnisse zeigen sich innerhalb der ersten 2 Wochen. Im Durchschnitt ist eine gesunde Gewichtsabnahme von 3-5 kg pro Monat erreichbar. Die Ergebnisse variieren je nach individuellen Zielen."
+      },
+      {
+        "q": "Sind die Pläne personalisiert?",
+        "a": "Ja, jeder Plan wird komplett individuell auf Basis Ihres Alters, Gewichts, Gesundheitszustands, Ihrer Essensvorlieben und Ihres Lebensstils erstellt."
+      },
+      {
+        "q": "Ist es möglich, ohne Sport abzunehmen?",
+        "a": "Ja. Leylas Methodik ist auf sportfreies Abnehmen ausgerichtet. Mit dem richtigen Ernährungsplan sind effektive Ergebnisse auch ohne Training möglich."
+      },
+      {
+        "q": "Wo kann ich das Buch kaufen?",
+        "a": "'Das Geheimnis des Gewichts — Der Schlüssel zur Schlankheit' kann über WhatsApp bestellt werden und ist auch im BakuBookCenter und auf Alinino.az erhältlich."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Starten Sie noch heute",
+    "subtitle": "Holen Sie sich Ihren persönlichen Ernährungsplan und machen Sie den ersten Schritt in ein gesundes Leben",
+    "button": "Beratung buchen",
+    "whatsapp": "Nachricht auf WhatsApp"
+  },
+  "footer": {
+    "subTitle": "Professionelle Ernährungsberaterin",
+    "copyrightName": "Leyla Zülfüqarlı",
+    "description": "Professionelle Ernährungsberaterin Leyla Zülfüqarlı — persönliche Ernährungspläne, Beratungen und Kurse.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "address": "The Club Port Baku, Baku, Aserbaidschan",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten.",
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
+  "consultation": {
+    "eyebrow": "Beratung",
+    "title": "Beratung buchen",
+    "subtitle": "Füllen Sie das untenstehende Formular aus und wir werden uns in Kürze mit Ihnen in Verbindung setzen",
+    "fullName": "Vollständiger Name",
+    "phone": "Telefonnummer",
+    "email": "E-Mail (optional)",
+    "age": "Alter",
+    "goal": "Ihr Ziel",
+    "goalOptions": {
+      "weightLoss": "Abnehmen",
+      "weightGain": "Zunehmen",
+      "maintenance": "Gewicht halten",
+      "detox": "Detox",
+      "antiAging": "Anti-Aging",
+      "other": "Sonstiges"
+    },
+    "message": "Zusätzliche Anmerkungen",
+    "messagePlaceholder": "Zusätzliche Informationen...",
+    "submit": "Anfrage absenden",
+    "sending": "Wird gesendet...",
+    "success": "Ihre Anfrage ist eingegangen! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.",
+    "successTitle": "Anfrage eingegangen!",
+    "newRequest": "Neue Anfrage",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "howItWorks": "Wie funktioniert es?",
+    "step1": "Füllen Sie das Formular aus",
+    "step2": "Wir kontaktieren Sie innerhalb von 24 Stunden",
+    "step3": "Der erste Termin wird vereinbart",
+    "step4": "Ein persönlicher Plan wird erstellt",
+    "callDirectly": "Direkt anrufen",
+    "whatsappBtn": "Nachricht auf WhatsApp",
+    "goalPlaceholder": "Auswählen..."
+  },
+  "book": {
+    "pdfNotice": "Achtung: Diese Bücher sind derzeit nur im PDF-Format (E-Book) erhältlich.",
+    "title1": "Das Geheimnis der Fettleibigkeit - Der Schlüssel zur Gewichtsabnahme",
+    "title2": "Gesund essen, abnehmen!",
+    "author": "Leyla Zülfüqarlı",
+    "description1": "Basierend auf meiner jahrelangen Erfahrung und wissenschaftlichen Forschung enthüllt dieses Buch die wichtigsten Geheimnisse des Abnehmens und eines gesunden Körpers. Wie man ohne Sport oder Hungern abnimmt? Die Antwort steht in diesem Buch.",
+    "description2": "Eines der ersten und bekanntesten Bücher von Leyla Zülfüqarlı. Praktische Tipps zu den Grundprinzipien gesunder Ernährung, Körperverjüngung und dem lebenslangen Erhalt Ihrer Figur.",
+    "bestseller": "BESTSELLER",
+    "orderWhatsApp": "PDF bestellen",
+    "features": {
+      "f1": "Sportfreie Abnehm-Methodik",
+      "f2": "Stoffwechsel beschleunigen",
+      "f3": "Richtige Lebensmittelkombinationen",
+      "f4": "Praktische Tipps und Beispielmenüs"
+    },
+    "features2": {
+      "f1": "Grundlagen gesunder Ernährung",
+      "f2": "Schlechte Angewohnheiten ablegen",
+      "f3": "Reinigung auf Zellenebene",
+      "f4": "Detox-Rezepte"
+    },
+    "detoxEyebrow": "🍵 Detox-Paket",
+    "detoxTitle": "Buch + Detox-Tee Paket",
+    "detoxDesc": "Holen Sie sich das Buch 'Das Geheimnis der Fettleibigkeit - Der Schlüssel zur Gewichtsabnahme' zusammen mit einem speziellen Detox-Tee. Dieses Paket ist die ideale Lösung, um den Körper zu reinigen und den Abnehmprozess zu beschleunigen.",
+    "detoxFeature1Title": "Bestseller-Buch",
+    "detoxFeature1Desc": "Alle Geheimnisse der sportfreien Abnehm-Methode",
+    "detoxFeature2Title": "Detox-Tee",
+    "detoxFeature2Desc": "Eine spezielle Teemischung, die den Körper reinigt",
+    "detoxFeature3Title": "Ernährungsplan",
+    "detoxFeature3Desc": "Ein persönlicher Plan zur Verwendung zusammen mit dem Buch",
+    "detoxOrderBtn": "Detox-Paket bestellen",
+    "ctaTitle": "Möchten Sie auch eine persönliche Beratung?",
+    "ctaDesc": "Holen Sie sich einen persönlichen Diätplan zusammen mit dem Buch",
+    "ctaBtn": "Für Beratung registrieren"
+  },
+  "login": {
+    "title": "Anmelden",
+    "subtitle": "Melden Sie sich bei Ihrem Konto an, um auf das Dashboard zuzugreifen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "noAccount": "Haben Sie noch kein Konto?",
+    "register": "Registrieren",
+    "forgotPassword": "Passwort vergessen?"
+  },
+  "register": {
+    "title": "Registrieren",
+    "subtitle": "Ein neues Konto erstellen",
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "submit": "Konto erstellen",
+    "haveAccount": "Haben Sie bereits ein Konto?",
+    "login": "Anmelden"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Nehmen Sie Kontakt mit uns auf",
+    "subtitle": "Fragen stellen, beraten lassen, einen Termin vereinbaren",
+    "directContact": "Direktkontakt",
+    "phoneLabel": "TELEFON",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ADRESSE",
+    "addressValue": "The Club Port Baku, Baku, Aserbaidschan",
+    "socialMedia": "Soziale Medien",
+    "consultTitle": "Sie wünschen eine Beratung?",
+    "consultDesc": "Füllen Sie das Beratungsformular für einen persönlichen Ernährungsplan aus. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "consultBtn": "Beratung buchen",
+    "quickTitle": "Schnellkontakt",
+    "quickDesc": "Wenn Sie Fragen haben, schreiben Sie uns direkt auf WhatsApp. Wir werden so schnell wie möglich antworten.",
+    "quickBtn": "Nachricht auf WhatsApp"
+  },
+  "dashboard": {
+    "welcome": "Willkommen",
+    "myCourses": "Meine Kurse",
+    "materials": "Materialien",
+    "profile": "Profil",
+    "noCourses": "Sie sind noch für keine Kurse eingeschrieben.",
+    "watchLesson": "Lektion ansehen",
+    "downloadPdf": "PDF herunterladen"
+  }
+}
