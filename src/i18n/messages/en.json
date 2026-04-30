@@ -3,7 +3,9 @@
     "title": "Blog",
     "subtitle": "Professional advice on health and nutrition",
     "eyebrow": "Articles",
-    "read_more": "Read more"
+    "read_more": "Read more",
+    "no_posts": "No articles have been shared yet.",
+    "loading": "Loading..."
   },
   "bmi": {
     "eyebrow": "Health Tools",

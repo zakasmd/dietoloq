@@ -3,7 +3,9 @@
     "title": "Blog",
     "subtitle": "Professionelle Beratung zu Gesundheit und Ernährung",
     "eyebrow": "Artikel",
-    "read_more": "Weiterlesen"
+    "read_more": "Weiterlesen",
+    "no_posts": "Bisher wurden noch keine Artikel geteilt.",
+    "loading": "Laden..."
   },
   "bmi": {
     "eyebrow": "Gesundheits-Tools",

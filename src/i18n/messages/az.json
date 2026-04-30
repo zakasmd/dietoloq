@@ -3,7 +3,9 @@
     "title": "Bloq",
     "subtitle": "Sağlamlıq və qidalanma haqqında peşəkar tövsiyələr",
     "eyebrow": "Məqalələr",
-    "read_more": "Ətraflı oxu"
+    "read_more": "Ətraflı oxu",
+    "no_posts": "Hələ heç bir məqalə paylaşılmayıb.",
+    "loading": "Yüklənir..."
   },
   "bmi": {
     "eyebrow": "Sağlamlıq Alətləri",

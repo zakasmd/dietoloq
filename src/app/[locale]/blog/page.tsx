@@ -76,7 +76,7 @@ export default function BlogPage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '6rem', color: 'hsl(var(--primary)/0.5)' }}>Yüklənir...</div>
+            <div style={{ textAlign: 'center', padding: '6rem', color: 'hsl(var(--primary)/0.5)' }}>{t('loading')}</div>
           ) : currentPosts.length > 0 ? (
             currentPosts.map((post, idx) => {
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
@@ -157,7 +157,7 @@ export default function BlogPage() {
                              <span className="badge badge-primary" style={{ fontSize: '0.65rem' }}>{post.category}</span>
                           </div>
                           <span className="btn btn-primary btn-sm" style={{ gap: '0.5rem', padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                            {locale === 'az' ? 'Davamını oxu' : locale === 'ru' ? 'Читать полностью' : 'Read full story'} <ArrowRight size={14} />
+                            {t('read_more')} <ArrowRight size={14} />
                           </span>
                         </div>
                       </div>
@@ -175,7 +175,7 @@ export default function BlogPage() {
           ) : (
             <div style={{ textAlign: 'center', padding: '6rem' }} className="glass">
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🍃</div>
-              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.1rem' }}>Hələ heç bir məqalə paylaşılmayıb.</p>
+              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.1rem' }}>{t('no_posts')}</p>
             </div>
           )}
         </div>
