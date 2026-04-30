@@ -54,7 +54,7 @@
     "badge": "Peşəkar Diyetoloq · Bakı",
     "title": "Sağlam həyat üçün",
     "titleHighlight": "fərdi qidalanma planı",
-    "subtitle": "Leyla Zülfüqarlı ilə elmi əsaslı diet proqramları, konsultasiya və real nəticələr. İdmansız arıqlama metodları üzrə 15+ il təcrübə.",
+    "subtitle": "Dyt, Nutr, Anti age, FTA Dr Leyla Zülfüqarlı — Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi. Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifidir (ECO Praqa, IFSO London, EASD Tbilisi).",
     "cta1": "Konsultasiya üçün qeydiyyat",
     "cta2": "Kurslara bax",
     "whatsapp": "WhatsApp-da yaz",
@@ -65,7 +65,8 @@
     "stat3": "55+",
     "stat3Label": "Sertifikat",
     "stat4": "100+",
-    "stat4Label": "Uğurlu Seminar"
+    "stat4Label": "Uğurlu Seminar",
+    "doctorNameFull": "Dyt, Nutr, Anti-age, FTA Dr Leyla Zülfüqarlı"
   },
   "services": {
     "title": "Xidmətlər",
@@ -159,7 +160,7 @@
   },
   "about": {
     "title": "Haqqında",
-    "shortBio": "Leyla Zülfüqarlı – 15+ il təcrübəyə malik peşəkar diyetoloq, Azərbaycanda ilk diyet kitablarının müəllifi. AzTV, Xəzər TV, Show TV, İTV, ARB kimi kanallarda çıxışları, beynəlxalq (İsveçrə, Almaniya) detoks proqramları və 12000-dən çox məmnun müştərisi ilə sağlam qidalanmada fərq yaradır.",
+    "shortBio": "Dyt, Nutr, Anti age, FTA Dr Leyla Zülfüqarlı – Moskva TV, Show TV, AzTV, Xəzər TV, İTV, ARB kimi kanallarda çıxışları, beynəlxalq (ECO Praqa, IFSO London, EASD Tbilisi) təcrübəsi və 12000-dən çox məmnun pasienti ilə peşəkar diyetoloq, nutrisioloq və Anti-Age mütəxəssisidir.",
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
@@ -167,10 +168,10 @@
     "experienceVal": "15+",
     "certificatesVal": "55+",
     "clientsVal": "12000+",
-    "bio1": "Peşəkar diyetoloq kimi 15 ildən artıq təcrübəyə malik olan Leyla Zülfüqarlı, 12000-dən çox müştəriyə fərdi, elmi əsaslı qidalanma planları hazırlayaraq onların həyatını dəyişdirmişdir. O, Tibb Universitetində Tibbi Biologiya ixtisası üzrə təhsil almış, daha sonra cərrah köməkçisi kimi fəaliyyət göstərmişdir. İnsanlara daha çox fayda vermək istəyi ilə 2010-cu ildə Ukraynada dietologiya üzrə, 2012-ci ildə isə İstanbul Medipol Universitetində \"Beslenme və Diyet\" üzrə təhsilini davam etdirmişdir.",
-    "bio2": "Leyla Zülfüqarlı təkcə Azərbaycanda deyil, Almaniya, İsveçrə, Türkiyə, Slovakiya, İngiltərə və Fransa kimi ölkələrdə də fəaliyyət göstərmişdir. O, İsveçrədə azərbaycanlılar üçün xüsusi olaraq 7 günlük detoks və arıqlama proqramları təşkil edərək, insanların həm bədən, həm də ruh sağlamlığını artırmışdır.",
-    "bio3": "Azərbaycanda ilk diyet kitablarının müəllifi kimi tanınan Leyla xanım, \"Sağlam bəslən, arıqla\" və \"Köklüyün sirri, arıqlığın açarı\" adlı iki uğurlu kitabın müəllifidir. Onun sağlam qidalanma ilə bağlı məqalələri dəfələrlə həm yerli, həm də Türkiyə qəzetlərində çap olunmuşdur. O cümlədən, AzTV, Xəzər TV, Show TV, İTV, ARB, Lider TV kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır.",
-    "bio4": "\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Leyla xanım, həm idmansız arıqlamaq istəyənlərə, həm də kökəlmək istəyən şəxslərə fərdi yanaşma ilə kömək edir. O, Youtube, Facebook və Instagram kanallarında mütəmadi olaraq maarifləndirici videolar paylaşır. Ona müraciət edən hər bir şəxs yüksək məmnuniyyətlə və sağlam şəkildə onun yanından ayrılır.",
+    "bio1": "Dyt, Nutr, Anti age, FTA Dr Leyla Zülfüqarlı — 2008-ci ildə Bakıda ali tibbi təhsili bitirmişdir. O, Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifi, peşəkar diyetoloq, nutrisioloq və Anti-Age mütəxəssisidir.",
+    "bio2": "Akademik Xronologiya:\n• 2010: Ukrayna Diyetoloqlar Assosiasiyasının \"Şkolı Dietiki\" təhsil sistemi.\n• 2012-2013: İstanbul Medipol Universiteti \"Beslenme ve Diyetetik\" bölümü və Mega Hastaneler kompleksində elmi təcrübələr.\n• 2014: 6-cı Beynəlxalq Obezite Konqresi və Bariatrik Cərrahiyyə diyetisyenliyi kursu.\n• 2015-2016: ECO (Praqa), IFSO (London), EASD (Tbilisi) beynəlxalq konqresləri.",
+    "bio3": "Media və Tanınma:\nMoskva TV, Show TV, AzTV, Xəzər TV, İTV, ARB kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır. Leyla xanım beynəlxalq səviyyədə tanınan bir mütəxəssis olaraq fəaliyyətini davam etdirir.",
+    "bio4": "Müəlliflik:\n• 2015: \"Sağlam bəslən - Arıqla\" (Ölkədə ilk diyet kitabı).\n• 2017: \"Köklüyün sirri - Секреты ожирения\".\n\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Dr. Leyla, peşəkar diyetoloq və nutrisioloq olaraq minlərlə insanın həyatını sağlam şəkildə dəyişir.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
     "missionText2": "Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",
@@ -338,10 +339,10 @@
     "ctaTitle": "Fərdi konsultasiya da almaq istəyirsiniz?",
     "ctaDesc": "Kitabla birlikdə fərdi diet planı alın",
     "ctaBtn": "Konsultasiyaya qeydiyyat",
-    "teaTitle1": "Relax Çayı",
-    "teaDesc1": "Gərgin iş günündən sonra bədəni sakitləşdirən, sinir sistemini dincəldən və yuxu rejimini tənzimləyən xüsusi bitki qarışığı.",
-    "teaTitle2": "Detoks Çayı",
-    "teaDesc2": "Orqanizmi zərərli toksinlərdən təmizləyən, metabolizmanı sürətləndirən və arıqlama prosesinə dəstək verən bitki tərkibli çay.",
+    "teaTitle1": "TeaLaks LZ Çayı",
+    "teaDesc1": "Qəbizliyə qarşı effektiv təbii həll. Həzm sistemini yumşaldır, bağırsaq keçiriciliyini yaxşılaşdırır və qarın boşluğundakı gərginliyi aradan qaldırır. Orqanizmi qüvvətləndirir və yorğunluğu aradan qaldırır.",
+    "teaTitle2": "Detoks LZ Çayı",
+    "teaDesc2": "Müalicəvi detoks çayı. Metabolizmi sürətləndirir, toksinləri kənarlaşdırır və 3-5 kq artıq çəkidən azad olmağa kömək edir. Xoşxassəli şişlərin (fibromioma, polip) sorulmasına, qaraciyər piylənməsi və hepatitlərin sağalmasına dəstək verir. Mədəaltı vəzi və öd kisəsi iltihabında, qan azlığında effektlidir.",
     "orderBtn": "Sifariş Et"
   },
   "login": {

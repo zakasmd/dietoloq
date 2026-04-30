@@ -29,16 +29,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    az: 'Leyla Zülfüqarlı | Peşəkar Dietoloq',
-    ru: 'Лейла Зюльфюгарлы | Профессиональный Диетолог',
-    en: 'Leyla Zülfüqarlı | Professional Dietitian',
-    de: 'Leyla Zülfüqarlı | Professionelle Ernährungsberaterin',
+    az: 'Dr. Leyla Zülfüqarlı | Dyt, Nutr, Anti Age | Peşəkar Dietoloq',
+    ru: 'Д-р Лейла Зульфугарлы | Диет., Нутр., Анти-эйдж | Профессиональный Диетолог',
+    en: 'Dr. Leyla Zülfüqarlı | Dyt, Nutr, Anti-Age | Professional Dietitian',
+    de: 'Dr. Leyla Zülfüqarlı | Dyt, Nutr, Anti-Age | Professionelle Diätetikerin',
   };
   const descriptions: Record<string, string> = {
-    az: 'Peşəkar dietoloq Leyla Zülfüqarlı ilə fərdi qidalanma planları, konsultasiya və kurslar. 15+ il təcrübə, 12000+ müştəri.',
-    ru: 'Профессиональный диетолог Лейла Зюльфюгарлы — индивидуальные планы питания, консультации и курсы. 15+ лет опыта, 12000+ клиентов.',
-    en: 'Professional dietitian Leyla Zülfüqarlı — personalized nutrition plans, consultations and courses. 15+ years experience, 12000+ clients.',
-    de: 'Professionelle Ernährungsberaterin Leyla Zülfüqarlı – personalisierte Ernährungspläne, Beratungen und Kurse. 15+ Jahre Erfahrung, 12.000+ Kunden.',
+    az: 'Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı. Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifidir. 15+ il təcrübə, 12000+ pasient.',
+    ru: 'Врач-диетолог, нутрициолог, специалист по антивозрастной медицине д-р Лейла Зульфугарлы. Автор первых в Азербайджане книг по диетологии. 15+ лет опыта, 12000+ пациентов.',
+    en: 'Physician Dietitian, Nutritionist, Anti-Age Expert Dr. Leyla Zülfüqarlı. Author of the first nutrition books in Azerbaijan. 15+ years experience, 12,000+ successful patients.',
+    de: 'Fachärztin für Diätetik, Ernährungsberaterin, Anti-Age-Expertin Dr. Leyla Zülfüqarlı. Autorin der ersten Ernährungsbücher in Aserbaidschan. 15+ Jahre Erfahrung, 12.000+ Patienten.',
   };
   return {
     title: titles[locale] || titles.az,

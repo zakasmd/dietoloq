@@ -54,7 +54,7 @@
     "badge": "Professionelle Ernährungsberaterin · Baku",
     "title": "Erreichen Sie Ihre Gesundheitsziele mit",
     "titleHighlight": "einem persönlichen Ernährungsplan",
-    "subtitle": "Wissenschaftlich fundierte Diätprogramme, Beratungen und echte Ergebnisse mit Leyla Zülfüqarlı. 15+ Jahre Erfahrung in Abnehm-Methoden ohne Sport.",
+    "subtitle": "Dyt, Nutr, Anti-Age, FTA Dr. Leyla Zülfüqarlı — Fachärztin für Diätetik, Ernährungsberaterin, Anti-Age-Spezialistin. Autorin der ersten Bücher über gesunde Ernährung und Diät in Aserbaidschan (ECO Prag, IFSO London, EASD Tiflis).",
     "cta1": "Beratung buchen",
     "cta2": "Kurse ansehen",
     "whatsapp": "Nachricht auf WhatsApp",
@@ -65,7 +65,8 @@
     "stat3": "55+",
     "stat3Label": "Zertifikate",
     "stat4": "100+",
-    "stat4Label": "Erfolgreiche Seminare"
+    "stat4Label": "Erfolgreiche Seminare",
+    "doctorNameFull": "Dyt, Nutr, Anti-Age, FTA Dr. Leyla Zülfüqarlı"
   },
   "services": {
     "title": "Leistungen",
@@ -159,7 +160,7 @@
   },
   "about": {
     "title": "Über mich",
-    "shortBio": "Leyla Zülfüqarlı – Professionelle Ernährungsberaterin mit 15+ Jahren Erfahrung, Autorin der ersten Diätbücher in Aserbaidschan. Mit Auftritten in TV-Sendern wie AzTV, Xazar TV, Show TV, ITV und ARB, internationalen Detox-Programmen (Schweiz, Deutschland) und über 12.000 zufriedenen Kunden macht sie einen echten Unterschied in der gesunden Ernährung.",
+    "shortBio": "Leyla Zülfüqarlı – Professionelle Ernährungsberaterin mit 15+ Jahren Erfahrung, Autorin der ersten Diätbücher in Aserbaidschan. Mit Auftritten in TV-Sendern wie Moskva TV, Show TV, AzTV, Xazar TV, ITV und ARB, internationalen Detox-Programmen (Schweiz, Deutschland) und über 12.000 zufriedenen Kunden macht sie einen echten Unterschied in der gesunden Ernährung.",
     "readMore": "Mehr lesen",
     "experience": "Jahre Exp.",
     "certificates": "Zertifikate",
@@ -167,10 +168,10 @@
     "experienceVal": "15+",
     "certificatesVal": "55+",
     "clientsVal": "12000+",
-    "bio1": "Mit über 15 Jahren Erfahrung als professionelle Ernährungsberaterin hat Leyla Zülfüqarlı personalisierte, wissenschaftlich fundierte Ernährungspläne für mehr als 12.000 Kunden erstellt und deren Leben verändert. Sie studierte Medizinische Biologie an der Medizinischen Universität und arbeitete später als chirurgische Assistentin. Getrieben von dem Wunsch, Menschen effektiver zu helfen, setzte sie ihre Ausbildung in Diätetik 2010 in der Ukraine fort und spezialisierte sich 2012 an der Istanbul Medipol Universität auf 'Ernährung und Diätetik'.",
-    "bio2": "Das Fachwissen von Leyla Zülfüqarlı reicht über Aserbaidschan hinaus; sie hat in Ländern wie Deutschland, der Schweiz, der Türkei, der Slowakei, Großbritannien und Frankreich gearbeitet. Insbesondere organisierte sie spezielle 7-tägige Detox- und Abnehmprogramme für Aserbaidschaner in der Schweiz, die sowohl das körperliche als auch das geistige Wohlbefinden steigerten.",
-    "bio3": "Anerkannt als Autorin der ersten Diätbücher in Aserbaidschan, ist Leyla die Schöpferin von zwei erfolgreichen Büchern: 'Gesund essen, abnehmen' und 'Das Geheimnis der Fettleibigkeit, der Schlüssel zur Gewichtsabnahme'. Ihre Artikel über gesunde Ernährung wurden mehrfach in lokalen und türkischen Zeitungen veröffentlicht. Darüber hinaus hat sie ihre Geheimnisse einer gesunden Ernährung mit Tausenden geteilt, indem sie in zahlreichen prominenten TV-Sendern auftrat, darunter AzTV, Xazar TV, Show TV, ITV, ARB und Lider TV.",
-    "bio4": "Nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker' hilft Leyla sowohl denjenigen, die ohne Sport abnehmen möchten, als auch denjenigen, die durch einen maßgeschneiderten Ansatz zunehmen wollen. Sie teilt regelmäßig Lehrvideos auf ihren YouTube-, Facebook- und Instagram-Kanälen. Jeder, der sie konsultiert, verlässt sie hochzufrieden und gesünder.",
+    "bio1": "Dyt, Nutr, Anti-Age, FTA Dr. Leyla Zülfüqarlı — Fachärztin für Diätetik, Ernährungsberaterin und Anti-Age-Spezialistin mit über 15 Jahren Erfahrung. Autorin der ersten Diätetik-Bücher in Aserbaidschan.",
+    "bio2": "Akademische Chronologie:\n• 2008: Abschluss der medizinischen Hochschulausbildung in Baku.\n• 2010: Ausbildung bei der Association of Dietitians of Ukraine.\n• 2012-2013: Universität Istanbul Medipol, Abteilung für Ernährung und Diätetik.\n• 2014: 6. Internationaler Adipositas-Kongress und Kurs für bariatrische Diätetik.",
+    "bio3": "Internationale Leistungen:\n• 2015 Prag (ECO): 22nd European Congress on Obesity.\n• 2015 London (IFSO): 20th World Congress of IFSO.\n• 2016 Tiflis (EASD): Post-graduate Forschung und wissenschaftliche Studien.",
+    "bio4": "Autorenschaft:\n• 2015: Erstes Diätbuch des Landes \"Sağlam bəslən - Arıqla\".\n• 2017: Zweites Buch \"Köklüyün sirri - Секреты ожирения\".\nDr. Leyla verbessert weiterhin das Leben Tausender Menschen nach dem Prinzip: 'Unser Feind ist nicht das Fett, sondern der Zucker.'",
     "missionTitle": "Meine Mission",
     "missionText1": "In dem Wissen, dass jeder Mensch anders ist, bereite ich für jeden einen einzigartigen Ernährungsplan vor. Um ein gesundes Leben zu führen, sollte Essen ein Vergnügen, ein Lebensstil sein – keine Einschränkung.",
     "missionText2": "Nicht nur das Gewicht meiner Kunden zu verbessern, sondern auch ihre Gesundheit, ihr Energieniveau und ihre Lebensqualität – das ist mein Ziel.",
@@ -339,10 +340,10 @@
     "ctaTitle": "Möchten Sie auch eine persönliche Beratung?",
     "ctaDesc": "Holen Sie sich einen persönlichen Diätplan zusammen mit dem Buch",
     "ctaBtn": "Für Beratung registrieren",
-    "teaTitle1": "Relax Tee",
-    "teaDesc1": "Eine spezielle Kräutermischung, die den Körper nach einem stressigen Arbeitstag beruhigt, das Nervensystem entspannt und den Schlafrhythmus reguliert.",
-    "teaTitle2": "Detox Tee",
-    "teaDesc2": "Kräutertee, der den Körper von schädlichen Toxinen reinigt, den Stoffwechsel beschleunigt und den Abnehmprozess unterstützt.",
+    "teaTitle1": "TeaLaks LZ Tee",
+    "teaDesc1": "Effektive natürliche Lösung gegen Verstopfung. Erweicht das Verdauungssystem, verbessert die Darmpassage und lindert Bauchspannungen. Stärkt den Körper und beseitigt Müdigkeit.",
+    "teaTitle2": "Detox LZ Tee",
+    "teaDesc2": "Medizinischer Detox-Tee. Beschleunigt den Stoffwechsel, entgiftet und hilft beim Abnehmen von 3-5 kg Übergewicht. Unterstützt die Rückbildung gutartiger Tumore (Myome, Polypen), behandelt Fettleber und Hepatitis. Wirksam bei Bauchspeicheldrüsenentzündungen.",
     "orderBtn": "Jetzt Bestellen"
   },
   "login": {

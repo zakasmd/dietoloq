@@ -53,8 +53,8 @@
   "hero": {
     "badge": "Professional Dietitian · Baku",
     "title": "Achieve your health goals with",
-    "titleHighlight": "a personalized nutrition plan",
-    "subtitle": "Science-based diet programs, consultations, and real results with Leyla Zulfuqarli. 15+ years of experience in no-exercise weight loss methods.",
+    "titleHighlight": "evidence-based nutrition",
+    "subtitle": "Dyt, Nutr, Anti-age, FTA Dr. Leyla Zülfüqarlı — Physician Dietitian, Nutritionist, and Anti-Age Specialist. Founder of the Healthy Nutrition School with over 15 years of international clinical experience.",
     "cta1": "Book a Consultation",
     "cta2": "View Courses",
     "whatsapp": "Message on WhatsApp",
@@ -65,7 +65,8 @@
     "stat3": "55+",
     "stat3Label": "Certifications",
     "stat4": "100+",
-    "stat4Label": "Successful Seminars"
+    "stat4Label": "Successful Seminars",
+    "doctorNameFull": "Dyt, Nutr, Anti-age, FTA Dr. Leyla Zülfüqarlı"
   },
   "services": {
     "title": "Services",
@@ -159,7 +160,7 @@
   },
   "about": {
     "title": "About",
-    "shortBio": "Leyla Zulfuqarli – Professional dietitian with 15+ years of experience, author of the first diet books in Azerbaijan. With appearances on TV channels like AzTV, Xazar TV, Show TV, ITV and ARB, international detox programs (Switzerland, Germany), and over 12000 satisfied clients, she makes a real difference in healthy eating.",
+    "shortBio": "Dr. Leyla Zülfüqarlı — Physician Dietitian with 15+ years of international experience, specializing in metabolic health, anti-aging, and non-invasive weight management.",
     "readMore": "Read More",
     "experience": "Years Exp.",
     "certificates": "Certs",
@@ -167,10 +168,10 @@
     "experienceVal": "15+",
     "certificatesVal": "55+",
     "clientsVal": "12000+",
-    "bio1": "With over 15 years of experience as a professional dietitian, Leyla Zulfuqarli has created personalized, science-based nutrition plans for more than 12000 clients, transforming their lives. She studied Medical Biology at the Medical University and later worked as a surgical assistant. Driven by a desire to help people more effectively, she continued her education in dietology in Ukraine in 2010, and later specialized in 'Nutrition and Dietetics' at Istanbul Medipol University in 2012.",
-    "bio2": "Leyla Zulfuqarli's expertise extends beyond Azerbaijan; she has worked in countries like Germany, Switzerland, Turkey, Slovakia, the UK, and France. Notably, she organized special 7-day detox and weight loss programs for Azerbaijanis in Switzerland, enhancing both physical and mental well-being.",
-    "bio3": "Recognized as the author of the first diet books in Azerbaijan, Leyla is the creator of two successful books: 'Eat Healthy, Lose Weight' and 'The Secret of Obesity, The Key to Weight Loss'. Her articles on healthy eating have been published multiple times in both local and Turkish newspapers. Furthermore, she has shared her secrets to healthy nutrition with thousands by appearing on numerous prominent TV channels including AzTV, Xazar TV, Show TV, ITV, ARB and Lider TV.",
-    "bio4": "Operating on the principle that 'Our enemy is not fat, but sugar', Leyla helps both those looking to lose weight without exercise and those wanting to gain weight through a customized approach. She regularly shares educational videos on her YouTube, Facebook, and Instagram channels. Every person who consults her leaves highly satisfied and healthier.",
+    "bio1": "Dr. Leyla Zülfüqarlı is a physician-dietitian, nutritionist, and anti-aging expert. She has spent over 15 years developing evidence-based methods for sustainable weight management and metabolic health without the need for intense physical training.",
+    "bio2": "Academic Chronology:\n• 2008: Medical Degree, Azerbaijan Medical University.\n• 2010: Advanced training with the Association of Dietitians of Ukraine.\n• 2012-2013: Clinical Nutrition & Dietetics training, Istanbul Medipol University.\n• 2014: Specialized training in Obesity and Bariatric Surgery Dietetics.",
+    "bio3": "International Achievements:\n• Participant and contributor to the European Congress on Obesity (Prague).\n• Member of IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).\n• Advanced research and clinical practice at EASD (Tbilisi).",
+    "bio4": "Authorship:\n• 2015: Published 'Sağlam bəslən - Arıqla' (Eat Healthy - Lose Weight).\n• 2017: Published 'Köklüyün sirri - Секреты ожирения' (Secrets of Obesity).\nDr. Leyla operates on the fundamental principle that metabolic balance—not caloric restriction—is the key to long-term health.",
     "missionTitle": "My Mission",
     "missionText1": "Knowing that everyone is different, preparing a unique nutrition plan for everyone. To live a healthy life, food should be a pleasure, a lifestyle — not a restriction.",
     "missionText2": "Elevating not just my client's weight, but their health, energy levels, and quality of life — this is my goal.",
@@ -328,21 +329,21 @@
     },
     "detoxEyebrow": "🍵 Detox Package",
     "detoxTitle": "Book + Detox Tea Package",
-    "detoxDesc": "Get 'The Secret of Obesity - The Key to Weight Loss' book along with a special detox tea. This package is the ideal solution to cleanse the body and speed up the weight loss process.",
+    "detoxDesc": "A complete metabolic reset package combining evidence-based nutrition guides with natural herbal support to accelerate toxin elimination and weight loss.",
     "detoxFeature1Title": "Bestseller Book",
-    "detoxFeature1Desc": "All the secrets of the no-exercise weight loss method",
+    "detoxFeature1Desc": "Complete guide to non-exercise weight management",
     "detoxFeature2Title": "Detox Tea",
-    "detoxFeature2Desc": "A special tea blend that cleanses the body",
+    "detoxFeature2Desc": "Premium herbal blend for cellular cleansing",
     "detoxFeature3Title": "Nutrition Plan",
-    "detoxFeature3Desc": "A personalized plan to use along with the book",
+    "detoxFeature3Desc": "Strategic meal planning to amplify tea results",
     "detoxOrderBtn": "Order Detox Package",
     "ctaTitle": "Do you also want a personal consultation?",
     "ctaDesc": "Get a personalized diet plan along with the book",
     "ctaBtn": "Register for Consultation",
-    "teaTitle1": "Relax Tea",
-    "teaDesc1": "A special herbal blend that calms the body after a stressful work day, relaxes the nervous system, and regulates sleep patterns.",
-    "teaTitle2": "Detox Tea",
-    "teaDesc2": "Herbal tea that cleanses the body of harmful toxins, speeds up metabolism, and supports the weight loss process.",
+    "teaTitle1": "TeaLaks LZ Tea",
+    "teaDesc1": "A gentle digestive aid designed to improve intestinal transit, alleviate bloating, and reduce abdominal tension while providing sustained energy support.",
+    "teaTitle2": "Detox LZ Tea",
+    "teaDesc2": "Medicinal detox tea. Speeds up metabolism, removes toxins, and helps lose 3-5 kg of excess weight. Supports the absorption of benign tumors (fibroids, polyps), treats fatty liver and hepatitis. Effective for pancreatic and gallbladder inflammation.",
     "orderBtn": "Order Now"
   },
   "login": {
@@ -366,7 +367,6 @@
     "haveAccount": "Already have an account?",
     "login": "Log In"
   },
-
   "contact": {
     "eyebrow": "Contact",
     "title": "Get in touch with us",
