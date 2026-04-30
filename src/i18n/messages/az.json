@@ -45,7 +45,7 @@
     "register": "Qeydiyyat",
     "dashboard": "Dashboard",
     "logout": "Çıxış",
-    "brandName": "Leyla Zülfüqarlı",
+    "brandName": "Dr. Leyla Zülfüqarlı",
     "subTitle": "Diyetoloq",
     "servicesBadge": "Xidmətlər",
     "reviewsBadge": "Rəylər"
@@ -54,7 +54,7 @@
     "badge": "Peşəkar Diyetoloq · Bakı",
     "title": "Sağlam həyat üçün",
     "titleHighlight": "fərdi qidalanma planı",
-    "subtitle": "Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı. Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifidir (ECO Praqa, IFSO London, EASD Tbilisi).",
+    "subtitle": "Həkim diyetoloq, Nutrisioloq, Funksional Tibb və Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı. Azərbaycanda diyetologiya sahəsində ilk kitabların müəllifi və 15 ildən çox beynəlxalq elmi təcrübəyə malik (ECO Praqa, IFSO London, EASD Tbilisi) peşəkar mütəxəssis.",
     "cta1": "Konsultasiya üçün qeydiyyat",
     "cta2": "Kurslara bax",
     "whatsapp": "WhatsApp-da yaz",
@@ -66,7 +66,7 @@
     "stat3Label": "Sertifikat",
     "stat4": "100+",
     "stat4Label": "Uğurlu Seminar",
-    "doctorNameFull": "Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı"
+    "doctorNameFull": "Həkim diyetoloq, Nutrisioloq, Funksional Tibb və Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı"
   },
   "services": {
     "title": "Xidmətlər",
@@ -160,7 +160,7 @@
   },
   "about": {
     "title": "Haqqında",
-    "shortBio": "Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı – Moskva TV, Show TV, AzTV, Xəzər TV, İTV, ARB kimi kanallarda çıxışları, beynəlxalq (ECO Praqa, IFSO London, EASD Tbilisi) təcrübəsi və 12000-dən çox məmnun pasienti ilə xidmətinizdədir.",
+    "shortBio": "Həkim diyetoloq, Nutrisioloq, Funksional Tibb və Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı — 15 illik beynəlxalq təcrübəsi, 12000-dən çox uğurlu pasient nəticəsi və Moskva TV, Show TV kimi kanallardakı çıxışları ilə sağlam bəslənmə sahəsində ölkənin aparıcı ekspertidir.",
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
@@ -168,10 +168,10 @@
     "experienceVal": "15+",
     "certificatesVal": "55+",
     "clientsVal": "12000+",
-    "bio1": "Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı — 2008-ci ildə Bakıda ali tibbi təhsili bitirmişdir. O, Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifidir.",
-    "bio2": "Akademik Xronologiya:\n• 2010: Ukrayna Diyetoloqlar Assosiasiyasının \"Şkolı Dietiki\" təhsil sistemi.\n• 2012-2013: İstanbul Medipol Universiteti \"Beslenme ve Diyetetik\" bölümü və Mega Hastaneler kompleksində elmi təcrübələr.\n• 2014: 6-cı Beynəlxalq Obezite Konqresi və Bariatrik Cərrahiyyə diyetisyenliyi kursu.\n• 2015-2016: ECO (Praqa), IFSO (London), EASD (Tbilisi) beynəlxalq konqresləri.",
-    "bio3": "Media və Tanınma:\nMoskva TV, Show TV, AzTV, Xəzər TV, İTV, ARB kimi bir çox tanınmış televiziya kanallarında çıxış edərək, minlərlə insana sağlam qidalanmanın sirlərini çatdırmışdır. Leyla xanım beynəlxalq səviyyədə tanınan bir mütəxəssis olaraq fəaliyyətini davam etdirir.",
-    "bio4": "Müəlliflik:\n• 2015: \"Sağlam bəslən - Arıqla\" (Ölkədə ilk diyet kitabı).\n• 2017: \"Köklüyün sirri - Секреты ожирения\".\n\"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə hərəkət edən Dr. Leyla, peşəkar diyetoloq və nutrisioloq olaraq minlərlə insanın həyatını sağlam şəkildə dəyişir.",
+    "bio1": "Dr. Leyla Zülfüqarlı — Həkim diyetoloq, Nutrisioloq, Funksional Tibb və Anti Age mütəxəssisidir. 2008-ci ildə Bakıda ali tibbi təhsili bitirdikdən sonra, Ukrayna və Türkiyənin (İstanbul Medipol Universiteti) aparıcı klinikalarında elmi-praktik təcrübə keçmişdir. O, Azərbaycanda diyetologiya sahəsində ilk kitabların müəllifidir.",
+    "bio2": "Akademik Nailiyyətlər və Təcrübə:\n• 15 ildən artıq klinik təcrübə və 12.000-dən çox fərdi pasient uğuru.\n• Praqa (ECO), London (IFSO) və Tbilisi (EASD) beynəlxalq konqreslərində elmi çıxışlar və iştirak.\n• İstanbul Medipol Universitetində \"Beslenme ve Diyetetik\" və Bariatrik Cərrahiyyə diyetisyenliyi üzrə ixtisaslaşma.\n• Ukrayna Diyetoloqlar Assosiasiyasının rəsmi təhsil sistemi üzrə mütəxəssis hazırlığı.\n• Davamlı olaraq beynəlxalq elmi konfranslarda elmi məruzələr və tibbi yeniliklərin praktikaya tətbiqi.",
+    "bio3": "Metodologiya və Media:\nDr. Leyla dünyada tanınan \"Düşmənimiz yağ deyil, şəkərdir\" prinsipi ilə idmansız və ac qalmadan sağlam arıqlama metodikasının ölkədəki tək təmsilçisidir. Moskva TV, Show TV, AzTV və digər aparıcı kanallarda mütəmadi çıxışları ilə sağlam həyat tərzini geniş kütlələrə təbliğ edir. Onun yanaşması orqanizmin biokimyəvi balansını bərpa etməyə əsaslanır.",
+    "bio4": "Müəlliflik və Missiya:\n2015-ci ildə ölkənin ilk diyet kitabı olan \"Sağlam bəslən - Arıqla\" və 2017-ci ildə \"Köklüyün sirri\" kitablarını nəşr etdirmişdir. Onun əsas missiyası yalnız çəki itirmək deyil, hüceyrə səviyyəsində yenilənmə və metabolik balansı bərpa edərək insanların həyat keyfiyyətini yüksəltməkdir. O, insanlara qidanın bir məhdudiyyət deyil, sağlamlıq və enerji mənbəyi olduğunu aşılamağı hədəfləyir.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
     "missionText2": "Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",

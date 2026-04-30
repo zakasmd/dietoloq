@@ -51,7 +51,6 @@ export default function Footer() {
               </div>
               <div>
                 <div className={styles.logoName}>{nav('brandName')}</div>
-                <div className={styles.logoSub}>{t('subTitle')}</div>
               </div>
             </div>
             <p className={styles.description}>{t('description')}</p>

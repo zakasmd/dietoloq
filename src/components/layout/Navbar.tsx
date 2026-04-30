@@ -55,7 +55,6 @@ export default function Navbar() {
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>{t('brandName')}</span>
-              <span className={styles.logoSub}>{t('subTitle')}</span>
             </div>
           </Link>
 

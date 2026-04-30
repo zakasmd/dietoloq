@@ -29,10 +29,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    az: 'Dr. Leyla Zülfüqarlı | Həkim diyetoloq, Nutrisioloq, Anti Age',
-    ru: 'Д-р Лейла Зульфугарлы | Врач-диетолог, Нутрициолог, Анти-эйдж',
-    en: 'Dr. Leyla Zülfüqarlı | Physician Dietitian, Nutritionist, Anti-Age',
-    de: 'Dr. Leyla Zülfüqarlı | Fachärztin für Diätetik, Ernährungsberaterin',
+    az: 'Dr. Leyla Zülfüqarlı | Həkim diyetoloq, Funksional Tibb, Anti Age',
+    ru: 'Д-р Лейла Зульфугарлы | Врач-диетолог, Функциональная медицина, Анти-эйдж',
+    en: 'Dr. Leyla Zülfüqarlı | Physician Dietitian, Functional Medicine, Anti-Age',
+    de: 'Dr. Leyla Zülfüqarlı | Fachärztin für Diätetik, Funktionelle Medizin, Anti-Aging',
   };
   const descriptions: Record<string, string> = {
     az: 'Həkim diyetoloq, Nutrisioloq, Anti Age mütəxəssisi Dr. Leyla Zülfüqarlı. Azərbaycanda ilk sağlam bəslənmə və diyet kitablarının müəllifidir. 15+ il təcrübə, 12000+ pasient.',
