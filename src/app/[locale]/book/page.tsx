@@ -69,7 +69,7 @@ export default function BookPage() {
             {/* Book 1 */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <ProductImage src="/images/kitabyeni.jpg" alt={t('title1')} />
+                <ProductImage src="/images/kitabyeni.png" alt={t('title1')} />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -129,7 +129,7 @@ export default function BookPage() {
             {/* Tea 1: Relax */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-                <ProductImage src="/images/tealakscay.jpg" alt={t('teaTitle1')} />
+                <ProductImage src="/images/tealakscay.png" alt={t('teaTitle1')} />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -174,7 +174,7 @@ export default function BookPage() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ order: 1 }}>
-                <ProductImage src="/images/detokscay.jpg" alt={t('teaTitle2')} />
+                <ProductImage src="/images/detokscay.png" alt={t('teaTitle2')} />
               </motion.div>
             </div>
           </div>
