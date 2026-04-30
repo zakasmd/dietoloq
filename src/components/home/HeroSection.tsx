@@ -31,7 +31,7 @@ export default function HeroSection() {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <Award size={16} className={styles.eyebrowIcon} />
-              <span>Dyt, Nutr, Anti age, FTA Dr Leyla Zülfüqarlı</span>
+              <span>{t('doctorNameFull')}</span>
             </motion.div>
 
             <motion.h1
