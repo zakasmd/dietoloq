@@ -98,12 +98,17 @@ export default function BMICalculator() {
                       id="weight-input"
                       type="number" 
                       value={weight === 0 ? '' : weight} 
+                      onKeyDown={(e) => {
+                        if (['e', 'E', '+', '-'].includes(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                       onChange={(e) => {
                         const val = e.target.value;
                         if (val.length > 3) return;
                         const num = parseInt(val);
                         if (!isNaN(num)) {
-                          if (num > 250) setWeight(250); // Updated limit
+                          if (num > 250) setWeight(250);
                           else setWeight(num);
                         } else {
                           setWeight(0);
@@ -132,12 +137,17 @@ export default function BMICalculator() {
                       id="height-input"
                       type="number" 
                       value={height === 0 ? '' : height} 
+                      onKeyDown={(e) => {
+                        if (['e', 'E', '+', '-'].includes(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                       onChange={(e) => {
                         const val = e.target.value;
                         if (val.length > 3) return;
                         const num = parseInt(val);
                         if (!isNaN(num)) {
-                          if (num > 220) setHeight(220); // Updated limit
+                          if (num > 220) setHeight(220);
                           else setHeight(num);
                         } else {
                           setHeight(0);
