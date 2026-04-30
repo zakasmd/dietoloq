@@ -32,8 +32,6 @@ const ProductImage = ({ src, alt }: { src: string, alt: string }) => (
           height: 'auto', 
           borderRadius: 'var(--radius)', 
           display: 'block',
-          mixBlendMode: 'lighten', // Helps blend with dark background if image has black bg, or use 'screen'
-          filter: 'contrast(1.05) brightness(1.05)',
           objectFit: 'contain'
         }}
       />
