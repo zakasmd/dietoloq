@@ -97,12 +97,12 @@
         "f4": "Jugend-Ernährung"
       },
       "consultation": {
-        "title": "Gesunde Ernährung",
-        "desc": "Korrektur der täglichen Essgewohnheiten, Planung der Wasseraufnahme und detaillierte Beratung für einen gesunden Lebensstil. Bereits beim ersten Gespräch werden die Bedürfnisse Ihres Körpers umfassend analysiert.",
-        "f1": "Wasseraufnahme-Plan",
-        "f2": "Essgewohnheiten",
-        "f3": "Diätkontrolle",
-        "f4": "Anleitung"
+        "title": "Abnehmen nach Autorenmethode",
+        "desc": "Mit der exklusiven Autorenmethode von Dr. Leyla Zülfüqarlı ist es möglich, monatlich 8-10-12 kg reine Fettmasse zu verlieren. Schnelle Ergebnisse ohne Sport oder Hungern, durch Verjüngung auf Zellebene.",
+        "f1": "8-12 kg Fettverlust",
+        "f2": "Autorenmethode",
+        "f3": "Abnehmen ohne Sport",
+        "f4": "Zellerneuerung"
       },
       "detox": {
         "title": "Detox-Programm",
@@ -124,7 +124,7 @@
     "learnMore": "Mehr erfahren",
     "popular": "Beliebt",
     "ctaTitle": "Welche Leistung ist die richtige für Sie?",
-    "ctaSubtitle": "Lassen Sie uns gemeinsam in einer kostenlosen Erstberatung darüber sprechen",
+    "ctaSubtitle": "Lassen Sie uns Ihren individuellen Plan im ersten Beratungsgespräch besprechen",
     "ctaButton": "Beratung erhalten"
   },
   "results": {

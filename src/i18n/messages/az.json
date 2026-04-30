@@ -97,12 +97,12 @@
         "f4": "Gənclik qidalanması"
       },
       "consultation": {
-        "title": "Sağlam Qidalanma",
-        "desc": "Gündəlik qidalanma vərdişlərinin düzəldilməsi, su qəbulu planlaşdırması və sağlam həyat tərzi üçün ətraflı məsləhətlər. İlk görüşdən etibarən bədəninizin ehtiyacları tam analiz edilir.",
-        "f1": "Su qəbulu planı",
-        "f2": "Qidalanma vərdişi",
-        "f3": "Diet nəzarəti",
-        "f4": "Yönləndirilmə"
+        "title": "Müəllif Metodikası ilə Arıqlama",
+        "desc": "Dr. Leyla Zülfüqarlının özəl müəllif metodikası ilə ayda 8-10-12 kq sırf yağ kütləsindən arıqlamaq mümkündür. İdmansız və ac qalmadan, hüceyrə səviyyəsində yenilənmə ilə sürətli nəticə.",
+        "f1": "8-12 kq yağ itkisi",
+        "f2": "Müəllif metodikası",
+        "f3": "İdmansız arıqlama",
+        "f4": "Hüceyrəvi yenilənmə"
       },
       "detox": {
         "title": "Detoks Proqramı",
@@ -124,7 +124,7 @@
     "learnMore": "Ətraflı",
     "popular": "Populyar",
     "ctaTitle": "Hansı xidmət sizin üçündür?",
-    "ctaSubtitle": "Pulsuz ilk konsultasiyada birgə müzakirə edək",
+    "ctaSubtitle": "İlk konsultasiyada fərdi planınızı birgə müzakirə edək",
     "ctaButton": "Konsultasiya al"
   },
   "results": {

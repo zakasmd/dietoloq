@@ -97,12 +97,12 @@
         "f4": "Youth nutrition"
       },
       "consultation": {
-        "title": "Healthy Nutrition",
-        "desc": "Correction of daily eating habits, water intake planning, and detailed advice for a healthy lifestyle. From the first meeting, your body's needs are fully analyzed.",
-        "f1": "Water intake plan",
-        "f2": "Eating habits",
-        "f3": "Diet control",
-        "f4": "Guidance"
+        "title": "Weight Loss by Author's Methodology",
+        "desc": "With Dr. Leyla Zülfüqarlı's exclusive author's methodology, it is possible to lose 8-10-12 kg of pure fat mass per month. Rapid results without exercise or starvation, through cellular-level rejuvenation.",
+        "f1": "8-12 kg fat loss",
+        "f2": "Author's methodology",
+        "f3": "Non-exercise weight loss",
+        "f4": "Cellular rejuvenation"
       },
       "detox": {
         "title": "Detox Program",
@@ -124,7 +124,7 @@
     "learnMore": "Learn More",
     "popular": "Popular",
     "ctaTitle": "Which service is right for you?",
-    "ctaSubtitle": "Let's discuss together in a free first consultation",
+    "ctaSubtitle": "Let's discuss your personalized plan during the first consultation",
     "ctaButton": "Get a Consultation"
   },
   "results": {
