@@ -50,44 +50,48 @@ export default function CookieConsent() {
         }}
       >
         <div className="glass-strong" style={{ 
-          padding: '1.25rem 1.5rem', 
-          borderRadius: '1.5rem', 
+          padding: '0.875rem 1.25rem', 
+          borderRadius: '1.25rem', 
           display: 'flex', 
           flexDirection: 'row',
           alignItems: 'center', 
-          gap: '1.25rem',
+          gap: '1rem',
           border: '1px solid hsl(var(--primary)/0.3)',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-          flexWrap: 'wrap'
+          boxShadow: '0 15px 35px rgba(0,0,0,0.3)',
         }}>
           <style jsx>{`
             @media (max-width: 640px) {
               .glass-strong {
-                flex-direction: column !important;
-                text-align: center;
-                gap: 1rem !important;
-                padding: 1.5rem !important;
+                padding: 0.625rem 1rem !important;
+                gap: 0.75rem !important;
+                border-radius: 1rem !important;
               }
               .cookie-icon {
-                margin: 0 auto;
+                display: none !important;
+              }
+              .cookie-text {
+                font-size: 0.75rem !important;
+                line-height: 1.3 !important;
               }
               .cookie-btn {
-                width: 100%;
+                padding: 0.4rem 0.8rem !important;
+                font-size: 0.75rem !important;
+                min-width: fit-content;
               }
             }
           `}</style>
-          <div className="cookie-icon" style={{ background: 'hsl(var(--primary)/0.1)', padding: '0.75rem', borderRadius: '1rem', color: 'hsl(var(--primary))', flexShrink: 0 }}>
-            <ShieldCheck size={24} />
+          <div className="cookie-icon" style={{ background: 'hsl(var(--primary)/0.1)', padding: '0.6rem', borderRadius: '0.75rem', color: 'hsl(var(--primary))', flexShrink: 0 }}>
+            <ShieldCheck size={20} />
           </div>
-          <div style={{ flex: '1 1 250px' }}>
-            <p style={{ fontSize: '0.875rem', lineHeight: 1.4, color: 'hsl(var(--foreground))', margin: 0 }}>
+          <div style={{ flex: '1' }}>
+            <p className="cookie-text" style={{ fontSize: '0.85rem', lineHeight: 1.4, color: 'hsl(var(--foreground))', margin: 0 }}>
               {content[locale as keyof typeof content] || content.az}
             </p>
           </div>
           <button 
             onClick={accept}
             className="btn btn-primary btn-sm cookie-btn"
-            style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem', whiteSpace: 'nowrap' }}
+            style={{ padding: '0.5rem 1.25rem', fontSize: '0.8rem', whiteSpace: 'nowrap', borderRadius: '0.75rem' }}
           >
             {btnText[locale as keyof typeof content] || btnText.az}
           </button>
