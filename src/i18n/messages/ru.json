@@ -194,7 +194,27 @@
       "Сертификат методики похудения без спорта"
     ],
     "socialTitle": "Следите за мной",
-    "socialDesc": "Я делюсь полезными советами и секретами здоровья в социальных сетях",
+    "socialDesc": "Я делюсь полезными советами, прямыми эфирами и секретами здоровья в социальных сетях",
+    "interviewsTitle": "Медиа и Интервью",
+    "interviewsDesc": "Экспертные интервью д-ра Лейлы Зульфугарлы ведущим медиа-ресурсам Турции и Азербайджана",
+    "interviews": [
+      { "title": "Show TV - Hayat Güzeldir (Интервью)", "url": "https://m.showtv.com.tr/programlar/videolar/hayat-guzeldir-sezon-1-bolum-31-izle/40344" },
+      { "title": "Sabah - Секреты снижения веса", "url": "https://www.sabah.com.tr/roza/beslenme/kilo-vermek-istiyorsaniz-bunlara-dikkat" },
+      { "title": "Hürses - Борьба с лишним весом", "url": "https://www.hurses.com.tr/fazla-kilolardan-kurtulmak-icin-yapilmasi-gerekenler" },
+      { "title": "Azertag.az - Первый урок для будущих врачей", "url": "https://azertag.az/ru/xeber/Pervyi_urok_po_dietologii_dlya_budushchih_vrachei-1051102" },
+      { "title": "Day.az - Здоровое питание и экономика", "url": "https://news.day.az/economy/885606.html" },
+      { "title": "Autograph.az - Красиво есть не запретишь", "url": "https://autograph.az/news/krasivo-est-ne-zapretish-1318" },
+      { "title": "Report.az - Советы по летнему питанию", "url": "https://report.az/ru/amp/zdravookhranenie/kak-pitatsya-letom-soveti-dietologa" },
+      { "title": "Musavat.com - Наше питание и болезни", "url": "https://musavat.com/news/qidamizin-yol-acdigi-xestelikler-ve-qefil-olumler-hekim-dietoloq-leyla-zulfuqarli-danisir-video_624943.html" },
+      { "title": "Lady.day.az - Женское здоровье", "url": "https://lady.day.az/news/health/1036165.html" },
+      { "title": "Azxeber.com - Советы диетолога", "url": "https://azxeber.com/az/ariqlamaq-ve-ya-kkelmek-ucun-bunlari-edin-dietoloq-mesleheti/" },
+      { "title": "Lady.day.az - Секреты метаболизма", "url": "https://lady.day.az/news/health/1073850.html" },
+      { "title": "Sia.az - Здоровый образ жизни", "url": "https://sia.az/az/news/social/1139315.html" },
+      { "title": "Pravda.az - Инновации в диетологии", "url": "https://pravda.az/news/177551" },
+      { "title": "Gencaile.az - Здоровье семьи", "url": "https://gencaile.az/leyla-zulfuqarli-b%C9%99z%C9%99n-insanlar-el%C9%99-dusunur-ki-xurmani-yalniz-iftarda-yem%C9%99k-lazimdir/" },
+      { "title": "Day.az - Борьба с ожирением", "url": "https://news.day.az/society/1437586.html" },
+      { "title": "Crossmedia.az - Интервью эксперта", "url": "https://crossmedia.az/az/article/13798" }
+    ],
     "certsBadgeTitle": "55+ Сертиф.",
     "certsBadgeSub": "Клиническая нутрициология"
   },

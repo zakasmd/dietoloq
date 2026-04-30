@@ -196,7 +196,27 @@
     "certsBadgeTitle": "55+ Sertifikat",
     "certsBadgeSub": "Klinik Nutrisyon",
     "socialTitle": "Məni izləyin",
-    "socialDesc": "Sosial şəbəkələrdə faydalı məsləhətlər, canlı yayımlar və sağlamlıq sirlərini paylaşıram"
+    "socialDesc": "Sosial şəbəkələrdə faydalı məsləhətlər, canlı yayımlar və sağlamlıq sirlərini paylaşıram",
+    "interviewsTitle": "Media və Müsahibələr",
+    "interviewsDesc": "Dr. Leyla Zülfüqarlının Türkiyə və Azərbaycanın aparıcı media qurumlarına verdiyi ekspert müsahibələri",
+    "interviews": [
+      { "title": "Show TV - Hayat Güzeldir (Müsahibə)", "url": "https://m.showtv.com.tr/programlar/videolar/hayat-guzeldir-sezon-1-bolum-31-izle/40344" },
+      { "title": "Sabah - Çəki vermə sirrləri", "url": "https://www.sabah.com.tr/roza/beslenme/kilo-vermek-istiyorsaniz-bunlara-dikkat" },
+      { "title": "Hürses - Artıq çəki ilə mübarizə", "url": "https://www.hurses.com.tr/fazla-kilolardan-kurtulmak-icin-yapilmasi-gerekenler" },
+      { "title": "Azertag.az - Gənc həkimlər üçün ilk dərs", "url": "https://azertag.az/ru/xeber/Pervyi_urok_po_dietologii_dlya_budushchih_vrachei-1051102" },
+      { "title": "Day.az - Sağlam qidalanma və iqtisadiyyat", "url": "https://news.day.az/economy/885606.html" },
+      { "title": "Autograph.az - Gözəl yemək və sağlamlıq", "url": "https://autograph.az/news/krasivo-est-ne-zapretish-1318" },
+      { "title": "Report.az - Yay qidalanması məsləhətləri", "url": "https://report.az/ru/amp/zdravookhranenie/kak-pitatsya-letom-soveti-dietologa" },
+      { "title": "Musavat.com - Qidamız və xəstəliklər", "url": "https://musavat.com/news/qidamizin-yol-acdigi-xestelikler-ve-qefil-olumler-hekim-dietoloq-leyla-zulfuqarli-danisir-video_624943.html" },
+      { "title": "Lady.day.az - Qadın sağlamlığı", "url": "https://lady.day.az/news/health/1036165.html" },
+      { "title": "Azxeber.com - Peşəkar diyetoloq tövsiyələri", "url": "https://azxeber.com/az/ariqlamaq-ve-ya-kkelmek-ucun-bunlari-edin-dietoloq-mesleheti/" },
+      { "title": "Lady.day.az - Metabolizm sirrləri", "url": "https://lady.day.az/news/health/1073850.html" },
+      { "title": "Sia.az - Sağlam həyat tərzi", "url": "https://sia.az/az/news/social/1139315.html" },
+      { "title": "Pravda.az - Diyetologiyada yeniliklər", "url": "https://pravda.az/news/177551" },
+      { "title": "Gencaile.az - Ailə sağlamlığı", "url": "https://gencaile.az/leyla-zulfuqarli-b%C9%99z%C9%99n-insanlar-el%C9%99-dusunur-ki-xurmani-yalniz-iftarda-yem%C9%99k-lazimdir/" },
+      { "title": "Day.az - Piylənmə ilə mübarizə", "url": "https://news.day.az/society/1437586.html" },
+      { "title": "Crossmedia.az - Ekspert müsahibəsi", "url": "https://crossmedia.az/az/article/13798" }
+    ]
   },
   "testimonials": {
     "title": "Müştəri rəyləri",

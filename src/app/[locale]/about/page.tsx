@@ -155,6 +155,72 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ─── Media & Interviews ─── */}
+      <section style={{ padding: '2.5rem 0', background: 'hsl(var(--primary)/0.02)' }}>
+        <div className="container">
+          <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '1rem' }}>📺 {t('interviewsTitle')}</div>
+            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+              {t('interviewsTitle')}
+            </h2>
+            <p style={{ color: 'hsl(var(--foreground)/0.65)', maxWidth: '700px', margin: '0 auto' }}>{t('interviewsDesc')}</p>
+          </motion.div>
+
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', 
+            gap: '1rem',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            {(t.raw('interviews') as { title: string, url: string }[]).map((item, i) => (
+              <motion.a 
+                key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...fadeUp(i * 0.05)}
+                className="glass hover-glow"
+                style={{ 
+                  padding: '1.25rem', 
+                  borderRadius: 'var(--radius)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  textDecoration: 'none',
+                  transition: 'transform 0.2s ease'
+                }}
+              >
+                <div style={{ 
+                  width: '40px', 
+                  height: '40px', 
+                  borderRadius: '10px', 
+                  background: 'hsl(var(--primary)/0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'hsl(var(--primary))' }}>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </div>
+                <span style={{ 
+                  fontSize: '0.9rem', 
+                  color: 'hsl(var(--foreground)/0.85)', 
+                  fontWeight: 500,
+                  lineHeight: 1.4
+                }}>
+                  {item.title}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── Social ─── */}
       <section style={{ padding: '2.5rem 0' }}>
         <div className="container">

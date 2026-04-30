@@ -195,7 +195,27 @@
       "Zertifikat für sportfreie Abnehm-Methoden"
     ],
     "socialTitle": "Folgen Sie mir",
-    "socialDesc": "Ich teile nützliche Tipps, Live-Übertragungen und Gesundheitsgeheimnisse in sozialen Netzwerken",
+    "socialDesc": "Ich teile nützliche Tipps, Live-Übertragungen und Gesundheitsgeheimnisse in den sozialen Medien",
+    "interviewsTitle": "Medien & Interviews",
+    "interviewsDesc": "Experteninterviews von Dr. Leyla Zülfüqarlı auf führenden Medienplattformen der Türkei und Aserbaidschans",
+    "interviews": [
+      { "title": "Show TV - Hayat Güzeldir (Interview)", "url": "https://m.showtv.com.tr/programlar/videolar/hayat-guzeldir-sezon-1-bolum-31-izle/40344" },
+      { "title": "Sabah - Geheimnisse der Gewichtsabnahme", "url": "https://www.sabah.com.tr/roza/beslenme/kilo-vermek-istiyorsaniz-bunlara-dikkat" },
+      { "title": "Hürses - Kampf gegen Übergewicht", "url": "https://www.hurses.com.tr/fazla-kilolardan-kurtulmak-icin-yapilmasi-gerekenler" },
+      { "title": "Azertag.az - Erste Lektion für angehende Ärzte", "url": "https://azertag.az/ru/xeber/Pervyi_urok_po_dietologii_dlya_budushchih_vrachei-1051102" },
+      { "title": "Day.az - Gesunde Ernährung und Wirtschaft", "url": "https://news.day.az/economy/885606.html" },
+      { "title": "Autograph.az - Die Kunst des gesunden Essens", "url": "https://autograph.az/news/krasivo-est-ne-zapretish-1318" },
+      { "title": "Report.az - Tipps zur Sommerernährung", "url": "https://report.az/ru/amp/zdravookhranenie/kak-pitatsya-letom-soveti-dietologa" },
+      { "title": "Musavat.com - Unsere Ernährung und Krankheiten", "url": "https://musavat.com/news/qidamizin-yol-acdigi-xestelikler-ve-qefil-olumler-hekim-dietoloq-leyla-zulfuqarli-danisir-video_624943.html" },
+      { "title": "Lady.day.az - Frauengesundheit", "url": "https://lady.day.az/news/health/1036165.html" },
+      { "title": "Azxeber.com - Professionelle Ernährungsberatung", "url": "https://azxeber.com/az/ariqlamaq-ve-ya-kkelmek-ucun-bunlari-edin-dietoloq-mesleheti/" },
+      { "title": "Lady.day.az - Geheimnisse des Stoffwechsels", "url": "https://lady.day.az/news/health/1073850.html" },
+      { "title": "Sia.az - Gesunder Lebensstil", "url": "https://sia.az/az/news/social/1139315.html" },
+      { "title": "Pravda.az - Innovationen in der Diätetik", "url": "https://pravda.az/news/177551" },
+      { "title": "Gencaile.az - Familiengesundheit", "url": "https://gencaile.az/leyla-zulfuqarli-b%C9%99z%C9%99n-insanlar-el%C9%99-dusunur-ki-xurmani-yalniz-iftarda-yem%C9%99k-lazimdir/" },
+      { "title": "Day.az - Kampf gegen Fettleibigkeit", "url": "https://news.day.az/society/1437586.html" },
+      { "title": "Crossmedia.az - Experteninterview", "url": "https://crossmedia.az/az/article/13798" }
+    ],
     "certsBadgeTitle": "55+ Zertifikate",
     "certsBadgeSub": "Klinische Ernährung"
   },
