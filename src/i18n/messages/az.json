@@ -40,7 +40,7 @@
     "blog": "Blog",
     "contact": "Əlaqə",
     "consultation": "Konsultasiya",
-    "book": "Kitab",
+    "book": "Kitablar və Çaylar",
     "login": "Daxil ol",
     "register": "Qeydiyyat",
     "dashboard": "Dashboard",
@@ -337,7 +337,12 @@
     "detoxOrderBtn": "Detoks Paketi Sifariş et",
     "ctaTitle": "Fərdi konsultasiya da almaq istəyirsiniz?",
     "ctaDesc": "Kitabla birlikdə fərdi diet planı alın",
-    "ctaBtn": "Konsultasiyaya qeydiyyat"
+    "ctaBtn": "Konsultasiyaya qeydiyyat",
+    "teaTitle1": "Relax Çayı",
+    "teaDesc1": "Gərgin iş günündən sonra bədəni sakitləşdirən, sinir sistemini dincəldən və yuxu rejimini tənzimləyən xüsusi bitki qarışığı.",
+    "teaTitle2": "Detoks Çayı",
+    "teaDesc2": "Orqanizmi zərərli toksinlərdən təmizləyən, metabolizmanı sürətləndirən və arıqlama prosesinə dəstək verən bitki tərkibli çay.",
+    "orderBtn": "Sifariş Et"
   },
   "login": {
     "title": "Daxil ol",

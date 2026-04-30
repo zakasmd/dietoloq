@@ -40,7 +40,7 @@
     "blog": "Blog",
     "contact": "Kontakt",
     "consultation": "Beratung",
-    "book": "Buch",
+    "book": "Bücher und Tees",
     "login": "Anmelden",
     "register": "Registrieren",
     "dashboard": "Dashboard",
@@ -338,7 +338,12 @@
     "detoxOrderBtn": "Detox-Paket bestellen",
     "ctaTitle": "Möchten Sie auch eine persönliche Beratung?",
     "ctaDesc": "Holen Sie sich einen persönlichen Diätplan zusammen mit dem Buch",
-    "ctaBtn": "Für Beratung registrieren"
+    "ctaBtn": "Für Beratung registrieren",
+    "teaTitle1": "Relax Tee",
+    "teaDesc1": "Eine spezielle Kräutermischung, die den Körper nach einem stressigen Arbeitstag beruhigt, das Nervensystem entspannt und den Schlafrhythmus reguliert.",
+    "teaTitle2": "Detox Tee",
+    "teaDesc2": "Kräutertee, der den Körper von schädlichen Toxinen reinigt, den Stoffwechsel beschleunigt und den Abnehmprozess unterstützt.",
+    "orderBtn": "Jetzt Bestellen"
   },
   "login": {
     "title": "Anmelden",

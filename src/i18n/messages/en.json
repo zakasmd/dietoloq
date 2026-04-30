@@ -40,7 +40,7 @@
     "blog": "Blog",
     "contact": "Contact",
     "consultation": "Consultation",
-    "book": "Book",
+    "book": "Books and Teas",
     "login": "Log In",
     "register": "Sign Up",
     "dashboard": "Dashboard",
@@ -338,7 +338,12 @@
     "detoxOrderBtn": "Order Detox Package",
     "ctaTitle": "Do you also want a personal consultation?",
     "ctaDesc": "Get a personalized diet plan along with the book",
-    "ctaBtn": "Register for Consultation"
+    "ctaBtn": "Register for Consultation",
+    "teaTitle1": "Relax Tea",
+    "teaDesc1": "A special herbal blend that calms the body after a stressful work day, relaxes the nervous system, and regulates sleep patterns.",
+    "teaTitle2": "Detox Tea",
+    "teaDesc2": "Herbal tea that cleanses the body of harmful toxins, speeds up metabolism, and supports the weight loss process.",
+    "orderBtn": "Order Now"
   },
   "login": {
     "title": "Log In",
