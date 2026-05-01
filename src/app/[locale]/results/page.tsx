@@ -19,6 +19,7 @@ export default function ResultsPage() {
     image?: string;
   }> = [
     { id: 1, title: t('case1Title'), goal: t('case1Goal'), video: 'https://www.youtube.com/embed/Qq0KKjlfw2A' },
+    { id: 13, title: t('case13Title'), goal: t('case13Goal'), image: '/images/results/result-6.jpg' },
     { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 2, title: t('case2Title'), goal: t('case2Goal'), video: 'https://www.youtube.com/embed/IJM9V7uJHHo' },
     { id: 3, title: t('case3Title'), goal: t('case3Goal'), video: 'https://www.youtube.com/embed/1zQK8Wn1xag' },
@@ -30,7 +31,6 @@ export default function ResultsPage() {
     { id: 9, title: t('case9Title'), goal: t('case9Goal'), image: '/images/results/result-3.jpeg' },
     { id: 10, title: t('case10Title'), goal: t('case10Goal'), image: '/images/results/result-4.jpeg' },
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
-    { id: 13, title: t('case13Title'), goal: t('case13Goal'), image: '/images/results/result-6.jpg' },
   ];
 
   const totalPages = Math.ceil(results.length / itemsPerPage);

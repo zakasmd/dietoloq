@@ -244,16 +244,16 @@
     "subtitle": "Xidmətlərimizdən razı qalan pasientlərimizin rəyləri",
     "items": [
       {
-        "name": "Murad Arif (Bəstəkar, Prodüser)",
-        "text": "Leyla xanımın fərdi proqramı sayəsində 3 aya tam 30 kq arıqladım! Ən əsası isə heç bir əməliyyat olmadan, sağlam şəkildə istədiyim nəticəni əldə etdim və çəkimi qoruyuram.",
-        "result": "-30 kq / 3 ay",
-        "avatar": "👨"
-      },
-      {
         "name": "Nərminə xanım",
         "text": "9-10 il idi ki, köklükdən əziyyət çəkirdim. Artıq yeriyə bilmir, böyük çətinlik çəkirdim. Çox yerə müraciət etsəm də, nəticə ala bilməmişdim. Leyla xanımın fərdiləşdirilmiş proqramı sayəsində 4 ayda düz 30 kq atdım! İndi özümü çox yüngül hiss edirəm.",
         "result": "-30 kq / 4 ay",
         "avatar": "👩"
+      },
+      {
+        "name": "Murad Arif (Bəstəkar, Prodüser)",
+        "text": "Leyla xanımın fərdi proqramı sayəsində 3 aya tam 30 kq arıqladım! Ən əsası isə heç bir əməliyyat olmadan, sağlam şəkildə istədiyim nəticəni əldə etdim və çəkimi qoruyuram.",
+        "result": "-30 kq / 3 ay",
+        "avatar": "👨"
       },
       {
         "name": "Günay xanım",

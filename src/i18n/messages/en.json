@@ -244,16 +244,16 @@
     "subtitle": "Reviews from our satisfied clients",
     "items": [
       {
+        "name": "Ms. Narmina",
+        "text": "I had been suffering from obesity for 9-10 years. I could no longer walk and was having great difficulty. Although I applied to many places, I couldn't get results. Thanks to Ms. Leyla's personalized program, I lost exactly 30 kg in 4 months! Now I feel very light.",
+        "result": "-30 kg / 4 months",
+        "avatar": "👩"
+      },
+      {
         "name": "Murad Arif (Composer, Producer)",
         "text": "Thanks to Leyla's personalized program, I lost exactly 30 kg in just 3 months! Most importantly, I achieved this result healthily without any surgery and I'm maintaining my weight.",
         "result": "-30 kg / 3 months",
         "avatar": "👨"
-      },
-      {
-        "name": "Nermine",
-        "text": "I suffered from obesity for 9-10 years. I could no longer walk and struggled a lot. I tried many places but got no results. Thanks to Leyla's personalized program, I lost exactly 30 kg in 4 months! I feel so light now.",
-        "result": "-30 kg / 4 months",
-        "avatar": "👩"
       },
       {
         "name": "Gunay",

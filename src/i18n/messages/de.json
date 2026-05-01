@@ -244,16 +244,16 @@
     "subtitle": "Bewertungen unserer zufriedenen Kunden",
     "items": [
       {
-        "name": "Murad Arif (Komponist, Produzent)",
-        "text": "Dank Leylas persönlichem Programm habe ich in nur 3 Monaten genau 30 kg abgenommen! Am wichtigsten ist, dass ich dieses Ergebnis auf gesunde Weise ohne Operation erreicht habe und mein Gewicht halte.",
-        "result": "-30 kg / 3 Monate",
-        "avatar": "👨"
-      },
-      {
         "name": "Nermine",
         "text": "Ich litt 9-10 Jahre lang an Fettleibigkeit. Ich konnte kaum noch gehen und hatte große Probleme. Ich habe vieles versucht, aber ohne Erfolg. Dank Leylas persönlichem Programm habe ich in 4 Monaten genau 30 kg verloren! Ich fühle mich jetzt so leicht.",
         "result": "-30 kg / 4 Monate",
         "avatar": "👩"
+      },
+      {
+        "name": "Murad Arif (Komponist, Produzent)",
+        "text": "Dank Leylas persönlichem Programm habe ich in nur 3 Monaten genau 30 kg abgenommen! Am wichtigsten ist, dass ich dieses Ergebnis auf gesunde Weise ohne Operation erreicht habe und mein Gewicht halte.",
+        "result": "-30 kg / 3 Monate",
+        "avatar": "👨"
       },
       {
         "name": "Gunay",
