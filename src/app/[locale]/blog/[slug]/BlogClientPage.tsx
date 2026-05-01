@@ -57,10 +57,33 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
   const readTime = Math.ceil(content.split(' ').length / 200) + ' dəq';
 
-  // Share handlers
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareOnFacebook = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
-  const shareOnWhatsapp = () => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + shareUrl)}`, '_blank');
+  const [copied, setCopied] = React.useState(false);
+
+  const shareOnWhatsapp = () => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + window.location.href)}`, '_blank');
+  const shareOnFacebook = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+
+  const shareOnInstagram = async () => {
+    const url = window.location.href;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title,
+          url: url
+        });
+      } catch (err) {
+        console.error('Sharing failed', err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        alert('Linki kopyalamaq mümkün olmadı');
+      }
+    }
+  };
 
   return (
     <div style={{ paddingTop: '10rem', paddingBottom: '12rem', minHeight: '100vh' }}>
@@ -191,9 +214,14 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
                  <button onClick={shareOnFacebook} className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#1877F2', color: '#1877F2' }}>
                    <FacebookIcon />
                  </button>
-                 <Link href="https://instagram.com/dietoloqleylazulfuqarli" target="_blank" className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F' }}>
+                 <button onClick={shareOnInstagram} className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F', position: 'relative' }}>
                    <InstagramIcon />
-                 </Link>
+                   {copied && (
+                     <div style={{ position: 'absolute', bottom: '110%', left: '50%', transform: 'translateX(-50%)', background: '#333', color: '#fff', fontSize: '10px', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
+                       Link kopyalandı
+                     </div>
+                   )}
+                 </button>
                </div>
             </div>
             <Link href={`/${locale}/blog`} className="btn btn-primary btn-sm" style={{ borderRadius: '100px' }}>
