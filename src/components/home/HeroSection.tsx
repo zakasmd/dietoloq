@@ -84,11 +84,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.75, duration: 0.6 }}
             >
-              {(['stat1', 'stat2', 'stat3', 'stat4'] as const).map((key, i, arr) => (
+              {(['stat1', 'stat2', 'stat3', 'stat4'] as const).map((key) => (
                 <div key={key} className={styles.statItem}>
                   <span className={styles.statValue}>{t(key)}</span>
                   <span className={styles.statLabel}>{t(`${key}Label`)}</span>
-                  {i < arr.length - 1 && <div className={styles.statDivider} />}
                 </div>
               ))}
             </motion.div>
