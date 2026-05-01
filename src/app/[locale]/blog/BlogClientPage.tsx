@@ -102,8 +102,8 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                     cursor: 'pointer'
                   }}
                 >
-                  <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', padding: '2.5rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: post.image_url ? '1fr 280px' : '1fr', gap: '3rem', alignItems: 'center' }}>
+                  <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }} className="blog-card-padding">
+                    <div className="blog-card-grid">
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         {/* Author Header */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -112,7 +112,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Dr. Leyla Zülfüqarlı</span>
-                            <span className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</span>
+                            <span className="text-gradient-mint blog-author-text" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</span>
                           </div>
                         </div>
 
@@ -157,7 +157,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                       </div>
 
                       {post.image_url && (
-                        <div style={{ width: '100%', aspectRatio: '1/1', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: 'var(--glow-mint)' }}>
+                        <div className="blog-card-image" style={{ borderRadius: '1.5rem', overflow: 'hidden', boxShadow: 'var(--glow-mint)', width: '280px', aspectRatio: '1/1' }}>
                           <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
                         </div>
                       )}

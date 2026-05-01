@@ -129,13 +129,13 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
             </h1>
 
             {/* Premium Author Card */}
-            <div className="glass-strong" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.25rem 1.75rem', borderRadius: '1.5rem', border: '1px solid hsl(var(--primary)/0.2)', width: 'fit-content' }}>
+            <div className="glass-strong blog-author-badge">
               <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid hsl(var(--primary)/0.4)', padding: '3px', overflow: 'hidden' }}>
                 <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
               </div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Dr. Leyla Zülfüqarlı</div>
-                <div className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</div>
+                <div className="text-gradient-mint blog-author-text" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</div>
               </div>
             </div>
           </header>

@@ -478,3 +478,56 @@ html, body {
     padding-right: 0.875rem;
   }
 }
+
+/* ==========================================
+   BLOG SPECIFIC UTILITIES
+   ========================================== */
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.blog-author-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 1.5rem;
+  border: 1px solid hsl(var(--primary)/0.2);
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .blog-card-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .blog-card-image {
+    order: -1;
+    aspect-ratio: 16/9 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-author-badge {
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+  }
+  .blog-author-text {
+    font-size: 0.6rem !important;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .blog-card-padding {
+    padding: 1.5rem !important;
+  }
+  .blog-content-area {
+    font-size: 1.05rem !important;
+    line-height: 1.7;
+  }
+}
