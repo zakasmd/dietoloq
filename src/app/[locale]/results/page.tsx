@@ -9,7 +9,7 @@ export default function ResultsPage() {
   const t = useTranslations('results');
   const locale = useLocale();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   const results: Array<{
     id: number;
@@ -41,6 +41,8 @@ export default function ResultsPage() {
     { id: 21, title: t('case21Title'), goal: t('case21Goal'), image: '/images/results/result-8.jpg' },
     { id: 22, title: t('case22Title'), goal: t('case22Goal'), video: 'https://www.youtube.com/embed/nskecqwttnQ' },
     { id: 23, title: t('case23Title'), goal: t('case23Goal'), image: '/images/results/result-9.png' },
+    { id: 24, title: t('case24Title'), goal: t('case24Goal'), video: 'https://www.youtube.com/embed/jMX0uXtOe-4' },
+    { id: 25, title: t('case25Title'), goal: t('case25Goal'), video: 'https://www.youtube.com/embed/6gd380BvCEI' },
   ];
 
   const totalPages = Math.ceil(results.length / itemsPerPage);
