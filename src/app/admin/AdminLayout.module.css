@@ -117,7 +117,7 @@
   .topbar { padding: 0 1rem; }
   
   /* Prevent zoom on focus */
-  input, textarea, select {
+  :global(input), :global(textarea), :global(select) {
     font-size: 16px !important;
   }
 }
