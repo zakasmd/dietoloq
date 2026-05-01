@@ -59,7 +59,7 @@
     "cta2": "Kurslara bax",
     "whatsapp": "WhatsApp-da yaz",
     "stat1": "12000+",
-    "stat1Label": "Müştəri",
+    "stat1Label": "Pasientlər",
     "stat2": "15+",
     "stat2Label": "İl Təcrübə",
     "stat3": "55+",
@@ -70,7 +70,7 @@
   },
   "services": {
     "title": "Xidmətlər",
-    "subtitle": "Hər bir müştəriyə fərdi yanaşma ilə sağlamlıq yolculuğunuzu birlikdə planlaşdırırıq",
+    "subtitle": "Hər bir pasientə fərdi yanaşma ilə sağlamlıq yolculuğunuzu birlikdə planlaşdırırıq",
     "items": {
       "weightLoss": {
         "title": "Arıqlama Proqramı",
@@ -129,12 +129,12 @@
   },
   "results": {
     "title": "Real Nəticələr",
-    "subtitle": "Müştərilərimizin real transformasiya hekayələri",
+    "subtitle": "Pasientlərimizin real transformasiya hekayələri",
     "eyebrow": "Nəticələr",
     "beforeLabel": "Əvvəl",
     "afterLabel": "Sonra",
     "viewAll": "Hamısına bax",
-    "statsClients": "12000+ Uğurlu müştəri",
+    "statsClients": "12000+ Uğurlu pasient",
     "statsSatisfy": "100% Məmnuniyyət dərəcəsi",
     "statsLoss": "Ortalama çəki itkisi",
     "statsTime": "İlk nəticə müddəti",
@@ -142,7 +142,7 @@
     "goalGain": "Çəki artırma",
     "monthLabel": "ay",
     "weekLabel": "həftə",
-    "ctaTitle": "Siz də nəticə əldə edə bilərsiniz",
+    "ctaTitle": "Siz də uğurlu pasient ola bilərsiniz",
     "ctaSubtitle": "Fərdi qidalanma planınızı hazırlayalım",
     "ctaButton": "Konsultasiya al",
     "case1Goal": "Arıqlama prosesi",
@@ -178,7 +178,7 @@
     "readMore": "Ətraflı oxu",
     "experience": "İl Təcrübə",
     "certificates": "Sertifikat",
-    "clients": "Müştəri",
+    "clients": "Pasient",
     "experienceVal": "15+",
     "certificatesVal": "55+",
     "clientsVal": "12000+",
@@ -188,8 +188,8 @@
     "bio4": "Müəlliflik və Missiya:\n2015-ci ildə ölkənin ilk diyet kitabı olan \"Sağlam bəslən - Arıqla\" və 2017-ci ildə \"Köklüyün sirri\" kitablarını nəşr etdirmişdir. Onun əsas missiyası yalnız çəki itirmək deyil, hüceyrə səviyyəsində yenilənmə və metabolik balansı bərpa edərək insanların həyat keyfiyyətini yüksəltməkdir. O, insanlara qidanın bir məhdudiyyət deyil, sağlamlıq və enerji mənbəyi olduğunu aşılamağı hədəfləyir.",
     "missionTitle": "Mənim missiyam",
     "missionText1": "Hər insanın fərqli olduğunu bilərək, hər kəsə özünəməxsus qidalanma planı hazırlamaq. Sağlam həyat yaşamaq üçün qida bir həzz, bir həyat tərzi olmalıdır — məhdudiyyət yox.",
-    "missionText2": "Müştərimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",
-    "servicesTitle": "Müştərilərim üçün nə edirəm?",
+    "missionText2": "Pasientimin yalnız çəkisini deyil, sağlamlığını, enerji səviyyəsini, həyat keyfiyyətini yüksəltmək — bu mənim hədəfimdir.",
+    "servicesTitle": "Pasientlərim üçün nə edirəm?",
     "servicesList": [
       "Arıqlama və çəki azaltma üçün fərdi diet proqramları (idmansız)",
       "Kökəlmək istəyənlər üçün fərdi çəki artırma planları",
@@ -240,8 +240,8 @@
     ]
   },
   "testimonials": {
-    "title": "Müştəri rəyləri",
-    "subtitle": "Xidmətlərimizdən razı qalan müştərilərimizin rəyləri",
+    "title": "Pasient rəyləri",
+    "subtitle": "Xidmətlərimizdən razı qalan pasientlərimizin rəyləri",
     "items": [
       {
         "name": "Murad Arif (Bəstəkar, Prodüser)",
