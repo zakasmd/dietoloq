@@ -52,6 +52,7 @@
   },
   "hero": {
     "badge": "Professionelle Ernährungsberaterin · Baku",
+    "doctorNameFull": "Fachärztin für Diätetik, Ernährungsberaterin, Spezialistin für funktionelle Medizin und Anti-Age Dr. Leyla Zülfüqarlı",
     "title": "Für ein gesundes Leben",
     "titleHighlight": "individueller Ernährungsplan",
     "subtitle": "Ernährungsberaterin, Nutrisiologin, Spezialistin für funktionelle Medizin und Anti-Age Dr. Leyla Zülfügarli. Autorin der ersten Bücher im Bereich Diätetik in Aserbaidschan und professionelle Expertin mit mehr als 15 Jahren internationaler wissenschaftlicher Erfahrung (ECO Prag, IFSO London, EASD Tiflis).",
@@ -63,7 +64,9 @@
     "stat2": "15+",
     "stat2Label": "Jahre Erfahrung",
     "stat3": "55+",
-    "stat3Label": "Zertifikate"
+    "stat3Label": "Zertifikate",
+    "stat4": "100+",
+    "stat4Label": "Seminare"
   },
   "services": {
     "title": "Dienstleistungen",
