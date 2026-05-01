@@ -112,7 +112,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Dr. Leyla Zülfüqarlı</span>
-                            <span className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Anti-Age mütəxəssisi</span>
+                            <span className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</span>
                           </div>
                         </div>
 

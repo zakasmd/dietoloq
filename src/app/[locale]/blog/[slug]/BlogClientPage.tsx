@@ -109,7 +109,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
               </div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Dr. Leyla Zülfüqarlı</div>
-                <div className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Anti-Age mütəxəssisi</div>
+                <div className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</div>
               </div>
             </div>
           </header>
