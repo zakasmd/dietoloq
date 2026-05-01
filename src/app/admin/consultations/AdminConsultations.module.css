@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters {
+    width: 100%;
+  }
+  .filters button {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+  }
+  .cardContent {
+    flex-direction: column;
+  }
+  .actions {
+    width: 100%;
+    flex-direction: row !important;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .actions > * {
+    flex: 1;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .contactInfo {
+    gap: 0.75rem;
+  }
+}

@@ -1,17 +1,4 @@
-'use client';
-
-import { useEffect, useState, useRef } from 'react';
-import { createClient } from '@/lib/supabase/client';
-import { Upload, Trash2, FileText, Globe, Lock, Users as UsersIcon, X, UserMinus } from 'lucide-react';
-
-type Material = {
-  id: string;
-  title_az: string;
-  description_az: string | null;
-  file_url: string;
-  is_public: boolean;
-  created_at: string;
-};
+import styles from './AdminBooks.module.css';
 
 export default function BooksAdminPage() {
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -161,7 +148,7 @@ export default function BooksAdminPage() {
       </div>
 
       {/* Upload Form */}
-      <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)' }}>
+      <div className={styles.card} style={{ border: '1.5px solid var(--color-primary-200)' }}>
         <h3 style={{ marginBottom: '1.25rem' }}>Yeni PDF Yüklə</h3>
         {error && <div style={{ padding: '0.875rem', background: '#FEE2E2', color: '#991B1B', borderRadius: 8, marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
         {success && <div style={{ padding: '0.875rem', background: '#DCFCE7', color: '#166534', borderRadius: 8, marginBottom: '1rem', fontSize: '0.9rem' }}>{success}</div>}
@@ -186,7 +173,7 @@ export default function BooksAdminPage() {
               onChange={(e) => setIsPublic(e.target.checked)}
               style={{ width: 18, height: 18, cursor: 'pointer' }}
             />
-            <label htmlFor="is_public_books" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>
+            <label htmlFor="is_public_books" className="form-label" style={{ margin: 0, cursor: 'pointer', fontSize: '0.875rem' }}>
               Hərkəsə Açıq — qeydiyyatlı bütün istifadəçilər görür
             </label>
           </div>
@@ -200,31 +187,33 @@ export default function BooksAdminPage() {
       {/* Materials List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         {materials.map((m) => (
-          <div key={m.id} style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)', flexWrap: 'wrap' }}>
-            <div style={{ width: 44, height: 44, background: m.is_public ? '#DCFCE7' : '#F1F5F9', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <FileText size={20} color={m.is_public ? '#059669' : '#64748B'} />
-            </div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{m.title_az}</div>
-              {m.description_az && <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>{m.description_az}</div>}
-              <div style={{ marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem' }}>
-                {m.is_public
-                  ? <><Globe size={12} color="#059669" /> <span style={{ color: '#059669' }}>Hərkəsə Açıq</span></>
-                  : <><Lock size={12} color="#64748B" /> <span style={{ color: '#64748B' }}>Məhdud Giriş</span></>
-                }
+          <div key={m.id} className={styles.item}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1, minWidth: '200px' }}>
+              <div style={{ width: 44, height: 44, background: m.is_public ? '#DCFCE7' : '#F1F5F9', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <FileText size={20} color={m.is_public ? '#059669' : '#64748B'} />
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontWeight: 600, fontSize: '0.95rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.title_az}</div>
+                {m.description_az && <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '0.15rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.description_az}</div>}
+                <div style={{ marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem' }}>
+                  {m.is_public
+                    ? <><Globe size={12} color="#059669" /> <span style={{ color: '#059669' }}>Hərkəsə Açıq</span></>
+                    : <><Lock size={12} color="#64748B" /> <span style={{ color: '#64748B' }}>Məhdud Giriş</span></>
+                  }
+                </div>
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
+            <div className={styles.itemActions}>
               <a href={m.file_url} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">Bax</a>
               <button className="btn btn-outline btn-sm" onClick={() => togglePublic(m.id, m.is_public)}>
-                {m.is_public ? 'Məhdudlaşdır' : 'Açıq Et'}
+                {m.is_public ? 'Məhdud' : 'Açıq'}
               </button>
-              <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: m.id, title: m.title_az }); fetchAllowedUsers(m.id); }} title="Girişi olan istifadəçilər">
+              <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: m.id, title: m.title_az }); fetchAllowedUsers(m.id); }} title="Girişlər">
                 <UsersIcon size={14} />
               </button>
               <button
                 className="btn btn-sm"
-                style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', cursor: 'pointer' }}
                 onClick={() => deleteMaterial(m.id, m.file_url)}
               >
                 <Trash2 size={14} />
@@ -238,12 +227,13 @@ export default function BooksAdminPage() {
           </div>
         )}
       </div>
+
       {/* Allowed Users Modal */}
       {showUsersFor && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
-          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto' }}>
+          <div className={styles.modal}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <h3 style={{ fontSize: '1.1rem' }}>Materiala giriş icazəsi olanlar</h3>
+              <h3 style={{ fontSize: '1.1rem' }}>Giriş icazəsi olanlar</h3>
               <button onClick={() => setShowUsersFor(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}><X size={20} /></button>
             </div>
             <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>Fayl: <strong>{showUsersFor.title}</strong></p>
@@ -256,8 +246,8 @@ export default function BooksAdminPage() {
               </div>
               {searchResult && (
                 <div style={{ marginTop: '0.75rem', padding: '0.75rem', background: 'white', borderRadius: '8px', border: '1px solid var(--color-primary-200)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{ fontSize: '0.85rem' }}>{searchResult.full_name} ({searchResult.email})</div>
-                  <button onClick={grantAccess} className="btn btn-primary btn-sm" style={{ padding: '0.2rem 0.5rem' }}>Əlavə et</button>
+                  <div style={{ fontSize: '0.85rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{searchResult.full_name}</div>
+                  <button onClick={grantAccess} className="btn btn-primary btn-sm" style={{ padding: '0.2rem 0.5rem', flexShrink: 0 }}>Əlavə et</button>
                 </div>
               )}
             </div>
@@ -265,13 +255,13 @@ export default function BooksAdminPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {allowedUsers.map((u) => (
                 <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
-                  <div style={{ minWidth: 0 }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{u.profiles?.full_name || 'Adsız'}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{u.profiles?.email}</div>
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{u.profiles?.full_name || 'Adsız'}</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748B', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{u.profiles?.email}</div>
                   </div>
                   <button 
                     onClick={() => revokeAccess(u.user_id, showUsersFor.id)}
-                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer' }}
+                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer', marginLeft: '0.5rem' }}
                     title="Girişi ləğv et"
                   >
                     <UserMinus size={16} />

@@ -7,7 +7,7 @@
 .inner {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 5rem;
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
 
@@ -16,6 +16,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .imageBg {
@@ -34,7 +35,7 @@
   z-index: 1;
   width: 100%;
   max-width: 420px;
-  height: 500px;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-glass);
@@ -42,8 +43,8 @@
 }
 
 .image {
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -159,7 +160,8 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .imageWrapper { max-width: 420px; margin: 0 auto; overflow: hidden; }
+  .imageWrapper { max-width: 100%; margin: 0 auto; }
+  .imageCard { max-width: 380px; margin: 0 auto; }
   .certBadge { right: 0; }
 }
 

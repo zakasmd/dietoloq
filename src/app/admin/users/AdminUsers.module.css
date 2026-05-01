@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headerActions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .headerActions button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.tableWrapper {
+  background: white;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .desktopTable {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileCards {
+    display: none;
+  }
+}
+
+.mobileCard {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cardActions button {
+  flex: 1;
+  justify-content: center;
+  font-size: 0.75rem !important;
+  padding: 0.4rem 0.25rem !important;
+}
+
+.modal {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    padding: 1.25rem;
+  }
+}

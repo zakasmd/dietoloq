@@ -87,7 +87,7 @@ export default function BMICalculator() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="glass-strong" style={{ padding: '2.5rem', borderRadius: '2rem', height: '100%' }}>
+            <div className={`glass-strong ${styles.calculatorInner}`}>
               <div className={styles.inputs}>
                 <div className={styles.inputGroup}>
                   <label htmlFor="weight-input" className={styles.labelRow}>

@@ -58,26 +58,28 @@
 
 /* Stats */
 .statsRow {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1rem !important;
-  background: hsl(var(--glass-bg)) !important;
-  backdrop-filter: blur(24px) !important;
-  border-radius: var(--radius) !important;
-  padding: 1.25rem 2rem !important;
-  box-shadow: var(--shadow-glass) !important;
-  border: 1px solid hsl(var(--glass-border)) !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  margin-top: 1.5rem !important;
-  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(24px);
+  border-radius: var(--radius);
+  padding: 1.25rem 2rem;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid hsl(var(--glass-border));
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  overflow: hidden;
 }
 
 .statItem {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .statValue {
@@ -123,8 +125,8 @@
 .imageContainer {
   position: relative;
   z-index: 1;
-  width: 380px;
-  height: 380px;
+  width: min(420px, 90vw);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 8px;
   background: hsl(150 40% 10% / 0.65);
@@ -135,8 +137,8 @@
 }
 
 .heroImage {
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
@@ -300,54 +302,54 @@
   .hero { padding: 90px 0 32px; }
 
   .title { 
-    font-size: clamp(1.5rem, 8vw, 2.5rem) !important; 
-    line-height: 1.15 !important; 
-    text-align: center !important;
+    font-size: clamp(1.5rem, 8vw, 2.5rem); 
+    line-height: 1.15; 
+    text-align: center;
   }
 
   .statsRow {
-    flex-direction: column !important;
-    gap: 0.75rem !important;
-    width: 100% !important;
-    padding: 1rem !important;
-    align-items: center !important;
-    text-align: center !important;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
   }
 
   .statItem { 
-    width: 100% !important; 
-    justify-content: center !important;
+    width: 100%; 
+    justify-content: center;
     border-bottom: 1px solid hsl(var(--border) / 0.2);
     padding-bottom: 0.5rem;
   }
   .statItem:last-child { border-bottom: none; }
   
-  .statDivider { display: none !important; }
-  .ctaGroup { justify-content: center !important; width: 100% !important; }
+  .statDivider { display: none; }
+  .ctaGroup { justify-content: center; width: 100%; }
 
   .imageWrapper {
-    width: 100% !important;
-    max-width: 280px !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
-    padding: 0 !important;
-    margin: 1.5rem auto 0 !important;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    margin: 1.5rem auto 0;
   }
 
   .imageContainer {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
   }
 
   /* Hide floating cards on small mobile */
-  .floatCard { display: none !important; }
+  .floatCard { display: none; }
 }
 
 @media (max-width: 390px) {
   .hero { padding: 80px 0 24px; }
-  .title { font-size: 1.6rem !important; }
-  .subtitle { font-size: 0.875rem !important; text-align: center !important; }
+  .title { font-size: 1.6rem; }
+  .subtitle { font-size: 0.875rem; text-align: center; }
   .imageWrapper {
-    max-width: 240px !important;
+    max-width: 240px;
   }
 }

@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .headerActions {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .headerActions button {
+    flex: 1;
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.25rem !important;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.25rem;
+  }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.courseItem {
+  background: white;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.courseMain {
+  padding: 1.25rem 1.5rem 1.25rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .courseMain {
+    padding: 1rem 1rem 1rem 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .courseActions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .courseActions button {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.25rem !important;
+  }
+  
+  .expandBtn {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem !important;
+  }
+}
+
+.lessonForm {
+  padding: 1.25rem 1.5rem;
+  background: var(--color-primary-50);
+  border-top: 1px solid var(--color-primary-200);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .lessonForm {
+    padding: 1rem;
+  }
+}
+
+.lessonItem {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .lessonItem {
+    padding: 0.75rem 1rem;
+  }
+}

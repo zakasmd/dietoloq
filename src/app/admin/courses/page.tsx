@@ -1,14 +1,4 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { createClient } from '@/lib/supabase/client';
-import { Plus, X, ChevronDown, ChevronUp, Trash2, Users as UsersIcon, UserMinus } from 'lucide-react';
-
-type Course = { id: string; title_az: string; description_az: string; price: number | null; is_published: boolean; is_public: boolean };
-type Lesson = { id: string; course_id: string; title_az: string; youtube_url: string | null; pdf_url: string | null; order_index: number; is_published: boolean };
-type CourseForm = { title_az: string; description_az: string; price: string; is_public: boolean };
-type LessonForm = { title_az: string; youtube_url: string; pdf_url: string; order_index: string; duration_minutes: string };
+import styles from './CoursesAdmin.module.css';
 
 export default function CoursesAdminPage() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -187,17 +177,17 @@ export default function CoursesAdminPage() {
   if (loading) return <div style={{ textAlign: 'center', padding: '3rem' }}>Yüklənir...</div>;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+    <div className={styles.container}>
+      <div className={styles.header}>
         <div>
           <h1 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>Kurslar İdarəetməsi</h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Kursları və dərsləri idarə edin</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div className={styles.headerActions}>
           <button className="btn btn-sm" style={{ background: '#FEE2E2', color: '#991B1B', border: 'none' }} onClick={() => selectedCourseIds.length ? deleteSelectedCourses() : alert('Zəhmət olmasa, əvvəlcə kursları seçin')}>
             <Trash2 size={16} /> Seçilənləri Sil ({selectedCourseIds.length})
           </button>
-          <button className="btn btn-primary" onClick={() => setShowCourseForm(true)}>
+          <button className="btn btn-primary" onClick={() => { setShowCourseForm(true); setEditCourseId(null); setFormError(null); }}>
             <Plus size={16} /> Yeni Kurs
           </button>
         </div>
@@ -210,9 +200,9 @@ export default function CoursesAdminPage() {
         </div>
       )}
 
-      {/* New Course Form (at the top) */}
+      {/* New Course Form */}
       {showCourseForm && !editCourseId && (
-        <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)' }}>
+        <div className={styles.card} style={{ border: '1.5px solid var(--color-primary-200)' }}>
           <h3 style={{ marginBottom: '1.25rem' }}>Yeni Kurs Əlavə Et</h3>
           {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
           <form onSubmit={courseForm.handleSubmit(createOrUpdateCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -224,17 +214,19 @@ export default function CoursesAdminPage() {
               <label className="form-label">Açıqlama (AZ)</label>
               <textarea {...courseForm.register('description_az')} className="form-input form-textarea" placeholder="Kursun açıqlaması" />
             </div>
-            <div className="form-group">
-              <label className="form-label">Qiymət (AZN)</label>
-              <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
-            </div>
-            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <input type="checkbox" id="is_public_new" {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
-              <label htmlFor="is_public_new" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
+            <div className={styles.formGrid}>
+              <div className="form-group">
+                <label className="form-label">Qiymət (AZN)</label>
+                <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
+              </div>
+              <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingTop: '1.5rem' }}>
+                <input type="checkbox" id="is_public_new" {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+                <label htmlFor="is_public_new" className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq</label>
+              </div>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               <button type="submit" className="btn btn-primary">Kurs yarat</button>
-              <button type="button" className="btn btn-outline" onClick={() => { setShowCourseForm(false); setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
+              <button type="button" className="btn btn-outline" onClick={() => { setShowCourseForm(false); setEditCourseId(null); setFormError(null); courseForm.reset(); }}>Ləğv et</button>
             </div>
           </form>
         </div>
@@ -245,7 +237,7 @@ export default function CoursesAdminPage() {
         <div key={course.id}>
           {editCourseId === course.id ? (
             /* Inline Edit Form */
-            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1.5px solid var(--color-primary-200)', marginBottom: '1.5rem' }}>
+            <div className={styles.card} style={{ border: '1.5px solid var(--color-primary-200)', marginBottom: '1.5rem' }}>
               <h3 style={{ marginBottom: '1.25rem' }}>Kursu Redaktə Et</h3>
               {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
               <form onSubmit={courseForm.handleSubmit(createOrUpdateCourse)} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -257,28 +249,30 @@ export default function CoursesAdminPage() {
                   <label className="form-label">Açıqlama (AZ)</label>
                   <textarea {...courseForm.register('description_az')} className="form-input form-textarea" placeholder="Kursun açıqlaması" />
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Qiymət (AZN)</label>
-                  <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
-                </div>
-                <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <input type="checkbox" id={`is_public_edit_${course.id}`} {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
-                  <label htmlFor={`is_public_edit_${course.id}`} className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq (qeydiyyatlı bütün istifadəçilər görür)</label>
+                <div className={styles.formGrid}>
+                  <div className="form-group">
+                    <label className="form-label">Qiymət (AZN)</label>
+                    <input {...courseForm.register('price')} className="form-input" type="number" placeholder="150" />
+                  </div>
+                  <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingTop: '1.5rem' }}>
+                    <input type="checkbox" id={`is_public_edit_${course.id}`} {...courseForm.register('is_public')} style={{ width: 18, height: 18, cursor: 'pointer' }} />
+                    <label htmlFor={`is_public_edit_${course.id}`} className="form-label" style={{ margin: 0, cursor: 'pointer' }}>Hərkəsə Açıq</label>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '0.75rem' }}>
                   <button type="submit" className="btn btn-primary">Yadda Saxla</button>
-                  <button type="button" className="btn btn-outline" onClick={() => { setEditCourseId(null); courseForm.reset(); }}>Ləğv et</button>
+                  <button type="button" className="btn btn-outline" onClick={() => { setEditCourseId(null); setFormError(null); courseForm.reset(); }}>Ləğv et</button>
                 </div>
               </form>
             </div>
           ) : (
             /* Course Card */
-            <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', boxShadow: 'var(--shadow-card)', border: selectedCourseIds.includes(course.id) ? '2px solid var(--color-primary)' : '1px solid var(--color-border-light)', overflow: 'hidden', marginBottom: '1rem', position: 'relative' }}>
+            <div className={styles.courseItem} style={{ border: selectedCourseIds.includes(course.id) ? '2px solid var(--color-primary)' : '1px solid var(--color-border-light)' }}>
               <div style={{ position: 'absolute', left: '0.75rem', top: '1.25rem' }}>
                 <input type="checkbox" checked={selectedCourseIds.includes(course.id)} onChange={() => toggleSelect(course.id)} style={{ width: 18, height: 18, cursor: 'pointer' }} />
               </div>
-              <div style={{ padding: '1.25rem 1.5rem 1.25rem 3rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                <div style={{ flex: 1 }}>
+              <div className={styles.courseMain}>
+                <div style={{ flex: 1, minWidth: '200px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <h3 style={{ fontSize: '1rem' }}>{course.title_az}</h3>
                     {course.is_public && <span style={{ fontSize: '0.65rem', background: '#DCFCE7', color: '#166534', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 700 }}>AÇIQ</span>}
@@ -286,11 +280,12 @@ export default function CoursesAdminPage() {
                   <p style={{ fontSize: '0.825rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>{course.description_az?.slice(0, 80)}...</p>
                   {course.price && <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)', marginTop: '0.25rem' }}>{course.price} AZN</div>}
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <div className={styles.courseActions}>
                   <button className="btn btn-outline btn-sm" onClick={() => { 
                     setEditCourseId(course.id);
-                    setShowCourseForm(true); // Ensure form state is true but editId is what matters
-                    setAddLessonFor(null); // Close lesson form if open
+                    setShowCourseForm(true);
+                    setAddLessonFor(null);
+                    setFormError(null);
                     courseForm.reset({
                       title_az: course.title_az,
                       description_az: course.description_az || '',
@@ -304,9 +299,9 @@ export default function CoursesAdminPage() {
                     {course.is_published ? 'Gizlə' : 'Aktiv et'}
                   </button>
                   <button className="btn btn-outline btn-sm" onClick={() => { setShowUsersFor({ id: course.id, title: course.title_az }); fetchAllowedUsers(course.id); }} title="Girişi olan istifadəçilər">
-                    <UsersIcon size={14} />
+                    <UsersIcon size={14} /> Girişlər
                   </button>
-                  <button className="btn btn-primary btn-sm" onClick={() => { setAddLessonFor(course.id); setEditCourseId(null); }}>
+                  <button className="btn btn-primary btn-sm" onClick={() => { setAddLessonFor(course.id); setEditCourseId(null); setFormError(null); }}>
                     <Plus size={14} /> Dərs
                   </button>
                   <button
@@ -317,6 +312,7 @@ export default function CoursesAdminPage() {
                     <Trash2 size={14} />
                   </button>
                   <button
+                    className={`${styles.expandBtn} btn btn-sm`}
                     style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)', padding: '0.25rem' }}
                     onClick={() => toggleExpand(course.id)}
                   >
@@ -327,10 +323,10 @@ export default function CoursesAdminPage() {
 
               {/* Lesson Add Form */}
               {addLessonFor === course.id && (
-                <div style={{ padding: '1.25rem 1.5rem', background: 'var(--color-primary-50)', borderTop: '1px solid var(--color-primary-200)' }}>
+                <div className={styles.lessonForm}>
                   <h4 style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Yeni Dərs Əlavə Et</h4>
                   {formError && <div style={{ padding: '1rem', background: '#FEE2E2', color: '#991B1B', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{formError}</div>}
-                  <form onSubmit={lessonForm.handleSubmit(addLesson)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <form onSubmit={lessonForm.handleSubmit(addLesson)} className={styles.formGrid}>
                     <div className="form-group" style={{ gridColumn: '1 / -1' }}>
                       <label className="form-label">Dərsin adı *</label>
                       <input {...lessonForm.register('title_az', { required: true })} className="form-input" placeholder="Dərs 1: Giriş" />
@@ -353,25 +349,24 @@ export default function CoursesAdminPage() {
                     </div>
                     <div style={{ gridColumn: '1 / -1', display: 'flex', gap: '0.75rem' }}>
                       <button type="submit" className="btn btn-primary btn-sm">Dərs yarat</button>
-                      <button type="button" className="btn btn-outline btn-sm" onClick={() => setAddLessonFor(null)}>Ləğv et</button>
+                      <button type="button" className="btn btn-outline btn-sm" onClick={() => { setAddLessonFor(null); setFormError(null); }}>Ləğv et</button>
                     </div>
                   </form>
                 </div>
               )}
 
-              {/* Lessons */}
+              {/* Lessons List */}
               {expandedCourse === course.id && (
                 <div style={{ borderTop: '1px solid var(--color-border-light)' }}>
                   {(lessons[course.id] || []).map((lesson, i) => (
-                    <div key={lesson.id} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.875rem 1.5rem', borderBottom: i < (lessons[course.id].length - 1) ? '1px solid var(--color-border-light)' : 'none', background: i % 2 === 0 ? 'white' : 'var(--color-bg)' }}>
+                    <div key={lesson.id} className={styles.lessonItem} style={{ borderBottom: i < (lessons[course.id].length - 1) ? '1px solid var(--color-border-light)' : 'none', background: i % 2 === 0 ? 'white' : 'var(--color-bg)' }}>
                       <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--color-primary-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary)', flexShrink: 0 }}>
                         {lesson.order_index}
                       </div>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{lesson.title_az}</div>
-                        {lesson.youtube_url && <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.15rem' }}>▶ {lesson.youtube_url.slice(0, 50)}...</div>}
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 600, fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{lesson.title_az}</div>
+                        {lesson.youtube_url && <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '0.15rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>▶ {lesson.youtube_url}</div>}
                       </div>
-                      {lesson.pdf_url && <span style={{ fontSize: '0.72rem', color: '#059669', background: '#DCFCE7', padding: '0.2rem 0.5rem', borderRadius: 6 }}>PDF</span>}
                       <button
                         style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#EF4444', padding: '0.25rem', flexShrink: 0 }}
                         onClick={() => deleteLesson(lesson.id, course.id)}
@@ -394,7 +389,7 @@ export default function CoursesAdminPage() {
       {/* Allowed Users Modal */}
       {showUsersFor && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem' }}>
-          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', width: '100%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto' }}>
+          <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '1.5rem', width: '100%', maxWidth: '500px', maxHeight: '80vh', overflowY: 'auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <h3 style={{ fontSize: '1.1rem' }}>Giriş icazəsi olanlar</h3>
               <button onClick={() => setShowUsersFor(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}><X size={20} /></button>
@@ -404,13 +399,13 @@ export default function CoursesAdminPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {allowedUsers.map((u) => (
                 <div key={u.user_id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
-                  <div style={{ minWidth: 0 }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{(u as any).profiles?.full_name || 'Adsız'}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>{(u as any).profiles?.email}</div>
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{(u as any).profiles?.full_name || 'Adsız'}</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748B', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{(u as any).profiles?.email}</div>
                   </div>
                   <button 
                     onClick={() => revokeAccess(u.user_id, showUsersFor.id)}
-                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer' }}
+                    style={{ background: '#FEE2E2', color: '#991B1B', border: 'none', padding: '0.4rem', borderRadius: '8px', cursor: 'pointer', marginLeft: '0.5rem' }}
                     title="Girişi ləğv et"
                   >
                     <UserMinus size={16} />

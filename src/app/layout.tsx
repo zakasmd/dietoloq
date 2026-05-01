@@ -45,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning style={{ overflowX: 'hidden' }}>
-      <body suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100%', touchAction: 'pan-y', position: 'relative' }}>
+    <html suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
         {GA_ID && (
           <>

@@ -1,5 +1,5 @@
 .section {
-  padding: 10rem 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -7,7 +7,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
 
@@ -78,6 +78,19 @@
 
 .calculatorCard {
   position: relative;
+}
+
+.calculatorInner {
+  padding: 2.5rem;
+  border-radius: 2rem;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .calculatorInner {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
 }
 
 .inputs {

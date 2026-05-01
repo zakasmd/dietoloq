@@ -1,8 +1,4 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { createClient } from '@/lib/supabase/client';
-import Link from 'next/link';
+import styles from './AdminDashboard.module.css';
 
 export default function AdminPage() {
   const [stats, setStats] = useState({ consultations: 0, users: 0, courses: 0, newConsultations: 0 });
@@ -40,7 +36,7 @@ export default function AdminPage() {
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>Saytın ümumi statistikası</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem' }}>
+      <div className={styles.statsGrid}>
         {cards.map((card) => (
           <Link
             key={card.label}
@@ -69,7 +65,7 @@ export default function AdminPage() {
       {/* Quick Actions */}
       <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '1.75rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)' }}>
         <h2 style={{ fontSize: '1rem', marginBottom: '1.25rem' }}>⚡ Sürətli əməliyyatlar</h2>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        <div className={styles.quickActions}>
           <Link href="/admin/consultations" className="btn btn-primary btn-sm">📋 Müraciətlərə bax</Link>
           <Link href="/admin/courses" className="btn btn-outline btn-sm">🎓 Kurs əlavə et</Link>
           <Link href="/admin/users" className="btn btn-outline btn-sm">👥 İstifadəçilər</Link>

@@ -1,31 +1,4 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { createClient } from '@/lib/supabase/client';
-import { Phone, Mail, CheckCircle, Clock, AlertCircle } from 'lucide-react';
-
-type Consultation = {
-  id: string;
-  full_name: string;
-  phone: string;
-  email: string | null;
-  age: number | null;
-  goal: string | null;
-  message: string | null;
-  status: string;
-  created_at: string;
-};
-
-const goalLabels: Record<string, string> = {
-  weightLoss: 'Arıqlamaq', weightGain: 'Kökəlmək', maintenance: 'Çəkini saxlamaq',
-  pregnancy: 'Hamiləlik', antiAging: 'Anti-ageing', other: 'Digər',
-};
-
-const statusConfig: Record<string, { label: string; color: string; bg: string; icon: React.ReactNode }> = {
-  new: { label: 'Yeni', color: '#D97706', bg: '#FEF3C7', icon: <AlertCircle size={14} /> },
-  contacted: { label: 'Əlaqə saxlanıldı', color: '#2563EB', bg: '#DBEAFE', icon: <Clock size={14} /> },
-  done: { label: 'Tamamlandı', color: '#059669', bg: '#DCFCE7', icon: <CheckCircle size={14} /> },
-};
+import styles from './AdminConsultations.module.css';
 
 export default function ConsultationsAdminPage() {
   const [consultations, setConsultations] = useState<Consultation[]>([]);
@@ -56,12 +29,12 @@ export default function ConsultationsAdminPage() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className={styles.header}>
         <div>
           <h1 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>Konsultasiya Müraciətləri</h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Cəmi: {consultations.length} müraciət</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div className={styles.filters}>
           {['all', 'new', 'contacted', 'done'].map((s) => (
             <button
               key={s}
@@ -86,13 +59,11 @@ export default function ConsultationsAdminPage() {
           return (
             <div
               key={c.id}
-              style={{
-                background: 'white', borderRadius: 'var(--radius-xl)', padding: '1.5rem',
-                boxShadow: 'var(--shadow-card)', border: c.status === 'new' ? '1.5px solid #FCD34D' : '1px solid var(--color-border-light)',
-              }}
+              className={styles.card}
+              style={{ border: c.status === 'new' ? '1.5px solid #FCD34D' : '1px solid var(--color-border-light)' }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
-                <div style={{ flex: 1 }}>
+              <div className={styles.cardContent}>
+                <div style={{ flex: 1, minWidth: '250px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
                     <h3 style={{ fontSize: '1rem', fontWeight: 700 }}>{c.full_name}</h3>
                     <span style={{
@@ -106,7 +77,7 @@ export default function ConsultationsAdminPage() {
                     {c.goal && <span className="badge badge-primary" style={{ fontSize: '0.7rem' }}>{goalLabels[c.goal] || c.goal}</span>}
                   </div>
 
-                  <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: c.message ? '0.75rem' : 0 }}>
+                  <div className={styles.contactInfo} style={{ marginBottom: c.message ? '0.75rem' : 0 }}>
                     <a href={`tel:${c.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.875rem', color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>
                       <Phone size={14} /> {c.phone}
                     </a>
@@ -130,7 +101,7 @@ export default function ConsultationsAdminPage() {
                 </div>
 
                 {/* Action Buttons */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flexShrink: 0 }}>
+                <div className={styles.actions} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flexShrink: 0 }}>
                   <a href={`https://wa.me/${c.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-sm">
                     WhatsApp
                   </a>

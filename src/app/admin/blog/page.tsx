@@ -1,32 +1,4 @@
-'use client';
-
-import { useEffect, useState, useRef, useMemo } from 'react';
-import dynamic from 'next/dynamic';
-import { createClient } from '@/lib/supabase/client';
-import { Plus, Trash2, Edit2, X, Save, ExternalLink, Video, Image as ImageIcon, Upload, Loader2 } from 'lucide-react';
-import { useForm, Controller } from 'react-hook-form';
-import 'react-quill-new/dist/quill.snow.css';
-
-// Dynamically import ReactQuill to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill-new'), {
-  ssr: false,
-  loading: () => <div className="form-input" style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Redaktor yüklənir...</div>
-});
-
-type BlogPost = {
-  id: string;
-  title_az: string;
-  title_ru?: string;
-  title_en?: string;
-  content_az: string;
-  content_ru?: string;
-  content_en?: string;
-  slug: string;
-  image_url?: string;
-  youtube_url?: string;
-  category: string;
-  created_at: string;
-};
+import styles from './AdminBlog.module.css';
 
 export default function AdminBlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -144,7 +116,7 @@ export default function AdminBlogPage() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className={styles.header}>
         <div>
           <h1 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Blog İdarəetməsi</h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>Məqalələr paylaşın və redaktə edin</p>
@@ -164,7 +136,7 @@ export default function AdminBlogPage() {
       </div>
 
       {showForm && (
-        <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: '2rem', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)' }}>
+        <div style={{ background: 'white', borderRadius: 'var(--radius-2xl)', padding: 'clamp(1rem, 5vw, 2rem)', boxShadow: 'var(--shadow-card)', border: '1px solid var(--color-border-light)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
             <h2 style={{ fontSize: '1.1rem' }}>{editingPost ? 'Postu Redaktə Et' : 'Yeni Post Əlavə Et'}</h2>
             <button onClick={() => setShowForm(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)' }}><X size={20} /></button>
@@ -189,7 +161,7 @@ export default function AdminBlogPage() {
               }
             `}</style>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className={styles.formGrid}>
               <div className="form-group">
                 <label className="form-label">Başlıq (AZ) *</label>
                 <input {...register('title_az', { required: true })} className="form-input" placeholder="Məs: Sağlam Qidalanma" />
@@ -217,10 +189,10 @@ export default function AdminBlogPage() {
               />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className={styles.formGrid}>
               <div className="form-group">
                 <label className="form-label"><ImageIcon size={14} style={{ marginRight: '4px' }} /> Şəkil (Yüklə)</label>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <div className={styles.uploadGroup}>
                   <input
                     type="file"
                     accept="image/*"
@@ -236,9 +208,9 @@ export default function AdminBlogPage() {
                     disabled={uploading}
                   >
                     {uploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
-                    {uploading ? 'Yüklənir...' : 'Şəkil seç'}
+                    <span style={{ marginLeft: '4px' }}>{uploading ? 'Yüklənir...' : 'Şəkil seç'}</span>
                   </button>
-                  <input {...register('image_url')} className="form-input" style={{ flex: 2 }} placeholder="Şəkil URL (avtomatik dolur)" readOnly />
+                  <input {...register('image_url')} className="form-input" style={{ flex: 2 }} placeholder="Şəkil URL" readOnly />
                 </div>
               </div>
               <div className="form-group">
@@ -250,7 +222,7 @@ export default function AdminBlogPage() {
             <div style={{ borderTop: '1px solid var(--color-border-light)', paddingTop: '1.25rem', marginTop: '0.5rem' }}>
               <h3 style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--color-text-muted)' }}>Digər Dillər (İstəyə bağlı)</h3>
               <div style={{ display: 'grid', gap: '1.5rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className={styles.formGrid}>
                   <div className="form-group">
                     <label className="form-label">Başlıq (RU)</label>
                     <input {...register('title_ru')} className="form-input" placeholder="Заголовок (RU)" />
@@ -261,7 +233,7 @@ export default function AdminBlogPage() {
                   </div>
                 </div>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className={styles.formGrid}>
                   <div className="form-group">
                     <label className="form-label">Məzmun (RU)</label>
                     <Controller
@@ -296,9 +268,9 @@ export default function AdminBlogPage() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', marginTop: '1rem' }}>
-              <button type="button" className="btn btn-outline" onClick={() => setShowForm(false)}>Ləğv et</button>
-              <button type="submit" className="btn btn-primary"><Save size={18} /> {editingPost ? 'Yenilə' : 'Paylaş'}</button>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', marginTop: '1rem', flexWrap: 'wrap' }}>
+              <button type="button" className="btn btn-outline" style={{ flex: 1 }} onClick={() => setShowForm(false)}>Ləğv et</button>
+              <button type="submit" className="btn btn-primary" style={{ flex: 1 }}><Save size={18} /> {editingPost ? 'Yenilə' : 'Paylaş'}</button>
             </div>
           </form>
         </div>
@@ -306,23 +278,23 @@ export default function AdminBlogPage() {
 
       <div style={{ display: 'grid', gap: '1rem' }}>
         {posts.map((post) => (
-          <div key={post.id} className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem' }}>
-            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+          <div key={post.id} className={`${styles.postItem} card`}>
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', flex: 1 }}>
               {post.image_url ? (
-                <img src={post.image_url} alt="" style={{ width: 60, height: 60, borderRadius: 12, objectFit: 'cover' }} />
+                <img src={post.image_url} alt="" style={{ width: 60, height: 60, borderRadius: 12, objectFit: 'cover', flexShrink: 0 }} />
               ) : (
-                <div style={{ width: 60, height: 60, borderRadius: 12, background: 'var(--color-primary-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📝</div>
+                <div style={{ width: 60, height: 60, borderRadius: 12, background: 'var(--color-primary-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>📝</div>
               )}
-              <div>
-                <h3 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{post.title_az}</h3>
-                <div style={{ display: 'flex', gap: '1rem', fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
+              <div style={{ minWidth: 0 }}>
+                <h3 style={{ fontSize: '1rem', marginBottom: '0.25rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{post.title_az}</h3>
+                <div style={{ display: 'flex', gap: '1rem', fontSize: '0.75rem', color: 'var(--color-text-muted)', flexWrap: 'wrap' }}>
                   <span>📅 {new Date(post.created_at).toLocaleDateString('az-AZ')}</span>
                   <span>📁 {post.category}</span>
-                  {post.youtube_url && <span style={{ color: '#EF4444' }}>🔴 Video var</span>}
+                  {post.youtube_url && <span style={{ color: '#EF4444' }}>🔴 Video</span>}
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div className={styles.postActions} style={{ display: 'flex', gap: '0.5rem' }}>
               <a href={`/az/blog/${post.slug}`} target="_blank" className="btn btn-sm" style={{ background: '#F1F5F9' }} title="Bax">
                 <ExternalLink size={16} />
               </a>
