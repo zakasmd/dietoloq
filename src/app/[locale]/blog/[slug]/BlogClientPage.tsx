@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calendar, ChevronLeft, Clock } from 'lucide-react';
@@ -57,7 +58,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
   const videoId = post.youtube_url ? getYoutubeEmbed(post.youtube_url) : null;
   const readTime = Math.ceil(content.split(' ').length / 200) + ' dəq';
 
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
 
   const shareOnWhatsapp = () => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + window.location.href)}`, '_blank');
   const shareOnFacebook = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
