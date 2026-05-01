@@ -21,7 +21,9 @@ type BlogPost = {
 
 // Custom Social Icons
 const WhatsAppIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3l-1.5 5.5Z"/></svg>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.012 2c-5.508 0-9.988 4.48-9.988 9.988 0 1.76.46 3.412 1.26 4.852l-1.284 4.692 4.812-1.26c1.408.768 3.012 1.208 4.712 1.208 5.508 0 9.988-4.48 9.988-9.988C22 6.48 17.52 2 12.012 2zm4.7 13.52c-.22.612-1.284 1.144-1.776 1.208-.456.06-1.04.092-1.644-.104-.376-.124-.852-.288-1.464-.544-2.612-1.092-4.304-3.752-4.436-3.928-.132-.176-1.072-1.428-1.072-2.724 0-1.296.672-1.932.912-2.196.24-.264.524-.332.7-.332s.352.004.504.012c.16.008.376-.06.588.452.22.532.748 1.824.812 1.956.064.132.108.288.02.464-.088.176-.132.288-.264.444-.132.156-.276.348-.396.468-.132.132-.272.276-.116.544.156.268.692 1.144 1.488 1.848.8.712 1.472 1.052 1.74 1.184.268.132.424.112.58-.068.156-.18.664-.772.844-1.036.18-.264.36-.22.608-.132.248.088 1.572.74 1.84 1.876.04.148.04.436-.14.736z" />
+  </svg>
 );
 const FacebookIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -189,7 +191,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
                  <button onClick={shareOnFacebook} className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#1877F2', color: '#1877F2' }}>
                    <FacebookIcon />
                  </button>
-                 <Link href="https://instagram.com/leylazulfuqarli" target="_blank" className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F' }}>
+                 <Link href="https://instagram.com/dietoloqleylazulfuqarli" target="_blank" className="btn btn-outline" style={{ width: 40, height: 40, borderRadius: '50%', padding: 0, justifyContent: 'center', borderColor: '#E4405F', color: '#E4405F' }}>
                    <InstagramIcon />
                  </Link>
                </div>
