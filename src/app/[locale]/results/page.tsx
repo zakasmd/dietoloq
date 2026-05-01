@@ -33,7 +33,6 @@ export default function ResultsPage() {
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
     { id: 14, title: t('case14Title'), goal: t('case14Goal'), video: 'https://www.youtube.com/embed/nQ7HvRe-GBQ' },
     { id: 15, title: t('case15Title'), goal: t('case15Goal'), video: 'https://www.youtube.com/embed/V52ahTWVEh0' },
-    { id: 16, title: t('case16Title'), goal: t('case16Goal'), video: 'https://www.youtube.com/embed/yUhNH6ni_9A' },
     { id: 17, title: t('case17Title'), goal: t('case17Goal'), video: 'https://www.youtube.com/embed/CcSNdIgvXX8' },
     { id: 18, title: t('case18Title'), goal: t('case18Goal'), video: 'https://www.youtube.com/embed/W1WD9m64SBY' },
     { id: 19, title: t('case19Title'), goal: t('case19Goal'), video: 'https://www.youtube.com/embed/NkaGhIg8oZI' },
@@ -43,6 +42,17 @@ export default function ResultsPage() {
     { id: 23, title: t('case23Title'), goal: t('case23Goal'), image: '/images/results/result-9.png' },
     { id: 24, title: t('case24Title'), goal: t('case24Goal'), video: 'https://www.youtube.com/embed/jMX0uXtOe-4' },
     { id: 25, title: t('case25Title'), goal: t('case25Goal'), video: 'https://www.youtube.com/embed/6gd380BvCEI' },
+    { id: 26, title: t('case26Title'), goal: t('case26Goal'), image: '/images/results/result-10.jpg' },
+    { id: 27, title: t('case27Title'), goal: t('case27Goal'), video: 'https://www.youtube.com/embed/8Z86wzx_PvY' },
+    { id: 28, title: t('case28Title'), goal: t('case28Goal'), image: '/images/results/result-11.jpg' },
+    { id: 29, title: t('case29Title'), goal: t('case29Goal'), image: '/images/results/result-12.jpg' },
+    { id: 30, title: t('case30Title'), goal: t('case30Goal'), image: '/images/results/result-13.png' },
+    { id: 31, title: t('case31Title'), goal: t('case31Goal'), image: '/images/results/result-14.jpg' },
+    { id: 32, title: t('case32Title'), goal: t('case32Goal'), image: '/images/results/result-15.png' },
+    { id: 33, title: t('case33Title'), goal: t('case33Goal'), image: '/images/results/result-16.jpg' },
+    { id: 34, title: t('case34Title'), goal: t('case34Goal'), image: '/images/results/result-17.jpg' },
+    { id: 35, title: t('case35Title'), goal: t('case35Goal'), video: 'https://www.youtube.com/embed/NKuLYHV3Aow' },
+    { id: 36, title: t('case36Title'), goal: t('case36Goal'), image: '/images/results/result-18.jpg' },
   ];
 
   const totalPages = Math.ceil(results.length / itemsPerPage);
