@@ -71,30 +71,31 @@
     "items": {
       "weightLoss": {
         "title": "Abnehmprogramm",
-        "description": "Abnehmen ohne Sport und Hunger mit individuell erstellten Ernährungsprogrammen."
+        "desc": "Individuelle Abnehm- und Gewichtsreduktions-Diätprogramme. Wir sorgen dafür, dass Sie Ihr Ziel mit einem völlig wissenschaftsbasierten Ansatz ohne Sport oder Hunger erreichen. Wir beschleunigen Ihren Stoffwechsel nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker'."
       },
       "weightGain": {
         "title": "Zunehmen",
-        "description": "Spezielle Programme für diejenigen, die auf gesunde und ausgewogene Weise zunehmen möchten."
+        "desc": "Speziell vorbereitete gesunde Gewichtszunahme- und Ernährungspläne für diejenigen, die zunehmen möchten. Wir helfen Ihnen, Ihr Idealgewicht zu erreichen, indem wir Muskel- und gesunde Fettmasse ohne schädliche Produkte erhöhen."
       },
-      "ivTherapy": {
+      "antiAging": {
+        "title": "Anti-Ageing & Ernährung",
+        "desc": "Spezielle Anti-Aging-Ernährungsempfehlungen und Expertenführung in der Ernährung. Zellverjüngendes Ernährungsprogramm, das die Hautgesundheit verbessert und den Körper verjüngt."
+      },
+      "consultation": {
+        "title": "Abnehmen mit Autorenmethodik",
+        "desc": "Mit der privaten Autorenmethodik von Dr. Leyla Zülfügarli ist es möglich, 8-10-12 kg reine Fettmasse pro Monat zu verlieren. Schnelle Ergebnisse ohne Sport und Hunger."
+      },
+      "detox": {
+        "title": "Detox-Programm",
+        "desc": "Körperreinigungsprogramm von schädlichen Toxinen, Erneuerung des Körpers mit speziellem Detox-Tee und Ernährung. Effektive 7-tägige Reinigung und Energiewiederherstellung basierend auf Schweizer Erfahrung."
+      },
+      "media": {
         "title": "IV-Therapie",
-        "description": "Spezielle Vitamincocktails zur Energiewiederherstellung, Immunstärkung und Detox."
-      },
-      "antiAge": {
-        "title": "Anti-Age und Detox",
-        "description": "Zellverjüngungs- und Körperreinigungsprogramme von Toxinen."
-      },
-      "childNutrition": {
-        "title": "Kinderernährung",
-        "description": "Gesunde Essgewohnheiten und Gewichtskontrollprogramme für Kinder und Jugendliche."
-      },
-      "chronicDisease": {
-        "title": "Therapeutische Ernährung",
-        "description": "Spezielle Diätpläne bei Diabetes, Gastritis und anderen chronischen Krankheiten."
+        "desc": "Die effektivste Methode, um Nährstoffe, Vitamine und Mineralien durch direkte Infusion in den Blutkreislauf an das Körpergewebe abzugeben. Erhöht die Energie und stärkt die Immunität."
       }
     },
     "viewMore": "Weiterlesen",
+    "learnMore": "Weiterlesen",
     "cta": "Untersuchung buchen"
   },
   "results": {
@@ -245,7 +246,7 @@
       { "title": "Lady.day.az - Stoffwechselgeheimnisse", "url": "https://lady.day.az/news/health/1073850.html" },
       { "title": "Sia.az - Gesunder Lebensstil", "url": "https://sia.az/az/news/social/1139315.html" },
       { "title": "Pravda.az - Innovationen in der Diätetik", "url": "https://pravda.az/news/177551" },
-      { "title": "Gencaile.az - Familiengesundheit", "url": "https://gencaile.az/leyla-zulfuqarli-b%C9%99z%C9%99n-insanlar-el%C9%99-dusunur-ki-xurmani-yalniz-iftarda-yem%C9%99k-lazimdir/" },
+      { "title": "Gencaile.az - Familie gesundheit", "url": "https://gencaile.az/leyla-zulfuqarli-b%C9%99z%C9%99n-insanlar-el%C9%99-dusunur-ki-xurmani-yalniz-iftarda-yem%C9%99k-lazimdir/" },
       { "title": "Day.az - Bekämpfung von Fettleibigkeit", "url": "https://news.day.az/society/1437586.html" },
       { "title": "Crossmedia.az - Experteninterview", "url": "https://crossmedia.az/az/article/13798" },
       { "title": "MYS.gov.az - Seminar für gesunden Lebensstil", "url": "https://www.mys.gov.az/az/xeberler/saglam-heyat-terzinin-dusturu-movzusunda-onlayn-seminar-kecirildi" },
@@ -272,16 +273,152 @@
       {
         "name": "Gunay",
         "text": "Ich bin so glücklich, denn dies war meine erste Diät und ich habe in 1 Monat 7 Kilo abgenommen. Da ich an Hashimoto leide, konnte ich vorher höchstens 1-2 Kilo abnehmen. Aber dank Leylas speziellem Ansatz habe ich diesen Erfolg erzielt!",
-        "result": "-7 kg / 1 Monat",
+        "result": "-7 kg / 1 month",
         "avatar": "👩‍🦰"
       },
       {
         "name": "Revanə khanim (54 Jahre alt)",
-        "text": "Ich kam zu Dr. Leyla mit hohem Zucker und Übergewicht. In kurzer Zeit normalisierte sich mein Zucker und ich begann abzunehmen. Es war wie ein Wunder!",
-        "result": "-12 kg / 2 Monate",
-        "avatar": "👩"
+        "text": "Als ich mit dem Programm anfing, war ich sehr hoffnungslos. Obwohl ich seit 2 Jahren sehr strenge Diäten und Sport ohne Zucker und Kohlenhydrate machte, konnte ich nicht einmal 1 kg abnehmen. Ich litt auch unter schweren Allergien und Juckreiz. Aber nach 1 Monat verringerte sich mein Juckreiz und ich verlor 10 Kilo, außerdem wurden 20 cm Fett abgebaut!",
+        "result": "-10 kg / 1 Monat",
+        "avatar": "👩‍🦳"
       }
     ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "q": "Wie läuft die Beratung ab?",
+        "a": "Die Beratung erfolgt sowohl online (Videoanruf) als auch im Format eines persönlichen Treffens. Beim ersten Treffen werden Ihr Gesundheitszustand, Ihre Ziele und Ihr Lebensstil analysiert."
+      },
+      {
+        "q": "Ich möchte abnehmen, habe aber keine Zeit für Sport. Ist das möglich?",
+        "a": "Ja, natürlich! Die von Frau Leyla angewandte Methodik basiert genau auf dem Abnehmen ohne Sport. Mit richtiger, wissenschaftlich fundierter Ernährung und dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker' können Sie auch ohne Sport schnell und gesund Übergewicht loswerden."
+      },
+      {
+        "q": "Kann ich mich für eine gesunde Gewichtszunahme bewerben?",
+        "a": "Ja. Viele Menschen wenden sich an uns, nicht nur um abzunehmen, sondern auch um zuzunehmen. Wir erstellen spezielle kalorienreiche Programme, die reich an gesunden Proteinen und Kohlenhydraten sind und auf Ihren Stoffwechsel und Organismus abgestimmt sind."
+      },
+      {
+        "q": "Wo kann ich die Bücher von Leyla Zülfügarli bekommen?",
+        "a": "Sie können die Bücher 'Gesund essen - Abnehmen' und 'Das Geheimnis der Fettleibigkeit' direkt über WhatsApp bei uns bestellen. Sie sind auch bei BakuBookCenter und auf der Website Alinino.az erhältlich."
+      },
+      {
+        "q": "Wie kann ich die Ratschläge, die ich im Fernsehen sehe, privat erhalten?",
+        "a": "Die im Fernsehen gegebenen Ratschläge sind allgemeiner Natur. Um ein vollständig personalisiertes und für Sie passendes Ergebnis zu erhalten, können Sie über unsere Website oder per WhatsApp eine direkte Beratung vereinbaren."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Jetzt registrieren",
+    "subtitle": "Holen Sie sich Ihren individuellen Ernährungsplan und machen Sie den ersten Schritt in ein gesundes Leben",
+    "button": "Anmeldung zur Beratung",
+    "whatsapp": "Auf WhatsApp schreiben"
+  },
+  "consultation": {
+    "eyebrow": "Beratung",
+    "title": "Anmeldung zur Beratung",
+    "subtitle": "Füllen Sie das untenstehende Formular aus, wir werden uns in Kürze mit Ihnen in Verbindung setzen",
+    "fullName": "Vor- und Nachname",
+    "phone": "Telefonnummer",
+    "email": "E-Mail (optional)",
+    "age": "Alter",
+    "goal": "Ihr Ziel",
+    "goalOptions": {
+      "weightLoss": "Abnehmen",
+      "weightGain": "Zunehmen",
+      "maintenance": "Gewicht halten",
+      "detox": "Detox-Programm",
+      "antiAging": "Altern verhindern",
+      "other": "Andere"
+    },
+    "message": "Zusätzliche Anmerkungen",
+    "messagePlaceholder": "Zusätzliche Informationen...",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet...",
+    "success": "Ihre Anfrage wurde entgegengenommen! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.",
+    "successTitle": "Anfrage entgegengenommen!",
+    "newRequest": "Neue Anfrage",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "howItWorks": "Wie es funktioniert?",
+    "step1": "Formular ausfüllen",
+    "step2": "Wir kontaktieren innerhalb von 24 Stunden",
+    "step3": "Erstes Treffen wird geplant",
+    "step4": "Individueller Plan wird erstellt",
+    "callDirectly": "Direkt anrufen",
+    "whatsappBtn": "Auf WhatsApp schreiben",
+    "goalPlaceholder": "Wählen..."
+  },
+  "book": {
+    "title": "Bücher und Tees",
+    "pdfNotice": "Achtung: Derzeit sind diese Bücher nur im PDF-Format (E-Book) verfügbar.",
+    "title1": "Geheimnis der Fettleibigkeit - Schlüssel zur Schlankheit",
+    "title2": "Gesund essen, abnehmen!",
+    "author": "Leyla Zülfügarli",
+    "description1": "In diesem Buch, das auf meiner langjährigen Erfahrung und wissenschaftlichen Forschung basiert, werden die wichtigsten Geheimnisse des Abnehmens und eines gesunden Körpers enthüllt. Wie kann man ohne Sport und Hunger abnehmen? Die Antwort steht in diesem Buch.",
+    "description2": "Eines der ersten und bekanntesten Bücher von Leyla Zülfügarli. Grundprinzipien gesunder Ernährung, Erneuerung des Körpers und praktische Tipps zur Erhaltung der Form ein Leben lang.",
+    "bestseller": "BESTSELLER",
+    "orderWhatsApp": "PDF bestellen",
+    "features": {
+      "f1": "Abnehmmethodik ohne Sport",
+      "f2": "Stoffwechselbeschleunigung",
+      "f3": "Richtige Lebensmittelkombinationen",
+      "f4": "Praktische Tipps und Beispielmenüs"
+    },
+    "features2": {
+      "f1": "Grundlagen gesunder Ernährung",
+      "f2": "Schädliche Gewohnheiten ablegen",
+      "f3": "Reinigung auf zellulärer Ebene",
+      "f4": "Detox-Rezepte"
+    },
+    "detoxEyebrow": "🍵 Detox-Paket",
+    "detoxTitle": "Paket Buch + Detox-Tee",
+    "detoxDesc": "Holen Sie sich das Buch 'Geheimnis der Fettleibigkeit' zusammen mit speziellem Detox-Tee. Dieses Paket ist die ideale Lösung, um den Körper zu reinigen und den Abnehmprozess zu beschleunigen.",
+    "detoxFeature1Title": "Bestseller-Buch",
+    "detoxFeature1Desc": "Alle Geheimnisse der Abnehmmethode ohne Sport",
+    "detoxFeature2Title": "Detox-Tee",
+    "detoxFeature2Desc": "Spezielle Teemischung, die den Körper reinigt",
+    "detoxFeature3Title": "Ernährungsplan",
+    "detoxFeature3Desc": "Individueller Plan zur gemeinsamen Nutzung mit dem Buch",
+    "detoxOrderBtn": "Detox-Paket bestellen",
+    "ctaTitle": "Möchten Sie auch eine persönliche Beratung?",
+    "ctaDesc": "Holen Sie sich zusammen mit dem Buch einen individuellen Diätplan",
+    "ctaBtn": "Anmeldung zur Beratung",
+    "teaTitle1": "TeaLaks LZ Tee",
+    "teaDesc1": "Effektive natürliche Lösung gegen Verstopfung. Erweicht das Verdauungssystem, verbessert die Darmpassage und beseitigt Spannungen in der Bauchhöhle. Stärkt den Körper und beseitigt Müdigkeit.",
+    "teaTitle2": "Detox LZ Tee",
+    "teaDesc2": "Heilender Detox-Tee. Beschleunigt den Stoffwechsel, entfernt Giftstoffe und hilft, 3-5 kg Übergewicht loszuwerden. Unterstützt die Absorption gutartiger Tumore (Fibromyom, Polyp), die Behandlung von Fettleber und Hepatitis-Heilung. Wirksam bei Entzündungen der Bauchspeicheldrüse und Gallenblase, bei Blutarmut.",
+    "orderBtn": "Jetzt bestellen"
+  },
+  "login": {
+    "title": "Anmelden",
+    "subtitle": "Melden Sie sich bei Ihrem Konto an, um auf das Dashboard zuzugreifen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "noAccount": "Haben Sie kein Konto?",
+    "register": "Registrieren",
+    "forgotPassword": "Passwort vergessen?"
+  },
+  "register": {
+    "title": "Registrieren",
+    "subtitle": "Neues Konto erstellen",
+    "fullName": "Vor- und Nachname",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort wiederholen",
+    "submit": "Registrieren",
+    "haveAccount": "Haben Sie ein Konto?",
+    "login": "Anmelden"
+  },
+  "dashboard": {
+    "welcome": "Willkommen",
+    "myCourses": "Meine Kurse",
+    "materials": "Materialien",
+    "profile": "Profil",
+    "noCourses": "Sie haben noch keine registrierten Kurse.",
+    "watchLesson": "Lektion ansehen",
+    "downloadPdf": "PDF herunterladen"
   },
   "contact": {
     "title": "Kontakt",
@@ -298,15 +435,35 @@
     },
     "info": {
       "address": "Adresse",
-      "addressText": "Baku, Aserbaidschan",
+      "addressText": "The Club Port Baku, Baku, Aserbaidschan",
       "phone": "Telefon",
       "email": "E-Mail",
       "workingHours": "Arbeitszeiten",
       "workingHoursText": "Mo - Sa: 09:00 - 18:00"
-    }
+    },
+    "directContact": "Direkter Kontakt",
+    "phoneLabel": "TELEFON",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ADRESSE",
+    "addressValue": "The Club Port Baku, Baku, Aserbaidschan",
+    "socialMedia": "Soziale Medien",
+    "consultTitle": "Möchten Sie eine Beratung erhalten?",
+    "consultDesc": "Füllen Sie unser Beratungsformular für Ihren individuellen Ernährungsplan aus. Wir werden uns innerhalb von 24 Stunden mit Ihnen in Verbindung setzen.",
+    "consultBtn": "Anmeldung zur Beratung",
+    "quickTitle": "Schnelle Kommunikation",
+    "quickDesc": "Wenn Sie eine Frage haben, schreiben Sie direkt auf WhatsApp. Sie erhalten so schnell wie möglich eine Antwort.",
+    "quickBtn": "Auf WhatsApp schreiben"
   },
   "footer": {
+    "subTitle": "Professionelle ERNÄHRUNGSBERATERIN",
+    "copyrightName": "Leyla Zülfügarli",
+    "description": "Individueller Ernährungsplan, Beratung und Kurse mit der professionellen Ernährungsberaterin Leyla Zülfügarli.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "address": "The Club Port Baku, Baku, Aserbaidschan",
+    "followUs": "Folgen Sie uns",
     "rights": "Alle Rechte vorbehalten.",
-    "links": "Schnelllinks"
+    "phone": "Telefon",
+    "email": "E-mail"
   }
 }

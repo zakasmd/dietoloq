@@ -71,30 +71,31 @@
     "items": {
       "weightLoss": {
         "title": "Weight Loss Program",
-        "description": "Losing weight without sports and hunger with individually prepared nutrition programs."
+        "desc": "Individual weight loss and weight reduction diet programs. We ensure you reach your goal with a completely science-based approach without sports or hunger. We accelerate your metabolism with the principle 'Our enemy is not fat, but sugar'."
       },
       "weightGain": {
         "title": "Weight Gain",
-        "description": "Special programs for those who want to gain weight in a healthy and balanced way."
+        "desc": "Specially prepared healthy weight gain and nutrition plans for those who want to gain weight. We help you reach your ideal weight by increasing muscle and healthy fat mass without harmful products."
       },
-      "ivTherapy": {
+      "antiAging": {
+        "title": "Anti-Ageing & Nutrition",
+        "desc": "Special anti-aging nutrition recommendations and expert guidance in nutrition. Cellular rejuvenating nutrition program improving skin health and rejuvenating the body."
+      },
+      "consultation": {
+        "title": "Weight Loss with Author's Methodology",
+        "desc": "It is possible to lose 8-10-12 kg of pure fat mass per month with Dr. Leyla Zulfugarli's private author's methodology. Fast results without sports and hunger."
+      },
+      "detox": {
+        "title": "Detox Program",
+        "desc": "Body cleansing program from harmful toxins, renewing the body with special detox tea and nutrition. Effective 7-day cleansing and energy recovery based on Swiss experience."
+      },
+      "media": {
         "title": "IV Therapy",
-        "description": "Special vitamin cocktails for energy recovery, immune strengthening, and detox."
-      },
-      "antiAge": {
-        "title": "Anti-Age and Detox",
-        "description": "Cellular rejuvenation and body cleansing programs from toxins."
-      },
-      "childNutrition": {
-        "title": "Child Nutrition",
-        "description": "Healthy eating habits and weight control programs for children and adolescents."
-      },
-      "chronicDisease": {
-        "title": "Therapeutic Nutrition",
-        "description": "Special diet plans for diabetes, gastritis, and other chronic diseases."
+        "desc": "The most effective way to deliver nutrients, vitamins, and minerals to body tissues through direct infusion into the blood circulation. Increases energy and strengthens immunity."
       }
     },
     "viewMore": "Read more",
+    "learnMore": "Read more",
     "cta": "Book an Examination"
   },
   "results": {
@@ -277,11 +278,147 @@
       },
       {
         "name": "Revanə khanim (54 years old)",
-        "text": "I came to Dr. Leyla with high sugar and overweight. In a short time, my sugar normalized and I started losing weight. It was like a miracle!",
-        "result": "-12 kg / 2 months",
-        "avatar": "👩"
+        "text": "When I started the program, I was very hopeless. Although I had been doing very strict diets and exercise without sugar and carbohydrates for 2 years, I couldn't lose even 1 kg. I also suffered from serious allergies and itching. But after 1 month, my itching decreased and I lost 10 kilos, moreover, 20 cm of fat was broken down!",
+        "result": "-10 kg / 1 month",
+        "avatar": "👩‍🦳"
       }
     ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How is the consultation?",
+        "a": "The consultation is carried out both online (video call) and in the format of a personal meeting. At the first meeting, your health status, goals, and lifestyle are analyzed."
+      },
+      {
+        "q": "I want to lose weight, but I don't have time for sports. Is this possible?",
+        "a": "Yes, of course! The methodology applied by Ms. Leyla is based exactly on weight loss without sports. With correct, science-based nutrition and the 'Our enemy is not fat, but sugar' principle, you can get rid of excess weight quickly and healthily even without sports."
+      },
+      {
+        "q": "Can I apply for healthy weight gain?",
+        "a": "Yes. Many people apply to us not only to lose weight, but also to gain weight. We prepare special high-calorie programs rich in healthy proteins and carbohydrates suitable for your metabolism and organism."
+      },
+      {
+        "q": "Where can I get Leyla Zulfugarli's books?",
+        "a": "You can order the books 'Eat Healthy - Lose Weight' and 'The Secret of Obesity' directly from us via WhatsApp. They are also on sale at BakuBookCenter and Alinino.az websites."
+      },
+      {
+        "q": "How can I get the advice I see on TV privately?",
+        "a": "The advice given on television is general in nature. To get a fully personalized and suitable result for you, you can schedule a direct consultation from our site or via WhatsApp."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Register Now",
+    "subtitle": "Get your personalized nutrition plan and take the first step towards a healthy life",
+    "button": "Registration for Consultation",
+    "whatsapp": "Message on WhatsApp"
+  },
+  "consultation": {
+    "eyebrow": "Consultation",
+    "title": "Registration for Consultation",
+    "subtitle": "Fill in the form below, we will contact you soon",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "email": "E-mail (optional)",
+    "age": "Age",
+    "goal": "Your Goal",
+    "goalOptions": {
+      "weightLoss": "Lose Weight",
+      "weightGain": "Gain Weight",
+      "maintenance": "Maintain Weight",
+      "detox": "Detox Program",
+      "antiAging": "Prevent Aging",
+      "other": "Other"
+    },
+    "message": "Additional Notes",
+    "messagePlaceholder": "Additional information...",
+    "submit": "Submit Application",
+    "sending": "Sending...",
+    "success": "Your application has been accepted! We will contact you soon.",
+    "successTitle": "Application Accepted!",
+    "newRequest": "New Application",
+    "error": "An error occurred. Please try again.",
+    "howItWorks": "How it works?",
+    "step1": "Fill the form",
+    "step2": "We contact within 24 hours",
+    "step3": "First meeting is planned",
+    "step4": "Personalized plan is prepared",
+    "callDirectly": "Call directly",
+    "whatsappBtn": "Message on WhatsApp",
+    "goalPlaceholder": "Select..."
+  },
+  "book": {
+    "title": "Books and Teas",
+    "pdfNotice": "Attention: Currently these books are only available in PDF format (E-book).",
+    "title1": "Secret of Obesity - Key to Thinness",
+    "title2": "Eat Healthy, Lose Weight!",
+    "author": "Leyla Zulfugarli",
+    "description1": "In this book, written based on my long years of experience and scientific research, the most important secrets of losing weight and having a healthy body are revealed. How to lose weight without sports and hunger? The answer is in this book.",
+    "description2": "One of Leyla Zulfugarli's first and most famous books. Basic principles of healthy nutrition, body renewal, and practical advice for maintaining form for life.",
+    "bestseller": "BESTSELLER",
+    "orderWhatsApp": "Order PDF",
+    "features": {
+      "f1": "Weight loss methodology without sports",
+      "f2": "Metabolism acceleration",
+      "f3": "Correct food combinations",
+      "f4": "Practical tips and sample menus"
+    },
+    "features2": {
+      "f1": "Foundations of healthy nutrition",
+      "f2": "Getting rid of harmful habits",
+      "f3": "Cleansing at the cellular level",
+      "f4": "Detox recipes"
+    },
+    "detoxEyebrow": "🍵 Detox Package",
+    "detoxTitle": "Book + Detox Tea Package",
+    "detoxDesc": "Get the book 'Secret of Obesity' together with special detox tea. This package is the ideal solution to cleanse the body and speed up the weight loss process.",
+    "detoxFeature1Title": "Bestseller Book",
+    "detoxFeature1Desc": "All the secrets of the weight loss method without sports",
+    "detoxFeature2Title": "Detox Tea",
+    "detoxFeature2Desc": "Special tea blend that cleanses the body",
+    "detoxFeature3Title": "Nutrition Plan",
+    "detoxFeature3Desc": "Individual plan for joint use with the book",
+    "detoxOrderBtn": "Order Detox Package",
+    "ctaTitle": "Do you also want a personalized consultation?",
+    "ctaDesc": "Get an individual diet plan together with the book",
+    "ctaBtn": "Registration for Consultation",
+    "teaTitle1": "TeaLaks LZ Tea",
+    "teaDesc1": "Effective natural solution against constipation. Softens the digestive system, improves intestinal permeability and eliminates tension in the abdominal cavity. Strengthens the body and eliminates fatigue.",
+    "teaTitle2": "Detox LZ Tea",
+    "teaDesc2": "Medicinal detox tea. Speeds up metabolism, removes toxins and helps to get rid of 3-5 kg of excess weight. Supports absorption of benign tumors (fibromyoma, polyp), treatment of liver fatty and hepatitis healing. Effective in inflammation of the pancreas and gallbladder, in anemia.",
+    "orderBtn": "Order Now"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Log in to your account to access the dashboard",
+    "email": "E-mail",
+    "password": "Password",
+    "submit": "Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "forgotPassword": "Forgot password?"
+  },
+  "register": {
+    "title": "Register",
+    "subtitle": "Create a new account",
+    "fullName": "Full Name",
+    "email": "E-mail",
+    "password": "Password",
+    "confirmPassword": "Repeat password",
+    "submit": "Register",
+    "haveAccount": "Have an account?",
+    "login": "Login"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "myCourses": "My Courses",
+    "materials": "Materials",
+    "profile": "Profile",
+    "noCourses": "You don't have any registered courses yet.",
+    "watchLesson": "Watch lesson",
+    "downloadPdf": "Download PDF"
   },
   "contact": {
     "title": "Contact",
@@ -298,15 +435,35 @@
     },
     "info": {
       "address": "Address",
-      "addressText": "Baku, Azerbaijan",
+      "addressText": "The Club Port Baku, Baku, Azerbaijan",
       "phone": "Phone",
       "email": "Email",
       "workingHours": "Working Hours",
       "workingHoursText": "Mon - Sat: 09:00 - 18:00"
-    }
+    },
+    "directContact": "Direct contact",
+    "phoneLabel": "PHONE",
+    "emailLabel": "E-MAIL",
+    "addressLabel": "ADDRESS",
+    "addressValue": "The Club Port Baku, Baku, Azerbaijan",
+    "socialMedia": "Social media",
+    "consultTitle": "Want to get a consultation?",
+    "consultDesc": "Fill out our consultation form for your personalized nutrition plan. We will contact you within 24 hours.",
+    "consultBtn": "Registration for Consultation",
+    "quickTitle": "Quick communication",
+    "quickDesc": "If you have a question, write directly on WhatsApp. You will receive an answer as soon as possible.",
+    "quickBtn": "Message on WhatsApp"
   },
   "footer": {
+    "subTitle": "Professional DIETITIAN",
+    "copyrightName": "Leyla Zulfugarli",
+    "description": "Personalized nutrition plan, consultation and courses with professional dietitian Leyla Zulfugarli.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address": "The Club Port Baku, Baku, Azerbaijan",
+    "followUs": "Follow us",
     "rights": "All rights reserved.",
-    "links": "Quick Links"
+    "phone": "Phone",
+    "email": "E-mail"
   }
 }
