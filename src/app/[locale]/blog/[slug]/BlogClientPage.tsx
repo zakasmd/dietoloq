@@ -116,7 +116,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
               </div>
             </div>
 
-            <h1 className="text-gradient-mint" style={{ 
+            <h1 className="text-gradient-mint blog-title-mobile" style={{ 
               fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', 
               lineHeight: 1.15, 
               fontWeight: 800, 
@@ -130,12 +130,12 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
 
             {/* Premium Author Card */}
             <div className="glass-strong blog-author-badge">
-              <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid hsl(var(--primary)/0.4)', padding: '3px', overflow: 'hidden' }}>
+              <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid hsl(var(--primary)/0.4)', padding: '3px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
               </div>
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Dr. Leyla Zülfüqarlı</div>
-                <div className="text-gradient-mint blog-author-text" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</div>
+                <div className="text-gradient-mint blog-author-text" style={{ fontWeight: 800, textTransform: 'uppercase' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</div>
               </div>
             </div>
           </header>

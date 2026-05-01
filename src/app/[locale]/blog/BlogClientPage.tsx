@@ -117,7 +117,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                         </div>
 
                         <div>
-                          <h2 style={{ 
+                          <h2 className="blog-title-mobile" style={{ 
                             fontSize: '1.75rem', 
                             fontWeight: 700, 
                             lineHeight: 1.2, 
@@ -157,8 +157,8 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                       </div>
 
                       {post.image_url && (
-                        <div className="blog-card-image" style={{ borderRadius: '1.5rem', overflow: 'hidden', boxShadow: 'var(--glow-mint)', width: '280px', aspectRatio: '1/1' }}>
-                          <img src={post.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="hover-scale" />
+                        <div className="blog-card-image">
+                          <img src={post.image_url} alt="" className="hover-scale" />
                         </div>
                       )}
                     </div>
