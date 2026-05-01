@@ -140,7 +140,7 @@ export default function HeroSection() {
               <div className={styles.neonRing2} />
               <Image
                 src="/images/dietolog-1.jpg"
-                alt="Leyla Zülfüqarlı — Peşəkar Dietoloq"
+                alt="Dr. Leyla Zülfüqarlı — Peşəkar Dietoloq"
                 width={480}
                 height={560}
                 priority

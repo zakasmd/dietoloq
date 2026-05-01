@@ -34,7 +34,7 @@ export default function AboutSnippet() {
             <div className={styles.imageCard}>
               <Image
                 src="/images/dietolog-2.jpg"
-                alt="Leyla Zülfüqarlı"
+                alt="Dr. Leyla Zülfüqarlı"
                 width={440}
                 height={520}
                 className={styles.image}

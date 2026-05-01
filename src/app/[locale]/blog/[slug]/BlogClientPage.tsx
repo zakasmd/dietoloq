@@ -108,8 +108,8 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
                 <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
               </div>
               <div>
-                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Leyla Zülfüqarlı</div>
-                <div className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Dr. Leyla Zülfüqarlı</div>
+                <div className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Anti-Age mütəxəssisi</div>
               </div>
             </div>
           </header>

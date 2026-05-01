@@ -51,7 +51,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href={`/${locale}`} className={styles.logo}>
             <div className={styles.logoIcon} style={{ background: 'transparent', padding: 0, boxShadow: 'none' }}>
-              <Image src="/images/logo.jpg" alt="Leyla Zülfüqarlı" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              <Image src="/images/logo.jpg" alt="Dr. Leyla Zülfüqarlı" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>{t('brandName')}</span>

@@ -62,9 +62,16 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
               
-              // Helper to strip HTML tags for excerpt
+              // Helper to strip HTML tags and decode entities for excerpt
               const stripHtml = (html: string) => {
-                return html.replace(/<[^>]*>?/gm, '');
+                if (!html) return '';
+                const text = html.replace(/<[^>]*>?/gm, '');
+                return text.replace(/&nbsp;/g, ' ')
+                           .replace(/&amp;/g, '&')
+                           .replace(/&lt;/g, '<')
+                           .replace(/&gt;/g, '>')
+                           .replace(/&quot;/g, '"')
+                           .replace(/&#39;/g, "'");
               };
               
               const plainText = stripHtml(content);
@@ -104,8 +111,8 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                             <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Leyla Zülfüqarlı</span>
-                            <span className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Doktor, Nutrisioloji, Diyetoloq</span>
+                            <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Dr. Leyla Zülfüqarlı</span>
+                            <span className="text-gradient-mint" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Anti-Age mütəxəssisi</span>
                           </div>
                         </div>
 
