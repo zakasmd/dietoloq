@@ -42,6 +42,28 @@ export async function generateMetadata({
   return {
     title: titles[locale] || titles.az,
     description: descriptions[locale] || descriptions.az,
+    openGraph: {
+      title: titles[locale] || titles.az,
+      description: descriptions[locale] || descriptions.az,
+      url: 'https://dietoloqleylazulfuqarli.az',
+      siteName: 'Dr. Leyla Zülfüqarlı',
+      locale: locale,
+      type: 'website',
+      images: [
+        {
+          url: '/images/dietolog-1.jpg',
+          width: 1200,
+          height: 630,
+          alt: titles[locale] || titles.az,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[locale] || titles.az,
+      description: descriptions[locale] || descriptions.az,
+      images: ['/images/dietolog-1.jpg'],
+    },
     alternates: {
       languages: {
         az: '/az',
