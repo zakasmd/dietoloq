@@ -207,7 +207,7 @@ function LoginContent() {
                   {...regForm.register('full_name', { required: true, minLength: 2 })}
                   className="form-input"
                   style={{ paddingLeft: '2.75rem' }}
-                  placeholder="Ad Soyad"
+                  placeholder={tr('fullName')}
                   autoComplete="name"
                 />
               </div>
