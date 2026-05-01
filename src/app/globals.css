@@ -111,9 +111,23 @@
 /* HARD OVERFLOW FIX - outside @layer, cannot be overridden by Tailwind */
 html, body {
   overflow-x: hidden !important;
-  max-width: 100% !important;
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
   /* Prevent horizontal swipe on Android Chrome */
   touch-action: pan-y !important;
+  position: relative !important;
+}
+
+/* Global safety for all containers and layouts */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Ensure no element can exceed viewport width */
+.container, section, div, header, footer {
+  max-width: 100% !important;
 }
 
 /* ==========================================
