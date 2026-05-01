@@ -19,9 +19,9 @@ export default function ResultsPage() {
     image?: string;
   }> = [
     { id: 1, title: t('case1Title'), goal: t('case1Goal'), video: 'https://www.youtube.com/embed/Qq0KKjlfw2A' },
+    { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 2, title: t('case2Title'), goal: t('case2Goal'), video: 'https://www.youtube.com/embed/IJM9V7uJHHo' },
     { id: 3, title: t('case3Title'), goal: t('case3Goal'), video: 'https://www.youtube.com/embed/1zQK8Wn1xag' },
-    { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 4, title: t('case4Title'), goal: t('case4Goal'), video: 'https://www.youtube.com/embed/n_pp1dwXl6Y' },
     { id: 5, title: t('case5Title'), goal: t('case5Goal'), video: 'https://www.youtube.com/embed/eaZbsC4gZko' },
     { id: 6, title: t('case6Title'), goal: t('case6Goal'), video: 'https://www.youtube.com/embed/jTspMwR0xIY' },
@@ -96,7 +96,7 @@ export default function ResultsPage() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   style={{ borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}
                 >
-                  <div style={{ width: '100%', aspectRatio: '9/16', overflow: 'hidden', position: 'relative', background: '#000', flexShrink: 0 }}>
+                  <div style={{ width: '100%', aspectRatio: '4/5', overflow: 'hidden', position: 'relative', background: '#000', flexShrink: 0 }}>
                     {r.video ? (
                       <iframe
                         src={r.video}
@@ -110,7 +110,7 @@ export default function ResultsPage() {
                       <img 
                         src={r.image} 
                         alt={r.title}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#0b0b0b' }}
                       />
                     ) : null}
                   </div>
