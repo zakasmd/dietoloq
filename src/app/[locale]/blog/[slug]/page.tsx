@@ -30,16 +30,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
   const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
   
-  // Create a description from the first 160 characters
-  const description = content.replace(/[#*`]/g, '').substring(0, 160) + '...';
+  // Create a clean description by removing HTML tags and entities
+  const cleanDescription = content
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/&nbsp;/g, ' ') // Replace &nbsp; with space
+    .replace(/&[a-z0-9#]+;/gi, '') // Remove other entities
+    .replace(/[#*`]/g, '') // Remove markdown symbols
+    .trim()
+    .substring(0, 160) + '...';
+
+  const ogImage = post.image_url || '/images/dietolog-1.jpg';
 
   return {
     title: `${title} | Dr. Leyla Zülfüqarlı`,
-    description: description,
+    description: cleanDescription,
     openGraph: {
       title: title,
-      description: description,
-      images: post.image_url ? [{ url: post.image_url }] : [],
+      description: cleanDescription,
+      images: [{ url: ogImage }],
       type: 'article',
       publishedTime: post.created_at,
       authors: ['Dr. Leyla Zülfüqarlı'],
@@ -47,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: title,
-      description: description,
-      images: post.image_url ? [post.image_url] : [],
+      description: cleanDescription,
+      images: [ogImage],
     },
   };
 }

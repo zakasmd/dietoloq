@@ -4,7 +4,7 @@ import Script from 'next/script';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dietoloqleylazulfuqarli.az'),
+  metadataBase: new URL('https://www.leylazulfuqarli.com'),
   title: 'Dr. Leyla Zülfüqarlı | Diyetoloq',
   description: 'Peşəkar diyetoloq Leyla Zülfüqarlı — Funksional Tibb, Anti Age və Nutrisyon mütəxəssisi.',
   icons: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dr. Leyla Zülfüqarlı | Diyetoloq',
     description: 'Peşəkar diyetoloq Leyla Zülfüqarlı — Funksional Tibb, Anti Age və Nutrisyon mütəxəssisi.',
-    url: 'https://dietoloqleylazulfuqarli.az',
+    url: 'https://www.leylazulfuqarli.com',
     siteName: 'Dr. Leyla Zülfüqarlı',
     images: [
       {

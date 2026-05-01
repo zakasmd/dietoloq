@@ -45,7 +45,7 @@ export async function generateMetadata({
     openGraph: {
       title: titles[locale] || titles.az,
       description: descriptions[locale] || descriptions.az,
-      url: 'https://dietoloqleylazulfuqarli.az',
+      url: 'https://www.leylazulfuqarli.com',
       siteName: 'Dr. Leyla Zülfüqarlı',
       locale: locale,
       type: 'website',
