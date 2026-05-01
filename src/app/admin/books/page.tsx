@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import styles from './AdminBooks.module.css';
 
-var(--font-inter)face Material {
+interface Material {
   id: string;
   title_az: string;
   description_az: string | null;

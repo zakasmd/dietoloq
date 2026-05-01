@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import styles from './AdminUsers.module.css';
 
-var(--font-inter)face User {
+interface User {
   id: string;
   email: string | null;
   full_name: string | null;

@@ -17,7 +17,7 @@ const ReactQuill = dynamic(() => import('react-quill-new'), {
 });
 import 'react-quill-new/dist/quill.snow.css';
 
-var(--font-inter)face BlogPost {
+interface BlogPost {
   id: string;
   title_az: string;
   title_ru?: string;
