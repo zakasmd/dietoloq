@@ -31,6 +31,16 @@ export default function ResultsPage() {
     { id: 9, title: t('case9Title'), goal: t('case9Goal'), image: '/images/results/result-3.jpeg' },
     { id: 10, title: t('case10Title'), goal: t('case10Goal'), image: '/images/results/result-4.jpeg' },
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
+    { id: 14, title: t('case14Title'), goal: t('case14Goal'), video: 'https://www.youtube.com/embed/nQ7HvRe-GBQ' },
+    { id: 15, title: t('case15Title'), goal: t('case15Goal'), video: 'https://www.youtube.com/embed/V52ahTWVEh0' },
+    { id: 16, title: t('case16Title'), goal: t('case16Goal'), video: 'https://www.youtube.com/embed/yUhNH6ni_9A' },
+    { id: 17, title: t('case17Title'), goal: t('case17Goal'), video: 'https://www.youtube.com/embed/CcSNdIgvXX8' },
+    { id: 18, title: t('case18Title'), goal: t('case18Goal'), video: 'https://www.youtube.com/embed/W1WD9m64SBY' },
+    { id: 19, title: t('case19Title'), goal: t('case19Goal'), video: 'https://www.youtube.com/embed/NkaGhIg8oZI' },
+    { id: 20, title: t('case20Title'), goal: t('case20Goal'), image: '/images/results/result-7.jpg' },
+    { id: 21, title: t('case21Title'), goal: t('case21Goal'), image: '/images/results/result-8.jpg' },
+    { id: 22, title: t('case22Title'), goal: t('case22Goal'), video: 'https://www.youtube.com/embed/nskecqwttnQ' },
+    { id: 23, title: t('case23Title'), goal: t('case23Goal'), image: '/images/results/result-9.png' },
   ];
 
   const totalPages = Math.ceil(results.length / itemsPerPage);
