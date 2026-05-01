@@ -120,18 +120,50 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
             </div>
           )}
 
-          <div style={{ 
-            fontSize: '1.15rem', 
-            lineHeight: 1.7, 
-            color: 'hsl(var(--foreground)/0.9)', 
-            whiteSpace: 'pre-wrap', 
-            fontFamily: 'Inter, system-ui, sans-serif',
-            marginBottom: '5rem',
-            overflowWrap: 'break-word',
-            wordBreak: 'break-word'
-          }}>
-            {content}
-          </div>
+          <div 
+            className="blog-content-area"
+            style={{ 
+              fontSize: '1.15rem', 
+              lineHeight: 1.8, 
+              color: 'hsl(var(--foreground)/0.9)', 
+              fontFamily: 'Inter, system-ui, sans-serif',
+              marginBottom: '5rem',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
+            }}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+          <style jsx global>{`
+            .blog-content-area strong {
+              font-weight: 700;
+              color: hsl(var(--foreground));
+            }
+            .blog-content-area h1, .blog-content-area h2, .blog-content-area h3 {
+              font-family: 'Space Grotesk', sans-serif;
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: hsl(var(--foreground));
+              line-height: 1.2;
+            }
+            .blog-content-area h1 { font-size: 2rem; }
+            .blog-content-area h2 { font-size: 1.75rem; }
+            .blog-content-area h3 { font-size: 1.5rem; }
+            .blog-content-area ul, .blog-content-area ol {
+              margin-bottom: 1.5rem;
+              padding-left: 1.5rem;
+            }
+            .blog-content-area li {
+              margin-bottom: 0.5rem;
+            }
+            .blog-content-area a {
+              color: hsl(var(--primary));
+              text-decoration: underline;
+              text-underline-offset: 4px;
+            }
+            .blog-content-area p {
+              margin-bottom: 1.5rem;
+            }
+          `}</style>
 
           {videoId && (
             <div style={{ marginBottom: '5rem', borderRadius: '1.5rem', overflow: 'hidden', aspectRatio: '16/9', background: '#000', boxShadow: 'var(--glow-mint)', border: '1px solid hsl(var(--primary)/0.2)' }}>

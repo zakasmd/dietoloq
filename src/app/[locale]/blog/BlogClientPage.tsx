@@ -61,7 +61,14 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
             currentPosts.map((post, idx) => {
               const title = locale === 'ru' ? post.title_ru || post.title_az : locale === 'en' ? post.title_en || post.title_az : post.title_az;
               const content = locale === 'ru' ? post.content_ru || post.content_az : locale === 'en' ? post.content_en || post.content_az : post.content_az;
-              const excerpt = content.length > 200 ? content.substring(0, 200) + '...' : content;
+              
+              // Helper to strip HTML tags for excerpt
+              const stripHtml = (html: string) => {
+                return html.replace(/<[^>]*>?/gm, '');
+              };
+              
+              const plainText = stripHtml(content);
+              const excerpt = plainText.length > 200 ? plainText.substring(0, 200) + '...' : plainText;
               
               const d = new Date(post.created_at);
               const monthsAz = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'İyun', 'İyul', 'Avqust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'];

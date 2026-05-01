@@ -1,9 +1,17 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { createClient } from '@/lib/supabase/client';
 import { Plus, Trash2, Edit2, X, Save, ExternalLink, Video, Image as ImageIcon, Upload, Loader2 } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
+import 'react-quill-new/dist/quill.snow.css';
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), {
+  ssr: false,
+  loading: () => <div className="form-input" style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Redaktor yüklənir...</div>
+});
 
 type BlogPost = {
   id: string;
@@ -28,7 +36,16 @@ export default function AdminBlogPage() {
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const { register, handleSubmit, reset, setValue, watch } = useForm<Partial<BlogPost>>();
+  const { register, handleSubmit, reset, setValue, control } = useForm<Partial<BlogPost>>();
+
+  const quillModules = useMemo(() => ({
+    toolbar: [
+      [{ 'header': [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      ['link', 'clean']
+    ],
+  }), []);
 
   useEffect(() => {
     fetchPosts();
@@ -154,6 +171,24 @@ export default function AdminBlogPage() {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'grid', gap: '1.25rem' }}>
+            <style>{`
+              .ql-container {
+                min-height: 250px;
+                font-family: inherit;
+                font-size: 0.95rem;
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+              }
+              .ql-toolbar {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                background: #f8fafc;
+              }
+              .ql-editor {
+                min-height: 250px;
+              }
+            `}</style>
+
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div className="form-group">
                 <label className="form-label">Başlıq (AZ) *</label>
@@ -167,7 +202,19 @@ export default function AdminBlogPage() {
 
             <div className="form-group">
               <label className="form-label">Məzmun (AZ) *</label>
-              <textarea {...register('content_az', { required: true })} className="form-input form-textarea" rows={8} placeholder="Məqalə mətni..." />
+              <Controller
+                name="content_az"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <ReactQuill 
+                    theme="snow" 
+                    value={field.value || ''} 
+                    onChange={field.onChange}
+                    modules={quillModules}
+                  />
+                )}
+              />
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -202,14 +249,49 @@ export default function AdminBlogPage() {
 
             <div style={{ borderTop: '1px solid var(--color-border-light)', paddingTop: '1.25rem', marginTop: '0.5rem' }}>
               <h3 style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--color-text-muted)' }}>Digər Dillər (İstəyə bağlı)</h3>
-              <div style={{ display: 'grid', gap: '1rem' }}>
+              <div style={{ display: 'grid', gap: '1.5rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <input {...register('title_ru')} className="form-input" placeholder="Заголовок (RU)" />
-                  <input {...register('title_en')} className="form-input" placeholder="Title (EN)" />
+                  <div className="form-group">
+                    <label className="form-label">Başlıq (RU)</label>
+                    <input {...register('title_ru')} className="form-input" placeholder="Заголовок (RU)" />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Başlıq (EN)</label>
+                    <input {...register('title_en')} className="form-input" placeholder="Title (EN)" />
+                  </div>
                 </div>
+                
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <textarea {...register('content_ru')} className="form-input form-textarea" rows={4} placeholder="Текст (RU)" />
-                  <textarea {...register('content_en')} className="form-input form-textarea" rows={4} placeholder="Content (EN)" />
+                  <div className="form-group">
+                    <label className="form-label">Məzmun (RU)</label>
+                    <Controller
+                      name="content_ru"
+                      control={control}
+                      render={({ field }) => (
+                        <ReactQuill 
+                          theme="snow" 
+                          value={field.value || ''} 
+                          onChange={field.onChange}
+                          modules={quillModules}
+                        />
+                      )}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Məzmun (EN)</label>
+                    <Controller
+                      name="content_en"
+                      control={control}
+                      render={({ field }) => (
+                        <ReactQuill 
+                          theme="snow" 
+                          value={field.value || ''} 
+                          onChange={field.onChange}
+                          modules={quillModules}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
