@@ -46,20 +46,15 @@ export default function AdminPage() {
           <Link
             key={card.label}
             href={card.href}
-            style={{
-              background: 'white', borderRadius: 'var(--radius-xl)', padding: '1.5rem',
-              boxShadow: 'var(--shadow-card)', textDecoration: 'none',
-              border: card.urgent ? '2px solid #F59E0B' : '1px solid var(--color-border-light)',
-              transition: 'all 0.2s ease', display: 'block',
-            }}
+            className={`${styles.statCard} ${card.urgent ? styles.statCardUrgent : ''}`}
           >
-            <div style={{ width: 44, height: 44, background: card.color, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', marginBottom: '1rem' }}>
+            <div className={styles.cardIcon} style={{ background: card.color }}>
               {card.icon}
             </div>
-            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-text)', marginBottom: '0.25rem' }}>
+            <div className={styles.cardValue}>
               {card.value}
             </div>
-            <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>{card.label}</div>
+            <div className={styles.cardLabel}>{card.label}</div>
             {card.urgent && (
               <div style={{ marginTop: '0.5rem', fontSize: '0.72rem', color: '#D97706', fontWeight: 700 }}>⚡ Cavab tələb edir</div>
             )}

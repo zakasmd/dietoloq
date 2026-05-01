@@ -112,11 +112,11 @@
   .overlay { display: block; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .content { padding: 1.25rem 1rem; }
   .topbar { padding: 0 1rem; }
   
-  /* Prevent zoom on focus */
+  /* Prevent zoom on focus in admin panel */
   :global(input), :global(textarea), :global(select) {
     font-size: 16px !important;
   }
