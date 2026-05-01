@@ -1,4 +1,49 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { useForm } from 'react-hook-form';
+import { 
+  Plus, Trash2, Edit2, ChevronDown, ChevronUp, X, 
+  Users as UsersIcon, UserMinus 
+} from 'lucide-react';
 import styles from './CoursesAdmin.module.css';
+
+interface Course {
+  id: string;
+  title_az: string;
+  description_az: string | null;
+  price: number | null;
+  is_public: boolean;
+  is_published: boolean;
+  created_at: string;
+}
+
+interface Lesson {
+  id: string;
+  course_id: string;
+  title_az: string;
+  youtube_url: string | null;
+  pdf_url: string | null;
+  order_index: number;
+  duration_minutes: number | null;
+  is_published: boolean;
+}
+
+interface CourseForm {
+  title_az: string;
+  description_az: string;
+  price: string;
+  is_public: boolean;
+}
+
+interface LessonForm {
+  title_az: string;
+  youtube_url: string;
+  pdf_url: string;
+  order_index: string;
+  duration_minutes: string;
+}
 
 export default function CoursesAdminPage() {
   const [courses, setCourses] = useState<Course[]>([]);

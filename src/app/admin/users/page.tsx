@@ -1,4 +1,17 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
 import styles from './AdminUsers.module.css';
+
+interface User {
+  id: string;
+  email: string | null;
+  full_name: string | null;
+  phone: string | null;
+  role: string;
+  created_at: string;
+}
 
 export default function UsersAdminPage() {
   const [users, setUsers] = useState<User[]>([]);
