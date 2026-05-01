@@ -17,7 +17,7 @@ export default function ServicesClientPage({ locale }: { locale: string }) {
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>💼 {t('title')}</div>
-            <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('title')}
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'hsl(var(--foreground)/0.7)', maxWidth: '540px', margin: '0 auto' }}>{t('subtitle')}</p>
@@ -60,7 +60,7 @@ export default function ServicesClientPage({ locale }: { locale: string }) {
                   }}>
                     <Icon size={22} color="hsl(var(--primary-foreground))" />
                   </div>
-                  <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.5rem' }}>
                     {t(`items.${key}.title`)}
                   </h3>
                   <p style={{ fontSize: '0.875rem', color: 'hsl(var(--foreground)/0.7)', lineHeight: '1.65', marginBottom: '1.25rem' }}>
@@ -87,7 +87,7 @@ export default function ServicesClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '0 0 5rem', textAlign: 'center' }}>
         <div className="container">
           <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)' }}>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('ctaTitle')}
             </h2>
             <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>{t('ctaSubtitle')}</p>

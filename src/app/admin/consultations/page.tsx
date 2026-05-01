@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client';
 import { Phone, Mail } from 'lucide-react';
 import styles from './AdminConsultations.module.css';
 
-interface Consultation {
+var(--font-inter)face Consultation {
   id: string;
   full_name: string;
   phone: string;

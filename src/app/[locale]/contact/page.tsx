@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>📞 {t('eyebrow')}</div>
-            <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('title')}
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'hsl(var(--foreground)/0.7)', maxWidth: '480px', margin: '0 auto' }}>
@@ -55,7 +55,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
             >
-              <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))' }}>
+              <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))' }}>
                 {t('directContact')}
               </h2>
 
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 );
               })}
 
-              <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1rem', color: 'hsl(var(--foreground))', marginTop: '1rem' }}>{t('socialMedia')}</h3>
+              <h3 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1rem', color: 'hsl(var(--foreground))', marginTop: '1rem' }}>{t('socialMedia')}</h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.75rem' }}>
                 <a href="https://wa.me/994506684823" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ justifyContent: 'center', fontSize: '0.85rem', padding: '0.75rem 1rem' }}>
                   <WaIcon /> WhatsApp
@@ -105,7 +105,7 @@ export default function ContactPage() {
             >
               <div className="glass" style={{ padding: '3rem 2rem', borderRadius: 'var(--radius-xl)', background: 'hsl(var(--primary)/0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🎯</div>
-                <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem', lineHeight: 1.3 }}>
+                <h3 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.5rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem', lineHeight: 1.3 }}>
                   {t('consultTitle')}
                 </h3>
                 <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem', lineHeight: '1.8', fontSize: '0.95rem', maxWidth: '320px' }}>
@@ -117,7 +117,7 @@ export default function ContactPage() {
               </div>
 
               <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius)' }}>
-                <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.75rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '0.75rem' }}>
                   💬 {t('quickTitle')}
                 </h3>
                 <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '1.25rem', fontSize: '0.9rem', lineHeight: '1.6' }}>
@@ -127,7 +127,7 @@ export default function ContactPage() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.625rem',
                   width: '100%', padding: '0.875rem',
                   background: '#25D366', color: 'white', borderRadius: '10px',
-                  fontFamily: 'Space Grotesk,sans-serif', fontWeight: 700, fontSize: '0.95rem',
+                  fontFamily: 'var(--font-space-grotesk),sans-serif', fontWeight: 700, fontSize: '0.95rem',
                   textDecoration: 'none', boxShadow: '0 4px 16px rgba(37,211,102,0.25)',
                   boxSizing: 'border-box',
                 }}>

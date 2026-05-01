@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import styles from './CoursesAdmin.module.css';
 
-interface Course {
+var(--font-inter)face Course {
   id: string;
   title_az: string;
   description_az: string | null;
@@ -19,7 +19,7 @@ interface Course {
   created_at: string;
 }
 
-interface Lesson {
+var(--font-inter)face Lesson {
   id: string;
   course_id: string;
   title_az: string;
@@ -30,14 +30,14 @@ interface Lesson {
   is_published: boolean;
 }
 
-interface CourseForm {
+var(--font-inter)face CourseForm {
   title_az: string;
   description_az: string;
   price: string;
   is_public: boolean;
 }
 
-interface LessonForm {
+var(--font-inter)face LessonForm {
   title_az: string;
   youtube_url: string;
   pdf_url: string;

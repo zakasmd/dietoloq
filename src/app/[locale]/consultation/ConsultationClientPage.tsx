@@ -138,7 +138,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                 background: '#25D366',
                 color: 'white',
                 borderRadius: '12px',
-                fontFamily: 'Space Grotesk, system-ui',
+                fontFamily: 'var(--font-space-grotesk), system-ui',
                 fontWeight: 700,
                 fontSize: '1rem',
                 textDecoration: 'none',

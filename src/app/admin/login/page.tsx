@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
             <ShieldCheck size={30} color="hsl(165 60% 8%)" />
           </div>
           <h1 style={{
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontSize: '1.5rem', fontWeight: 700,
             color: 'white', letterSpacing: '-0.02em',
             marginBottom: '0.375rem',
@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
             Admin Panel
           </h1>
           <p style={{
-            fontFamily: 'Inter, system-ui',
+            fontFamily: 'var(--font-inter), system-ui',
             fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)',
           }}>
             Yalnız administrator girişi
@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
               borderRadius: '10px',
               marginBottom: '1.5rem',
               color: '#FCA5A5',
-              fontFamily: 'Inter, system-ui', fontSize: '0.85rem',
+              fontFamily: 'var(--font-inter), system-ui', fontSize: '0.85rem',
             }}>
               <AlertCircle size={16} style={{ flexShrink: 0, marginTop: '0.1rem' }} />
               {error}
@@ -124,7 +124,7 @@ export default function AdminLoginPage() {
             <div>
               <label style={{
                 display: 'block',
-                fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600,
+                fontFamily: 'var(--font-inter), system-ui', fontSize: '0.8rem', fontWeight: 600,
                 color: 'rgba(255,255,255,0.7)', marginBottom: '0.5rem',
               }}>
                 Admin E-mail
@@ -149,7 +149,7 @@ export default function AdminLoginPage() {
                     border: '1px solid rgba(255,255,255,0.15)',
                     borderRadius: '10px',
                     color: 'white',
-                    fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                    fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                     outline: 'none',
                   }}
                   onFocus={(e) => e.target.style.borderColor = 'hsl(150 100% 72% / 0.6)'}
@@ -162,7 +162,7 @@ export default function AdminLoginPage() {
             <div>
               <label style={{
                 display: 'block',
-                fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600,
+                fontFamily: 'var(--font-inter), system-ui', fontSize: '0.8rem', fontWeight: 600,
                 color: 'rgba(255,255,255,0.7)', marginBottom: '0.5rem',
               }}>
                 Şifrə
@@ -187,7 +187,7 @@ export default function AdminLoginPage() {
                     border: '1px solid rgba(255,255,255,0.15)',
                     borderRadius: '10px',
                     color: 'white',
-                    fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                    fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                     outline: 'none',
                   }}
                   onFocus={(e) => e.target.style.borderColor = 'hsl(150 100% 72% / 0.6)'}
@@ -218,7 +218,7 @@ export default function AdminLoginPage() {
                 background: loading ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
                 color: loading ? 'rgba(255,255,255,0.5)' : 'hsl(165 60% 8%)',
                 border: 'none', borderRadius: '10px', cursor: loading ? 'not-allowed' : 'pointer',
-                fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem',
+                fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.95rem',
                 transition: 'all 0.2s',
               }}
             >
@@ -230,7 +230,7 @@ export default function AdminLoginPage() {
             <a
               href="/az"
               style={{
-                fontFamily: 'Inter, system-ui', fontSize: '0.82rem',
+                fontFamily: 'var(--font-inter), system-ui', fontSize: '0.82rem',
                 color: 'rgba(255,255,255,0.4)', textDecoration: 'none',
               }}
             >

@@ -60,7 +60,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
               }}>
                 <span style={{ fontSize: '1.5rem' }}>🏅</span>
                 <div>
-                  <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>{t('certsBadgeTitle')}</div>
+                  <div style={{ fontFamily: 'var(--font-space-grotesk), sans-serif', fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>{t('certsBadgeTitle')}</div>
                   <div style={{ fontSize: '0.7rem', color: 'hsl(var(--primary))', fontWeight: 500 }}>{t('certsBadgeSub')}</div>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
             {/* Text */}
             <motion.div {...fadeUp(0.15)} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
               <div className="eyebrow">❖ {t('title')}</div>
-              <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', lineHeight: 1.1 }}>
+              <h1 style={{ fontFamily: 'var(--font-space-grotesk), sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', lineHeight: 1.1 }}>
                 {nav('brandName').split(' ')[0]} <span className="text-gradient-mint">{nav('brandName').split(' ').slice(1).join(' ')}</span>
               </h1>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'hsl(var(--foreground)/0.75)' }}>{t('bio1')}</p>
@@ -88,7 +88,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
                     }}>
                       <Icon size={20} color="hsl(var(--primary))" />
                       <div>
-                        <div style={{ fontFamily: 'Space Grotesk,sans-serif', fontWeight: 600, fontSize: '1.25rem', color: 'hsl(var(--primary))' }}>{s.val}</div>
+                        <div style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontWeight: 600, fontSize: '1.25rem', color: 'hsl(var(--primary))' }}>{s.val}</div>
                         <div style={{ fontSize: '0.72rem', color: 'hsl(var(--foreground)/0.65)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t(s.key)}</div>
                       </div>
                     </div>
@@ -110,7 +110,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '2rem', alignItems: 'start' }}>
             {/* Mission */}
             <motion.div {...fadeUp()} className="glass" style={{ padding: '2.5rem', borderRadius: 'var(--radius)' }}>
-              <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
                 🎯 {t('missionTitle')}
               </h2>
               <p style={{ color: 'hsl(var(--foreground)/0.75)', lineHeight: '1.8' }}>{t('missionText1')}</p>
@@ -120,7 +120,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
 
             {/* Services List */}
             <motion.div {...fadeUp(0.1)} className="glass" style={{ padding: '2.5rem', borderRadius: 'var(--radius)' }}>
-              <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1.25rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.5rem', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '1.25rem' }}>
                 💼 {t('servicesTitle')}
               </h2>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -141,7 +141,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
         <div className="container">
           <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>🏆 {t('certsLabel')}</div>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('certsTitle')}</h2>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('certsTitle')}</h2>
           </motion.div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1rem', maxWidth: '900px', margin: '0 auto' }}>
             {(t.raw('certsList') as string[]).map((cert: string, i: number) => (
@@ -158,11 +158,11 @@ export default function AboutClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '2.5rem 0', background: 'hsl(var(--primary)/0.02)' }}>
         <div className="container">
           <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div className="eyebrow" style={{ marginBottom: '1rem' }}>📺 {t('interviewsTitle')}</div>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
-              {t('interviewsTitle')}
+            <div className="eyebrow" style={{ marginBottom: '1rem' }}>📺 {t('InterviewsTitle')}</div>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+              {t('InterviewsTitle')}
             </h2>
-            <p style={{ color: 'hsl(var(--foreground)/0.65)', maxWidth: '700px', margin: '0 auto' }}>{t('interviewsDesc')}</p>
+            <p style={{ color: 'hsl(var(--foreground)/0.65)', maxWidth: '700px', margin: '0 auto' }}>{t('InterviewsDesc')}</p>
           </motion.div>
 
           <div style={{ 
@@ -172,7 +172,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
             maxWidth: '1200px',
             margin: '0 auto'
           }}>
-            {(t.raw('interviews') as { title: string, url: string }[]).map((item, i) => (
+            {(t.raw('Interviews') as { title: string, url: string }[]).map((item, i) => (
               <motion.a 
                 key={i}
                 href={item.url}
@@ -224,7 +224,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '2.5rem 0' }}>
         <div className="container">
           <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('socialTitle')}</h2>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))' }}>{t('socialTitle')}</h2>
             <p style={{ marginTop: '1rem', color: 'hsl(var(--foreground)/0.65)' }}>{t('socialDesc')}</p>
           </motion.div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -248,7 +248,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '2.5rem 0', textAlign: 'center' }}>
         <div className="container">
           <div className="glass" style={{ padding: '2.5rem 1.5rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.1)' }}>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>{ct('title')}</h2>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>{ct('title')}</h2>
             <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>{ct('subtitle')}</p>
             <Link href={`/${locale}/consultation`} className="btn btn-primary btn-lg">
               {ct('button')}

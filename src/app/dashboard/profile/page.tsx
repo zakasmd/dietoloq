@@ -90,14 +90,14 @@ export default function ProfilePage() {
       {/* Page header */}
       <div>
         <h1 style={{
-          fontFamily: 'Space Grotesk, system-ui',
+          fontFamily: 'var(--font-space-grotesk), system-ui',
           fontSize: '1.5rem', fontWeight: 700,
           color: '#0F172A', letterSpacing: '-0.02em',
           marginBottom: '0.375rem',
         }}>
           Profil
         </h1>
-        <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.9rem', color: '#64748B' }}>
+        <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem', color: '#64748B' }}>
           Hesab məlumatlarınızı idarə edin
         </p>
       </div>
@@ -119,17 +119,17 @@ export default function ProfilePage() {
               background: 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: 'hsl(165 60% 8%)',
-              fontFamily: 'Space Grotesk, system-ui',
+              fontFamily: 'var(--font-space-grotesk), system-ui',
               fontSize: '1.5rem', fontWeight: 800,
               flexShrink: 0,
             }}>
               {avatarLetter}
             </div>
             <div>
-              <div style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '1rem', color: '#0F172A' }}>
+              <div style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '1rem', color: '#0F172A' }}>
                 {user?.email}
               </div>
-              <div style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#059669', fontWeight: 600, marginTop: '0.2rem' }}>
+              <div style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.75rem', color: '#059669', fontWeight: 600, marginTop: '0.2rem' }}>
                 ● Aktiv hesab
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function ProfilePage() {
           <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div className="form-group" style={{ margin: 0 }}>
-                <label className="form-label" style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+                <label className="form-label" style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
                   Ad Soyad
                 </label>
                 <div style={{ position: 'relative' }}>
@@ -149,7 +149,7 @@ export default function ProfilePage() {
                       width: '100%', boxSizing: 'border-box',
                       padding: '0.65rem 0.875rem 0.65rem 2.5rem',
                       borderRadius: '8px', border: '1.5px solid #E5E7EB',
-                      fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                      fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                       color: '#1F2937', background: 'white',
                       outline: 'none', transition: 'border-color 0.2s',
                     }}
@@ -161,7 +161,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="form-group" style={{ margin: 0 }}>
-                <label style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+                <label style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
                   Telefon
                 </label>
                 <div style={{ position: 'relative' }}>
@@ -172,7 +172,7 @@ export default function ProfilePage() {
                       width: '100%', boxSizing: 'border-box',
                       padding: '0.65rem 0.875rem 0.65rem 2.5rem',
                       borderRadius: '8px', border: '1.5px solid #E5E7EB',
-                      fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                      fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                       color: '#1F2937', background: 'white',
                       outline: 'none', transition: 'border-color 0.2s',
                     }}
@@ -185,7 +185,7 @@ export default function ProfilePage() {
             </div>
 
             <div>
-              <label style={{ fontFamily: 'Inter, system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
+              <label style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.8rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '0.4rem' }}>
                 E-mail
               </label>
               <div style={{ position: 'relative' }}>
@@ -197,13 +197,13 @@ export default function ProfilePage() {
                     width: '100%', boxSizing: 'border-box',
                     padding: '0.65rem 0.875rem 0.65rem 2.5rem',
                     borderRadius: '8px', border: '1.5px solid #E5E7EB',
-                    fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                    fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                     color: '#6B7280', background: '#F9FAFB',
                     cursor: 'not-allowed',
                   }}
                 />
               </div>
-              <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#9CA3AF', marginTop: '0.3rem' }}>
+              <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.75rem', color: '#9CA3AF', marginTop: '0.3rem' }}>
                 Email dəyişdirilə bilməz
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function ProfilePage() {
                 background: saved ? '#059669' : 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
                 color: saved ? 'white' : 'hsl(165 60% 8%)',
                 border: 'none', borderRadius: '10px', cursor: saving ? 'not-allowed' : 'pointer',
-                fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.9rem',
+                fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.9rem',
                 transition: 'all 0.2s',
                 opacity: saving ? 0.7 : 1,
               }}
@@ -245,11 +245,11 @@ export default function ProfilePage() {
               <div style={{ width: 36, height: 36, borderRadius: '8px', background: '#F0FDF4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <User size={18} color="#059669" />
               </div>
-              <h3 style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A' }}>
+              <h3 style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A' }}>
                 Hesabınız aktifdir
               </h3>
             </div>
-            <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6 }}>
+            <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6 }}>
               Hesabınız uğurla yaradılmışdır. Kurs almaq üçün WhatsApp vasitəsilə müraciət edin.
             </p>
             <a
@@ -262,7 +262,7 @@ export default function ProfilePage() {
                 padding: '0.6rem 1.25rem',
                 background: '#25D366', color: 'white',
                 borderRadius: '8px',
-                fontFamily: 'Inter, system-ui', fontWeight: 600, fontSize: '0.85rem',
+                fontFamily: 'var(--font-inter), system-ui', fontWeight: 600, fontSize: '0.85rem',
                 textDecoration: 'none',
               }}
             >
@@ -277,10 +277,10 @@ export default function ProfilePage() {
             boxShadow: '0 1px 4px rgba(15,23,42,0.08)',
             border: '1px solid #E2E8F0',
           }}>
-            <h3 style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A', marginBottom: '0.625rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A', marginBottom: '0.625rem' }}>
               🔐 Şifrə dəyişmə
             </h3>
-            <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6, marginBottom: '1rem' }}>
+            <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.84rem', color: '#64748B', lineHeight: 1.6, marginBottom: '1rem' }}>
               Yeni şifrənizi daxil edərək dərhal dəyişdirə bilərsiniz.
             </p>
             
@@ -294,7 +294,7 @@ export default function ProfilePage() {
                   width: '100%', boxSizing: 'border-box',
                   padding: '0.65rem 0.875rem',
                   borderRadius: '8px', border: '1.5px solid #E5E7EB',
-                  fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                  fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                   color: '#1F2937', background: 'white',
                   outline: 'none', transition: 'border-color 0.2s',
                 }}
@@ -310,21 +310,21 @@ export default function ProfilePage() {
                   width: '100%', boxSizing: 'border-box',
                   padding: '0.65rem 0.875rem',
                   borderRadius: '8px', border: '1.5px solid #E5E7EB',
-                  fontFamily: 'Inter, system-ui', fontSize: '0.9rem',
+                  fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem',
                   color: '#1F2937', background: 'white',
                   outline: 'none', transition: 'border-color 0.2s',
                 }}
                 onFocus={(e) => e.target.style.borderColor = '#059669'}
                 onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
               />
-              {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: var(--font-inter) }}>{pwError}</div>}
+              {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: 'var(--font-inter)' }}>{pwError}</div>}
               
               {pwSent ? (
                 <div style={{
                   display: 'flex', alignItems: 'center', gap: '0.5rem',
                   padding: '0.625rem 1rem',
                   background: '#F0FDF4', borderRadius: '8px',
-                  fontFamily: 'Inter, system-ui', fontSize: '0.84rem',
+                  fontFamily: 'var(--font-inter), system-ui', fontSize: '0.84rem',
                   color: '#059669', fontWeight: 600,
                 }}>
                   <CheckCircle size={15} /> Şifrəniz uğurla dəyişdirildi!
@@ -339,7 +339,7 @@ export default function ProfilePage() {
                     color: changingPw || !newPassword || !confirmPassword ? '#9CA3AF' : 'hsl(165 60% 8%)',
                     border: 'none',
                     borderRadius: '8px', cursor: changingPw || !newPassword || !confirmPassword ? 'not-allowed' : 'pointer',
-                    fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.85rem',
+                    fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.85rem',
                     transition: 'all 0.2s',
                     width: 'fit-content'
                   }}
