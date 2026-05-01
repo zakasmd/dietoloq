@@ -130,8 +130,8 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
 
             {/* Premium Author Card */}
             <div className="glass-strong blog-author-badge">
-              <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid hsl(var(--primary)/0.4)', padding: '3px', overflow: 'hidden', flexShrink: 0 }}>
-                <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+              <div className="blog-author-image-wrap">
+                <img src="/images/logo.jpg" alt="Leyla Zülfüqarlı" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'hsl(var(--foreground))', marginBottom: '0.1rem' }}>Dr. Leyla Zülfüqarlı</div>

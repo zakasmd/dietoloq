@@ -107,8 +107,8 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         {/* Author Header */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                          <div style={{ width: 40, height: 40, borderRadius: '50%', border: '2px solid hsl(var(--primary)/0.3)', padding: '2px', overflow: 'hidden' }}>
-                            <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                          <div className="blog-author-image-wrap">
+                            <img src="/images/logo.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Dr. Leyla Zülfüqarlı</span>
