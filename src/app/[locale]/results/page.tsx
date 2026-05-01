@@ -26,6 +26,7 @@ export default function ResultsPage() {
     { id: 6, title: t('case6Title'), goal: t('case6Goal'), video: 'https://www.youtube.com/embed/jTspMwR0xIY' },
     { id: 7, title: t('case7Title'), goal: t('case7Goal'), image: '/images/results/result-1.jpeg' },
     { id: 8, title: t('case8Title'), goal: t('case8Goal'), image: '/images/results/result-2.jpeg' },
+    { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 9, title: t('case9Title'), goal: t('case9Goal'), image: '/images/results/result-3.jpeg' },
     { id: 10, title: t('case10Title'), goal: t('case10Goal'), image: '/images/results/result-4.jpeg' },
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
