@@ -158,11 +158,11 @@ export default function AboutClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '2.5rem 0', background: 'hsl(var(--primary)/0.02)' }}>
         <div className="container">
           <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div className="eyebrow" style={{ marginBottom: '1rem' }}>📺 {t('InterviewsTitle')}</div>
+            <div className="eyebrow" style={{ marginBottom: '1rem' }}>📺 {t('interviewsTitle')}</div>
             <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
-              {t('InterviewsTitle')}
+              {t('interviewsTitle')}
             </h2>
-            <p style={{ color: 'hsl(var(--foreground)/0.65)', maxWidth: '700px', margin: '0 auto' }}>{t('InterviewsDesc')}</p>
+            <p style={{ color: 'hsl(var(--foreground)/0.65)', maxWidth: '700px', margin: '0 auto' }}>{t('interviewsDesc')}</p>
           </motion.div>
 
           <div style={{ 
@@ -172,7 +172,7 @@ export default function AboutClientPage({ locale }: { locale: string }) {
             maxWidth: '1200px',
             margin: '0 auto'
           }}>
-            {(t.raw('Interviews') as { title: string, url: string }[]).map((item, i) => (
+            {(t.raw('interviews') as { title: string, url: string }[]).map((item, i) => (
               <motion.a 
                 key={i}
                 href={item.url}
