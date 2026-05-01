@@ -103,7 +103,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                   }}
                 >
                   <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }} className="blog-card-padding">
-                    <div className="blog-card-grid">
+                    <div className={`blog-card-grid ${!post.image_url ? 'no-image' : ''}`}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         {/* Author Header */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>

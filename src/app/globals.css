@@ -436,6 +436,10 @@
   align-items: center !important;
 }
 
+.blog-card-grid.no-image {
+  grid-template-columns: 1fr !important;
+}
+
 .blog-card-image {
   width: 320px !important;
   height: 320px !important;
