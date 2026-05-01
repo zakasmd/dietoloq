@@ -1,3 +1,8 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import Link from 'next/link';
 import styles from './AdminDashboard.module.css';
 
 export default function AdminPage() {
