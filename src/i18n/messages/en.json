@@ -128,8 +128,8 @@
     "ctaButton": "Get a Consultation"
   },
   "results": {
-    "title": "Real Results",
-    "subtitle": "Transformation stories from our clients",
+    "title": "Results",
+    "subtitle": "Transformation stories of our patients",
     "eyebrow": "Results",
     "beforeLabel": "Before",
     "afterLabel": "After",
@@ -245,7 +245,7 @@
     "items": [
       {
         "name": "Ms. Narmina",
-        "text": "I had been suffering from obesity for 9-10 years. I could no longer walk and was having great difficulty. Although I applied to many places, I couldn't get results. Thanks to Ms. Leyla's personalized program, I lost exactly 30 kg in 4 months! Now I feel very light.",
+        "text": "I had been suffering from obesity for 9-10 years. I could no longer walk and was having great difficulty. Although I applied to many places, I couldn't get results. Thanks to Ms. Leyla's personalized program, I lost exactly 30 kg in 4 months! Now I feel very healthy.",
         "result": "-30 kg / 4 months",
         "avatar": "👩"
       },

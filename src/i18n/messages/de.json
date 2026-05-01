@@ -128,8 +128,8 @@
     "ctaButton": "Beratung erhalten"
   },
   "results": {
-    "title": "Echte Ergebnisse",
-    "subtitle": "Erfolgsgeschichten unserer Kunden",
+    "title": "Ergebnisse",
+    "subtitle": "Transformationsgeschichten unserer Patienten",
     "eyebrow": "Ergebnisse",
     "beforeLabel": "Vorher",
     "afterLabel": "Nachher",
@@ -245,7 +245,7 @@
     "items": [
       {
         "name": "Nermine",
-        "text": "Ich litt 9-10 Jahre lang an Fettleibigkeit. Ich konnte kaum noch gehen und hatte große Probleme. Ich habe vieles versucht, aber ohne Erfolg. Dank Leylas persönlichem Programm habe ich in 4 Monaten genau 30 kg verloren! Ich fühle mich jetzt so leicht.",
+        "text": "Ich litt 9-10 Jahre lang an Fettleibigkeit. Ich konnte nicht mehr gehen und hatte große Schwierigkeiten. Obwohl ich mich an viele Stellen gewandt habe, konnte ich keine Ergebnisse erzielen. Dank des personalisierten Programms von Frau Leyla habe ich in 4 Monaten genau 30 kg abgenommen! Jetzt fühle ich mich sehr gesund.",
         "result": "-30 kg / 4 Monate",
         "avatar": "👩"
       },
