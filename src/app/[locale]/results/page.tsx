@@ -30,7 +30,7 @@ export default function ResultsPage() {
     { id: 9, title: t('case9Title'), goal: t('case9Goal'), image: '/images/results/result-3.jpeg' },
     { id: 10, title: t('case10Title'), goal: t('case10Goal'), image: '/images/results/result-4.jpeg' },
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
-    { id: 13, title: t('case13Title'), goal: t('case13Goal'), image: '/images/results/result-6.png' },
+    { id: 13, title: t('case13Title'), goal: t('case13Goal'), image: '/images/results/result-6.jpg' },
   ];
 
   const totalPages = Math.ceil(results.length / itemsPerPage);
