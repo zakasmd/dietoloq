@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -67,9 +67,9 @@
     position: relative;
   }
 
-  /* iOS Safari input zoom fix — font-size must be >= 16px on inputs */
+  /* Prevent automatic zoom on mobile for all inputs */
   @media (max-width: 768px) {
-    input, textarea, select {
+    input, select, textarea {
       font-size: 16px !important;
     }
   }
@@ -90,7 +90,7 @@
     overflow-x: hidden;
   }
 
-  /* Subtle grain texture — premium feel */
+  /* Subtle grain texture â€” premium feel */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -172,7 +172,7 @@
     padding-bottom: 6rem;
   }
 
-/* ── Mobile: drastically reduce section gaps ── */
+/* â”€â”€ Mobile: drastically reduce section gaps â”€â”€ */
 @media (max-width: 768px) {
   .section {
     padding-top: 2rem;
@@ -574,10 +574,9 @@
   }
 }
 
- / *   P r e v e n t   a u t o m a t i c   z o o m   o n   m o b i l e   f o r   a l l   i n p u t s   * / 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-     i n p u t ,   s e l e c t ,   t e x t a r e a   { 
-         f o n t - s i z e :   1 6 p x   ! i m p o r t a n t ; 
-     } 
- }  
- 
+/* Prevent automatic zoom on mobile for all inputs */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}

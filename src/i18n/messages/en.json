@@ -63,7 +63,10 @@
     "stat2": "15+",
     "stat2Label": "Years Experience",
     "stat3": "55+",
-    "stat3Label": "Certificates"
+    "stat3Label": "Certificates",
+    "stat4": "100+",
+    "stat4Label": "Successful Seminar",
+    "doctorNameFull": "Dietitian, Nutritionist, Functional Medicine and Anti Age specialist Dr. Leyla Zulfugarli"
   },
   "services": {
     "title": "Services",
@@ -71,32 +74,58 @@
     "items": {
       "weightLoss": {
         "title": "Weight Loss Program",
-        "desc": "Individual weight loss and weight reduction diet programs. We ensure you reach your goal with a completely science-based approach without sports or hunger. We accelerate your metabolism with the principle 'Our enemy is not fat, but sugar'."
+        "desc": "Individual weight loss and weight reduction diet programs. We ensure you reach your goal with a completely science-based approach without sports or hunger. We accelerate your metabolism with the principle 'Our enemy is not fat, but sugar'.",
+        "f1": "Personalized calorie calculation",
+        "f2": "Weekly menu plan",
+        "f3": "Water intake plan",
+        "f4": "Result tracking"
       },
       "weightGain": {
         "title": "Weight Gain",
-        "desc": "Specially prepared healthy weight gain and nutrition plans for those who want to gain weight. We help you reach your ideal weight by increasing muscle and healthy fat mass without harmful products."
+        "desc": "Specially prepared healthy weight gain and nutrition plans for those who want to gain weight. We help you reach your ideal weight by increasing muscle and healthy fat mass without harmful products.",
+        "f1": "High-calorie plan",
+        "f2": "Protein optimization",
+        "f3": "Regular monitoring",
+        "f4": "Personalized approach"
       },
       "antiAging": {
         "title": "Anti-Ageing & Nutrition",
-        "desc": "Special anti-aging nutrition recommendations and expert guidance in nutrition. Cellular rejuvenating nutrition program improving skin health and rejuvenating the body."
+        "desc": "Special anti-aging nutrition recommendations and expert guidance in nutrition. Cellular rejuvenating nutrition program improving skin health and rejuvenating the body.",
+        "f1": "Antioxidant plan",
+        "f2": "Skin health",
+        "f3": "Hormone balance",
+        "f4": "Youthful nutrition"
       },
       "consultation": {
         "title": "Weight Loss with Author's Methodology",
-        "desc": "It is possible to lose 8-10-12 kg of pure fat mass per month with Dr. Leyla Zulfugarli's private author's methodology. Fast results without sports and hunger."
+        "desc": "It is possible to lose 8-10-12 kg of pure fat mass per month with Dr. Leyla Zulfugarli's private author's methodology. Fast results without sports and hunger.",
+        "f1": "8-12 kg fat loss",
+        "f2": "Author's methodology",
+        "f3": "Weight loss without sports",
+        "f4": "Cellular renewal"
       },
       "detox": {
         "title": "Detox Program",
-        "desc": "Body cleansing program from harmful toxins, renewing the body with special detox tea and nutrition. Effective 7-day cleansing and energy recovery based on Swiss experience."
+        "desc": "Body cleansing program from harmful toxins, renewing the body with special detox tea and nutrition. Effective 7-day cleansing and energy recovery based on Swiss experience.",
+        "f1": "Detox tea",
+        "f2": "Weekly program",
+        "f3": "Body cleansing",
+        "f4": "Nutrition plan"
       },
       "media": {
         "title": "IV Therapy",
-        "desc": "The most effective way to deliver nutrients, vitamins, and minerals to body tissues through direct infusion into the blood circulation. Increases energy and strengthens immunity."
+        "desc": "The most effective way to deliver nutrients, vitamins, and minerals to body tissues through direct infusion into the blood circulation. Increases energy and strengthens immunity.",
+        "f1": "Vitamin infusion",
+        "f2": "Immunity strengthening",
+        "f3": "Energy recovery",
+        "f4": "100% absorption"
       }
     },
-    "viewMore": "Read more",
     "learnMore": "Read more",
-    "cta": "Book an Examination"
+    "popular": "Popular",
+    "ctaTitle": "Which service is for you?",
+    "ctaSubtitle": "Let's discuss your individual plan in the first consultation",
+    "ctaButton": "Get a Consultation"
   },
   "results": {
     "title": "Results",
