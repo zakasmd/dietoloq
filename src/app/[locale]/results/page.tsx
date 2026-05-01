@@ -21,12 +21,12 @@ export default function ResultsPage() {
     { id: 1, title: t('case1Title'), goal: t('case1Goal'), video: 'https://www.youtube.com/embed/Qq0KKjlfw2A' },
     { id: 2, title: t('case2Title'), goal: t('case2Goal'), video: 'https://www.youtube.com/embed/IJM9V7uJHHo' },
     { id: 3, title: t('case3Title'), goal: t('case3Goal'), video: 'https://www.youtube.com/embed/1zQK8Wn1xag' },
+    { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 4, title: t('case4Title'), goal: t('case4Goal'), video: 'https://www.youtube.com/embed/n_pp1dwXl6Y' },
     { id: 5, title: t('case5Title'), goal: t('case5Goal'), video: 'https://www.youtube.com/embed/eaZbsC4gZko' },
     { id: 6, title: t('case6Title'), goal: t('case6Goal'), video: 'https://www.youtube.com/embed/jTspMwR0xIY' },
     { id: 7, title: t('case7Title'), goal: t('case7Goal'), image: '/images/results/result-1.jpeg' },
     { id: 8, title: t('case8Title'), goal: t('case8Goal'), image: '/images/results/result-2.jpeg' },
-    { id: 12, title: t('case12Title'), goal: t('case12Goal'), video: 'https://www.youtube.com/embed/59hTYRsYxPE' },
     { id: 9, title: t('case9Title'), goal: t('case9Goal'), image: '/images/results/result-3.jpeg' },
     { id: 10, title: t('case10Title'), goal: t('case10Goal'), image: '/images/results/result-4.jpeg' },
     { id: 11, title: t('case11Title'), goal: t('case11Goal'), image: '/images/results/result-5.jpeg' },
@@ -134,7 +134,7 @@ export default function ResultsPage() {
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
                 className="glass"
-                style={{ padding: '0.75rem 1.25rem', borderRadius: '1rem', cursor: currentPage === 1 ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }}
+                style={{ padding: '0.75rem 1.25rem', borderRadius: '1rem', cursor: currentPage === 1 ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1, color: 'white' }}
               >
                 ←
               </button>
@@ -153,7 +153,9 @@ export default function ResultsPage() {
                     justifyContent: 'center',
                     fontWeight: 600,
                     border: 'none',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    color: currentPage === i + 1 ? 'white' : 'white', // Ensure numbers are white
+                    backgroundColor: currentPage === i + 1 ? 'hsl(var(--primary))' : 'rgba(255,255,255,0.1)'
                   }}
                 >
                   {i + 1}
@@ -163,7 +165,7 @@ export default function ResultsPage() {
                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
                 className="glass"
-                style={{ padding: '0.75rem 1.25rem', borderRadius: '1rem', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', opacity: currentPage === totalPages ? 0.5 : 1 }}
+                style={{ padding: '0.75rem 1.25rem', borderRadius: '1rem', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', opacity: currentPage === totalPages ? 0.5 : 1, color: 'white' }}
               >
                 →
               </button>
