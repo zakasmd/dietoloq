@@ -317,7 +317,7 @@ export default function ProfilePage() {
                 onFocus={(e) => e.target.style.borderColor = '#059669'}
                 onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
               />
-              {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: 'Inter' }}>{pwError}</div>}
+              {pwError && <div style={{ color: '#EF4444', fontSize: '0.8rem', fontFamily: var(--font-inter) }}>{pwError}</div>}
               
               {pwSent ? (
                 <div style={{

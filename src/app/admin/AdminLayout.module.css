@@ -17,10 +17,10 @@
 
 .logo { display: flex; align-items: center; gap: 0.625rem; }
 .logoName {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-weight: 700; font-size: 0.95rem; color: white; letter-spacing: -0.01em;
 }
-.logoSub { font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+.logoSub { font-family: var(--font-inter), system-ui, sans-serif; font-size: 0.65rem; color: rgba(255,255,255,0.4); }
 
 .closeBtn {
   display: none; background: none; border: none;
@@ -33,7 +33,7 @@
   display: flex; align-items: center; gap: 0.75rem;
   padding: 0.75rem 1rem; border-radius: 10px;
   color: rgba(255,255,255,0.55); text-decoration: none;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease;
 }
 .navItem:hover { background: rgba(255,255,255,0.06); color: white; }
@@ -49,7 +49,7 @@
 }
 
 .dashLink {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none;
   padding: 0.5rem 1rem;
 }
@@ -59,7 +59,7 @@
   display: flex; align-items: center; gap: 0.5rem; width: 100%;
   padding: 0.625rem 1rem; background: none; border: none;
   color: rgba(255,255,255,0.4);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.8rem; cursor: pointer;
   border-radius: 10px; transition: all 0.2s ease;
 }
@@ -84,13 +84,13 @@
 .menuBtn:hover { background: #F1F5F9; }
 
 .topbarTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-weight: 700; font-size: 1.05rem; color: #0F172A;
   letter-spacing: -0.01em;
 }
 .siteLink {
   margin-left: auto;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.825rem; color: hsl(150 80% 35%); text-decoration: none; font-weight: 600;
 }
 .siteLink:hover { color: hsl(150 80% 25%); }

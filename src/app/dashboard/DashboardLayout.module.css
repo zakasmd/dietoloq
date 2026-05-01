@@ -57,7 +57,7 @@
 }
 
 .logoName {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   color: white;
@@ -65,7 +65,7 @@
 }
 
 .logoSub {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.65rem;
   color: hsl(150 100% 72% / 0.7);
   font-weight: 500;
@@ -98,13 +98,13 @@
   justify-content: center;
   color: hsl(165 60% 8%);
   font-weight: 700;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 1rem;
   flex-shrink: 0;
 }
 
 .userName {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: white;
@@ -115,7 +115,7 @@
 }
 
 .userEmail {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.72rem;
   color: rgba(255,255,255,0.4);
   white-space: nowrap;
@@ -140,7 +140,7 @@
   border-radius: 10px;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -175,7 +175,7 @@
   padding: 0.75rem 1rem;
   border-radius: 10px;
   color: rgba(255,255,255,0.5);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -224,7 +224,7 @@
 .menuBtn:hover { background: #F1F5F9; }
 
 .topbarTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   color: #0F172A;
@@ -233,7 +233,7 @@
 
 .siteLink {
   margin-left: auto;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.825rem;
   color: #059669;
   text-decoration: none;

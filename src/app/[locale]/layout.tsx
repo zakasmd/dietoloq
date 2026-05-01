@@ -3,10 +3,23 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import '@/app/globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+});
 
 type Locale = 'az' | 'ru' | 'en' | 'de';
 
@@ -89,10 +102,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      {/* Static background — no animation loop for performance */}
-      <div style={{
-        position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none',
+    <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className={inter.className}>
+        <NextIntlClientProvider messages={messages}>
+          {/* Static background — no animation loop for performance */}
+          <div style={{
+            position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none',
         background: [
           'radial-gradient(ellipse 60% 50% at 10% 5%, hsl(150 80% 30% / 0.35) 0%, transparent 60%)',
           'radial-gradient(ellipse 55% 55% at 85% 85%, hsl(175 85% 35% / 0.30) 0%, transparent 60%)',
@@ -105,6 +120,8 @@ export default async function LocaleLayout({
         <Footer />
         <WhatsAppButton />
       </div>
-    </NextIntlClientProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

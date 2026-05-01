@@ -42,7 +42,7 @@
 }
 
 .cardTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
   color: hsl(var(--foreground));
@@ -64,7 +64,7 @@
   font-weight: 600;
   color: hsl(var(--primary));
   text-decoration: none;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   transition: gap 0.2s ease;
   margin-top: 0.5rem;
 }

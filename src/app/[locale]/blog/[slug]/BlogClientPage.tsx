@@ -165,7 +165,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
               color: hsl(var(--foreground));
             }
             .blog-content-area h1, .blog-content-area h2, .blog-content-area h3 {
-              font-family: 'Space Grotesk', sans-serif;
+              font-family: var(--font-space-grotesk), sans-serif;
               margin-top: 2rem;
               margin-bottom: 1rem;
               color: hsl(var(--foreground));
