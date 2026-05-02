@@ -94,7 +94,7 @@ function CoursesContent() {
     return (
       <div style={{ textAlign: 'center', padding: '4rem', color: '#64748B' }}>
         <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⏳</div>
-        <p style={{ fontFamily: 'Inter, system-ui' }}>Kurslar yüklənir...</p>
+        <p style={{ fontFamily: 'var(--font-inter), system-ui' }}>Kurslar yüklənir...</p>
       </div>
     );
   }
@@ -107,10 +107,10 @@ function CoursesContent() {
         border: '1px solid #E2E8F0',
       }}>
         <div style={{ fontSize: '4rem', marginBottom: '1.25rem' }}>🎓</div>
-        <h2 style={{ fontFamily: 'Space Grotesk, system-ui', fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>
+        <h2 style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontSize: '1.35rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.75rem' }}>
           Hələ kursunuz yoxdur
         </h2>
-        <p style={{ fontFamily: 'Inter, system-ui', color: '#64748B', marginBottom: '2rem', maxWidth: '360px', margin: '0 auto 2rem', lineHeight: 1.6 }}>
+        <p style={{ fontFamily: 'var(--font-inter), system-ui', color: '#64748B', marginBottom: '2rem', maxWidth: '360px', margin: '0 auto 2rem', lineHeight: 1.6 }}>
           Kurs almaq üçün WhatsApp-da bizimlə əlaqə saxlayın.
         </p>
         <a
@@ -122,7 +122,7 @@ function CoursesContent() {
             padding: '0.75rem 1.5rem',
             background: '#25D366', color: 'white',
             borderRadius: '10px',
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontWeight: 700, fontSize: '0.9rem',
             textDecoration: 'none',
           }}
@@ -150,7 +150,7 @@ function CoursesContent() {
                 borderColor: selectedCourse?.id === course.id ? '#059669' : '#E2E8F0',
                 background: selectedCourse?.id === course.id ? '#059669' : 'white',
                 color: selectedCourse?.id === course.id ? 'white' : '#334155',
-                fontFamily: 'Space Grotesk, system-ui',
+                fontFamily: 'var(--font-space-grotesk), system-ui',
                 fontWeight: 600,
                 fontSize: '0.875rem',
                 cursor: 'pointer',
@@ -192,13 +192,13 @@ function CoursesContent() {
               ) : (
                 <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.4)' }}>
                   <Lock size={36} style={{ marginBottom: '1rem' }} />
-                  <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.9rem' }}>Video mövcud deyil</p>
+                  <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem' }}>Video mövcud deyil</p>
                 </div>
               )
             ) : (
               <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.3)' }}>
                 <Play size={56} style={{ marginBottom: '1rem' }} />
-                <p style={{ fontFamily: 'Inter, system-ui', fontSize: '0.95rem' }}>
+                <p style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.95rem' }}>
                   Sağ tərəfdən dərs seçin
                 </p>
               </div>
@@ -215,10 +215,10 @@ function CoursesContent() {
               display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap',
             }}>
               <div>
-                <div style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#059669', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
+                <div style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.75rem', color: '#059669', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
                   İzlənir
                 </div>
-                <h2 style={{ fontFamily: 'Space Grotesk, system-ui', fontSize: '1.05rem', fontWeight: 600, color: '#0F172A', letterSpacing: '-0.01em' }}>
+                <h2 style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontSize: '1.05rem', fontWeight: 600, color: '#0F172A', letterSpacing: '-0.01em' }}>
                   {activeLesson.title_az}
                 </h2>
               </div>
@@ -233,7 +233,7 @@ function CoursesContent() {
                     background: '#F0FDF4', color: '#059669',
                     border: '1px solid #BBF7D0',
                     borderRadius: '8px',
-                    fontFamily: 'Inter, system-ui',
+                    fontFamily: 'var(--font-inter), system-ui',
                     fontWeight: 600, fontSize: '0.85rem',
                     textDecoration: 'none',
                     whiteSpace: 'nowrap',
@@ -261,10 +261,10 @@ function CoursesContent() {
           }}>
             <BookOpen size={18} color="#059669" />
             <div>
-              <div style={{ fontFamily: 'Space Grotesk, system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A', letterSpacing: '-0.01em' }}>
+              <div style={{ fontFamily: 'var(--font-space-grotesk), system-ui', fontWeight: 700, fontSize: '0.95rem', color: '#0F172A', letterSpacing: '-0.01em' }}>
                 {selectedCourse?.title_az}
               </div>
-              <div style={{ fontFamily: 'Inter, system-ui', fontSize: '0.75rem', color: '#64748B' }}>
+              <div style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.75rem', color: '#64748B' }}>
                 {lessonsLoading ? 'Yüklənir...' : `${lessons.length} dərs`}
               </div>
             </div>
@@ -272,11 +272,11 @@ function CoursesContent() {
 
           <div style={{ maxHeight: '460px', overflowY: 'auto' }}>
             {lessonsLoading ? (
-              <div style={{ padding: '2rem', textAlign: 'center', color: '#94A3B8', fontFamily: 'Inter, system-ui', fontSize: '0.875rem' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', color: '#94A3B8', fontFamily: 'var(--font-inter), system-ui', fontSize: '0.875rem' }}>
                 Dərslər yüklənir...
               </div>
             ) : lessons.length === 0 ? (
-              <div style={{ padding: '2rem', textAlign: 'center', color: '#94A3B8', fontFamily: 'Inter, system-ui', fontSize: '0.875rem' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', color: '#94A3B8', fontFamily: 'var(--font-inter), system-ui', fontSize: '0.875rem' }}>
                 Dərs hələ əlavə edilməyib
               </div>
             ) : (
@@ -311,7 +311,7 @@ function CoursesContent() {
                       width: 32, height: 32, borderRadius: '50%',
                       background: isActive ? '#059669' : '#F1F5F9',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: 'Space Grotesk, system-ui',
+                      fontFamily: 'var(--font-space-grotesk), system-ui',
                       fontSize: '0.8rem', fontWeight: 700,
                       color: isActive ? 'white' : '#64748B',
                       flexShrink: 0,
@@ -322,7 +322,7 @@ function CoursesContent() {
                     {/* Title + duration */}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{
-                        fontFamily: 'Inter, system-ui',
+                        fontFamily: 'var(--font-inter), system-ui',
                         fontSize: '0.875rem', fontWeight: isActive ? 600 : 500,
                         color: isActive ? '#059669' : '#1E293B',
                         whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
@@ -332,7 +332,7 @@ function CoursesContent() {
                       {lesson.duration_minutes && (
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.2rem' }}>
                           <Clock size={11} color="#94A3B8" />
-                          <span style={{ fontFamily: 'Inter, system-ui', fontSize: '0.72rem', color: '#94A3B8' }}>
+                          <span style={{ fontFamily: 'var(--font-inter), system-ui', fontSize: '0.72rem', color: '#94A3B8' }}>
                             {lesson.duration_minutes} dəq
                           </span>
                         </div>
@@ -354,7 +354,7 @@ function CoursesContent() {
           href="/dashboard"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-            fontFamily: 'Inter, system-ui',
+            fontFamily: 'var(--font-inter), system-ui',
             fontSize: '0.85rem', color: '#64748B',
             textDecoration: 'none',
           }}
@@ -372,7 +372,7 @@ export default function CoursesPage() {
     <Suspense fallback={
       <div style={{ textAlign: 'center', padding: '4rem', color: '#64748B' }}>
         <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⏳</div>
-        <p style={{ fontFamily: 'Inter, system-ui' }}>Yüklənir...</p>
+        <p style={{ fontFamily: 'var(--font-inter), system-ui' }}>Yüklənir...</p>
       </div>
     }>
       <CoursesContent />

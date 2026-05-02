@@ -138,7 +138,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                 background: '#25D366',
                 color: 'white',
                 borderRadius: '12px',
-                fontFamily: 'Space Grotesk, system-ui',
+                fontFamily: 'var(--font-space-grotesk), system-ui',
                 fontWeight: 700,
                 fontSize: '1rem',
                 textDecoration: 'none',
@@ -179,7 +179,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                     <input
                       {...register('full_name')}
                       className="form-input"
-                      placeholder="Ad Soyad"
+                      placeholder={t('fullName')}
                     />
                     {errors.full_name && <span className="form-error">{errors.full_name.message}</span>}
                   </div>
@@ -189,7 +189,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                     <input
                       {...register('phone')}
                       className="form-input"
-                      placeholder="+994 XX XXX XX XX"
+                      placeholder={t('phone')}
                       type="tel"
                     />
                     {errors.phone && <span className="form-error">{errors.phone.message}</span>}
@@ -200,7 +200,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                     <input
                       {...register('email')}
                       className="form-input"
-                      placeholder="email@example.com"
+                      placeholder={t('email')}
                       type="email"
                     />
                     {errors.email && <span className="form-error">{errors.email.message}</span>}
@@ -211,7 +211,7 @@ export default function ConsultationClientPage({ locale }: { locale: string }) {
                     <input
                       {...register('age')}
                       className="form-input"
-                      placeholder="25"
+                      placeholder={t('age')}
                       type="number"
                       min="10"
                       max="100"

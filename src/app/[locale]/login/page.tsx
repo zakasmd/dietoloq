@@ -207,7 +207,7 @@ function LoginContent() {
                   {...regForm.register('full_name', { required: true, minLength: 2 })}
                   className="form-input"
                   style={{ paddingLeft: '2.75rem' }}
-                  placeholder="Ad Soyad"
+                  placeholder={tr('fullName')}
                   autoComplete="name"
                 />
               </div>
@@ -307,7 +307,7 @@ export default function LoginPage() {
   return (
     <Suspense fallback={
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ color: 'hsl(var(--primary))', fontFamily: 'Space Grotesk,sans-serif' }}>Yüklənir...</div>
+        <div style={{ color: 'hsl(var(--primary))', fontFamily: 'var(--font-space-grotesk),sans-serif' }}>Yüklənir...</div>
       </div>
     }>
       <LoginContent />

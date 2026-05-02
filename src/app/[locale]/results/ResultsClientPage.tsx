@@ -70,7 +70,7 @@ export default function ResultsClientPage({ locale }: { locale: string }) {
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>📊 {t('eyebrow')}</div>
-            <h1 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 300, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('title')}
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'hsl(var(--foreground)/0.7)', maxWidth: '520px', margin: '0 auto' }}>
@@ -95,7 +95,7 @@ export default function ResultsClientPage({ locale }: { locale: string }) {
                 style={{ padding: '1.5rem', borderRadius: 'var(--radius)', textAlign: 'center' }}
               >
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{s.icon}</div>
-                <div style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.75rem', fontWeight: 700, color: 'hsl(var(--primary))', marginBottom: '0.25rem' }}>{s.val}</div>
+                <div style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.75rem', fontWeight: 700, color: 'hsl(var(--primary))', marginBottom: '0.25rem' }}>{s.val}</div>
                 <div style={{ fontSize: '0.8rem', color: 'hsl(var(--foreground)/0.6)', fontWeight: 500 }}>{s.label}</div>
               </motion.div>
             ))}
@@ -140,7 +140,7 @@ export default function ResultsClientPage({ locale }: { locale: string }) {
                     <div style={{ marginBottom: '0.75rem' }}>
                       <span style={{ fontSize: '0.75rem', background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))', padding: '0.35rem 0.85rem', borderRadius: 20, fontWeight: 600 }}>{r.goal}</span>
                     </div>
-                    <h3 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--foreground))', lineHeight: 1.4, margin: 0 }}>
+                    <h3 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--foreground))', lineHeight: 1.4, margin: 0 }}>
                       {r.title}
                     </h3>
                   </div>
@@ -200,7 +200,7 @@ export default function ResultsClientPage({ locale }: { locale: string }) {
       <section style={{ padding: '0 0 5rem', textAlign: 'center' }}>
         <div className="container">
           <div className="glass" style={{ padding: '4rem 2rem', borderRadius: 'var(--radius)', background: 'hsl(var(--primary)/0.08)' }}>
-            <h2 style={{ fontFamily: 'Space Grotesk,sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-space-grotesk),sans-serif', fontSize: 'clamp(1.5rem,3vw,2.25rem)', fontWeight: 300, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>
               {t('ctaTitle')}
             </h2>
             <p style={{ color: 'hsl(var(--foreground)/0.7)', marginBottom: '2rem' }}>{t('ctaSubtitle')}</p>

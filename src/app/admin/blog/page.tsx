@@ -1,4 +1,36 @@
+'use client';
+
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { useForm, Controller } from 'react-hook-form';
+import dynamic from 'next/dynamic';
+import { 
+  Plus, X, Save, Edit2, Trash2, ExternalLink, 
+  Image as ImageIcon, Video, Loader2, Upload 
+} from 'lucide-react';
 import styles from './AdminBlog.module.css';
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { 
+  ssr: false,
+  loading: () => <div style={{ height: '250px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }} />
+});
+import 'react-quill-new/dist/quill.snow.css';
+
+interface BlogPost {
+  id: string;
+  title_az: string;
+  title_ru?: string;
+  title_en?: string;
+  content_az: string;
+  content_ru?: string;
+  content_en?: string;
+  image_url: string;
+  youtube_url?: string;
+  category: string;
+  slug: string;
+  created_at: string;
+}
 
 export default function AdminBlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);

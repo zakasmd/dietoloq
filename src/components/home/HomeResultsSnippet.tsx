@@ -19,7 +19,7 @@ export default function HomeResultsSnippet() {
           >
             <div className="eyebrow" style={{ marginBottom: '1rem' }}>🏆 {t('eyebrow')}</div>
             <h2 style={{ 
-              fontFamily: 'Space Grotesk, sans-serif', 
+              fontFamily: 'var(--font-space-grotesk), sans-serif', 
               fontSize: 'clamp(1.75rem, 5vw, 3.5rem)', 
               fontWeight: 300, 
               marginBottom: '1.5rem', 
@@ -61,7 +61,7 @@ export default function HomeResultsSnippet() {
                 <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'hsl(var(--primary))', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'hsl(var(--primary)/0.1)', padding: '0.4rem 1rem', borderRadius: '100px', display: 'inline-block', marginBottom: '1rem' }}>
                   {t('case3Goal')}
                 </span>
-                <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', fontWeight: 400, lineHeight: 1.3, color: 'hsl(var(--foreground))' }}>
+                <h3 style={{ fontFamily: 'var(--font-space-grotesk), sans-serif', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', fontWeight: 400, lineHeight: 1.3, color: 'hsl(var(--foreground))' }}>
                   {t('case3Title')}
                 </h3>
               </div>

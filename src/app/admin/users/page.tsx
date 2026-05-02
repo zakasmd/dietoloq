@@ -1,4 +1,17 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
 import styles from './AdminUsers.module.css';
+
+interface User {
+  id: string;
+  email: string | null;
+  full_name: string | null;
+  phone: string | null;
+  role: string;
+  created_at: string;
+}
 
 export default function UsersAdminPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -120,8 +133,8 @@ export default function UsersAdminPage() {
                   <td style={{ padding: '1rem 1.25rem', fontSize: '0.775rem', color: 'var(--color-text-muted)' }}>{new Date(user.created_at).toLocaleDateString('az-AZ')}</td>
                   <td style={{ padding: '1rem 1.25rem' }}>
                     <div style={{ display: 'flex', gap: '0.4rem' }}>
-                      <button className="btn btn-primary btn-sm" onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'course' })}>🎓 Kurs</button>
-                      <button className="btn btn-outline btn-sm" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'material' })}>📄 PDF</button>
+                      <button className="btn btn-primary btn-sm" onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email || 'Adsız', type: 'course' })}>🎓 Kurs</button>
+                      <button className="btn btn-outline btn-sm" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email || 'Adsız', type: 'material' })}>📄 PDF</button>
                     </div>
                   </td>
                 </tr>
@@ -151,8 +164,8 @@ export default function UsersAdminPage() {
                 <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>📅 {new Date(user.created_at).toLocaleDateString('az-AZ')}</div>
               </div>
               <div className={styles.cardActions}>
-                <button className="btn btn-primary btn-sm" onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'course' })}>🎓 Kurs ver</button>
-                <button className="btn btn-outline btn-sm" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email, type: 'material' })}>📄 PDF ver</button>
+                <button className="btn btn-primary btn-sm" onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email || 'Adsız', type: 'course' })}>🎓 Kurs ver</button>
+                <button className="btn btn-outline btn-sm" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }} onClick={() => setGrantModal({ userId: user.id, userName: user.full_name || user.email || 'Adsız', type: 'material' })}>📄 PDF ver</button>
               </div>
             </div>
           ))}

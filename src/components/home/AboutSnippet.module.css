@@ -73,7 +73,7 @@
 }
 
 .certTitle {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: hsl(var(--foreground));
@@ -95,7 +95,7 @@
 }
 
 .title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   line-height: 1.1;
@@ -139,7 +139,7 @@
 .statIcon { font-size: 1.5rem; }
 
 .statVal {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: hsl(var(--primary));

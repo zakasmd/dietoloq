@@ -1,4 +1,21 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { 
+  Upload, FileText, Globe, Lock, 
+  Users as UsersIcon, Trash2, X, UserMinus 
+} from 'lucide-react';
 import styles from './AdminBooks.module.css';
+
+interface Material {
+  id: string;
+  title_az: string;
+  description_az: string | null;
+  file_url: string;
+  is_public: boolean;
+  created_at: string;
+}
 
 export default function BooksAdminPage() {
   const [materials, setMaterials] = useState<Material[]>([]);

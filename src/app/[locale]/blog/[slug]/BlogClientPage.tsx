@@ -152,7 +152,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
               fontSize: '1.15rem', 
               lineHeight: 1.8, 
               color: 'hsl(var(--foreground)/0.9)', 
-              fontFamily: 'Inter, system-ui, sans-serif',
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
               marginBottom: '5rem',
               overflowWrap: 'break-word',
               wordBreak: 'break-word'
@@ -165,7 +165,7 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
               color: hsl(var(--foreground));
             }
             .blog-content-area h1, .blog-content-area h2, .blog-content-area h3 {
-              font-family: 'Space Grotesk', sans-serif;
+              font-family: var(--font-space-grotesk), sans-serif;
               margin-top: 2rem;
               margin-bottom: 1rem;
               color: hsl(var(--foreground));

@@ -248,12 +248,26 @@ CREATE POLICY "Admin can manage blog"
 -- =============================================
 -- TRIGGER: Yeni user qeydiyyat edəndə profile yarat
 -- =============================================
+-- =============================================
+-- TRIGGER: Yeni user qeydiyyat edəndə profile yarat
+-- =============================================
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger AS $$
+DECLARE
+  profile_name TEXT;
 BEGIN
-  INSERT INTO public.profiles (id, full_name)
-  VALUES (new.id, new.raw_user_meta_data->>'full_name')
-  ON CONFLICT (id) DO NOTHING;
+  -- Extract full_name from metadata if exists
+  profile_name := COALESCE(new.raw_user_meta_data->>'full_name', '');
+  
+  INSERT INTO public.profiles (id, full_name, role)
+  VALUES (new.id, profile_name, 'user')
+  ON CONFLICT (id) DO UPDATE
+  SET full_name = EXCLUDED.full_name,
+      updated_at = NOW();
+      
+  RETURN new;
+EXCEPTION WHEN OTHERS THEN
+  -- Log error or just return new to not block auth
   RETURN new;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;

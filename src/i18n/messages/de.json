@@ -52,6 +52,7 @@
   },
   "hero": {
     "badge": "Professionelle Ernährungsberaterin · Baku",
+    "doctorNameFull": "Fachärztin für Diätetik, Ernährungsberaterin, Spezialistin für funktionelle Medizin und Anti-Age Dr. Leyla Zülfüqarlı",
     "title": "Für ein gesundes Leben",
     "titleHighlight": "individueller Ernährungsplan",
     "subtitle": "Ernährungsberaterin, Nutrisiologin, Spezialistin für funktionelle Medizin und Anti-Age Dr. Leyla Zülfügarli. Autorin der ersten Bücher im Bereich Diätetik in Aserbaidschan und professionelle Expertin mit mehr als 15 Jahren internationaler wissenschaftlicher Erfahrung (ECO Prag, IFSO London, EASD Tiflis).",
@@ -63,7 +64,9 @@
     "stat2": "15+",
     "stat2Label": "Jahre Erfahrung",
     "stat3": "55+",
-    "stat3Label": "Zertifikate"
+    "stat3Label": "Zertifikate",
+    "stat4": "100+",
+    "stat4Label": "Seminare"
   },
   "services": {
     "title": "Dienstleistungen",
@@ -71,32 +74,58 @@
     "items": {
       "weightLoss": {
         "title": "Abnehmprogramm",
-        "desc": "Individuelle Abnehm- und Gewichtsreduktions-Diätprogramme. Wir sorgen dafür, dass Sie Ihr Ziel mit einem völlig wissenschaftsbasierten Ansatz ohne Sport oder Hunger erreichen. Wir beschleunigen Ihren Stoffwechsel nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker'."
+        "desc": "Individuelle Abnehm- und Gewichtsreduktions-Diätprogramme. Wir sorgen dafür, dass Sie Ihr Ziel mit einem völlig wissenschaftsbasierten Ansatz ohne Sport oder Hunger erreichen. Wir beschleunigen Ihren Stoffwechsel nach dem Prinzip 'Unser Feind ist nicht das Fett, sondern der Zucker'.",
+        "f1": "Individuelle Kalorienberechnung",
+        "f2": "Wöchentlicher Menüplan",
+        "f3": "Wasseraufnahmeplan",
+        "f4": "Ergebnisverfolgung"
       },
       "weightGain": {
         "title": "Zunehmen",
-        "desc": "Speziell vorbereitete gesunde Gewichtszunahme- und Ernährungspläne für diejenigen, die zunehmen möchten. Wir helfen Ihnen, Ihr Idealgewicht zu erreichen, indem wir Muskel- und gesunde Fettmasse ohne schädliche Produkte erhöhen."
+        "desc": "Speziell vorbereitete gesunde Gewichtszunahme- und Ernährungspläne für diejenigen, die zunehmen möchten. Wir helfen Ihnen, Ihr Idealgewicht zu erreichen, indem wir Muskel- und gesunde Fettmasse ohne schädliche Produkte erhöhen.",
+        "f1": "Hochkalorischer Plan",
+        "f2": "Proteinoptimierung",
+        "f3": "Regelmäßige Überwachung",
+        "f4": "Individueller Ansatz"
       },
       "antiAging": {
         "title": "Anti-Ageing & Ernährung",
-        "desc": "Spezielle Anti-Aging-Ernährungsempfehlungen und Expertenführung in der Ernährung. Zellverjüngendes Ernährungsprogramm, das die Hautgesundheit verbessert und den Körper verjüngt."
+        "desc": "Spezielle Anti-Aging-Ernährungsempfehlungen und Expertenführung in der Ernährung. Zellverjüngendes Ernährungsprogramm, das die Hautgesundheit verbessert und den Körper verjüngt.",
+        "f1": "Antioxidantien-Plan",
+        "f2": "Hautgesundheit",
+        "f3": "Hormonelles Gleichgewicht",
+        "f4": "Verjüngende Ernährung"
       },
       "consultation": {
         "title": "Abnehmen mit Autorenmethodik",
-        "desc": "Mit der privaten Autorenmethodik von Dr. Leyla Zülfügarli ist es möglich, 8-10-12 kg reine Fettmasse pro Monat zu verlieren. Schnelle Ergebnisse ohne Sport und Hunger."
+        "desc": "Mit der privaten Autorenmethodik von Dr. Leyla Zülfügarli ist es möglich, 8-10-12 kg reine Fettmasse pro Monat zu verlieren. Schnelle Ergebnisse ohne Sport und Hunger.",
+        "f1": "8-12 kg Fettverlust",
+        "f2": "Autorenmethodik",
+        "f3": "Abnehmen ohne Sport",
+        "f4": "Zelluläre Erneuerung"
       },
       "detox": {
         "title": "Detox-Programm",
-        "desc": "Körperreinigungsprogramm von schädlichen Toxinen, Erneuerung des Körpers mit speziellem Detox-Tee und Ernährung. Effektive 7-tägige Reinigung und Energiewiederherstellung basierend auf Schweizer Erfahrung."
+        "desc": "Körperreinigungsprogramm von schädlichen Toxinen, Erneuerung des Körpers mit speziellem Detox-Tee und Ernährung. Effektive 7-tägige Reinigung und Energiewiederherstellung basierend auf Schweizer Erfahrung.",
+        "f1": "Detox-Tee",
+        "f2": "Wöchentliches Programm",
+        "f3": "Körperreinigung",
+        "f4": "Ernährungsplan"
       },
       "media": {
         "title": "IV-Therapie",
-        "desc": "Die effektivste Methode, um Nährstoffe, Vitamine und Mineralien durch direkte Infusion in den Blutkreislauf an das Körpergewebe abzugeben. Erhöht die Energie und stärkt die Immunität."
+        "desc": "Die effektivste Methode, um Nährstoffe, Vitamine und Mineralien durch direkte Infusion in den Blutkreislauf an das Körpergewebe abzugeben. Erhöht die Energie und stärkt die Immunität.",
+        "f1": "Vitamininfusion",
+        "f2": "Stärkung der Immunität",
+        "f3": "Energiewiederherstellung",
+        "f4": "100% Absorption"
       }
     },
-    "viewMore": "Weiterlesen",
-    "learnMore": "Weiterlesen",
-    "cta": "Untersuchung buchen"
+    "learnMore": "Mehr erfahren",
+    "popular": "Beliebt",
+    "ctaTitle": "Welcher Service ist der richtige für Sie?",
+    "ctaSubtitle": "Lassen Sie uns Ihren individuellen Plan im ersten Beratungsgespräch besprechen",
+    "ctaButton": "Beratung erhalten"
   },
   "results": {
     "title": "Ergebnisse",

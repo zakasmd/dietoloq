@@ -1,4 +1,34 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { Phone, Mail } from 'lucide-react';
 import styles from './AdminConsultations.module.css';
+
+interface Consultation {
+  id: string;
+  full_name: string;
+  phone: string;
+  email?: string;
+  age?: number;
+  goal?: string;
+  message?: string;
+  status: string;
+  created_at: string;
+}
+
+const statusConfig: any = {
+  new: { label: 'Yeni', bg: '#FEF3C7', color: '#92400E', icon: '✨' },
+  contacted: { label: 'Əlaqə saxlanıldı', bg: '#DBEAFE', color: '#1E40AF', icon: '📞' },
+  done: { label: 'Tamamlandı', bg: '#DCFCE7', color: '#166534', icon: '✅' },
+};
+
+const goalLabels: any = {
+  weight_loss: 'Arıqlama',
+  weight_gain: 'Kökəlmə',
+  healthy_living: 'Sağlam həyat',
+  other: 'Digər',
+};
 
 export default function ConsultationsAdminPage() {
   const [consultations, setConsultations] = useState<Consultation[]>([]);

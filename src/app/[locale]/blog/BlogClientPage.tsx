@@ -103,7 +103,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                   }}
                 >
                   <Link href={`/${locale}/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }} className="blog-card-padding">
-                    <div className="blog-card-grid">
+                    <div className={`blog-card-grid ${!post.image_url ? 'no-image' : ''}`}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         {/* Author Header */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -112,7 +112,7 @@ export default function BlogClientPage({ posts, locale }: { posts: BlogPost[], l
                           </div>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'hsl(var(--foreground))' }}>Dr. Leyla Zülfüqarlı</span>
-                            <span className="text-gradient-mint blog-author-text" style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</span>
+                            <span className="text-gradient-mint blog-author-text" style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.1rem' }}>Həkim-Diyetoloq, Nutrisioloq, Funksional Tibb Həkimi, Anti-Age mütəxəssisi</span>
                           </div>
                         </div>
 

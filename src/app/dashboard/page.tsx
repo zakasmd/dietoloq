@@ -75,7 +75,7 @@ export default function DashboardPage() {
   if (loading) return (
     <div style={{ textAlign: 'center', padding: '4rem', color: '#64748B' }}>
       <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⏳</div>
-      <p style={{ fontFamily: 'Inter, system-ui' }}>Yüklənir...</p>
+      <p style={{ fontFamily: 'var(--font-inter), system-ui' }}>Yüklənir...</p>
     </div>
   );
 
@@ -97,7 +97,7 @@ export default function DashboardPage() {
         <div>
           <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>👋</div>
           <h1 style={{
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
             fontWeight: 700,
             color: 'white',
@@ -106,7 +106,7 @@ export default function DashboardPage() {
           }}>
             Xoş gəldiniz, {firstName}!
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, system-ui', fontSize: '0.9rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-inter), system-ui', fontSize: '0.9rem' }}>
             {courses.length > 0
               ? `${courses.length} kursunuz var. Dərslərə davam edin.`
               : 'Kurs almaq üçün bizimlə əlaqə saxlayın.'}
@@ -119,7 +119,7 @@ export default function DashboardPage() {
             background: 'linear-gradient(135deg, hsl(150 100% 72%), hsl(175 85% 60%))',
             color: 'hsl(165 60% 8%)',
             borderRadius: '10px',
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontWeight: 700, fontSize: '0.9rem',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
@@ -133,7 +133,7 @@ export default function DashboardPage() {
             background: '#25D366',
             color: 'white',
             borderRadius: '10px',
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontWeight: 700, fontSize: '0.9rem',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
@@ -147,7 +147,7 @@ export default function DashboardPage() {
       {courses.length > 0 ? (
         <div>
           <h2 style={{
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontSize: '1.1rem', fontWeight: 700,
             color: '#0F172A', marginBottom: '1.25rem',
             letterSpacing: '-0.01em',
@@ -192,7 +192,7 @@ export default function DashboardPage() {
                 </div>
 
                 <h3 style={{
-                  fontFamily: 'Space Grotesk, system-ui',
+                  fontFamily: 'var(--font-space-grotesk), system-ui',
                   fontSize: '1rem', fontWeight: 600,
                   color: '#0F172A', marginBottom: '0.5rem',
                   letterSpacing: '-0.01em',
@@ -202,7 +202,7 @@ export default function DashboardPage() {
 
                 {course.description_az && (
                   <p style={{
-                    fontFamily: 'Inter, system-ui',
+                    fontFamily: 'var(--font-inter), system-ui',
                     fontSize: '0.82rem', color: '#64748B',
                     lineHeight: 1.5, marginBottom: '1.25rem',
                     display: '-webkit-box',
@@ -218,7 +218,7 @@ export default function DashboardPage() {
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
                   <span style={{
-                    fontFamily: 'Inter, system-ui',
+                    fontFamily: 'var(--font-inter), system-ui',
                     fontSize: '0.8rem', color: '#059669',
                     background: '#DCFCE7', padding: '0.25rem 0.75rem',
                     borderRadius: '20px', fontWeight: 600,
@@ -227,7 +227,7 @@ export default function DashboardPage() {
                   </span>
                   <span style={{
                     display: 'flex', alignItems: 'center', gap: '0.25rem',
-                    fontFamily: 'Inter, system-ui',
+                    fontFamily: 'var(--font-inter), system-ui',
                     fontSize: '0.8rem', color: '#059669', fontWeight: 600,
                   }}>
                     <Play size={14} /> İzlə
@@ -249,7 +249,7 @@ export default function DashboardPage() {
         }}>
           <div style={{ fontSize: '4rem', marginBottom: '1.25rem' }}>🎓</div>
           <h2 style={{
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontSize: '1.35rem', fontWeight: 700,
             color: '#0F172A', marginBottom: '0.75rem',
             letterSpacing: '-0.01em',
@@ -257,7 +257,7 @@ export default function DashboardPage() {
             Hələ kursunuz yoxdur
           </h2>
           <p style={{
-            fontFamily: 'Inter, system-ui',
+            fontFamily: 'var(--font-inter), system-ui',
             color: '#64748B', marginBottom: '2rem',
             maxWidth: '380px', margin: '0 auto 2rem',
             lineHeight: 1.6,
@@ -275,7 +275,7 @@ export default function DashboardPage() {
                 padding: '0.75rem 1.5rem',
                 background: '#25D366', color: 'white',
                 borderRadius: '10px',
-                fontFamily: 'Space Grotesk, system-ui',
+                fontFamily: 'var(--font-space-grotesk), system-ui',
                 fontWeight: 700, fontSize: '0.9rem',
                 textDecoration: 'none',
               }}
@@ -288,7 +288,7 @@ export default function DashboardPage() {
               background: 'white', color: '#0F172A',
               border: '1.5px solid #E2E8F0',
               borderRadius: '10px',
-              fontFamily: 'Space Grotesk, system-ui',
+              fontFamily: 'var(--font-space-grotesk), system-ui',
               fontWeight: 700, fontSize: '0.9rem',
               textDecoration: 'none',
             }}>
@@ -320,13 +320,13 @@ export default function DashboardPage() {
         </div>
         <div style={{ flex: 1 }}>
           <div style={{
-            fontFamily: 'Space Grotesk, system-ui',
+            fontFamily: 'var(--font-space-grotesk), system-ui',
             fontWeight: 600, fontSize: '0.9rem', color: '#0F172A', marginBottom: '0.2rem',
           }}>
             Sualınız var?
           </div>
           <div style={{
-            fontFamily: 'Inter, system-ui',
+            fontFamily: 'var(--font-inter), system-ui',
             fontSize: '0.82rem', color: '#64748B',
           }}>
             WhatsApp-da bizimlə əlaqə saxlayın, dərhal cavab veririk.
@@ -340,7 +340,7 @@ export default function DashboardPage() {
             padding: '0.6rem 1.25rem',
             background: '#25D366', color: 'white',
             borderRadius: '8px',
-            fontFamily: 'Inter, system-ui',
+            fontFamily: 'var(--font-inter), system-ui',
             fontWeight: 600, fontSize: '0.85rem',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
