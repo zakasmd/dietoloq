@@ -51,7 +51,7 @@ export default function BookClientPage({ locale }: { locale: string }) {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="eyebrow" style={{ marginBottom: '1rem' }}>🛍️ {t('eyebrow')}</span>
             <h1 className="text-gradient-mint" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 800, marginBottom: '1.5rem' }}>
-              {t('title').replace('Kitab', 'Kitablar və Çaylar')}
+              {t('title')}
             </h1>
             <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '50px', display: 'inline-block', border: '1px solid hsl(var(--primary)/0.2)' }}>
               <p style={{ color: 'hsl(var(--primary))', fontWeight: 600, fontSize: '0.9rem' }}>
