@@ -110,6 +110,7 @@ CREATE TABLE IF NOT EXISTS blog_posts (
   excerpt_az TEXT,
   cover_url TEXT,
   category TEXT,
+  youtube_url TEXT,
   read_time_minutes INTEGER,
   is_published BOOLEAN DEFAULT false,
   published_at TIMESTAMPTZ,

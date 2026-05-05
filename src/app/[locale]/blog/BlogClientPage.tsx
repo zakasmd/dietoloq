@@ -16,6 +16,7 @@ type BlogPost = {
   content_en?: string;
   slug: string;
   image_url?: string;
+  youtube_url?: string;
   category: string;
   created_at: string;
 };

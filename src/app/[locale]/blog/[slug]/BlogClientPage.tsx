@@ -50,7 +50,9 @@ export default function BlogClientPage({ post, locale }: { post: BlogPost | null
   else date = `${d.getDate()} ${monthsEn[d.getMonth()]} ${d.getFullYear()}`;
 
   const getYoutubeEmbed = (url: string) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    if (!url) return null;
+    // Support various YouTube URL formats including shorts, watch?v=, youtu.be, etc.
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
   };
